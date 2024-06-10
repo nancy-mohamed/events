@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl" data-nav-layout="horizontal" data-theme-mode="light" data-header-styles="gradient"
+    data-menu-styles="light">
+
+<head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="Description" content="Events" />
+    <meta name="Author" content="Events" />
+    <meta name="keywords" content="Events" />
+
+    <!-- TITLE -->
+    <title>ادارة فاعليات</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+
+    <!-- BOOTSTRAP CSS -->
+    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- ICONS CSS -->
+    <link href="assets/css/icons.css" rel="stylesheet" />
+
+    <!-- STYLES CSS -->
+    <link href="assets/css/styles.css" rel="stylesheet" />
+
+    <!-- SIMPLEBAR CSS -->
+    <link rel="stylesheet" href="assets/libs/simplebar/simplebar.min.css" />
+
+    <!-- DATA-TABLES CSS -->
+    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="assets/css/responsive.bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/buttons.bootstrap5.min.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/star-rating-svg.css">
+
+</head>
+
+<body>
+    <!-- LOADER -->
+    <div id="loader">
+        <img src="assets/images/loader.svg" alt="" />
+    </div>
+    <!-- END LOADER -->
+
+ 
+
+    <div class="page error-bg">
+        <!-- Start::error-page -->
+        <div class="error-page  ">
+            <div class="container">
+                <div class="row justify-content-center align-items-center authentication authentication-basic h-100">
+                    <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-6 col-sm-8 col-12">
+                        <div class="my-5 d-flex justify-content-center">
+                            <a href="index.html">
+                                <img src="assets/images/logo.png" alt="logo" class="desktop-logo">
+                            </a>
+                        </div>
+                        <div class="card custom-card rectangle2">
+                            <div class="card-body p-5 rectangle3">
+                                <p class="h4 fw-semibold mb-4 text-center">تسجيل الدخول</p>
+                                <ul class="nav nav-pills nav-login justify-content-center mb-3" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" role="tab" aria-current="page"
+                                        href="#employee" aria-selected="true">موظف</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" role="tab" aria-current="page"
+                                        href="#beneficiary" aria-selected="true">مستفيد</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane p-0 border-0 show active" id="employee" role="tabpanel">
+                                        <div class="row gy-3">
+                                            <div class="col-xl-12">
+                                                <label for="signin-username" class="form-label text-default">الاسم بالكامل</label>
+                                                <input type="text" class="form-control form-control-lg" id="signin-username" placeholder="الاسم">
+                                            </div>
+                                            <div class="col-xl-12 mb-2">
+                                                <label for="signin-password" class="form-label text-default d-block">كلمة المرور</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control form-control-lg" id="signin-password" placeholder="كلمة المرور">
+                                                    <button class="btn btn-light bg-light" type="button"><i class="ri-eye-off-line align-middle"></i></button>
+                                                </div>
+                                                <div class="d-flex justify-content-between mt-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
+                                                           تذكرني ؟
+                                                        </label>
+                                                    </div>
+                                                    <a href="#" class="text-danger">نسيت كلمة المرور ؟</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 d-grid mt-2">
+                                                <a data-bs-toggle="modal" data-bs-target="#modalOtp"
+                                                type="button" class="btn btn-lg btn-secondary rounded-pill">تسجيل الدخول</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <p class="fs-14 text-success mb-0"> 
+                                                   يجب التسجيل برقم الهوية ورقم الجوال
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane p-0 border-0" id="beneficiary" role="tabpanel">
+                                        <div class="row gy-3">
+                                            <div class="col-xl-12">
+                                                <label for="signin-username" class="form-label text-default">الاسم بالكامل</label>
+                                                <input type="text" class="form-control form-control-lg" id="signin-username" placeholder="الاسم">
+                                            </div>
+                                            <div class="col-xl-12 mb-2">
+                                                <label for="signin-password" class="form-label text-default d-block">كلمة المرور</label>
+                                                <div class="input-group">
+                                                    <input type="password" class="form-control form-control-lg" id="signin-password" placeholder="كلمة المرور">
+                                                    <button class="btn btn-light bg-light" type="button"><i class="ri-eye-off-line align-middle"></i></button>
+                                                </div>
+                                                <div class="d-flex justify-content-between mt-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                                        <label class="form-check-label text-muted fw-normal" for="defaultCheck1">
+                                                           تذكرني ؟
+                                                        </label>
+                                                    </div>
+                                                    <a href="#" class="text-danger">نسيت كلمة المرور ؟</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 d-grid mt-2">
+                                                <a data-bs-toggle="modal" data-bs-target="#modalOtp"
+                                                type="button" class="btn btn-lg btn-secondary rounded-pill">تسجيل الدخول</a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <p class="fs-14 text-success mb-0"> 
+                                                   يجب التسجيل برقم الهوية ورقم الجوال
+                                            </p>
+                                        </div>
+                                    </div>
+                                   
+                                   
+                                </div>
+                             
+                               
+                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End::error-page -->
+    </div>
+
+
+    
+    <!-- <div class="modal fade" id="modalOtp" tabindex="-1" aria-labelledby="modalOtp" data-bs-keyboard="false"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              
+                <div class="modal-body">
+                   
+                    <p class="h5 fw-semibold mb-2 text-center">Verify Your Account</p>
+                    <p class="mb-4 text-muted op-7 fw-normal text-center">Enter the 4 digit code sent to the registered email Id.</p>
+                    <div class="row gy-3">
+                        <div class="col-xl-12 mb-2">
+                            <div class="row">
+                                <div class="col-3">
+                                    <input type="text" class="form-control form-control-lg text-center" id="one" maxlength="1" onkeyup="clickEvent(this,'two')">
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control form-control-lg text-center" id="two" maxlength="1" onkeyup="clickEvent(this,'three')">
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control form-control-lg text-center" id="three" maxlength="1" onkeyup="clickEvent(this,'four')">
+                                </div>
+                                <div class="col-3">
+                                    <input type="text" class="form-control form-control-lg text-center" id="four" maxlength="1">
+                                </div>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                    Did not recieve a code ?<a href="mail.php" class="text-primary ms-2 d-inline-block">Resend</a>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 d-grid mt-2">
+                            <a href="index.php" class="btn btn-lg btn-primary">Verify</a>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <p class="fs-12 text-danger mt-3 mb-0"><sup><i class="ri-asterisk"></i></sup>Don't share the verification code with anyone !</p>
+                    </div>
+
+
+                </div>
+              
+
+            </div>
+        </div>
+    </div> -->
+    <div id="modalOtp" class="modal fade zoomIn" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalgridLabel">تفعيل الحساب
+                    </h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12 col-md-12">
+                            <form id="otp-form">
+                                <div class="otp-inputs">
+                                    <input type="text" pattern="\d*" maxlength="1" />
+                                    <input type="text" maxlength="1" />
+                                    <input type="text" maxlength="1" />
+                                    <input type="text" maxlength="1" />
+                                </div>
+                            </form>
+                        </div>
+                   
+                       
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary rounded-pill w-100">التفعيل وإنشاء الحساب</button>
+                        </div>
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="mt-4">لم تتلق الرمز ؟ <a class="text-success" href="#0">اعادة ارسال</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <!-- POPPER JS -->
+    <script src="assets/libs/%40popperjs/core/umd/popper.min.js"></script>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SIMPLEBAR JS -->
+    <!-- JQUERY CDN -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/js/simplebar.js"></script>
+
+    <!-- DEFAULTMENU JS -->
+    <script src="assets/js/defaultmenu.js"></script>
+
+    <!-- STICKY JS -->
+    <script src="assets/js/sticky.js"></script>
+
+
+    <!-- DATA-TABLES CDN -->
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
+    <script src="assets/js/dataTables.responsive.min.js"></script>
+    <script src="assets/js/dataTables.buttons.min.js"></script>
+    <script src="assets/js/buttons.print.min.js"></script>
+    <script src="assets/js/buttons.html5.min.js"></script>
+
+    <!-- INTERNAL DATADABLES JS -->
+    <script src="assets/js/datatables.js"></script>
+    <!-- CUSTOM JS -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/jquery.star-rating-svg.js"></script>
+    <script src="assets/js/otp.js"></script>
+
+
+
+    <!-- END SCRIPTS -->
+</body>
+
+</html>
+<!-- This code use for render base file -->
