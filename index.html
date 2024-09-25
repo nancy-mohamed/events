@@ -1,1015 +1,993 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl" data-nav-layout="horizontal" data-theme-mode="light" data-header-styles="gradient"
-    data-menu-styles="light">
+<html lang="en">
+
 
 <head>
-    <!-- Meta Data -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="Description" content="Events" />
-    <meta name="Author" content="Events" />
-    <meta name="keywords" content="Events" />
 
-    <!-- TITLE -->
-    <title>ادارة فاعليات</title>
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta name="author" content="Website Design Templates">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Residential towers of stone and marble">
+    <meta name="description" content="Residential towers of stone and marble">
 
-    <!-- FAVICON -->
-    <link rel="icon" href="assets/images/logo.png" type="image/x-icon" />
+    <!-- title  -->
+    <title>الأبراج الوسطي </title>
 
-    <!-- BOOTSTRAP CSS -->
-    <link id="style" href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
 
-    <!-- ICONS CSS -->
-    <link href="assets/css/icons.css" rel="stylesheet" />
+    <!-- plugins -->
+    <link rel="stylesheet" href="css/plugins.css">
 
-    <!-- STYLES CSS -->
-    <link href="assets/css/styles.css" rel="stylesheet" />
+    <!-- search css -->
+    <link rel="stylesheet" href="css/flaticon.css">
 
-    <!-- SIMPLEBAR CSS -->
-    <link rel="stylesheet" href="assets/libs/simplebar/simplebar.min.css" />
 
-    <!-- DATA-TABLES CSS -->
-    <link rel="stylesheet" href="assets/css/dataTables.bootstrap5.min.css" />
-    <link rel="stylesheet" href="assets/css/responsive.bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/buttons.bootstrap5.min.css" />
+    <!-- theme core css -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/ar.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/star-rating-svg.css">
+
 
 </head>
 
 <body>
-    <!-- LOADER -->
-    <div id="loader">
-        <img src="assets/images/loader.svg" alt="" />
-    </div>
-    <!-- END LOADER -->
 
-    <!-- PAGE -->
-    <div class="page">
-        <!-- HEADER -->
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
 
-        <header class="app-header">
-            <!-- Start::main-header-container -->
-            <div class="main-header-container container-fluid">
-                <!-- Start::header-content-left -->
-                <div class="header-content-left">
-                    <!-- Start::header-element -->
-                    <div class="header-element">
-                        <div class="horizontal-logo">
-                            <a href="index.html" class="header-logo">
-                                <img src="assets/images/logo-light.png" alt="logo" class="desktop-dark" />
-                            </a>
-                        </div>
-                    </div>
-                    <!-- End::header-element -->
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
 
-                    <!-- Start::header-element -->
-                    <div class="header-element">
-                        <!-- Start::header-link -->
-                        <a aria-label="anchor" href="javascript:void(0);" class="sidemenu-toggle header-link"
-                            data-bs-toggle="sidebar">
-                            <span class="open-toggle me-2">
-                                <i class="bx bx-menu header-link-icon"></i>
-                            </span>
-                        </a>
-                        <div class="main-header-center d-none d-lg-block header-link">
-                            <input type="text" class="form-control form-control-lg" id="typehead"
-                                placeholder="عن ماذا تبحث ...." autocomplete="off" />
-                            <button type="button" aria-label="button" class="btn pe-1">
-                                <i class="fe fe-search" aria-hidden="true"></i>
-                            </button>
-                        </div>
+        <!-- HEADER
+        ================================================== -->
+  
+        <header class="header-style2">
 
-                        <!-- End::header-link -->
-                    </div>
-                    <!-- End::header-element -->
-
-                    <!-- Start::header-element -->
-                    <div class="header-element header-search d-lg-none d-block">
-                        <!-- Start::header-link -->
-                        <a aria-label="anchor" href="javascript:void(0);" class="header-link" data-bs-toggle="modal"
-                            data-bs-target="#searchModal">
-                            <i class="bx bx-search-alt-2 header-link-icon"></i>
-                        </a>
-                        <!-- End::header-link -->
-                    </div>
-                    <!-- End::header-element -->
-                </div>
-                <!-- End::header-content-left -->
-
-                <div class="header-content-center">
-                    <p class="welcome_text text-animation">مشروع حديقة العليا</p>
-                </div>
-
-                <!-- Start::header-content-right -->
-                <div class="header-content-right">
-                    <!-- Start::header-element -->
-                    <div class="header-element header-theme-mode">
-                        <!-- Start::header-link|layout-setting -->
-                        <a aria-label="anchor" href="javascript:void(0);" class="header-link layout-setting">
-                            <!-- Start::header-link-icon -->
-                            <i class="bx bx-sun bx-flip-horizontal header-link-icon ionicon dark-layout"></i>
-                            <!-- End::header-link-icon -->
-                            <!--  Start::header-link-icon -->
-                            <i class="bx bx-moon bx-flip-horizontal header-link-icon ionicon light-layout"></i>
-                            <!-- End::header-link-icon -->
-                        </a>
-                        <!-- End::header-link|layout-setting -->
-                    </div>
-                    <!-- End::header-element -->
-
-                    <!-- Start::header-element -->
-                    <div class="header-element notifications-dropdown">
-                        <!-- Start::header-link|dropdown-toggle -->
-                        <a href="javascript:void(0);" class="header-link dropdown-toggle" data-bs-toggle="dropdown"
-                            data-bs-auto-close="outside" id="messageDropdown" aria-expanded="false">
-                            <i class="bx bx-bell bx-flip-horizontal header-link-icon ionicon"></i>
-                            <span class="badge bg-info rounded-pill header-icon-badge pulse pulse-secondary"
-                                id="notification-icon-badge">5</span>
-                        </a>
-                        <!-- End::header-link|dropdown-toggle -->
-                        <!-- Start::main-header-dropdown -->
-                        <!-- <div class="main-header-dropdown dropdown-menu border-0 dropdown-menu-end"
-                            data-popper-placement="none">
-                            <div class="p-3">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <p class="mb-0 fs-17 fw-semibold">Notifications</p>
-                                    <span class="badge bg-secondary-transparent" id="notifiation-data">5 Unread</span>
-                                </div>
+            <div class="top-bar bg-primary d-none d-lg-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-12">
+                            <div class="top-bar-info">
+                                <ul class="ps-0">
+                                    <li><i class="ti-mobile"></i>0553141010</li>
+                                    <li class="d-none d-sm-inline-block"><i class="ti-email"></i>al-amer999@hotmail.com</li>
+                                </ul>
                             </div>
-                            <div class="dropdown-divider"></div>
-                            <ul class="list-unstyled mb-0" id="header-notification-scroll">
-                                <li class="dropdown-item">
-                                    <div class="d-flex align-items-start">
-                                        <div class="pe-2">
-                                            <span class="avatar avatar-md bg-secondary-transparent rounded-2">
-                                                <img src="assets/images/faces/2.jpg" alt="" />
-                                            </span>
-                                        </div>
-                                        <div class="flex-grow-1 d-flex justify-content-between">
-                                            <div>
-                                                <p class="mb-0 fw-semibold">
-                                                    <a href="notifications.html">Olivia James</a>
-                                                </p>
-                                                <span class="fs-12 text-muted fw-normal">Congratulate for New template
-                                                    start</span>
-                                            </div>
-                                            <div class="min-w-fit-content ms-2 text-end">
-                                                <a aria-label="anchor" href="javascript:void(0);"
-                                                    class="min-w-fit-content text-muted me-1 dropdown-item-close1"><i
-                                                        class="ti ti-x fs-14"></i></a>
-                                                <p class="mb-0 text-muted fs-11">2 min ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown-item">
-                                    <div class="d-flex align-items-start">
-                                        <div class="pe-2">
-                                            <span class="avatar avatar-md bg-warning-transparent rounded-2"><i
-                                                    class="bx bx-pyramid fs-18"></i></span>
-                                        </div>
-                                        <div class="flex-grow-1 d-flex justify-content-between">
-                                            <div>
-                                                <p class="mb-0 fw-semibold">
-                                                    <a href="notifications.html">Order Placed
-                                                        <span class="text-warning">ID: #1116773</span></a>
-                                                </p>
-                                                <span class="fs-12 text-muted fw-normal header-notification-text">Order
-                                                    Placed Successfully</span>
-                                            </div>
-                                            <div class="min-w-fit-content ms-2 text-end">
-                                                <a aria-label="anchor" href="javascript:void(0);"
-                                                    class="min-w-fit-content text-muted me-1 dropdown-item-close1"><i
-                                                        class="ti ti-x fs-14"></i></a>
-                                                <p class="mb-0 text-muted fs-11">5 min ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown-item">
-                                    <div class="d-flex align-items-start">
-                                        <div class="pe-2">
-                                            <span class="avatar avatar-md bg-secondary-transparent rounded-2">
-                                                <img src="assets/images/faces/8.jpg" alt="" />
-                                            </span>
-                                        </div>
-                                        <div class="flex-grow-1 d-flex justify-content-between">
-                                            <div>
-                                                <p class="mb-0 fw-semibold">
-                                                    <a href="notifications.html">Elizabeth Lewis</a>
-                                                </p>
-                                                <span class="fs-12 text-muted fw-normal">added new schedule realease
-                                                    date</span>
-                                            </div>
-                                            <div class="min-w-fit-content ms-2 text-end">
-                                                <a aria-label="anchor" href="javascript:void(0);"
-                                                    class="min-w-fit-content text-muted me-1 dropdown-item-close1"><i
-                                                        class="ti ti-x fs-14"></i></a>
-                                                <p class="mb-0 text-muted fs-11">10 min ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown-item">
-                                    <div class="d-flex align-items-start">
-                                        <div class="pe-2">
-                                            <span class="avatar avatar-md bg-primary-transparent rounded-2"><i
-                                                    class="bx bx-pulse fs-18"></i></span>
-                                        </div>
-                                        <div class="flex-grow-1 d-flex justify-content-between">
-                                            <div>
-                                                <p class="mb-0 fw-semibold">
-                                                    <a href="notifications.html">Your Order Has Been Shipped</a>
-                                                </p>
-                                                <span class="fs-12 text-muted fw-normal header-notification-text">Order
-                                                    No: 123456 Has Shipped To Your Delivery
-                                                    Address</span>
-                                            </div>
-                                            <div class="min-w-fit-content ms-2 text-end">
-                                                <a aria-label="anchor" href="javascript:void(0);"
-                                                    class="min-w-fit-content text-muted me-1 dropdown-item-close1"><i
-                                                        class="ti ti-x fs-14"></i></a>
-                                                <p class="mb-0 text-muted fs-11">12 min ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown-item">
-                                    <div class="d-flex align-items-start">
-                                        <div class="pe-2">
-                                            <span class="avatar avatar-md bg-pink-transparent rounded-2"><i
-                                                    class="bx bx-badge-check"></i></span>
-                                        </div>
-                                        <div class="flex-grow-1 d-flex justify-content-between">
-                                            <div>
-                                                <p class="mb-0 fw-semibold">
-                                                    <a href="notifications.html">Account Has Been Verified</a>
-                                                </p>
-                                                <span class="fs-12 text-muted fw-normal header-notification-text">Your
-                                                    Account Has Been Verified Sucessfully</span>
-                                            </div>
-                                            <div class="min-w-fit-content ms-2 text-end">
-                                                <a aria-label="anchor" href="javascript:void(0);"
-                                                    class="min-w-fit-content text-muted me-1 dropdown-item-close1"><i
-                                                        class="ti ti-x fs-14"></i></a>
-                                                <p class="mb-0 text-muted fs-11">20 min ago</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <ul class="top-social-icon ps-0">
+                                <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#!"><i class="fab fa-linkedin-in"></i></a></li>
                             </ul>
-                            <div class="p-3 empty-header-item1 border-top">
-                                <div class="d-grid">
-                                    <a href="notifications.html" class="btn btn-primary">View All</a>
-                                </div>
-                            </div>
-                            <div class="p-5 empty-item1 d-none">
-                                <div class="text-center">
-                                    <span class="avatar avatar-xl avatar-rounded bg-secondary-transparent">
-                                        <i class="bx bx-bell-off bx-tada fs-2"></i>
-                                    </span>
-                                    <h6 class="fw-semibold mt-3">No New Notifications</h6>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- End::main-header-dropdown -->
+                        </div>
                     </div>
-                    <!-- End::header-element -->
+                </div>
+            </div>
 
-                    <!-- Start::header-element -->
-                    <div class="header-element header-fullscreen">
-                        <!-- Start::header-link -->
-                        <a class="fullscreen-btn header-link" href="javascript:void(0);">
-                            <i class="bx bx-fullscreen header-link-icon full-screen-open"></i>
-                            <i class="bx bx-exit-fullscreen header-link-icon full-screen-close d-none"></i>
-                        </a>
-                        <!-- End::header-link -->
-                    </div>
-                    <!-- End::header-element -->
+            <div class="navbar-default border-bottom">
 
-                    <!-- Start::header-element -->
-                    <div class="header-element mainuserProfile">
-                        <!-- Start::header-link|dropdown-toggle -->
-                        <a href="javascript:void(0);" class="header-link dropdown-toggle" id="mainHeaderProfile"
-                            data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                            <div class="d-flex align-items-center">
-                                <div class="d-sm-flex wd-100p gap-2">
-                                    <div class="avatar avatar-sm">
-                                        <img alt="avatar" class="rounded-circle" src="assets/images/thumb.jpg" />
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <a href="index.html" class="navbar-brand logodefault"><img id="logo" src="img/logo.png" alt="logo" /></a>
+                                        <!-- end logo -->
                                     </div>
-                                    <div class="my-auto d-none d-xl-flex">
-                                        <h6 class="mb-0 user-name d-sm-block d-none">
-                                            محمد يوسف
-                                        </h6>
+
+                                    <div class="navbar-toggler bg-primary"></div>
+
+                                    <!-- start menu area -->
+                                    <ul class="navbar-nav" id="nav" style="display: none;">
+                                        <li>
+                                            <a href="#!">الرئيسية</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">معلومات عنا</a>
+                                        </li>
+                                      
+                                        <li>
+                                            <a href="#!">رخام</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">حجر</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">فايبر</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">حداده</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">موبيليا</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">G R C</a>
+                                        </li>
+                                        <li>
+                                            <a href="#!">ديكورات وتشطيبات</a>
+                                        </li>
+                                     
+                                     
+                                    </ul>
+                                    <!-- end menu area -->
+
+                                    <!-- start attribute navigation -->
+                                    <div class="attr-nav align-items-xl-center ms-xl-auto d-none d-xl-inline-block">
+                                        <ul>
+                                            <li class=""><a href="#" class="butn-style1 secondary md text-white">اتصل بنا</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end attribute navigation -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- BANNER
+        ================================================== -->
+        <section class="full-screen p-0">
+            <div class="slider-fade owl-carousel owl-theme w-100 min-vh-100">
+
+                <div class="item bg-img cover-background left-overlay-secondary" data-overlay-dark="7" data-background="img/bg1.webp">
+                    <div class="container d-flex flex-column">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-md-10 col-lg-8 col-xl-7">
+                                <span class="small-title">المعرفة والخبرة في التصاميم 
+                                </span>
+                                <h1 class="">
+                                  مصنع الأبراج الوسطي
+                                </h1>
+                                <p>
+                                    يمكننا توفير جميع الكميات المطلوبة من الرخام والحجر لمشاريع البناء حول العالم.
+                                </p>
+                                <div class="mt-1-9 align-middle">
+                                    <a href="#" class="butn me-sm-2 mb-2 mb-sm-0 md white">اكتشف المزيد عنا</a>
+                                    <a href="#" class="butn md">اتصل بنا</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item bg-img cover-background left-overlay-secondary" data-overlay-dark="7" data-background="img/bg2.jpeg">
+                    <div class="container d-flex flex-column">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-md-10 col-lg-8 col-xl-7">
+                                <span class="small-title">المعرفة والخبرة في التصاميم 
+                                </span>
+                                <h1 class="">
+                                    مصنع الأبراج الوسطي
+                                </h1>
+                                <p>
+                                    يمكننا توفير جميع الكميات المطلوبة من الرخام والحجر لمشاريع البناء حول العالم.
+                                </p>
+                                <div class="mt-1-9 align-middle">
+                                    <a href="#" class="butn me-sm-2 mb-2 mb-sm-0 md white">اكتشف المزيد عنا</a>
+                                    <a href="#" class="butn md">اتصل بنا</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item bg-img cover-background left-overlay-secondary" data-overlay-dark="7" data-background="img/bg3.webp">
+                    <div class="container d-flex flex-column">
+                        <div class="row align-items-center min-vh-100">
+                            <div class="col-md-10 col-lg-8 col-xl-7">
+                                <span class="small-title">المعرفة والخبرة في التصاميم 
+                                </span>
+                                <h1 class="">
+                                    مصنع الأبراج الوسطي
+                                  </h1>
+                                <p>
+                                    يمكننا توفير جميع الكميات المطلوبة من الرخام والحجر لمشاريع البناء حول العالم.
+                                </p>
+                                <div class="mt-1-9 align-middle">
+                                    <a href="#" class="butn me-sm-2 mb-2 mb-sm-0 md white">اكتشف المزيد عنا</a>
+                                    <a href="#" class="butn md">اتصل بنا</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+
+            </div>
+        </section>
+
+        <!-- ABOUT
+        ================================================== -->
+        <section>
+            <div class="container position-relative z-index-9">
+                <div class="row align-items-xxl-center about-style01">
+                    <div class="col-lg-6 mb-1-9 mb-lg-0 wow fadeIn" data-wow-delay="200ms">
+                        <div class="row">
+                            <div class="col-sm-3 d-none d-sm-block">
+                                <img src="img/img2.jpg" class="about-img1" alt="...">
+                            </div>
+                            <div class="col-sm-9">
+                                <img src="img/about1.webp" class="about-img2" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="400ms">
+                        <div class="ps-lg-2-3">
+                            <div class="section-title">
+                                <span class="sm-title">من نحن</span>
+                            </div>
+                            <h2 class="h1 mb-1-9">مصنع الأبراج الوسطي </h2>
+                            <p class="mb-1-9">
+                                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء
+                            </p>
+                            <div class="row mb-2-9">
+                                <div class="col-md-6 mb-4 mb-md-0">
+                                    <div class="d-flex align-items-center feature-item">
+                                        <div class="flex-shrink-0">
+                                            <i class="flaticon-trowel"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h4 class="mb-0">أفضل الخامات
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-center feature-item">
+                                        <div class="flex-shrink-0">
+                                           <i class="flaticon-chisel"></i>
+                                        </div>
+                                        <div class="flex-grow-1 ms-2">
+                                            <h4 class="mb-0">سرعة التنفيذ
+                                            </h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </a>
-                        <!-- End::header-link|dropdown-toggle -->
-                        <ul class="dropdown-menu border-0 main-header-dropdown overflow-hidden header-profile-dropdown"
-                            aria-labelledby="mainHeaderProfile">
+                            <a href="#" class="butn secondary">معرفة المزيد</a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="img/bg-06.jpg" class="position-absolute bottom-0 right about-shape" alt="...">
+        </section>
+
+       
+            <!-- SERVICES
+        ================================================== -->
+        <section class="service-style01 bg-img cover-background secondary-overlay" data-overlay-dark="7" data-background="img/bg5.webp">
+            <div class="container-fluid">
+                <div class="section-title mb-1-9 mb-md-6 text-center wow fadeIn" data-wow-delay="200ms">
+                    <span class="sm-title">ما نقدمه</span>
+                    <h2 class="mb-0 text-white">الأقسام الخاصة بالمصنع</h2>
+                </div>
+                <div class="row categories-list wow fadeIn" data-wow-delay="400ms">
+                    <div class="col-md-12">
+                        <div class="categories-carousel owl-carousel owl-theme">
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat1.jpg" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="">رخام صناعي وطبيعي
+                                    </h3>
+                                    <a href="#">7 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat2.jpg" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="">حجر صناعي وطبيعي
+                                    </h3>
+                                    <a href="#">9 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat2.jpg" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="">فايبر سيلكون رابر
+                                    </h3>
+                                    <a href="#">4 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat4.avif" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="">موبيليا ومجالس
+                                    </h3>
+                                    <a href="#">24 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat5.avif" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="">حداده وألومنتال وكلادنج
+                                    </h3>
+                                    <a href="#">12 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat6.jpg" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class=""> G R C 
+                                    </h3>
+                                    <a href="#">10 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="card-style1">
+                                <div class="card-main-img">
+                                    <div class="card-image">
+                                        <img src="img/cat6.jpg" alt="...">
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h3 class="">ديكورات داخليه وتشطيبات 
+                                    </h3>
+                                    <a href="#">10 ألوان متوفرة <i class="fa-angle-left fa align-middle ms-1"></i></a>
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                
+            
+                 
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="position-relative z-index-9">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow fadeIn d-flex justify-content-between align-items-center" data-wow-delay="200ms">
+                        <div class="section-title mb-1-9 mb-md-6">
+                            <span class="sm-title">ما تم انجازه</span>
+                            <h2 class="mb-0">رخام صناعي وطبيعي
+                            </h2>
+                        </div>
+                        <a href="#" class="butn secondary">عرض الكل</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12  wow fadeIn" data-wow-delay="200ms">
+                        <div class="products-carousel owl-carousel owl-theme">
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/img3.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/img4.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg4.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/img5.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/cat1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+          
+        </section>
+        
+        <section class="position-relative z-index-9">
+            <div class="bg-secondary section-bg"></div>
+            <div class="position-relative z-index-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 wow fadeIn d-flex justify-content-between align-items-center" data-wow-delay="200ms">
+                            <div class="section-title mb-1-9 mb-md-6">
+                                <span class="sm-title">ما تم انجازه</span>
+                                <h2 class="mb-0 text-white">حجر صناعي وطبيعي
+                                </h2>
+                            </div>
+                            <a href="#" class="butn">عرض الكل</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="portfolio-carousel owl-carousel owl-theme">
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/stone1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/cat2.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/stone1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/cat2.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="position-relative z-index-9">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="200ms">
+                        <div class="section-title mb-3">
+                            <span class="sm-title">ما تم انجازه</span>
+                            <h2 class="">فايبر سيلكون رابر
+                            </h2>
+                            <p>
+                                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+                            </p>
+                        </div>
+                        <a href="#" class="butn secondary">عرض الكل</a>
+                    </div>
+                    <div class="col-lg-8 col-md-6 wow fadeIn" data-wow-delay="200ms">
+                        <div class="products3-carousel owl-carousel owl-theme">
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg1.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg2.jpeg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg3.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/about1.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/cat1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+               
+                
+            </div>
+          
+        </section>
+
+        <section class="position-relative z-index-9 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow fadeIn" data-wow-delay="200ms">
+                        <div class="section-title mb-4 text-center">
+                            <span class="sm-title">ما تم انجازه</span>
+                            <h2 class="">موبيليا ومجالس
+                            </h2>
+                        </div>
+                    </div>
+                  
+                </div>
+                <div class="row wow fadeIn" data-wow-delay="200ms">
+                    <div class="col-md-4 mb-4">
+                        <div class="portfolio-style01 portfolio-style01-2 portfolio-style01-small">
+                            <div class="portfolio-img">
+                                <img src="img/bg4.jpg" class="border-radius-10" alt="...">
+                            </div>
+                            <div class="portfolio-content text-center">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-style01 portfolio-style01-2 portfolio-style01-small">
+                            <div class="portfolio-img">
+                                <img src="img/bg5.webp" class="border-radius-10" alt="...">
+                            </div>
+                            <div class="portfolio-content text-center">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="portfolio-style01 portfolio-style01-2 portfolio-style01-large">
+                            <div class="portfolio-img">
+                                <img src="img/bg3.webp" class="border-radius-10" alt="...">
+                            </div>
+                            <div class="portfolio-content text-center">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="portfolio-style01 portfolio-style01-2 portfolio-style01-small">
+                            <div class="portfolio-img">
+                                <img src="img/cat1.jpg" class="border-radius-10" alt="...">
+                            </div>
+                            <div class="portfolio-content text-center">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-style01 portfolio-style01-2 portfolio-style01-small">
+                            <div class="portfolio-img">
+                                <img src="img/cat2.jpg" class="border-radius-10" alt="...">
+                            </div>
+                            <div class="portfolio-content text-center">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row wow fadeIn" data-wow-delay="200ms">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <a href="#" class="butn secondary">عرض الكل</a>
+                    </div>
+                </div>
+               
+                
+            </div>
+          
+        </section>
+
+
+        <section class="position-relative z-index-9">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow fadeIn d-flex justify-content-between align-items-center" data-wow-delay="200ms">
+                        <div class="section-title mb-1-9 mb-md-6">
+                            <span class="sm-title">ما تم انجازه</span>
+                            <h2 class="mb-0">حداده وألومنتال وكلادنج
+                            </h2>
+                        </div>
+                        <a href="#" class="butn secondary">عرض الكل</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12  wow fadeIn" data-wow-delay="200ms">
+                        <div class="products-carousel owl-carousel owl-theme">
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg5.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg4.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/stone1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/img5.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/cat1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+          
+        </section>
+   
+        <section class="position-relative z-index-9">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-6 wow fadeIn" data-wow-delay="200ms">
+                        <div class="section-title mb-3">
+                            <span class="sm-title">ما تم انجازه</span>
+                            <h2 class="">G R C 
+                            </h2>
+                            <p>
+                                هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+                            </p>
+                        </div>
+                        <a href="#" class="butn secondary">عرض الكل</a>
+                    </div>
+                    <div class="col-lg-8 col-md-6 wow fadeIn" data-wow-delay="200ms">
+                        <div class="products3-carousel owl-carousel owl-theme">
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg1.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg2.jpeg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/bg3.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">حجر</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/about1.webp" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">رخام</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                            <div class="portfolio-style01">
+                                <div class="portfolio-img">
+                                    <img src="img/cat1.jpg" class="border-radius-10" alt="...">
+                                </div>
+                                <div class="portfolio-content text-center">
+                                    <span class="text-primary d-block mb-1 small">ديكور</span>
+                                    <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                                </div>
+                            </div>
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+               
+                
+            </div>
+          
+        </section>
+
+        <section class="position-relative z-index-9 pb-0 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow fadeIn d-flex justify-content-between align-items-center" data-wow-delay="200ms">
+                        <div class="section-title mb-1-9 mb-md-6">
+                            <span class="sm-title">ما تم انجازه</span>
+                            <h2 class="mb-0">ديكورات داخليه وتشطيبات
+                            </h2>
+                        </div>
+                        <a href="#" class="butn secondary">عرض الكل</a>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="row">
+                <div class="col-lg-12 wow fadeIn" data-wow-delay="200ms">
+                    <div class="products6-carousel owl-carousel owl-theme">
+                        <div class="portfolio-style01 portfolio-style01-2">
+                            <div class="portfolio-img">
+                                <img src="img/cat6.jpg" class="" alt="...">
+                            </div>
+                            <div class="portfolio-content">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-style01 portfolio-style01-2">
+                            <div class="portfolio-img">
+                                <img src="img/img1.jfif" class="" alt="...">
+                            </div>
+                            <div class="portfolio-content">
+                                <span class="text-primary d-block mb-1 small">ديكور</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-style01 portfolio-style01-2">
+                            <div class="portfolio-img">
+                                <img src="img/cat6.jpg" class="" alt="...">
+                            </div>
+                            <div class="portfolio-content">
+                                <span class="text-primary d-block mb-1 small">رخام</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                        <div class="portfolio-style01 portfolio-style01-2">
+                            <div class="portfolio-img">
+                                <img src="img/img1.jfif" class="" alt="...">
+                            </div>
+                            <div class="portfolio-content">
+                                <span class="text-primary d-block mb-1 small">ديكور</span>
+                                <h3 class="mb-0 h6"><a href="#" class="portfolio-link">اسم المشروع</a></h3>
+                            </div>
+                        </div>
+                         
+                       
+                       
+                       
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+      
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="">
+            <div class="container">
+                <div class="row pb-4">
+                    <div class="col-md-6 col-lg-5 wow fadeIn" data-wow-delay="200ms">
+                        <div class="footer-logo mb-1-9">
+                            <a href="index.html"><img src="img/logo.png" alt="..."></a>
+                        </div>
+                        <p class="footer-des mb-1-9 text-white w-lg-75">
+                            هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
+                        </p>
+                        <ul class="social-icon-style1">
                             <li>
-                                <a class="dropdown-item border-bottom" href="#"><i
-                                        class="fs-13 mx-2 bx bx-user"></i>الحساب الشخصي</a>
+                                <a href="#!"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
-                                <a class="dropdown-item border-bottom" href="#"><i
-                                        class="fs-13 mx-2 bx bx-comment"></i>الرسايل</a>
+                                <a href="#!"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="#"><i class="fs-13 mx-2 bx bx-arrow-to-right"></i>تسجيل
-                                    الخروج</a>
+                                <a href="#!"><i class="fab fa-instagram"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <!-- End::header-element -->
-                </div>
-                <!-- End::header-content-right -->
-            </div>
-            <!-- End::main-header-container -->
-        </header>
-        <!-- END HEADER -->
-
-        <!-- SIDEBAR -->
-
-        <aside class="app-sidebar" id="sidebar">
-            <!-- Start::main-sidebar-header -->
-            <div class="main-sidebar-header">
-                <a href="index.html" class="header-logo">
-                    <img src="assets/images/logo.png" alt="logo" class="desktop-dark" />
-                    <img src="assets/images/logo.png" alt="logo" class="toggle-dark" />
-                </a>
-            </div>
-            <!-- End::main-sidebar-header -->
-
-            <!-- Start::main-sidebar -->
-            <div class="main-sidebar" id="sidebar-scroll">
-                <!-- Start::nav -->
-                <nav class="main-menu-container nav nav-pills flex-column sub-open">
-                    <div class="slide-left" id="slide-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24"
-                            viewBox="0 0 24 24">
-                            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
-                        </svg>
-                    </div>
-                    <ul class="main-menu">
-                        <!-- Start::slide -->
-                        <li class="slide">
-                            <a href="#" class="side-menu__item">
-                                <span class="side-menu__icon">
-                                    <i class="bx bx-file"></i>
-                                </span>
-                                <span class="side-menu__label">إدارة الفاعلية</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="#" class="side-menu__item active">
-                                <span class="side-menu__icon">
-                                    <i class="bx bx-box"></i>
-                                </span>
-                                <span class="side-menu__label">إدارة المشاركين</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="#" class="side-menu__item">
-                                <span class="side-menu__icon">
-                                    <i class="bx bx-user"></i>
-                                </span>
-                                <span class="side-menu__label"> المشاركين</span>
-                            </a>
-                        </li>
-                        <li class="slide">
-                            <a href="#" class="side-menu__item">
-                                <span class="side-menu__icon">
-                                    <i class="bx bx-bar-chart-alt"></i>
-                                </span>
-                                <span class="side-menu__label"> الداش بورد</span>
-                            </a>
-                        </li>
-                        <!-- End::slide -->
-                    </ul>
-                    <div class="slide-right" id="slide-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24"
-                            viewBox="0 0 24 24">
-                            <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path>
-                        </svg>
-                    </div>
-                </nav>
-                <!-- End::nav -->
-            </div>
-            <!-- End::main-sidebar -->
-        </aside>
-        <!-- END SIDEBAR -->
-
-        <!-- MAIN-CONTENT -->
-
-        <!-- Page Header -->
-        <div class="page-header-breadcrumb">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12 d-flex align-items-center justify-content-between">
-                        <h4 class="fw-medium mb-0">إدارة الفعاليات - الفرز</h4>
-                        <!-- <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="javascript:void(0);" class="text-white-50">الرئيسية</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                إدارة الفعاليات - الفرز
-                            </li>
-                        </ol> -->
-                        <div class="statistics-content">
-                            <div class="small-statistics">
-                                <h2>4500</h2>
-                                <p>مرشحين</p>
-                            </div>
-                            <div class="small-statistics">
-                                <h2>2040</h2>
-                                <p>غير مرشحين</p>
-                            </div>
+                    <div class="col-md-6 col-lg-3 mt-2-9 wow fadeIn" data-wow-delay="400ms">
+                        <div class="ps-0">
+                            <h3 class="text-white h5 mb-1-9">روابط مفيدة</h3>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="#">معلومات عنا</a>
+                                </li>
+                                <li>
+                                    <a href="#">الأقسام</a>
+                                </li>
+                                <li>
+                                    <a href="#">المنتجات</a>
+                                </li>
+                                <li>
+                                    <a href="#">اتصل بنا</a>
+                                </li>
+                            </ul> 
                         </div>
                     </div>
-                </div>
-            </div>
-
-
-        </div>
-        <!-- Page Header Close -->
-
-        <!-- Start::app-content -->
-        <div class="main-content app-content">
-            <div class="container-fluid">
-
-                <!-- Start::row -->
-                <div class="row">
-                    <div class="col-xl-12">
-
-                        <div class="card custom-card">
-
-                            <div class="card-body p-0 product-checkout">
-                                <ul class="nav nav-tabs tab-style-6 nav-justified d-sm-flex d-block border-bottom border-block-end-dashed"
-                                    id="myTab1" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="order-tab" data-bs-toggle="tab"
-                                            data-bs-target="#order-tab-pane" type="button" role="tab"
-                                            aria-controls="order-tab" aria-selected="true">
-                                            <i class="ri-briefcase-line mx-2 align-middle d-inline-block"></i>الترشيح
-                                            الأول
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="confirmed-tab" data-bs-toggle="tab"
-                                            data-bs-target="#confirm-tab-pane" type="button" role="tab"
-                                            aria-controls="confirmed-tab" aria-selected="false">
-                                            <i class="ri-user-2-line mx-2 align-middle d-inline-block"></i>المقابلات
-                                        </button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="shipped-tab" data-bs-toggle="tab"
-                                            data-bs-target="#shipped-tab-pane" type="button" role="tab"
-                                            aria-controls="shipped-tab" aria-selected="false">
-                                            <i class="ri-file-edit-line mx-2 align-middle d-inline-block"></i>انشاء
-                                            العقود
-                                        </button>
-                                    </li>
-                                </ul>
-                                <div class="p-3">
-                                    <div class="row gy-2 g-2">
-                                        <div class="col-xl-2">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="fullname-add" value=""
-                                                    placeholder="الاسم" />
-                                                <label for="fullname-add">الاسم</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-2">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="experience" value=""
-                                                    placeholder="الخبرات" />
-                                                <label for="experience">الخبرات</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-2">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="id" value=""
-                                                    placeholder="رقم الهوية" />
-                                                <label for="id">رقم الهوية</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-2">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="age" value=""
-                                                    placeholder="العمر" />
-                                                <label for="age">العمر</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-2">
-                                            
-                                            <div class="form-floating">
-                                                <select class="form-select" id="num"
-                                                    aria-label="Floating label select example">
-                                                    <option selected>عدد الخبرات</option>
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                </select>
-                                                <label for="num">عدد الخبرات</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-2">
-                                            <button type="button"
-                                                class="btn btn-success align-items-center justify-content-center d-inline-flex w-100 h-100"
-                                                id="personal-details-trigger">
-                                                <i class="ri-search-2-line mx-2 align-middle"></i> بحث
-                                            </button>
-                                        </div>
+                    <div class="col-md-6 col-lg-4 mt-2-9 wow fadeIn" data-wow-delay="600ms">
+                        <div class="ps-xl-4">
+                            <h3 class="text-white h5 mb-1-9">تواصل معانا</h3>
+                            <div class="footer-contact">
+                                <div class="flex-shrink-0">
+                                    <img src="img/phone-call.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4 class="">رقم الهاتف</h4>
+                                    <p class="mb-0">
+                                        <a href="#" class="text-white">0553141010</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="footer-contact">
+                                <div class="flex-shrink-0">
+                                    <img src="img/open.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4 class="">البريد الالكتروني</h4>
+                                    <p class="mb-0"> 
+                                        <a href="#" class="text-white">al-amer999@hotmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="footer-contact">
+                                <div class="flex-shrink-0">
+                                    <img src="img/location.png" alt="...">
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h4 class="">الموقع</h4>
+                                    <div style="text-decoration:none; overflow:hidden;max-width:100%;height:100px;">
+                                    <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
+                                    <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=52217،+التشاليح،+بريدة+52217,+Saudi+Arabia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-12">
-                        <div class="card custom-card">
-                            <div class="card-header justify-content-between d-flex">
-                                <div class="card-title">الفاعليات</div>
-                                <p class="text-sm mb-0 text-muted">
-                                    تم تحديد <span class="text-success fw-semibold">8</span> من أصل 12</span>
 
-                                </p>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="datatable table text-nowrap table-bordered table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">
-                                                    <input class="form-check-input" type="checkbox" id="checkboxNoLabel"
-                                                        value="" aria-label="..." />
-                                                </th>
-                                                <th scope="col">#</th>
-                                                <th scope="col">الاسم</th>
-                                                <th scope="col">مدينة الفعالية</th>
-                                                <th scope="col">تاريخ الفعالية</th>
-                                                <th scope="col">الحالة</th>
-                                                <th scope="col">الإجراء</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel1" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                    type="button"
-                                                    class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                    <i class="ri-eye-line"></i>
-                                                     </a>
-                                                     <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                     <i class="ri-arrow-go-forward-line"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel2" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel3" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel4" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel5" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel6" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel7" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel8" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        id="checkboxNoLabel9" value="" aria-label="..." />
-                                                </th>
-                                                <td>1</td>
-                                                <td>فعالية 1</td>
-                                                <td>الرياض</td>
-                                                <td>12/03/2024</td>
-                                                <td>
-                                                    <span class="badge bg-success-transparent">القادم</span>
-                                                </td>
-
-                                                <td>
-                                                    <a data-bs-toggle="modal" data-bs-target="#modalProfile"
-                                                        type="button"
-                                                        class="btn btn-icon btn-sm btn-info-light rounded-pill">
-                                                        <i class="ri-eye-line"></i>
-                                                    </a>
-                                                    <a  class="btn btn-icon btn-sm btn-danger-light rounded-pill btn-wave me-3 waves-effect waves-light">
-                                                        <i class="ri-arrow-go-forward-line"></i>
-                                                       </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="mt-4 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-primary btn-w-lg">ترشيح</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- End::app-content -->
-
-        <!-- END MAIN-CONTENT -->
-
-        <!-- FOOTER -->
-
-        <footer class="footer mt-auto py-3 bg-white text-center">
-            <div class="container">
-                <span class="text-muted"> © 2024 جميع الحقوق محفوظة </span>
+            <div class="py-4 border-top border-color-light-white">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <p class="d-inline-block text-white mb-0">&copy; <span class="current-year"></span> جميع الحقوق محفوظة لدي <a href="#!" class="text-primary text-white-hover">مصنع الأبراج الوسطي 
+                            </a></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
-        <!-- END FOOTER -->
-    </div>
-    <!-- END PAGE-->
 
-    <!-- SCRIPTS -->
-
-    <!-- SCROLL-TO-TOP -->
-    <div class="scrollToTop">
-        <span class="arrow"><i class="ri-arrow-up-circle-fill fs-20"></i></span>
-    </div>
-    <div id="responsive-overlay"></div>
-
-
-    <div class="modal fade" id="modalProfile" tabindex="-1" aria-labelledby="modalProfile" data-bs-keyboard="false"
-        aria-hidden="true">
-        <!-- Scrollable modal -->
-        <div class="modal-dialog modal-profile modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h6 class="modal-title" id="staticBackdropLabel3">ملف المقدم</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="main-profile-cover border-bottom border-block-end-dashed">
-                        <div class="avatar avatar-xxl avatar-rounded mb-0">
-                            <img src="assets/images/thumb.jpg" alt="">
-                        </div>
-                        <div class="main-profile-info">
-                            <h5 class="fw-semibold mb-1 ">محمد يوسف</h5>
-                            <p class="mb-0 text-muted">الرئيس التنفيذي (C.E.O)</p>
-                        </div>
-                    </div>
-                    <div class="border-bottom border-block-end-dashed">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="fs-15 mb-2 fw-semibold">معلومات شخصية :</p>
-                                <ul class="list-group">
-
-                                    <li class="list-group-item border-0">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div class="me-2 fw-semibold">
-                                                رقم الهوية :
-                                            </div>
-                                            <span class="fs-12 text-muted">829379787</span>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div class="me-2 fw-semibold">
-                                                رقم الجوال :
-                                            </div>
-                                            <span class="fs-12 text-muted">+(555) 555-1234</span>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div class="me-2 fw-semibold">
-                                                تاريخ الميلاد :
-                                            </div>
-                                            <span class="fs-12 text-muted">12-3-2024</span>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div class="me-2 fw-semibold">
-                                                مدينة الإقامة :
-                                            </div>
-                                            <span class="fs-12 text-muted">الرياض</span>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div class="me-2 fw-semibold">
-                                                الطول :
-                                            </div>
-                                            <span class="fs-12 text-muted">10 سم</span>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item border-0">
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <div class="me-2 fw-semibold">
-                                                الوزن :
-                                            </div>
-                                            <span class="fs-12 text-muted">80 كجم</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul class="list-group">
-                                    <li
-                                        class="pdf-icon list-group-item d-flex justify-content-between flex-wrap align-items-center">
-                                        صورة الهوية
-                                        <img class="icon-id" src="assets/images/card.png">
-                                    </li>
-                                    <li
-                                        class="pdf-icon list-group-item justify-content-between d-flex flex-wrap align-items-center">
-                                        صورة التفويض
-                                        <img class="icon-pdf" src="assets/images/pdf.png">
-                                    </li>
-                                    <li
-                                        class="pdf-icon list-group-item justify-content-between d-flex flex-wrap align-items-center">
-                                        الشهادة البنكية
-                                        <img class="icon-certificate" src="assets/images/certificate-file.png">
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-3 pb-3">
-                        <p class="fs-15 mb-2 fw-semibold">الخبرات والمشاراكات :</p>
-                        <div class="table-responsive">
-                            <table class="table text-nowrap table-bordered table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ت</th>
-                                        <th scope="col">الخبرات
-                                        </th>
-                                        <th scope="col">تاريخ البداية
-                                        </th>
-                                        <th scope="col">تاريخ النهاية
-                                        </th>
-                                        <th scope="col">المدة</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>خبرات 1</td>
-                                        <td>12/03/2024</td>
-                                        <td>4/10/2024</td>
-                                        <td>3 سنين</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>خبرات 1</td>
-                                        <td>12/03/2024</td>
-                                        <td>4/10/2024</td>
-                                        <td>3 سنين</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>خبرات 1</td>
-                                        <td>12/03/2024</td>
-                                        <td>4/10/2024</td>
-                                        <td>3 سنين</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-
-                    <div class="pt-3 rate-presenter border-top border-block-end-dashed text-center">
-                        <p class="fs-15 mb-2 fw-semibold">تقييم المتقدم :</p>
-                        <div class="rate-content">
-                            <div class="my-rating"></div>
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-w-md">قبول</button>
-                    <button type="button" class="btn btn-danger btn-w-md" data-bs-dismiss="modal">رفض</button>
-
-                </div>
-
-            </div>
-        </div>
     </div>
 
-    <!-- POPPER JS -->
-    <script src="assets/libs/%40popperjs/core/umd/popper.min.js"></script>
+ 
+    <!-- SCROLL TO TOP
+    ================================================== -->
+    <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- SIMPLEBAR JS -->
-    <!-- JQUERY CDN -->
-    <script src="assets/js/jquery-3.6.1.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/js/simplebar.js"></script>
+    <a href="#" class="icon_whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- DEFAULTMENU JS -->
-    <script src="assets/js/defaultmenu.js"></script>
+    <!-- all js include start -->
 
-    <!-- STICKY JS -->
-    <script src="assets/js/sticky.js"></script>
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
 
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
 
-    <!-- DATA-TABLES CDN -->
-    <script src="assets/js/jquery.dataTables.min.js"></script>
-    <script src="assets/js/dataTables.bootstrap5.min.js"></script>
-    <script src="assets/js/dataTables.responsive.min.js"></script>
-    <script src="assets/js/dataTables.buttons.min.js"></script>
-    <script src="assets/js/buttons.print.min.js"></script>
-    <script src="assets/js/buttons.html5.min.js"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
 
-    <!-- INTERNAL DATADABLES JS -->
-    <script src="assets/js/datatables.js"></script>
-    <!-- CUSTOM JS -->
-    <script src="assets/js/custom.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/jquery.star-rating-svg.js"></script>
+    <!-- jquery -->
+    <script src="js/core.min.js"></script>
+
+    <!-- custom scripts -->
+    <script src="js/main.js"></script>
 
 
-
-
-    <!-- END SCRIPTS -->
 </body>
 
+
 </html>
-<!-- This code use for render base file -->

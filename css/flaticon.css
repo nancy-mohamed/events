@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "flaticon_mycollection";
+    src: url("../fonts/flaticon_mycollection.ttf") format("truetype")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_mycollection !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-bathroom:before {
+    content: "\f101";
+}
+.flaticon-blueprint:before {
+    content: "\f102";
+}
+.flaticon-bridge-saw:before {
+    content: "\f103";
+}
+.flaticon-chisel:before {
+    content: "\f104";
+}
+.flaticon-construction:before {
+    content: "\f105";
+}
+.flaticon-dining-table:before {
+    content: "\f106";
+}
+.flaticon-floor:before {
+    content: "\f107";
+}
+.flaticon-hammer:before {
+    content: "\f108";
+}
+.flaticon-living-room:before {
+    content: "\f109";
+}
+.flaticon-marbles:before {
+    content: "\f10a";
+}
+.flaticon-modern-art:before {
+    content: "\f10b";
+}
+.flaticon-panels:before {
+    content: "\f10c";
+}
+.flaticon-stone:before {
+    content: "\f10d";
+}
+.flaticon-stones:before {
+    content: "\f10e";
+}
+.flaticon-suckers:before {
+    content: "\f10f";
+}
+.flaticon-tile-1:before {
+    content: "\f110";
+}
+.flaticon-tile-2:before {
+    content: "\f111";
+}
+.flaticon-tile:before {
+    content: "\f112";
+}
+.flaticon-tiles-1:before {
+    content: "\f113";
+}
+.flaticon-tiles-2:before {
+    content: "\f114";
+}
+.flaticon-tiles-3:before {
+    content: "\f115";
+}
+.flaticon-tiles:before {
+    content: "\f116";
+}
+.flaticon-trowel:before {
+    content: "\f117";
+}
+.flaticon-wood:before {
+    content: "\f118";
+}
