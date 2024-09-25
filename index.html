@@ -1,1614 +1,2564 @@
 
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="advanced search, agency, agent, classified, directory, house, listing, property, real estate, real estate agency, real estate agent, realestate, realtor, rental">
-<meta name="description" content="Homez - Real Estate HTML Template">
-<meta name="CreativeLayers" content="ATFN">
-<!-- css file -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/jquery-ui.min.css">
-<!-- <link rel="stylesheet" href="css/ace-responsive-menu.css"> -->
-<link rel="stylesheet" href="css/menu.css">
-<link rel="stylesheet" href="css/fontawesome.css">
-<link rel="stylesheet" href="css/flaticon.css">
-<link rel="stylesheet" href="css/select2.min.css">
-<link rel="stylesheet" href="css/animate.css">
-<link rel="stylesheet" href="css/slider.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/ud-custom-spacing.css">
-<!-- Responsive stylesheet -->
-<link rel="stylesheet" href="css/custom.css">
-<link rel="stylesheet" href="css/rtl.css">
-<link rel="stylesheet" href="css/responsive.css">
-
-
-<!-- Title -->
-<title>ادراء العقارية</title>
-<!-- Favicon -->
-<link href="images/favicon.png" sizes="" rel="shortcut icon" type="image/x-icon" />
-
-
-</head>
-<body>
-<div class="wrapper ovh">
-  <div class="preloader">
-  </div>
-  
-  <!-- Main Header Nav -->
-  <header class="header-nav nav-homepage-style stricky main-menu">
-    <!-- Ace Responsive Menu -->
-
-    <nav class="posr"> 
-      <div class="container posr menu_bdrt1 header-nav-content">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-auto">
-            <div class="logos">
-              <a class="header-logo logo1" href="index.html"><img src="images/logo.png" alt="Header Logo"></a>
-              <a class="header-logo logo2" href="index.html"><img src="images/logo.png" alt="Header Logo"></a>
-            </div>
-          </div>
-          <div class="col-auto">
-           <!-- Responsive Menu Structure-->
-           <ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
-            <li class="visible_list"> 
-              <a class="list-item" href="#"><span class="title">الرئيسية</span></a>
-             </li>
-            <li class="visible_list"> 
-              <a class="list-item" href="#"><span class="title">من نحن</span></a>
-            </li>
-            <li class="visible_list"> 
-              <a class="list-item" href="#"><span class="title">المشاريع</span></a>
-            </li>
-            <li class="visible_list"> 
-              <a class="list-item" href="#"><span class="title">الوحدات</span></a>
-            </li>
-            <li class="visible_list"> 
-              <a class="list-item" href="#"><span class="title">تواصل معانا</span></a>
-            </li>
-           
-          </ul>
-          </div>
-          <div class="col-auto">
-            <div class="d-flex align-items-center">
-              <a class="login-info d-flex align-items-center ud-btn add-property menu-btn bdrs60" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><i class="far fa-user-circle fz16 me-2"></i> <span class="d-none d-xl-block">تسجيل الدخول</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- Signup Modal -->
-  <div class="signup-modal">
-    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel">Welcome to Realton</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="log-reg-form">
-              <div class="navtab-style2">
-                <nav>
-                  <div class="nav nav-tabs mb20" id="nav-tab" role="tablist">
-                    <button class="nav-link active fw600" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Sign In</button>
-                    <button class="nav-link fw600" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">New Account</button>
-                  </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent2">
-                  <div class="tab-pane fade show active fz15" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class="form-style1">
-                      <div class="mb25">
-                        <label class="form-label fw600 dark-color">Email</label>
-                        <input type="email" class="form-control" placeholder="Enter Email">
-                      </div>
-                      <div class="mb15">
-                        <label class="form-label fw600 dark-color">Password</label>
-                        <input type="text" class="form-control" placeholder="Enter Password">
-                      </div>
-                      <div class="checkbox-style1 d-block d-sm-flex align-items-center justify-content-between mb10">
-                        <label class="custom_checkbox fz14 ff-heading">Remember me
-                          <input type="checkbox" checked="checked">
-                          <span class="checkmark"></span>
-                        </label>
-                        <a class="fz14 ff-heading" href="#">Lost your password?</a>
-                      </div>
-                      <div class="d-grid mb20">
-                        <button class="ud-btn btn-thm" type="button">Sign in <i class="fal fa-arrow-right-long"></i></button>
-                      </div>
-                      <div class="hr_content mb20"><hr><span class="hr_top_text">OR</span></div>
-                      <div class="d-grid mb10">
-                        <button class="ud-btn btn-white" type="button"><i class="fab fa-google"></i> Continue Google</button>
-                      </div>
-                      <div class="d-grid mb10">
-                        <button class="ud-btn btn-fb" type="button"><i class="fab fa-facebook-f"></i> Continue Facebook</button>
-                      </div>
-                      <div class="d-grid mb20">
-                        <button class="ud-btn btn-apple" type="button"><i class="fab fa-apple"></i> Continue Apple</button>
-                      </div>
-                      <p class="dark-color text-center mb0 mt10">Not signed up? <a class="dark-color fw600" href="page-register.html">Create an account.</a></p>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade fz15" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <div class="form-style1">
-                      <div class="mb25">
-                        <label class="form-label fw600 dark-color">Email</label>
-                        <input type="email" class="form-control" placeholder="Enter Email">
-                      </div>
-                      <div class="mb20">
-                        <label class="form-label fw600 dark-color">Password</label>
-                        <input type="text" class="form-control" placeholder="Enter Password">
-                      </div>
-                      <div class="d-grid mb20">
-                        <button class="ud-btn btn-thm" type="button">Create account <i class="fal fa-arrow-right-long"></i></button>
-                      </div>
-                      <div class="hr_content mb20"><hr><span class="hr_top_text">OR</span></div>
-                      <div class="d-grid mb10">
-                        <button class="ud-btn btn-white" type="button"><i class="fab fa-google"></i> Continue Google</button>
-                      </div>
-                      <div class="d-grid mb10">
-                        <button class="ud-btn btn-fb" type="button"><i class="fab fa-facebook-f"></i> Continue Facebook</button>
-                      </div>
-                      <div class="d-grid mb20">
-                        <button class="ud-btn btn-apple" type="button"><i class="fab fa-apple"></i> Continue Apple</button>
-                      </div>
-                      <p class="dark-color text-center mb0 mt10">Not signed up? <a class="dark-color fw600" href="page-register.html">Create an account.</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="hiddenbar-body-ovelay"></div>
-
-  <!-- Mobile Nav  -->
-  <div id="page" class="mobilie_header_nav stylehome1">
-    <div class="mobile-menu">
-      <div class="header innerpage-style">
-        <div class="menu_and_widgets">
-          <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
-            <a class="menubar" href="#menu"><img src="images/mobile-dark-nav-icon.svg" alt=""></a>
-            <a class="mobile_logo" href="#"><img src="images/logo.png" alt=""></a>
-            <a href="#"><span class="icon fz18 far fa-user-circle"></span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.mobile-menu -->
-    <nav id="menu" class="">
-      <ul>
-        <li> 
-          <a href="#">الرئيسية</a>
-         </li>
-        <li> 
-          <a href="#">من نحن</a>
-        </li>
-        <li> 
-          <a href="#">المشاريع</a>
-        </li>
-        <li> 
-          <a href="#">الوحدات</a>
-        </li>
-        <li> 
-          <a href="#">تواصل معانا</a>
-        </li>
-     
-        <!-- Only for Mobile View -->
-      </ul>
-    </nav>
-  </div>
-
- <!-- Home Banner Style V1 -->
- <section class="home-banner-style1 p0">
-  <div class="home-banner-bg"></div>
-  <div class="home-banner-overlay"></div>
-  <div class="home-style1">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-10">
-      
-          <div class="inner-banner-style1">
-            <h6 class="hero-sub-title animate-up-1">حقق حلمك</h6>
-            <!-- <h2 class="hero-title animate-up-2">منصة رائعة لشراء وبيع وتأجير عقاراتك </h2>
-            <p class="hero-text animate-up-3">
-              نسعى لمواكبة احتياج السوق العقاري في مجال انشاء الوحدات السكنية والتجارية بأفضل المعايير والمقاييس العالمية لرفع مستوى جودة الحياة لساكنيها ومرتاديها.
-            </p> -->
-            <h2 class="hero-title animate-up-2">استكشف أفضل و أرقى العقارات <br> مع ادراء العقارية
-            </h2>
-            <p class="hero-text animate-up-3">
-              سنوات من الخبرة في الاستثمار العقاري
-            </p>
-            
-            <div class="advance-search-tab mt30 animate-up-3">
-              <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="sale-tab" data-bs-toggle="tab" data-bs-target="#sale" type="button" role="tab" aria-controls="sale" aria-selected="true">بيع</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent" type="button" role="tab" aria-controls="rent" aria-selected="false">ايجار</button>
-                </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="sale" role="tabpanel" aria-labelledby="sale-tab">
-                  <div class="advance-content-style1">
-                    <div class="row align-items-center">
-                      <div class="col-md-6 col-xl-3">
-                        <label>بحث عن
-                        </label>
-                        <div class="advance-search-field position-relative text-start">
-                          <form action="#" method="get" class="form-search position-relative" accept-charset="utf-8">
-                            <div class="box-search">
-                              <span class="icon flaticon-search-1"></span>
-                              <input class="form-control" type="text" name="search" placeholder="اسم المشروع">
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl-3">
-                        <label>المنطقة
-                        </label>
-                        <div class="advance-search-field position-relative text-start">
-                          <form action="#" method="get" class="form-search position-relative" accept-charset="utf-8">
-                            <div class="box-search">
-                              <span class="icon flaticon-location"></span>
-                              <select class="select2 form-control">
-                                <option>الرياض</option>
-                                <option>جدة</option>
-                                <option>الرياض</option>
-                                <option>جدة</option>
-                                <option>الرياض</option>
-                                <option>جدة</option>
-                              </select>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl-3">
-                        <label>نوع المشروع
-                        </label>
-                        <div class="advance-search-field position-relative text-start">
-                          <form action="#" method="get" class="form-search position-relative" accept-charset="utf-8">
-                            <div class="box-search">
-                              <span class="icon flaticon-home-1"></span>
-                              <select class="select2 form-control">
-                                <option>مشروعات سكنية</option>
-                                <option>مشروعات ادارية</option>
-                              </select>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                   
-                 
-                      <div class="col-md-6 col-xl-3">
-                        <button class="ud-btn btn-thm mt-4 w-100" type="button">بحث</button>
-                      </div>
-                    </div>
-                   
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="rent" role="tabpanel" aria-labelledby="rent-tab">
-                  <div class="advance-content-style1">
-                    <div class="row align-items-center">
-                      <div class="col-md-6 col-xl-3">
-                        <label>بحث عن
-                        </label>
-                        <div class="advance-search-field position-relative text-start">
-                          <form action="#" method="get" class="form-search position-relative" accept-charset="utf-8">
-                            <div class="box-search">
-                              <span class="icon flaticon-search-1"></span>
-                              <input class="form-control" type="text" name="search" placeholder="اسم المشروع">
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl-3">
-                        <label>المنطقة
-                        </label>
-                        <div class="advance-search-field position-relative text-start">
-                          <form action="#" method="get" class="form-search position-relative" accept-charset="utf-8">
-                            <div class="box-search">
-                              <span class="icon flaticon-location"></span>
-                              <select class="select2 form-control">
-                                <option>الرياض</option>
-                                <option>جدة</option>
-                                <option>الرياض</option>
-                                <option>جدة</option>
-                                <option>الرياض</option>
-                                <option>جدة</option>
-                              </select>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-xl-3">
-                        <label>نوع المشروع
-                        </label>
-                        <div class="advance-search-field position-relative text-start">
-                          <form action="#" method="get" class="form-search position-relative" accept-charset="utf-8">
-                            <div class="box-search">
-                              <span class="icon flaticon-home-1"></span>
-                              <select class="select2 form-control">
-                                <option>مشروعات سكنية</option>
-                                <option>مشروعات ادارية</option>
-                              </select>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                   
-                 
-                      <div class="col-md-6 col-xl-3">
-                        <button class="ud-btn btn-thm mt-4 w-100" type="button">بحث</button>
-                      </div>
-                    </div>
-                   
-                  </div>
-                </div>
-              
-              </div>              
-            </div>
-           
-            
-          </div>
-        </div>
-      </div>
-    </div>
-    <a href="#explore-property">
-      <div class="mouse_scroll bounce-y">
-        <img src="images/mouse-hover.png" alt="">
-      </div>
-    </a>
-  </div>
-</section>
-
-
-
-<!-- <section class="pt30 pb20">
-  <div class="container">
-    <div class="row wow fadeInUp" data-wow-delay="00ms">
-      <div class="col-lg-9">
-        <div class="main-title">
-          <h2 class="title">إبحث بنوع عقارك
-          </h2>
-          <p class="paragraph">اختر نوع العقار ودعنا نساعدك في إيجاد الأنسب لك
-          </p>
-        </div>
-      </div>
-      
-    </div>
-    <div class="row wow fadeInUp" data-wow-delay="300ms">
-      <div class="col-lg-2 col-6">
-        <a href="#">
-          <div class="apartment-category d-flex align-items-center">
-            <span class="icon flaticon-home flex-shrink-0"></span>
-            <div class="content flex-shrink-1">
-              <h6 class="title mb-0">شقة</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-2 col-6">
-        <a href="#">
-          <div class="apartment-category d-flex align-items-center">
-            <span class="icon flaticon-network flex-shrink-0"></span>
-            <div class="content flex-shrink-1">
-              <h6 class="title mb-0">مكتب</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-2 col-6">
-        <a href="#">
-          <div class="apartment-category d-flex align-items-center">
-            <span class="icon flaticon-garden flex-shrink-0"></span>
-            <div class="content flex-shrink-1">
-              <h6 class="title mb-0">فيلا</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-2 col-6">
-        <a href="#">
-          <div class="apartment-category d-flex align-items-center">
-            <span class="icon flaticon-garden flex-shrink-0"></span>
-            <div class="content flex-shrink-1">
-              <h6 class="title mb-0">محل تجاري</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-lg-2 col-6">
-        <a href="#">
-          <div class="apartment-category d-flex align-items-center">
-            <span class="icon flaticon-garden flex-shrink-0"></span>
-            <div class="content flex-shrink-1">
-              <h6 class="title mb-0">عيادة</h6>
-            </div>
-          </div>
-        </a>
-      </div>
-    
-    </div>
-  </div>
-</section> -->
-
-<section class="pb40-md" id="explore-property">
-  <div class="about-images">
-    <img class="wow fadeInLeft" data-wow-delay="300ms" src="images/vector7.png">
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Ayloul - Creative Portfolio Template">
+        <meta name="keywords" content="Html, Css, jQuery, JavaScript, Ayloul, responsive, personal, Portfolio, design, creative, template">
+        
+        <!-- Title -->
+        <title>Nancy Design</title>
+        <!-- Favicon --> 
+        <link rel="icon" href="">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800">
+                
+        <!-- Font Awesome Css -->
+        <link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+		<!-- Flaticon -->
+        <link rel="stylesheet" href="fonts/flaticon.css">
+        <!-- Magnific css -->
+        <link rel="stylesheet" href="css/vendor/magnific-popup.css">
+        <!-- Bootstrap 4 Css -->
+        <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+        <!-- Main Style Css -->
+        <link rel="stylesheet" href="css/main/homepages.css">
+		<!-- Colors Css -->
+        <!-- <link rel="stylesheet" href="css/main/skins/yellow_color.css"> -->
+        
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
        
-        <div class="about-box-1 main-title mb-0 wow fadeInRight" data-wow-delay="300ms">
-          <h4 class="sub-title">من نحن</h4>
-          <h2 class="title mb30">خبرة عريقة في السوق العقاري
-          </h2>
-          <p class="text mb25 fz15">
-            تتميز شركة ادراء العقارية ببصمة فريدة وخاصة في تسويق العقارات التجارية باعتمادها على فريق عمل عالي الكفاءة وواسع الخبرة وباستخدامها التسويق العقاري التقليدي والرقمي معاً لاستقطاب أهم الشركات الناشئة والعلامات التجارية الرائدة.
-          </p>
-          <div class="list-style1 mb50">
-            <ul>
-              <li><i class="far fa-check text-white bgc-dark fz15"></i>منازل عصرية
-              </li>
-              <li><i class="far fa-check text-white bgc-dark fz15"></i>بيئة أمنه
-              </li>
-              <li><i class="far fa-check text-white bgc-dark fz15"></i>موقع استراتيجى
-              </li>
-            </ul>
-          </div>
-          <a href="#" class="ud-btn menu-btn">اكتشف المزيد عنا<i class="fal fa-arrow-left-long"></i></a>
-        </div>
-      </div>
-
-    </div>
-  </div> 
-</section>
-
-
-<section class="bgc-f7">
-  <div class="container">
-    <div class="row wow fadeInUp" data-wow-delay="100ms">
-      <div class="col-lg-6 col-md-6">
-        <div class="main-title">
-          <h4 class="sub-title">عقارات ادراء</h4>
-          <h2 class="title">عقاراتنا المميزة
-          </h2>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6">
-        <div class="dark-light-navtab style2 text-start text-lg-end">
-       
-          <ul class="nav nav-pills justify-content-end" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link rounded-0 mb10-sm active" id="pills-house-tab" data-bs-toggle="pill" data-bs-target="#pills-house" type="button" role="tab" aria-controls="pills-house" aria-selected="true">للبيع</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link rounded-0 mb10-sm" id="pills-villa-tab" data-bs-toggle="pill" data-bs-target="#pills-villa" type="button" role="tab" aria-controls="pills-villa" aria-selected="false">للايجار</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 wow fadeInUp" data-wow-delay="300ms">
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-house" role="tabpanel" aria-labelledby="pills-house-tab">
-            <div class="row">
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img1.jpg" alt="">
-                    <div class="list-tag">تم البيع</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img2.jpg" alt="">
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">شقة للإيجار حي الشبلي </a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img3.jpg" alt="">
-                    <div class="list-tag">تم البيع</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">2400 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img4.jpg" alt="">
-                    <div class="list-tag">تم البيع</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">400 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img1.jpg" alt="">
-                    <div class="list-tag">تم البيع</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img2.jpg" alt="">
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">شقة للإيجار حي الشبلي </a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-             
+    </head>
+    <body>
+        
+        <!-- ========== Start Loading ========== -->
+        
+        <div class="preloader">
+            <div class="preloader-item">
+                <div class="move"></div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="pills-villa" role="tabpanel" aria-labelledby="pills-villa-tab">
-            <div class="row">
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img4.jpg" alt="">
-                    <div class="list-tag">تم الايجار</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img3.jpg" alt="">
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">شقة للإيجار حي الشبلي </a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img3.jpg" alt="">
-                    <div class="list-tag">تم الايجار</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">2400 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img2.jpg" alt="">
-                    <div class="list-tag">تم الايجار</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">400 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img1.jpg" alt="">
-                    <div class="list-tag">تم الايجار</div>
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-shower"></i>
-                        5 حمام
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-lg-4">
-                <div class="listing-style8">
-                  <div class="list-thumb">
-                    <img class="w-100" src="images/img4.jpg" alt="">
-                  </div>
-                  <div class="list-content">
-                    <div class="d-flex justify-content-between align-items-center">
-                      <small class="list-category">فيلا</small>
-                      <div class="list-price">1500 ر.س <sub>/ شهر</sub></div>
-                    </div>
-                    <h6 class="list-title"><a href="#">شقة للإيجار حي الشبلي </a></h6>
-                    <p class="list-location">
-                      <i class="flaticon-maps-1"></i>
-                      منطقة الرياض, الرياض
-                    </p>
-                    <div class="list-meta2">
-                      <a href="#">
-                        <i class="flaticon-ruler"></i>
-                         250مم
-                      </a>
-                      <a href="#">
-                        <i class="flaticon-bed"></i>
-                       5 غرف
-                      </a>
-                  
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-             
-            </div>
-          </div>
-        </div>
-        <div class="d-grid d-md-block text-center mt30 mt0-md">
-          <a href="#" class="ud-btn menu-btn">عرض المزيد</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Explore Apartment -->
-    <section class="city-estate">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-           
-            <div class="main-title wow fadeInUp" data-wow-delay="100ms">
-              <h4 class="sub-title text-white">مشاربعنا </h4>
-              <h2 class="title text-white">أشهر المدن
-              </h2>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="explore-apartment-5col-slider navi_pagi_top_right slider-5-grid owl-carousel owl-theme wow fadeInUp" data-wow-delay="300ms">
-              <div class="item">
-                <a href="#">
-                  <div class="apartment-style1">
-                    <div class="apartment-img"><img class="w-100" src="images/img1.jpg" alt=""></div>
-                    <div class="apartment-content">
-                      <h6 class="title mb-0">حي الياسمين</h6>
-                      <p class="text mb-0">22 وحدة</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <div class="apartment-style1">
-                    <div class="apartment-img"><img class="w-100" src="images/img2.jpg" alt=""></div>
-                    <div class="apartment-content">
-                      <h6 class="title mb-0">الدمام
-                      </h6>
-                      <p class="text mb-0">50 وحدة</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <div class="apartment-style1">
-                    <div class="apartment-img"><img class="w-100" src="images/img3.jpg" alt=""></div>
-                    <div class="apartment-content">
-                      <h6 class="title mb-0">تبوك
-                      </h6>
-                      <p class="text mb-0">100 وحدة</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <div class="apartment-style1">
-                    <div class="apartment-img"><img class="w-100" src="images/img1.jpg" alt=""></div>
-                    <div class="apartment-content">
-                      <h6 class="title mb-0">حي الياسمين</h6>
-                      <p class="text mb-0">22 وحدة</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <div class="apartment-style1">
-                    <div class="apartment-img"><img class="w-100" src="images/img2.jpg" alt=""></div>
-                    <div class="apartment-content">
-                      <h6 class="title mb-0">الدمام
-                      </h6>
-                      <p class="text mb-0">50 وحدة</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="item">
-                <a href="#">
-                  <div class="apartment-style1">
-                    <div class="apartment-img"><img class="w-100" src="images/img3.jpg" alt=""></div>
-                    <div class="apartment-content">
-                      <h6 class="title mb-0">تبوك
-                      </h6>
-                      <p class="text mb-0">100 وحدة</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              
-          
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-   <!-- Why Chose Us -->
-   <section>
-    <div class="container">
-      <div class="row align-items-md-center wow fadeInRight" data-wow-delay="300ms">
-        <div class="col-md-6 col-lg-6">
-          <div class="position-relative mb30-md">
-            <img class="w-100 image-chose" src="images/vector2.png" alt="">
-            <a href="#">
-              <div class="iconbox-style5 d-flex align-items-center bounce-y">
-                <span class="icon flaticon-search-1 flex-shrink-0"></span>
-                <div class="iconbox-content flex-shrink-1 ms-2">
-                  <p class="text mb-0">سنوات الخبرة</p>
-                  <h4 class="title mb-0">13 سنة</h4>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-5 offset-lg-1 wow fadeInLeft" data-wow-delay="500ms">
-          <div class="main-title">
-            <h2 class="title">لماذا تختار ادراء العقارية ؟</h2>
-          </div>
-          <div class="why-chose-list">
-            <div class="list-one d-flex align-items-start">
-              <span class="list-icon flex-shrink-0 flaticon-security"></span>
-              <div class="list-content flex-grow-1 ml20">
-                <h6 class="mb-1">أفضل جودة
-                </h6>
-                <p class="text mb-0">
-                  المقروء لصفحة ما هناك حقيقة القارئ عن التركيز على الشكل الخارجي
-                </p>
-              </div>
-            </div>
-         
-            <div class="list-one d-flex align-items-start">
-              <span class="list-icon flex-shrink-0 flaticon-maps"></span>
-              <div class="list-content flex-grow-1 ml20">
-                <h6 class="mb-1">إستراتيجية
-                </h6>
-                <p class="text mb-0">
-                  المقروء لصفحة ما هناك منذ زمن التركيز على الشكل الخارجي
-                </p>
-              </div>
-            </div>
-            <div class="list-one d-flex align-items-start">
-              <span class="list-icon flex-shrink-0 flaticon-ruler"></span>
-              <div class="list-content flex-grow-1 ml20">
-                <h6 class="mb-1">الإتقان
-                </h6>
-                <p class="text mb-0">
-                  المقروء لصفحة ما هناك منذ زمن التركيز على الشكل الخارجي
-                </p>
-              </div>
-            </div>
-         
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <section class="fun-fact-area">
-    <div class="container">
-      <div class="row funfact_list justify-content-center wow fadeInUp" data-wow-delay="300ms">
-    
-        <div class="col-md-3 col-6">
-          <div class="funfact_one">
-            <span class="icon flaticon-house-key"></span>
-           <div class="">
-            <span class="timer-count">+ <div class="timer">6500</div></span>
-            <p class="mb-0">وحدات للإيجار</p>
-           </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="funfact_one">
-            <span class="icon flaticon-home"></span>
-           <div class="">
-            <span class="timer-count">+ <div class="timer">6500</div></span>
-            <p class="mb-0">وحدات للبيع</p>
-           </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="funfact_one">
-            <span class="icon flaticon-bird-house"></span>
-           <div class="">
-            <span class="timer-count">+ <div class="timer">31400</div></span>
-            <p class="mb-0">إجمالي الوحدات</p>
-           </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-6">
-          <div class="funfact_one">
-            <span class="icon flaticon-user-1"></span>
-            <div class="">
-              <span class="timer-count">+ <div class="timer">3000</div></span>
-              <p class="mb-0">عملاء سسعداء
-              </p>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <section class="">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="main-title wow fadeInUp" data-wow-delay="300ms">
-            <h4 class="sub-title">مشروعات ادراء العقارية</h4>
-            <h2 class="title">آخر العروض</h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="explore-apartment-slider navi_pagi_top_right slider-3-grid owl-carousel owl-theme wow fadeInUp" data-wow-delay="300ms">
-            <div class="item">
-              <div class="listing-style8">
-                <div class="list-thumb">
-                  <img class="w-100" src="images/img4.jpg" alt="">
-                </div>
-                <div class="list-content">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="list-category">فيلا</small>
-                    <div class="list-price">4020 ر.س <sub>/ شهر</sub></div>
-                  </div>
-                  <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                  <p class="list-location">
-                    <i class="flaticon-maps-1"></i>
-                    منطقة الرياض, الرياض
-                  </p>
-                  <div class="list-meta2">
-                    <a href="#">
-                      <i class="flaticon-ruler"></i>
-                       250مم
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-bed"></i>
-                     5 غرف
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-shower"></i>
-                      5 حمام
-                    </a>
-                
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="listing-style8">
-                <div class="list-thumb">
-                  <img class="w-100" src="images/img2.jpg" alt="">
-                </div>
-                <div class="list-content">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="list-category">شقة</small>
-                    <div class="list-price">4020 ر.س <sub>/ شهر</sub></div>
-                  </div>
-                  <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                  <p class="list-location">
-                    <i class="flaticon-maps-1"></i>
-                    منطقة الرياض, الرياض
-                  </p>
-                  <div class="list-meta2">
-                    <a href="#">
-                      <i class="flaticon-ruler"></i>
-                       250مم
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-bed"></i>
-                     5 غرف
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-shower"></i>
-                      5 حمام
-                    </a>
-                
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="listing-style8">
-                <div class="list-thumb">
-                  <img class="w-100" src="images/img1.jpg" alt="">
-                </div>
-                <div class="list-content">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="list-category">مكتب</small>
-                    <div class="list-price">4020 ر.س <sub>/ شهر</sub></div>
-                  </div>
-                  <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                  <p class="list-location">
-                    <i class="flaticon-maps-1"></i>
-                    منطقة الرياض, الرياض
-                  </p>
-                  <div class="list-meta2">
-                    <a href="#">
-                      <i class="flaticon-ruler"></i>
-                       250مم
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-bed"></i>
-                     5 غرف
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-shower"></i>
-                      5 حمام
-                    </a>
-                
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="listing-style8">
-                <div class="list-thumb">
-                  <img class="w-100" src="images/img4.jpg" alt="">
-                </div>
-                <div class="list-content">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="list-category">فيلا</small>
-                    <div class="list-price">4020 ر.س <sub>/ شهر</sub></div>
-                  </div>
-                  <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                  <p class="list-location">
-                    <i class="flaticon-maps-1"></i>
-                    منطقة الرياض, الرياض
-                  </p>
-                  <div class="list-meta2">
-                    <a href="#">
-                      <i class="flaticon-ruler"></i>
-                       250مم
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-bed"></i>
-                     5 غرف
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-shower"></i>
-                      5 حمام
-                    </a>
-                
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="listing-style8">
-                <div class="list-thumb">
-                  <img class="w-100" src="images/img2.jpg" alt="">
-                </div>
-                <div class="list-content">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="list-category">مكتب</small>
-                    <div class="list-price">4020 ر.س <sub>/ شهر</sub></div>
-                  </div>
-                  <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                  <p class="list-location">
-                    <i class="flaticon-maps-1"></i>
-                    منطقة الرياض, الرياض
-                  </p>
-                  <div class="list-meta2">
-                    <a href="#">
-                      <i class="flaticon-ruler"></i>
-                       250مم
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-bed"></i>
-                     5 غرف
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-shower"></i>
-                      5 حمام
-                    </a>
-                
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="listing-style8">
-                <div class="list-thumb">
-                  <img class="w-100" src="images/img1.jpg" alt="">
-                </div>
-                <div class="list-content">
-                  <div class="d-flex justify-content-between align-items-center">
-                    <small class="list-category">شقة</small>
-                    <div class="list-price">4020 ر.س <sub>/ شهر</sub></div>
-                  </div>
-                  <h6 class="list-title"><a href="#">فيلا للبيع حي القيروان</a></h6>
-                  <p class="list-location">
-                    <i class="flaticon-maps-1"></i>
-                    منطقة الرياض, الرياض
-                  </p>
-                  <div class="list-meta2">
-                    <a href="#">
-                      <i class="flaticon-ruler"></i>
-                       250مم
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-bed"></i>
-                     5 غرف
-                    </a>
-                    <a href="#">
-                      <i class="flaticon-shower"></i>
-                      5 حمام
-                    </a>
-                
-                  </div>
-                
-                </div>
-              </div>
-            </div>
-            
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="our-contact">
-    <div class="container position-relative">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-6 col-xl-6 wow fadeInUp" data-wow-delay="100ms">
-          <div class="main-title">
-            <h4 class="sub-title text-white">تواصل معانا
-            </h4>
-            <h2 class="title text-white">يسعدنا دائمًا الرد على أسئلتك واستفساراتك .
-            </h2>
-          </div>
-          <ul class="tp-contact-info-box">
-            <li>
-               <a href="tel: +966 5686 66681"> 
-               <span class="icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.2227 1C13.2227 1 15.9115 1.24444 19.3336 4.66659C22.7558 8.08874 23.0002 10.7776 23.0002 10.7776" stroke="#c7bdb0" stroke-width="1.5" stroke-linecap="round"></path>
-                  <path d="M13.4756 5.32031C13.4756 5.32031 14.6855 5.666 16.5004 7.48087C18.3152 9.29574 18.6609 10.5056 18.6609 10.5056" stroke="#c7bdb0" stroke-width="1.5" stroke-linecap="round"></path>
-                  <path d="M1.00801 8.25232C0.919597 10.5844 1.50981 14.545 5.48265 18.5178C6.44111 19.4762 7.39885 20.2378 8.33317 20.8405M2.8795 4.59079C4.58196 2.88834 7.29819 3.11708 8.37912 5.05393L9.17234 6.47526C9.88818 7.75793 9.60081 9.44058 8.47337 10.568C8.47337 10.568 8.47337 10.568 8.47337 10.568C8.47325 10.5681 7.10592 11.9357 9.58533 14.4151C12.0641 16.8939 13.4316 15.5279 13.4324 15.5271C13.4324 15.527 13.4324 15.5271 13.4325 15.527C14.5599 14.3996 16.2425 14.1123 17.5252 14.8281L18.9465 15.6213C20.8834 16.7023 21.1121 19.4185 19.4097 21.1209C18.3867 22.1439 17.1335 22.9399 15.7481 22.9924C14.7532 23.0302 13.4619 22.9444 11.9998 22.5251" stroke="#c7bdb0" stroke-width="1.5" stroke-linecap="round"></path>
-               </svg>
-               </span>
-               <span class="text">+966 5686 66681</span>
-              </a>
-            </li>
-            <li>
-               <a href="mailto: info@adira.com"> 
-                <span class="icon">
-                  <svg width="20" height="20" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.6 8.99922C6.6 9.44105 6.24183 9.79922 5.8 9.79922C5.35817 9.79922 5 9.44105 5 8.99922C5 8.55739 5.35817 8.19922 5.8 8.19922C6.24183 8.19922 6.6 8.55739 6.6 8.99922Z" fill="#c7bdb0"></path>
-                    <path d="M9.8 8.99922C9.8 9.44105 9.44183 9.79922 9 9.79922C8.55817 9.79922 8.2 9.44105 8.2 8.99922C8.2 8.55739 8.55817 8.19922 9 8.19922C9.44183 8.19922 9.8 8.55739 9.8 8.99922Z" fill="#c7bdb0"></path>
-                    <path d="M13 8.99922C13 9.44105 12.6418 9.79922 12.2 9.79922C11.7582 9.79922 11.4 9.44105 11.4 8.99922C11.4 8.55739 11.7582 8.19922 12.2 8.19922C12.6418 8.19922 13 8.55739 13 8.99922Z" fill="#c7bdb0"></path>
-                    <path d="M13 2.07026C11.8233 1.38958 10.4571 1 9 1C4.58172 1 1 4.58172 1 9C1 10.2797 1.30049 11.4893 1.83477 12.562C1.97675 12.847 2.02401 13.1729 1.94169 13.4805L1.46521 15.2613C1.25836 16.0344 1.96561 16.7416 2.73868 16.5348L4.51951 16.0583C4.82715 15.976 5.15297 16.0233 5.43802 16.1652C6.51069 16.6995 7.72025 17 9 17C13.4183 17 17 13.4183 17 9C17 7.54285 16.6104 6.17669 15.9297 5" stroke="#c7bdb0" stroke-width="1.5" stroke-linecap="round"></path>
-                 </svg>
-                </span>
-                <span class="text">
-                  info@adira.com
-                </span>
-              </a>
-            </li>
-            <li>
-               <a href="#" target="_blank">
-                <span class="icon">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.69922 6.86317C3.69922 3.62503 6.51983 1 9.99922 1C13.4786 1 16.2992 3.62503 16.2992 6.86317C16.2992 10.0759 14.2885 13.8249 11.1513 15.1656C10.4199 15.4781 9.57849 15.4781 8.84716 15.1656C5.70996 13.8249 3.69922 10.0759 3.69922 6.86317Z" stroke="#c7bdb0" stroke-width="1.5"></path>
-                    <path d="M11.7992 7.3C11.7992 8.29411 10.9933 9.1 9.99922 9.1C9.00511 9.1 8.19922 8.29411 8.19922 7.3C8.19922 6.30589 9.00511 5.5 9.99922 5.5C10.9933 5.5 11.7992 6.30589 11.7992 7.3Z" stroke="#c7bdb0" stroke-width="1.5"></path>
-                    <path d="M18.0645 13.1504C18.6633 13.6926 19 14.3038 19 14.9504C19 17.1871 14.9706 19.0004 10 19.0004C5.02944 19.0004 1 17.1871 1 14.9504C1 14.3038 1.33671 13.6926 1.93552 13.1504" stroke="#c7bdb0" stroke-width="1.5" stroke-linecap="round"></path>
-                 </svg>
-                </span>
-                <span class="text">
-                  شارع الأمير محمد بن عبد العزيز، العزيزية، جدة 23451، المملكة العربية السعودية
-                </span>
-               </a>
-            </li>
-         </ul>
-        </div>
-        <div class="col-lg-5 col-md-6 col-xl-6 wow fadeInUp" data-wow-delay="100ms">
-          <div class="home8-contact-form">
-            <h4 class="form-title mb25">تواصل معانا</h4>
-            <form class="">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="mb20">
-                    <input type="text" class="form-control" placeholder="الاسم">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="mb20">
-                    <input type="text" class="form-control" placeholder="رقم الهاتف">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="mb20">
-                    <input type="email" class="form-control" placeholder="البريد الالكتروني">
-                  </div>
-                </div>
-              
-                <div class="col-md-12">
-                  <div class="mb10">
-                    <textarea rows="7" class="form-control" placeholder="رسالتك"></textarea>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="d-grid">
-                    <a class="ud-btn btn-thm" href="#">ارسال</a>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="our-partners">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 wow fadeInUp" data-wow-delay="100ms">
-          <div class="main-title">
-            <h4 class="sub-title">شركاؤنا العقاريون المحترفون
-            </h4>
-            <h2 class="title">شركاء على المدى الطويل
-            </h2>
-            <p class="paragraph">
-              نعمل بشكل وثيق مع مجموعة كبيرة من العملاء في مختلف القطاعات. وفخورين جدا بالعمل معهم
-            </p>
-          </div>
         </div>
 
-       
-        <div class="col-lg-12">
-          <div class="dots_none nav_none slider-dib-sm slider-6-grid owl-carousel owl-theme wow fadeInUp" data-wow-delay="300ms">
-            <div class="item">
-              <div class="partner_item"><img class="" src="images/c1.png" alt="1.png"></div>
-            </div>
-            <div class="item">
-              <div class="partner_item"><img class="" src="images/c2.png" alt="2.png"></div>
-            </div>
-            <div class="item">
-              <div class="partner_item"><img class="" src="images/c3.png" alt="3.png"></div>
-            </div>
-            <div class="item">
-              <div class="partner_item"><img class="" src="images/c1.png" alt="1.png"></div>
-            </div>
-            <div class="item">
-              <div class="partner_item"><img class="" src="images/c2.png" alt="2.png"></div>
-            </div>
-            <div class="item">
-              <div class="partner_item"><img class="" src="images/c3.png" alt="3.png"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="footer-style1 at-home6">
-    <img src="images/footer-shape.png" class="footer-shape">
-    <div class="container">
-      
-      <div class="row">
-        <div class="col-md-6 col-lg-5">
-          <div class="footer-widget text-center text-sm-start">
-            <a class="footer-logo" href="index.html"><img src="images/logo.png" alt=""></a>
-            <p class="footer-des">
-              من أكثر شركات التسويق العقاري انتشاراً في مدينة جدة. شريكاً موثوقاً للكثير من المطورين العقاريين في إدارة وتسويق مشاريعهم.
-            </p>
-          </div>
-          <div class="social-widget">
-            <a class="text-white mb15 d-block fw600 fz15" href="">تابعنا عبر مواقع التواصل الاجتماعي</a>
-            <div class="social-style1">
-              <a href=""><i class="fab fa-facebook-f list-inline-item"></i></a>
-              <a href=""><i class="fab fa-twitter list-inline-item"></i></a>
-              <a href=""><i class="fab fa-instagram list-inline-item"></i></a>
-              <a href=""><i class="fab fa-linkedin-in list-inline-item"></i></a>
-            </div>
-          </div>
+        <!-- ========== End Loading ========== -->
+		
+	
+        
+        <!-- ========== Start Navbar ========== -->
+	
+		<div class="vertical-nav">
+			<!-- Logo -->
+			<a class="logo" href="#">N</a>
+		    <!-- Toggle Menu -->
+			<button class="toggle-menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
+			<!-- Mini Menu -->
+            <div class="mini-menu">
+				<ul class="list-unstyled">
+					<li><a class="active" href="#home"><i class="flaticon-door"></i><span>Home</span></a></li>
+					<li><a href="#about"><i class="flaticon-icon"></i><span>About</span></a></li>
+					<li><a href="#resume"><i class="flaticon-leaf"></i><span>Resume</span></a></li>
+					<li><a href="#portfolio"><i class="flaticon-squares"></i><span>Works</span></a></li>
+					<li><a href="#contact"><i class="flaticon-headphones"></i><span>Contact</span></a></li>
+				</ul>
+			</div>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="row">
-            <div class="col-auto">
-              <div class="link-style1">
-                <h6 class="text-white mb25">روابط الشركة
-                </h6>
-                <div class="link-list">
-                  <a href="">نبذة عنا</a>
-                  <a href="">خدماتنا</a>
-                  <a href="">اتصل بنا</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-auto">
-              <div class="link-style1">
-                <h6 class="text-white mb25">روابط الشركة
-                </h6>
-                <div class="link-list">
-                  <a href="">الوحدات</a>
-                  <a href="">مشاريعنا</a>
-                  <a href="">اتبنا</a>
-                </div>
-              </div>
-            </div>
-            
-          
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="footer-widget">
-            <h6 class="text-white mb25">تواصل معانا
-            </h6>
-            <ul class="footer-info-contact"> 
-              <li>
-                <a href="#">
-                  <span class="flaticon-call icon"></span>
-                  <span class="text">+966 5686 66681</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="flaticon-email icon"></span>
-                  <span class="text">info@adira.com</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="flaticon-map icon"></span>
-                 <span class="text"> شارع الأمير محمد بن عبد العزيز، العزيزية، جدة 23451، المملكة العربية السعودية</span>
-                </a>
-              </li>
-            
-            </ul>
-          </div>
-        </div>
+        <!-- ========== End Navbar ========== -->
+		
+		<div class="page-content">
+		    <div class="container-fluid">
+			    <div class="row">								
+				    <div class="col-12 no-padding">
+					
+			            <!-- ========== Start Home ========== -->
+					
+					    <section class="home active" id="home">
+                            <!-- <img class="banner" src="images/home.jpg"> -->
+				            <div class="container-fluid area-bg">
+					            <div class="home-intro d-flex h-100 align-items-center">
+						            <div class="home-info">
+							            <h3>Hey, My name is</h3>
+                                        <h1>Nancy Draz</h1>
+                                        <p>A Freelance Web <span></span></p>
+							            <a href="#" class="main-btn">Hire Me</a>
+						            </div>
+					            </div>
+				            </div>
+                        </section>
 
-      
-      </div>
-    </div>
-    <div class="container white-bdrt1 pt20 mt15">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="text-center">
-            <p class="copyright-text text-gray ff-heading">© 2024 جميع الحقوق محفوظة لدي ارداء العقارية</p>
-          </div>
-        </div>
-      
-      </div>
-    </div>
-  </section>
+			            <!-- ========== End Home ========== -->
+						
+						<!-- ========== Start About ========== -->
+        
+						<section class="about area-bg" id="about">
+							<!-- ========== Start About Me ========== -->
+							<div class="about-me container">
+								<div class="main-title">
+									<h2>Get to know me</h2>
+									<h3>About Me</h3> 
+								</div>
+								<div class="row align-items-center"> 
+									<div class="col-md-5">
+										<div class="about-image">
+											<img class="img-fluid" src="images/about2.jpg" alt="">
+										</div>
+									</div>
+									<div class="col-md-7">
+										<div class="about-info">
+											<h3>Hello! I am Nancy Draz</h3>
+											<p>I'm a Web designer based in shebin elkom and I'm very passionate and dedicated to my work. With 3 years experience as a professional Full Stack Developer, I have acquired the skills necessary to build great and premium websites .</p>
+											<ul class="personal-info list-unstyled">
+												<li class="about-item">
+												    <h4><span><i class="fa fa-user"></i></span>Nancy Shafiq Draz</h4>
+												</li>
+												<li class="about-item">
+												    <h4><span><i class="fa fa-phone"></i></span>01098774883</h4>
+												</li>
+												<li class="about-item">
+												    <h4><span><i class="fa fa-envelope"></i></span><a href="#" class="__cf_email__" data-cfemail="7d1c04111208113d14131b120e531e1210">draz.nona40@gmail.com</a></h4>
+												</li>
+												<li class="about-item">
+												    <h4><span><i class="fa fa-map-marker"></i></span>Cairo , Egypt </h4>
+												</li>
+											</ul>
+										
+										</div>
+									</div>
+								</div> 
+							</div>
+                            <!-- ========== End About Me ========== -->
+                            	<!-- ========== Start Skills ========== -->
+							<div class="skills container">
+								<div class="main-title">
+									<h2>My Skills</h2>
+								</div>
+								<div class="row">
+									<div class="col-lg-10 offset-lg-1">
+										<div class="skills-content">
+											<div class="row">
+                                                <div class="col-md-6 col-sm-12">
+													<div class="professional-skills">
+														<h3>
+															<i class="fa fa-tasks"></i>
+															Professional Skills
+														</h3>
+														<div class="progress-container">
+															<span class="percent">100%</span>
+															<h4>Html5 &amp; Css3</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="progress-container">
+															<span class="percent">95%</span>
+															<h4>JavaScript</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="progress-container">
+															<span class="percent">100%</span>
+															<h4>Bootstrap</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+                                                        </div>
+                                                        	<div class="progress-container">
+															<span class="percent">95%</span>
+															<h4>Jquery</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+                                                        </div>
+                                                        <div class="progress-container">
+															<span class="percent">95%</span>
+															<h4>Angular 12</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+                                                        </div>
+														<div class="progress-container">
+															<span class="percent">95%</span>
+															<h4>Angular Material</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+                                                        </div>
+														<div class="progress-container">
+															<span class="percent">50%</span>
+															<h4>Laravel</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+                                                        </div>
+                                                        <div class="progress-container">
+															<span class="percent">95%</span>
+															<h4>Photoshop</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-12">
+													<div class="personal-skills">
+														<h3>
+															<i class="fa fa-vcard"></i>
+															Personal Skills
+														</h3>
+														<div class="progress-container">
+															<span class="percent">85%</span>
+															<h4>Communication</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="progress-container">
+															<span class="percent">90%</span>
+															<h4>Teamwork</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+														<div class="progress-container">
+															<span class="percent">75%</span>
+															<h4>Self-motivation</h4>
+															<div class="progress">
+																<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- ========== End Skills ========== -->
+
+						
+
+						
+							
+						</section>
+
+						<!-- ========== End About ========== -->
+						
+						<!-- ========== Start Resume ========== -->
+						
+					    <section class="resume area-bg" id="resume">
+							<div class="container">
+								<div class="main-title">
+									<h2>Experience &amp; Education</h2>
+									<h3>My Resume</h3>
+								</div>
+								<div class="resume-content">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="education">
+												<i class="fa fa-graduation-cap"></i>
+												<div class="resume-item">
+													<h4>computer science, Faculty of computers and information
+                                                        menoufia university
+                                                    </h4>
+													<div class="resume-date">
+														2014 - 2018
+													</div>
+													<p>Bachelor's of (Graduated)
+                                                    </p>
+												</div>
+												
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="experience">
+                                                <i class="fa fa-suitcase"></i>
+												<div class="resume-item">
+													<h4> Front End Developer - Letsia</h4>
+													<div class="resume-date">
+														Present
+													</div>
+													<p>Remotely</p>
+												</div>
+													<div class="resume-item">
+													<h4>Angular Front End Developer - Techcubics</h4>
+													<div class="resume-date">
+														2021-2023
+													</div>
+													<p>Remotely</p>
+												</div>
+												<div class="resume-item">
+													<h4>Front End Developer - EngazWeb (KSA)</h4>
+													<div class="resume-date">
+														2021
+													</div>
+													<p>Remotely</p>
+												</div>
+                                                <div class="resume-item">
+													<h4>Front End Developer - Direction Goals (KSA)</h4>
+													<div class="resume-date">
+														2020
+													</div>
+													<p>Remotely</p>
+												</div>
+												<div class="resume-item">
+													<h4>Front End Developer - Al7osam Software Co</h4>
+													<div class="resume-date">
+														2020
+													</div>
+													<p>Full time</p>
+												</div>
+												<div class="resume-item">
+													<h4>Front End Developer - Vegan (KSA)</h4>
+													<div class="resume-date">
+														 2020
+                                                    </div>
+                                                    <p>Remotely</p>
+                                                </div>
+                                                <div class="resume-item">
+													<h4>Front End Developer - Waqood (KSA)</h4>
+													<div class="resume-date">
+														 2019
+                                                    </div>
+                                                    <p>Remotely</p>
+                                                </div>
+                                                    <div class="resume-item">
+													<h4>Angular Developer - Special Next</h4>
+													<div class="resume-date">
+														 2019
+                                                    </div>
+                                                    <p>Full time</p>
+                                                </div>
+                                                <div class="resume-item">
+													<h4>Front End Developer - UBox plus</h4>
+													<div class="resume-date">
+														 2018
+                                                    </div>
+                                                    <p>Full time</p>
+                                                </div>
+                                            
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						
+					    <!-- ========== End Resume ========== -->
+						
+						<!-- ========== Start Portfolio ========== -->
+        
+						<section class="portfolio area-bg" id="portfolio">
+							<div class="container">
+								<div class="main-title">
+									<h2>My Recent Works</h2>
+									<h3>My Portfolio</h3>
+								</div>
+								<div class="portfolio-content">
+
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="#all" role="tab">All</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#angular" role="tab">Angular Projects</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#education" role="tab">Education</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#real" role="tab">Real Estate</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#ecommerce" role="tab">Ecommerce</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#medicial" role="tab">Medicial</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#business" role="tab">Business</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#law" role="tab">Law</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#construction" role="tab">Construction</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#religious" role="tab">Religious</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#landing" role="tab">Landing Page</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#dashboard" role="tab">Dashboard</a>
+										</li>
+									</ul><!-- Tab panes -->
+									<div class="tab-content">
+										<div class="tab-pane active" id="all" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/moasasa_gabreen.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مؤسسة ابن جبرين</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/moasasa_gabreen.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://ms.ibn-jebreen.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/masha3r_gabreen.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مشاعر أمة</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/masha3r_gabreen.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://nsom.ibn-jebreen.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/baha.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : إمارة منطقة الباحة</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/baha.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://albaha.gov.sa/#side_menu_1063">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/letsia.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : letsia</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/letsia.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://letsia.org/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/angez.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : منصة انجز</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/angez.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://venerable-mooncake-8ef50e.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/engaz.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : انجاز ويب</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/engaz.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://site.engazcrm.com/ar">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/forhomi.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Forhomi</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/forhomi.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://forhomi.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/ro5am.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الأبراج الوسطي</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/ro5am.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://middletowers.vercel.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/adraa.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : ادراء العقارية</h4>
+															<small>Real Estate</small>
+															<a class="icon-img" href="images/adraa.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://real-estate-psi-puce.vercel.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/geomap.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : البوابة المكانية</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/geomap.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://mapservice.alriyadh.gov.sa/geoportal/geomap">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/joumla.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Joumla</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/joumla.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://joumla.techcubics.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/mostakbal.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : أكاديمية المستقبل</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/mostakbal.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://al-mostakbal.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/aqarbest.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : AqarBest</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/aqarbest.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://aqarbest.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/smarttway.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Smarttway</h4>
+															<small>education</small>
+															<a class="icon-img" href="images/smarttway.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://smarttway.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/izoorganic.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : izoorganic</h4>
+															<small>education</small>
+															<a class="icon-img" href="images/izoorganic.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://izoorganic.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/eucairo.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : eucairo</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/eucairo.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://eucairo.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/newobouroctober.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : newobouroctober</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/newobouroctober.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.newobouroctober.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/samhbateaa.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : samhbateaa</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/samhbateaa.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://samhbateaa.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/safkah.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : safkah</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/safkah.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://safkah.net/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/dahab.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Dahab Zaman</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/dahab.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://storied-lily-621cf1.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/smile.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Gulf Smile (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/smile.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://keen-bhaskara-c92f51.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/yasser.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Yasser Medical Complex (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/yasser.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://nostalgic-kilby-603f42.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/springrose.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Spring Rose (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/springrose.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://affectionate-kalam-7551d3.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/zahy.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Zahy (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/zahy.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hardcore-jones-ac93e2.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/news.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : News (KSA)</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/news.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://wizardly-hypatia-faeb27.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/iteacher.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : iteacher (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/iteacher.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://al7osam.net/iteacher/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/grace-medicine.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Grace Medicine (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/grace-medicine.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://grace-medicine.com/en">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/univara.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Univera (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/univara.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://www.univerapharma.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/jamia.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : جمعية الاحساء الخيرية (KSA)</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/jamia.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://hasawerathy.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/mokafat.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مكافات (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/mokafat.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.mukafaat.co/deals/riyadh">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/reverie.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Reverie (KSA)</h4>
+															<small>Business</small>
+															<a class="icon-img" href="images/reverie.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.reverie-sa.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/waffer.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Waffer Store (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/waffer.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://waffarstore.com/deals/riyadh">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/fahd.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الفهد (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/fahd.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.alfahadvip.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/xseer.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : اكسير (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/xseer.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://exceerpharmacy.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/YOT-landing.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : YOT (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/YOT-landing.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://yotlearn.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/nour.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Nour (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/nour.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.alnourunited.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/greenlines.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Greenlines (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/greenlines.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://greenlines.sa/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/page-schooler.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : سكولر (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/page-schooler.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://laughing-noyce-53ea5a.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/ahkam.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : أحكام (KSA)</h4>
+															<small>Law</small>
+															<a class="icon-img" href="images/ahkam.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hungry-payne-0f51a8.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/majed.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مجموعة ماجد بن طالب (KSA)</h4>
+															<small>Law</small>
+															<a class="icon-img" href="images/majed.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://optimistic-ardinghelli-450682.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/mawed.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : تطبيق مواعيد (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/mawed.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://loving-ride-5df3e3.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12"> 
+													<div class="item">
+														<img class="img-fluid" src="images/raqeb.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : رقيب (KSA)</h4>
+															<small>Law</small>
+															<a class="icon-img" href="images/raqeb.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://upbeat-colden-8d675d.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/schooler.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Schooler (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/schooler.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://www.schoolerapp.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/writer.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Writers (KSA)</h4>
+															<small>Business</small>
+															<a class="icon-img" href="images/writer.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://peaceful-yalow-ee69ff.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/dar.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : دار المنخفض (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/dar.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://elegant-ptolemy-eec41a.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/verseea.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Vereesa  (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/verseea.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://modest-benz-c62a85.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/shark.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : شعارك (KSA)</h4>
+															<smalls>Business</small>	
+															<a class="icon-img" href="images/shark.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://eager-wright-17b30c.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/alsourai.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : AL Sorayai (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/alsourai.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://admiring-noether-5e3bc1.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/hawanem.png" alt="">
+														<div class="overlay">
+															
+															<h4 class="item-title">Project Name : Huanem</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/hawanem.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://focused-yalow-449e88.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/waffer-landing.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Waffer Store Landing page (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/waffer-landing.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://zen-kepler-0b9329.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/YOT.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Your Online Teacher (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/YOT.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://priceless-goodall-635a07.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/almansour.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Al mansour (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/almansour.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://vigilant-mclean-f09ea3.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/alrashed.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Alrasheed Medical (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/alrashed.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://awesome-bohr-309fbe.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/gabreen.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الشيخ بن جبرين (KSA)</h4>
+															<small>Religious</small>
+															<a class="icon-img" href="images/gabreen.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://pedantic-darwin-082d95.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/spring.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Spring Rose (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/spring.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://sharp-pike-2a3858.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/direction.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Direction Go (KSA)</h4>
+															<smalls>Business</small>	
+															<a class="icon-img" href="images/direction.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://eloquent-wescoff-835ebf.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/nora.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مدرسة نورا الجبر الثانوية (KSA)</h4>
+																<small>Education</small>
+															<a class="icon-img" href="images/nora.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://angry-bartik-9b4d2f.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/shale.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : حجوزات اون لاين (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/shale.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://suspicious-heisenberg-cfef18.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/center.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مركز خدمات التمريض (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/center.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://amazing-ramanujan-b005fb.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/equip.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : معدات السعودية (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/equip.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<!-- <a target="_blank" href="https://nifty-lalande-195e70.netlify.app/">Live Preview</a> -->
+																<a target="_blank" href="https://sale.vision.com.sa/membership">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/peterol.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Direction Goals (KSA)</h4>
+															<smalls>Construction</small>
+															<a class="icon-img" href="images/peterol.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://sharp-curran-dbf4a6.netlify.app/"> Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/books.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : أوقاف الشيخ عبدالله (KSA)</h4>
+															<small>Religious</small>
+															<a class="icon-img" href="images/books.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://cocky-hodgkin-b26186.netlify.app/">Live Preview </a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/order+.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Order Plus (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/order+.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://orderplus.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/season.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Season (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/season.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://nervous-galileo-e712c7.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+										   
+											
+											
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/shopping.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Shopping</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/shopping.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://stupefied-bell-9b6262.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/seven.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الاتجاه السابع (KSA)</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/seven.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://naughty-spence-2a1074.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/antique.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Antique</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/antique.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://dazzling-ride-64e54c.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/organero.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Organero</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/organero.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hardcore-meitner-5bbc02.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/fared.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Alfarid Agency</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/fared.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://loving-nightingale-dae4ec.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/roshan.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : روشن (KSA)</h4>
+															<smalls>Ecommerce</small>
+															<a class="icon-img" href="images/roshan.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://lucid-noyce-cafd97.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+		
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/adala.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : عدالة (KWT)</h4>
+															<small>Dashboard</small>
+															<a class="icon-img" href="images/adala.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hardcore-ardinghelli-aa9025.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/draya.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : دراية للاستقدام (KSA)</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/draya.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://reverent-booth-6c4103.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											
+											
+											</div>
+										</div>
+										<div class="tab-pane" id="education" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/mostakbal.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : أكاديمية المستقبل</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/mostakbal.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://al-mostakbal.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/YOT.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Your Online Teacher (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/YOT.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://priceless-goodall-635a07.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/page-schooler.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : سكولر (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/page-schooler.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://laughing-noyce-53ea5a.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/schooler.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Schooler (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/schooler.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://www.schoolerapp.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/iteacher.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : iteacher (KSA)</h4>
+															<small>Education</small>
+															<a class="icon-img" href="images/iteacher.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://al7osam.net/iteacher/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/nora.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مدرسة نورا الجبر الثانوية (KSA)</h4>
+																<small>Education</small>
+															<a class="icon-img" href="images/nora.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://angry-bartik-9b4d2f.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										
+										</div>
+										<div class="tab-pane" id="real" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/adraa.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : ادراء العقارية</h4>
+															<small>Real Estate</small>
+															<a class="icon-img" href="images/adraa.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://real-estate-psi-puce.vercel.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/forhomi.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Forhomi</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/forhomi.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://forhomi.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/aqarbest.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : AqarBest</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/aqarbest.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://aqarbest.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+										<div class="tab-pane" id="ecommerce" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/engaz.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : انجاز ويب</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/engaz.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://site.engazcrm.com/ar">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/dahab.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Dahab Zaman</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/dahab.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://keen-bhaskara-c92f51.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/ro5am.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الأبراج الوسطي</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/ro5am.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://middletowers.vercel.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/zahy.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Zahy (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/zahy.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hardcore-jones-ac93e2.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/dar.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : دار المنخفض (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/dar.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://elegant-ptolemy-eec41a.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/springrose.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Spring Rose (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/springrose.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://affectionate-kalam-7551d3.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/fahd.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الفهد (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/fahd.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.alfahadvip.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/alsourai.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : AL Sorayai (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/alsourai.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://admiring-noether-5e3bc1.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/waffer.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Waffer Store (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/waffer.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://waffarstore.com/deals/riyadh">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/spring.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Spring Rose (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/spring.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://sharp-pike-2a3858.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/mokafat.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مكافات (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/mokafat.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.mukafaat.co/deals/riyadh">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/shale.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : حجوزات اون لاين (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/shale.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://suspicious-heisenberg-cfef18.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/shopping.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Shopping</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/shopping.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://stupefied-bell-9b6262.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/hawanem.png" alt="">
+														<div class="overlay">
+															
+															<h4 class="item-title">Project Name : Huanem</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/hawanem.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://focused-yalow-449e88.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/roshan.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : روشن (KSA)</h4>
+															<smalls>Ecommerce</small>
+															<a class="icon-img" href="images/roshan.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://lucid-noyce-cafd97.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/organero.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Organero</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/organero.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hardcore-meitner-5bbc02.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/season.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Season (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/season.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://nervous-galileo-e712c7.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/antique.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Antique</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/antique.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://dazzling-ride-64e54c.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										
+										</div>
+										<div class="tab-pane" id="medicial" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/smile.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Gulf Smile (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/smile.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://keen-bhaskara-c92f51.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/yasser.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Yasser Medical Complex (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/yasser.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://nostalgic-kilby-603f42.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/xseer.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : اكسير (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/xseer.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://exceerpharmacy.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/grace-medicine.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Grace Medicine (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/grace-medicine.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://grace-medicine.com/en">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/univara.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Univera (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/univara.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://www.univerapharma.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/alrashed.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Alrasheed Medical (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/alrashed.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://awesome-bohr-309fbe.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/center.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مركز خدمات التمريض (KSA)</h4>
+															<small>Medical</small>
+															<a class="icon-img" href="images/center.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://amazing-ramanujan-b005fb.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/verseea.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Vereesa  (KSA)</h4>
+															<small>Ecommerce</small>
+															<a class="icon-img" href="images/verseea.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://modest-benz-c62a85.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+										<div class="tab-pane" id="business" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/moasasa_gabreen.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مؤسسة ابن جبرين</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/moasasa_gabreen.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://ms.ibn-jebreen.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/masha3r_gabreen.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مشاعر أمة</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/masha3r_gabreen.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://nsom.ibn-jebreen.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/geomap.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : البوابة المكانية</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/geomap.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://mapservice.alriyadh.gov.sa/geoportal/geomap">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/letsia.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : letsia</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/letsia.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://letsia.org/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/baha.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : إمارة منطقة الباحة</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/baha.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://albaha.gov.sa/#side_menu_1063">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/news.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : News (KSA)</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/news.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://wizardly-hypatia-faeb27.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/reverie.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Reverie (KSA)</h4>
+															<small>Business</small>
+															<a class="icon-img" href="images/reverie.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.reverie-sa.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/shark.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : شعارك (KSA)</h4>
+															<smalls>Business</small>	
+															<a class="icon-img" href="images/shark.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://eager-wright-17b30c.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/direction.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Direction Go (KSA)</h4>
+															<smalls>Business</small>	
+															<a class="icon-img" href="images/direction.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://eloquent-wescoff-835ebf.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/jamia.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : جمعية الاحساء الخيرية (KSA)</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/jamia.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://hasawerathy.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/writer.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Writers (KSA)</h4>
+															<small>Business</small>
+															<a class="icon-img" href="images/writer.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://peaceful-yalow-ee69ff.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/draya.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : دراية للاستقدام (KSA)</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/draya.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://reverent-booth-6c4103.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/fared.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Alfarid Agency</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/fared.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://loving-nightingale-dae4ec.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/seven.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الاتجاه السابع (KSA)</h4>
+															<smalls>Business</small>
+															<a class="icon-img" href="images/seven.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://naughty-spence-2a1074.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+
+											</div>
+										</div>
+
+										<div class="tab-pane" id="law" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12"> 
+													<div class="item">
+														<img class="img-fluid" src="images/raqeb.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : رقيب (KSA)</h4>
+															<small>Law</small>
+															<a class="icon-img" href="images/raqeb.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://upbeat-colden-8d675d.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/ahkam.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : أحكام (KSA)</h4>
+															<small>Law</small>
+															<a class="icon-img" href="images/ahkam.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hungry-payne-0f51a8.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/majed.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : مجموعة ماجد بن طالب (KSA)</h4>
+															<small>Law</small>
+															<a class="icon-img" href="images/majed.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://optimistic-ardinghelli-450682.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="construction" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/equip.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : معدات السعودية (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/equip.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://sale.vision.com.sa/membership">Live Preview</a>
+																<!-- <a target="_blank" href="https://nifty-lalande-195e70.netlify.app/">Live Preview</a> -->
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/almansour.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Al mansour (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/almansour.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://vigilant-mclean-f09ea3.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/peterol.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Direction Goals (KSA)</h4>
+															<smalls>Construction</small>
+															<a class="icon-img" href="images/peterol.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://sharp-curran-dbf4a6.netlify.app/"> Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/nour.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Nour (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/nour.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.alnourunited.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/greenlines.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Greenlines (KSA)</h4>
+															<small>Construction</small>
+															<a class="icon-img" href="images/greenlines.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://greenlines.sa/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="tab-pane" id="religious" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/books.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : أوقاف الشيخ عبدالله (KSA)</h4>
+															<small>Religious</small>
+															<a class="icon-img" href="images/books.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://cocky-hodgkin-b26186.netlify.app/">Live Preview </a>
+															</div>
+														</div>
+													</div>
+												</div>
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/gabreen.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : الشيخ بن جبرين (KSA)</h4>
+															<small>Religious</small>
+															<a class="icon-img" href="images/gabreen.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://pedantic-darwin-082d95.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+										<div class="tab-pane" id="landing" role="tabpanel">
+											<div class="row">
+											
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/YOT-landing.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : YOT (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/YOT-landing.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="http://yotlearn.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/order+.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Order Plus (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/order+.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://orderplus.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/mawed.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : تطبيق مواعيد (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/mawed.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://loving-ride-5df3e3.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/waffer-landing.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Waffer Store Landing page (KSA)</h4>
+															<small>Landing Page</small>
+															<a class="icon-img" href="images/waffer-landing.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://zen-kepler-0b9329.netlify.app">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+										<div class="tab-pane" id="dashboard" role="tabpanel">
+											<div class="row">
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/angez.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : منصة انجز</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/angez.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://venerable-mooncake-8ef50e.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/adala.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : عدالة (KWT)</h4>
+															<small>Dashboard</small>
+															<a class="icon-img" href="images/adala.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://hardcore-ardinghelli-aa9025.netlify.app/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="angular" role="tabpanel">
+											<div class="row">
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/forhomi.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Forhomi</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/forhomi.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://forhomi.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/joumla.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Joumla</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/joumla.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://joumla.techcubics.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/aqarbest.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : AqarBest</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/aqarbest.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://aqarbest.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/smarttway.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : Smarttway</h4>
+															<small>education</small>
+															<a class="icon-img" href="images/smarttway.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://smarttway.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/izoorganic.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : izoorganic</h4>
+															<small>education</small>
+															<a class="icon-img" href="images/izoorganic.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://izoorganic.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/eucairo.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : eucairo</h4>
+															<small>business</small>
+															<a class="icon-img" href="images/eucairo.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://eucairo.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/newobouroctober.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : newobouroctober</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/newobouroctober.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://www.newobouroctober.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/samhbateaa.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : samhbateaa</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/samhbateaa.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://samhbateaa.com/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6 col-sm-12">
+													<div class="item">
+														<img class="img-fluid" src="images/safkah.png" alt="">
+														<div class="overlay">
+															<h4 class="item-title">Project Name : safkah</h4>
+															<small>ecommerce</small>
+															<a class="icon-img" href="images/safkah.png"><i class="fa fa-image"></i>Screenshot</a>
+															<div class="item-category">
+																<a target="_blank" href="https://safkah.net/">Live Preview</a>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+
+
+											</div>
+										</div>
 
 
 
-<a class="scrollToHome" href="#"><i class="fas fa-angle-up"></i></a>
 
-</div>
-<!-- Wrapper End --> 
-<script src="js/jquery-3.6.4.min.js"></script>
-<script src="js/jquery-migrate-3.0.0.min.js"></script> 
-<script src="js/popper.min.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/jquery.mmenu.all.js"></script> 
-<script src="js/ace-responsive-menu.js"></script> 
-<script src="js/jquery-scrolltofixed-min.js"></script> 
-<script src="js/jquery.counterup.js"></script> 
-<script src="js/wow.min.js"></script> 
-<script src="js/owl.js"></script> 
-<script src="js/parallax.js"></script> 
-<!-- <script src="js/pricing-slider.js"></script> -->
-<script src="js/select2.min.js"></script> 
-<script src="js/script.js"></script> 
+									</div>
 
 
-</body>
+								
+								</div>
+							</div>				
+						</section>
+
+						<!-- ========== End Portfolio ========== -->
+				
+
+						<!-- ========== Start Contact ========== -->
+
+						<section class="contact area-bg" id="contact">
+							<div class="container">
+								<div class="main-title">
+									<h2>Get In Touch</h2>
+									<h3>Contact Me</h3>
+								</div>
+								<div class="row">
+									<div class="col-lg-5 col-md-12">
+										<div class="contact-boxes">
+											<div class="contact-box">
+												<div class="content-box">
+													<p>
+														<i class="fa fa-home"></i>
+														Shebin Elkom
+													</p>
+												</div>
+											</div>
+											<div class="contact-box two">
+												<div class="content-box">
+													<p>
+														<i class="fa fa-envelope"></i>
+														<a href="#" class="__cf_email__" data-cfemail="38594154574d547851565e574b165b5755">draz.nona40@gmail.com</a>
+													</p>
+												</div>
+											</div>
+											<div class="contact-box">
+												<div class="content-box">
+													<p>
+														<i class="fa fa-phone"></i>
+														01098774883
+													</p>
+												</div>
+											</div>
+											<div class="contact-box">
+												<div class="content-box">
+													<p>
+														<i class="fa fa-whatsapp"></i>
+														01098774883
+													</p>
+												</div>
+											</div>
+										
+											<div class="contact-box">
+												<div class="content-box">
+													<p>
+														<i class="fa fa-check available"></i>
+														Freelance Available
+													</p>
+												</div>
+											</div>
+											<div class="contact-box">
+												<div class="content-box">
+													<p>
+														<span><a href="https://www.facebook.com/nona.draz.1"><i class="fa fa-facebook"></i></a></span>
+														<span><a href="#"><i class="fa fa-instagram"></i></a></span>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-7 col-md-12">
+										<form class="contact-form" action="#" method="post">
+											<div class="form-group">
+												<input type="text" class="form-control" id="name" name="name" required value="" onkeyup="this.setAttribute('value', this.value);">
+												<label for="name">Name</label>
+												<span class="input-border"></span>
+											</div>
+											<div class="form-group">
+												<input type="email" class="form-control" id="email" name="email" required value="" onkeyup="this.setAttribute('value', this.value);">
+												<label for="email">Email</label>
+												<span class="input-border"></span>
+											</div>
+											<div class="form-group">
+												<input type="text" class="form-control" id="subject" name="subject" required value="" onkeyup="this.setAttribute('value', this.value);">
+												<label for="subject">Subject</label>
+												<span class="input-border"></span>
+											</div>
+											<div class="form-group">
+												<textarea class="form-control" id="message" name="message" required data-value="" onkeyup="this.setAttribute('data-value', this.value);"></textarea>
+												<label for="message">Your Message</label>
+												<span class="input-border"></span>
+											</div>
+											<!-- Button Send Message  -->
+											<button class="contact-btn main-btn btn btn-block" type="submit" name="send">Send Message</button>
+										    <!-- Form Message  -->
+							                <div class="form-message text-center"><span></span></div>
+										</form>
+									</div>
+								</div>
+							</div>		
+	                        <div class="copyright">
+			                    <a href="#" target="_blank">NancyDesign</a> &copy; 2020 made by love <i class="fa fa-heart"></i>
+		                    </div>
+        				</section>
+
+						<!-- ========== End Contact ========== -->
+
+				    </div>
+			    </div>
+			</div>			
+		</div>
+		
+        <!-- ========== Js ========== -->
+
+        <!-- jQuery -->
+		<script src="js/jquery-3.2.1.min.js"></script>
+        <!-- Popper Js  -->
+    	<script src="js/popper.min.js"></script>
+        <!-- Bootstrap 4 Js -->
+        <script src="js/bootstrap.min.js"></script>
+		<!-- Typed Js -->
+        <script src="js/typed.js"></script>
+        <!-- Magnific Popup JS  -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <!-- Custom Js -->
+        <script src="js/custom.js"></script>
+    </body>
 </html>
