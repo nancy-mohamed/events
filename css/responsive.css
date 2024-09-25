@@ -1,83 +1,201 @@
-@media(max-width:992px){
-    .menu_area .navbar-brand{
-        position: relative;
-        top: inherit;
-        width: inherit;
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+@media only screen and (max-width:1700px) {
+}
+
+@media only screen and (max-width:1600px) {
+
+}
+
+@media only screen and (max-width:1500px) {
+
+}
+
+@media only screen and (max-width:1440px) {
+
+}
+
+@media only screen and (max-width:1400px) {
+
+}
+
+@media only screen and (max-width:1366px) {
+
+}
+
+/*  (min-width:1280px)+++ */
+@media only screen and (max-width:1280px) {
+
+}
+
+/*  (min-width:1200px)+++ */
+@media only screen and (min-width:1200px) {
+}
+
+/*  (max-width:1200px)+++ */
+@media only screen and (max-width:1200px) {
+
+}
+
+/* (min-width:992px) (max-width: 1199.98px) // Large devices (desktops, less than 1200px) */
+@media only screen and (max-width: 1199.98px) {/* ExTra Class Start*/
+
+}
+
+@media only screen and (max-width:992px) {
+    .home-banner-style1{
         height: inherit;
-        padding: 0;
-        background: transparent;
     }
-}
-@media only screen and (min-width: 767px) and (max-width: 991px){
-    .portfolio-style01-small .portfolio-img img {
-        height: 170px;
+    .inner-banner-style1{
+        padding-top: 20px;
     }
-    .portfolio-style01-large .portfolio-img img {
-        height: 360px;
+    .advance-search-tab{
+        margin-bottom: 30px;
     }
-}
-@media(max-width:767px){
-    .slider-fade .small-title{
+    .about-images img{
+        left: 0;
+        opacity: 0.2;
+    }
+    .listing-style8 img{
+        height: 220px;
+    }
+    .listing-style8 .list-content{
+        padding: 15px;
+    }
+    .listing-style8 .list-title{
+        font-size: 20px;
+    }
+    .iconbox-style5{
+        display: none !important; 
+    }
+    .funfact_one .icon{
+        font-size: 30px;
+    }
+    .funfact_one .timer{
+        font-size: 25px;
+        line-height: 34px;
+    }
+    .funfact_one p{
         font-size: 12px;
     }
-    .slider-fade h1 {
+    .tp-contact-info-box li {
+        margin-bottom: 0;
+    }
+    .home8-contact-form{
+        margin: 10px 0 0;
+        padding: 20px;
+    }
+}
+
+
+/* Medium devices (min-width:768px) (max-width: 991.98px) // (tablets, less than 992px) */
+@media only screen and (max-width:991px) {/* ExTra Class Start*/
+
+}
+
+@media(min-width: 767.98px) and (max-width:991.98px){
+    .image-chose {
+        height: 300px;
+    }
+}
+@media only screen and (max-width:768px) {
+
+}
+
+/* Small devices (min-width: 576px) (max-width: 767.98px) // (landscape phones, less than 768px) */
+@media only screen and (max-width: 767.98px) {/* ExTra Class Start*/
+
+
+    .image-chose{
+        position: absolute;
+        right: -100px;
+        opacity: 0.2;
+        height: auto;
+    }
+    .social-widget{
         margin-bottom: 10px;
-        line-height: 30px;
-        font-size: 25px;
     }
-    .butn.md {
-        padding: 16px 15px !important;
-    }
-    .butn{
-        font-size: 11px !important;
-        padding: 12px !important;
-    }
-    .portfolio-style01 .portfolio-img img{
-        height: 200px;
-    }
-    .portfolio-carousel .owl-item.active.center {
-        transform: scale(0.9);
-    }
-    .footer-contact img {
-        width: 25px;
-    }
-    .about-style01 .about-img2 {
-        height: 200px;
-        border-radius: 10px;
-    }
-    .about-style01 .h1 {
-        font-size: 22px;
-    }
-    .section-title h2{
+    .tp-contact-info-box li a{
         font-size: 16px;
     }
-    .card-style1{
+    .funfact_one{
+        border: none;
         margin-bottom: 10px;
     }
-    .card-style1 .card-image img{
-        height: 100px;
-    }
-    .card-style1 .card-content h3 {
-        font-size: 13px;
-        line-height: 20px;
-    }
-    .card-style1 .card-content a{
-        font-size: 10px;
-    }
-    .categories-list .col-xl-custom7:nth-child(even) {
-        margin-top: 0;
-    }
-    .icon_whatsapp{
-        width: 40px;
-        height: 40px;
-        bottom: 20px;
+    .main-title .title, .main-title2 .title{
         font-size: 20px;
+    }
+  
+    .dark-light-navtab .nav{
+        justify-content: end !important;
+        margin-bottom: 10px !important;
+    }
+   
+    .scrollToHome{
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+    }
+    .scrollToHome.show{
         right: 20px;
     }
-    .mb-4 {
-        margin-bottom: 1rem !important;
-    }
-    .mb-2-9, .my-2-9 {
-        margin-bottom: 2rem;
-    }
+ 
+
+
+}
+
+@media only screen and (max-width:630px) {
+}
+
+@media only screen and (max-width: 580px) {
+}
+
+/* Extra small devices (min-width:361px) (max-width: 575.98px) // (portrait phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
+
+}
+
+/* (min-width:361px) (max-width:520px) */
+@media only screen and (max-width:520px) {
+
+}
+
+/* (min-width:480px) (max-width:500px) */
+@media only screen and (max-width:500px) {
+
+}
+
+/* (min-width:361px) (max-width:479px) */
+@media only screen and (max-width:479px) {
+
+}
+
+@media only screen and (max-width:414px) {
+
+}
+
+@media only screen and (max-width:400px) {/* ExTra Class Start*/
+
+}
+
+/* (min-width:321px) (max-width:360px) */
+@media only screen and (max-width:360px) {
+
+}
+
+@media only screen and (max-width:340px) {
+
+}
+
+@media only screen and (max-width:320px) {
+
 }
