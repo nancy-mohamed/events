@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "purgecss": "^6.0.0"
+    "purgecss": "^6.0.0",
+    "terser": "^5.36.0"
   }
 }
