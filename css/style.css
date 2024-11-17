@@ -407,31 +407,50 @@ color: #C3A11B;
 .card-method .accordion-body {
    padding: 15px 10px;
 }
-.method-pay button{
+.method-item{
+    display: block;
+    cursor: pointer;
+}
+.method-item .custom-check{
     border: 1px solid #C3A11B;
     height: 50px;
     color: #000;
     position: relative;
-    width: -webkit-fill-available;
     font-size: 16px;
     border-radius: 16px;
     font-weight: 500;
+    display: block;
     background: transparent;
-    line-height: 29.98px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0;
 }
-.method-pay button .icon{
+.method-item input {
+    position:absolute;
+    top:-20px;
+    display: none;
+}
+.method-item .custom-check .icon{
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: #002160;
     color:#fff;
     position: absolute;
-    right: -6px;
+    right: -8px;
     top: -1px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.method-item input:checked + .custom-check {
+    background:#002160;
+    color:#fff;
+}
+.method-item input:checked + .custom-check .icon {
+    background:#C3A11B !important;
+    color:#fff !important;
 }
 .method-form{
     margin-bottom: 20px;
@@ -494,4 +513,8 @@ position: relative;
 }
 .background-transparent{
     background: transparent;
+}
+.modal-content{
+  border-radius: 20px;
+  border: 2px solid #C3A11B;
 }
