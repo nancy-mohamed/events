@@ -89,6 +89,8 @@ object-position: 65% 42%;
     width: 14px;
     height: 14px;
     border-radius: 50%;
+    margin-left: 7px;
+    margin-right: 7px;
     background: #F5F5F5;
     opacity: 1;
     border: none !important;
@@ -207,6 +209,7 @@ height: 110px;
   .footer-widget .footer-title{
     font-size: 22px;
     font-weight: 700;
+    margin: 10px 0;
     line-height: 44.98px;
     color: #ffff;
   }
