@@ -69,5 +69,17 @@
         height: 200px;
         margin-top: 20px;
     }
+    .bank-flex-style2 p{
+        font-size: 14.91px;
+        line-height: 23.05px;
+    }
+    .bank-flex-style2 {
+        margin: 20px 0 0;
+        gap: 10px;
+    }
+    .bank-flex-style2 .progress-circle{
+        width: 65px;
+        height: 65px;
+    }
     
 }
