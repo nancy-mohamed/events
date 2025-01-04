@@ -510,11 +510,52 @@ textarea:focus {
   box-shadow: none;
 }
 
+
 .bootselect-multiselect {
   position: relative;
 }
 .bootselect-multiselect .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
   width: 100%;
+}
+.bootselect-multiselect .btn {
+  border-radius: 14px;
+  border: 1px solid #B79F88;
+  height: 55px;
+  line-height: 30px;
+  overflow: hidden;
+  padding: 10px 20px;
+  color:#666666;
+  font-size: 15px;
+  width: 100%;
+}
+.bootselect-multiselect .btn:focus {
+  border: 2px solid var(--headings-color);
+  outline: none;
+}
+.bootselect-multiselect .btn.dropdown-toggle {
+  width: 100%;
+}
+.bootselect-multiselect .btn.dropdown-toggle:focus {
+  box-shadow: none;
+  outline: none !important;
+}
+.bootselect-multiselect .bootstrap-select.dropdown-toggle.bs-placeholder {
+  color: var(--headings-color);
+}
+.bootselect-multiselect .dropdown-menu {
+  padding: 10px 15px;
+}
+.bootselect-multiselect .dropdown-menu .inner {
+  padding: 10px;
+}
+.bootselect-multiselect .dropdown-menu .dropdown-item {
+  padding: 10px;
+}
+.bootselect-multiselect .dropdown-menu .dropdown-item.active, .bootselect-multiselect .dropdown-menu .dropdown-item:hover, .bootselect-multiselect .dropdown-menu .dropdown-item:focus {
+  background-color: rgb(240, 231 ,223,0.4);
+  color: var(--headings-color);
+  outline: none;
+  border-radius: 8px;
 }
 .bootselect-multiselect .btn-light {
   background-color: #ffffff;
