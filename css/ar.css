@@ -1,0 +1,94 @@
+body{
+    direction: rtl;
+}
+.swiper{
+    direction: ltr;
+}
+body , h1 , h2 , h3 , h4 , h5 , a , p , span , label , input, button{
+    font-family: "Almarai", sans-serif !important;
+    font-style: normal;
+    text-align: right;
+}
+.swiper-slide{
+    direction: ltr;
+}
+.hero.hero-bg-image.hero-slider-layout .hero-slide{
+    direction: rtl;
+}
+.main-menu ul li.submenu > a:after{
+    margin-right: 8px;
+    margin-left: 0;
+}
+.btn-default{
+    padding: 17px 20px 17px 54px;
+}
+.btn-default::before{
+    left: 0;
+    right: inherit;
+    transform: translate(20px, -50%) rotate(
+        180deg);
+}
+.btn-default::after{
+    right: -15%;
+    left: 0;
+}
+.btn-default:hover:after{
+    right: 0;
+    left: -15%;
+}
+.btn-default:hover::before {
+    transform: translate(17px, -50%) rotate(
+        180deg);
+}
+
+
+.readmore-btn{
+    padding-left: 32px;
+    padding-right: 0;
+}
+.readmore-btn:after{
+left: 0;
+right: inherit;
+transform: translate(-2px, -50%) rotate(180deg);
+}
+.section-title h3{
+    padding-right: 18px;
+    padding-left: 0;
+}
+.section-title h3::before{
+    right: 0;
+    left: inherit;
+}
+.our-approach-images{
+    padding: 0 100px 185px 0;
+}
+.approach-img-2{
+    right: 0;
+    left: inherit;
+}
+.our-goals-images{
+    margin-right: 20px;
+    margin-left: 0;
+}
+.slicknav_arrow:after{
+    left: 15px;
+    right: inherit;
+}
+.service-item-2{
+    direction: rtl;
+}
+.faq-accordion .accordion-header .accordion-button{
+    padding-left: 35px;
+    padding-right: 0;
+}
+.accordion-item .accordion-body {
+    padding-left: 35px;
+    padding-right: 0;
+}
+.faq-accordion .accordion-item .accordion-button::after, .faq-accordion .accordion-item .accordion-button.collapsed::after{
+    left: 0;
+    right: inherit;
+}
+.accordion-button{
+    text-align: right;
+}
