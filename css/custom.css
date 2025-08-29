@@ -5478,6 +5478,7 @@ header.main-header .header-sticky.active{
 	gap: 20px;
 	list-style: none;
 	padding: 0;
+	flex-wrap: wrap;
 	margin: 0;
 	justify-content: space-between;
 }
@@ -6813,7 +6814,18 @@ header.main-header .header-sticky.active{
         max-width: 16px;
 		margin-right: 5px;
     }
-
+		.file-links{
+		    gap: 10px;
+	}
+	.file-links li a{
+		padding: 20px;
+		    font-size: 17px;
+	}
+.file-links li a span{
+	    margin: 0 auto 10px;
+		    width: 65px;
+    height: 65px;
+}
 	.topbar-social-links{
 		display: none;
 	}
