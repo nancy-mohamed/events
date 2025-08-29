@@ -1,3 +1,47 @@
+@font-face {
+  font-family: 'Tajawal-Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-Black'), url('../webfonts/Tajawal/Tajawal-Black.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Tajawal-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-Bold'), url('../webfonts/Tajawal/Tajawal-Bold.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Tajawal-ExtraBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-ExtraBold'), url('../webfonts/Tajawal/Tajawal-ExtraBold.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Tajawal-ExtraLight';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-ExtraLight'), url('../webfonts/Tajawal/Tajawal-ExtraLight.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Tajawal-Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-Light'), url('../webfonts/Tajawal/Tajawal-Light.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Tajawal-Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-Medium'), url('../webfonts/Tajawal/Tajawal-Medium.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Tajawal-Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Tajawal-Regular'), url('../webfonts/Tajawal/Tajawal-Regular.ttf') format('opentype');
+}
 body{
     direction: rtl;
 }
@@ -5,7 +49,7 @@ body{
     direction: ltr;
 }
 body , h1 , h2 , h3 , h4 , h5 , a , p , span , label , input, button{
-    font-family: "Almarai", sans-serif !important;
+    font-family: 'Tajawal-Regular' !important;
     font-style: normal;
     text-align: right;
 }

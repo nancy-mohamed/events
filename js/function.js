@@ -62,7 +62,7 @@
 		const services_slider = new Swiper('.services-slider .swiper', {
 			slidesPerView : 1,
 			speed: 1000,
-			spaceBetween: 20,
+			spaceBetween: 15,
 			loop: true,
 			// autoplay: {
 			// 	delay: 5000,
@@ -80,7 +80,7 @@
 					slidesPerView: 3,
 				},
 				1024:{
-					slidesPerView: 4,
+					slidesPerView: 3,
 				}
 			}
 		});
