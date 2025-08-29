@@ -6794,7 +6794,11 @@ header.main-header .header-sticky.active{
         margin-bottom: 15px;
     }
 }
-
+@media(max-width:991px) and (min-width:767px){
+	.file-links li{
+		  flex: 0 0 22%;
+	}
+}
 @media only screen and (max-width: 767px){
 
 	body{
@@ -6814,6 +6818,9 @@ header.main-header .header-sticky.active{
         max-width: 16px;
 		margin-right: 5px;
     }
+		.file-links li{
+		  flex: 0 0 48%;
+	}
 		.file-links{
 		    gap: 10px;
 	}
