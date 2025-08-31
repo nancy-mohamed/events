@@ -479,7 +479,7 @@ body{
     line-height: 50px;
 }
 .section-title h4{
-    color: var(--white-color);
+    /* color: var(--white-color); */
  font-size: 25px;
     font-weight: 600;	
 }
@@ -769,6 +769,20 @@ header.main-header .header-sticky.active{
 	display: flex;
 	align-items: center;
 	gap: 25px;
+}
+.header-contact-btn .user-name{
+	    margin: 0;
+    font-size: 18px;
+    display: flex
+;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--accent-secondary-color);
+}
+.header-contact-btn .user-name img{
+      width: auto;
+    height: 35px;
 }
 .header-contact-btn .btn-default{
 	padding: 15px 20px;
@@ -5544,6 +5558,33 @@ header.main-header .header-sticky.active{
 .file-links li a:hover span img{
 	    filter: brightness(0) invert(1);
 }
+.section-padding{
+	padding: 50px 0;
+}
+.card-notifications{
+	    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.0392156862745098);
+    border: 1px solid var(--divider-color);
+	    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 2.083vw;
+    overflow: hidden;
+}
+.card-notifications .no-data{
+    padding: 40px 0;
+    text-align: center;
+}
+.card-notifications .no-data img{
+	width: auto;
+	height: 40px;
+	margin-bottom: 10px;
+}
+.card-notifications .no-data p{
+	margin-bottom: 0;
+	    text-align: center;
+	color: var(--text-color);
+	font-size: 18px;
+}
 @media only screen and (max-width: 1800px){
 
 	.bg-section{
@@ -6796,7 +6837,7 @@ header.main-header .header-sticky.active{
 }
 @media(max-width:991px) and (min-width:767px){
 	.file-links li{
-		  flex: 0 0 22%;
+		  flex: 0 0 24%;
 	}
 }
 @media only screen and (max-width: 767px){
