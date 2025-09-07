@@ -5906,8 +5906,11 @@ header.main-header .header-sticky.active{
 
 	.our-facts{
 		padding: 50px 0;
+		background-size: cover;
 	}
-
+.our-facts::before{
+	border-radius: 0;
+}
 	.our-facts-content{
 		width: 55%;
 	}
