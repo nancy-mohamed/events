@@ -183,9 +183,35 @@
 	}
 
 	/* Init Counter */
-	if ($('.counter').length) {
-		$('.counter').counterUp({ delay: 6, time: 3000 });
-	}
+	// if ($('.counter').length) {
+	// 	$('.counter').counterUp({ delay: 6, time: 3000 });
+	// }
+	function formatNumber(n) {
+  n = Number(n);
+  if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  return n.toLocaleString();
+}
+
+if ($('.counter').length) {
+  $('.counter').each(function () {
+    let $this = $(this);
+    let finalValue = Number($this.data('count'));
+
+    // Animate using jQuery, not counterUp
+    $({ countNum: 0 }).animate({ countNum: finalValue }, {
+      duration: 3000,
+      easing: 'swing',
+      step: function (now) {
+        $this.text(formatNumber(now));
+      },
+      complete: function () {
+        $this.text(formatNumber(finalValue)); // ensure final formatted value
+      }
+    });
+  });
+}
+
 
 	/* Image Reveal Animation */
 	if ($('.reveal').length) {
