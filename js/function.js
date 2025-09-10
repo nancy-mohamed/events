@@ -426,3 +426,6 @@ if ($('.counter').length) {
 	/* Why Choose List Active End */
 	
 })(jQuery);
+ $(document).on("click", ".how_work", function() {
+  $(this).siblings(".extra").slideToggle(); 
+});
