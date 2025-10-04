@@ -44,6 +44,7 @@
 /************************************/
 /*** 	 01. Global Variables	  ***/
 /************************************/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
 :root{
 	--primary-color				: #121212;
@@ -3829,6 +3830,7 @@ header.main-header .header-sticky.active{
 .page-single-sidebar{
     position: sticky;
     top: 20px;
+	    /* margin-top: -75px; */
 }
 
 .service-category-list{
@@ -4130,7 +4132,7 @@ header.main-header .header-sticky.active{
 }
 
 .service-entry{
-    padding: 60px 0 30px;
+    padding: 30px 0 ;
 }
 .service-entry h3{
     font-size: 30px;
@@ -4143,19 +4145,27 @@ header.main-header .header-sticky.active{
 	    line-height: 33px;
 }
 .service-entry .list-requirements{
-	list-style: none;
+	list-style: auto;
 	padding: 0;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 18px;
+   padding-right: 2em;
 }
 .service-entry .list-requirements li{
 	    font-size: 18px;
     position: relative;
-    padding-right: 32px;
+    padding-right: 5px;
     width: 100%;
     line-height: 25px;
+}
+.service-entry .list-requirements.style2{
+	list-style: none;
+	    padding-right: 0;
+}
+.service-entry .list-requirements.style2 li{
+	    padding-right: 1.6em;
 }
 .service-entry .list-download{
 list-style: none;
@@ -4209,23 +4219,14 @@ list-style: none;
 	color: var(--accent-color);
 }
 
-.service-entry ul{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px 30px;
-	list-style: none;
-	padding: 0;
-	margin-bottom: 40px;
-}
-
-.service-entry .list-requirements li::before{
-	content: '\f058';
-    font-family: 'FontAwesome';
+.service-entry .list-requirements.style2 li::before{
+	content: ' \F270';
+    font-family: 'bootstrap-icons';
     position: absolute;
     top: 0;
     right: 0;
     font-size: 18px;
-    color:var(--accent-color);
+    color:#2bb574;
 }
 
 .service-working-box,
@@ -4711,6 +4712,7 @@ list-style: none;
     background-color: var(--secondary-color);
     border-radius: 30px;
     margin-bottom: 60px;
+	    margin-top: -70px;
     overflow: hidden;
 }
 
@@ -4726,6 +4728,10 @@ list-style: none;
     border-bottom: 1px solid var(--divider-color);
     margin-bottom: 20px;
     padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--primary-color);
 }
 
 .project-category-list ul li:last-child{
@@ -4736,19 +4742,27 @@ list-style: none;
 
 .project-category-list ul li span{
 	font-family: var(--accent-font);
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     text-transform: capitalize;
-    color: var(--primary-color);
+    color: var(--text-color);
     display: inline-flex;
     width: 50%;
+	    display: flex
+;
+    align-items: center;
+    gap: 10px;
 }
-
+.project-category-list ul li span i{
+    font-size: 18px;
+    color: var(--accent-color);
+}
 .category-social-link{
     background-color: var(--accent-color);
     display: flex;
     align-items: center;
     gap: 30px;
+	justify-content: space-between;
     padding: 25px 30px;
 }
 
@@ -4763,18 +4777,17 @@ list-style: none;
 .category-social-link ul{
     margin: 0;
     padding: 0;
+	    gap: 10px;
+    display: flex
+;
     list-style: none;
 }
 
 .category-social-link ul li{
     display: inline-block;
     border-radius: 50%;
-    margin-right: 15px;
 }
 
-.category-social-link ul li:last-child{
-    margin-right: 0;
-}
 
 .category-social-link ul li a{
     border: 1px solid var(--primary-color);
@@ -5807,6 +5820,25 @@ border-bottom: 1px solid var(--divider-color);
 	font-size: 18px;
 	    color: var(--accent-secondary-color);
 	font-weight: 600;
+}
+.our-pricing-nav.style3 ul{
+    padding: 10px;
+    width: 100%;
+	    margin-bottom: 2em;
+    display: flex;
+		border-radius: 20px;
+		    background: #f5f7f8;
+    border: none;
+}
+.our-pricing-nav.style3 ul li{
+	    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+.our-pricing-nav.style3 ul li .nav-link{
+	text-align: center;
+	    padding: 10px;
+			border-radius: 20px;
 }
 @media only screen and (max-width: 1800px){
 
