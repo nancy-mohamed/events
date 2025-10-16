@@ -401,5 +401,6 @@
 	
 })(jQuery);
  $(document).on("click", ".how_work", function() {
-  $(this).siblings(".extra").slideToggle(); 
+	 $(this).siblings(".extra").slideToggle(); 
+	 $('header.main-header .header-sticky').toggle();
 });
