@@ -5916,6 +5916,9 @@ border-bottom: 1px solid var(--divider-color);
 	.btn-default::before{
 		transform: translate(-15px, -50%);
 	}
+		.card-services{
+		margin: 3em 0 0;
+	}
 
 	.btn-default:hover::before{
 		transform: translate(-12px, -50%);
@@ -7130,6 +7133,7 @@ border-bottom: 1px solid var(--divider-color);
 	.our-pricing-nav.style3 ul li{
 		    flex-basis: inherit;
 	}
+
 .hero-image-style2{
 	border-radius: 20px;
 	    padding: 50px 0;
