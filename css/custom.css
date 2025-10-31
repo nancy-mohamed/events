@@ -667,8 +667,11 @@ body{
 }
 
 header.main-header{
-   position: relative;
-	z-index: 100;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px -2px rgba(16, 24, 40, .1), 0 2px 4px -2px rgba(16, 24, 40, .06);
 }
 header.main-header.custom-style{
 	position: absolute;
@@ -699,10 +702,13 @@ header.main-header .header-sticky.active{
 }
 
 .navbar{
-	padding: 10px 0;
+	padding:  0;
 	align-items: center;
 }
-
+.navbar-brand img {
+    width: 200px;
+    height: 70px;
+}
 .navbar-brand{
 	padding: 0;
 	margin: 0;
@@ -721,19 +727,51 @@ header.main-header .header-sticky.active{
 }
 
 .main-menu ul li{
-	margin: 0;
-	position: relative;
+    margin: 0;
+    position: relative;
+    border-radius: 4px;
+    padding: 25px 16px;
 }
-
+.main-menu ul li:hover, .main-menu ul li:focus {
+    color: var(--accent-color);
+    background: #f3f4f6;
+}
+.main-menu ul li.active {
+    background: var(--accent-secondary-color);
+}
 .main-menu ul li a{
-	font-family: var(--accent-font);
-	font-size: 16px;
-	font-weight: 600;
-	line-height: 1em;
-	padding: 17px 15px !important;
-	color: var(--text-color);
-	text-transform: capitalize;
-	transition: all 0.3s ease-in-out;
+    font-family: var(--accent-font);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1em;
+    padding: 0 !important;
+    color: var(--text-color);
+    text-transform: capitalize;
+    transition: all 0.3s 
+ease-in-out;
+}
+.main-menu ul li.active a {
+    color: #fff;
+}
+.main-menu ul li::before {
+    background-color: transparent;
+    border-radius: 99px;
+    bottom: 0;
+    content: "";
+    height: 6px;
+    left: 6px;
+    position: absolute;
+    right: 6px;
+    transition: opacity .3s 
+ease, background-color .3s 
+ease;
+    z-index: 1;
+}
+.main-menu ul li:hover::before {
+    background-color: #9da4ae;
+}
+.main-menu ul li.active:before {
+    background-color: #54c08a;
 }
 .main-header.custom-style .main-menu ul li a{
 	color: #fff;
@@ -748,7 +786,7 @@ header.main-header .header-sticky.active{
 
 .main-menu ul li a:hover,
 .main-menu ul li a:focus{
-	color: var(--accent-color);
+	color: var(--primary-color);
 }
 
 .main-menu ul ul{
@@ -5529,16 +5567,88 @@ list-style: none;
     /* margin-top:-140px; */
    z-index: 10;
 }
+.fullscreen {
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	padding: 80px 0 0;
+    min-height: 100vh;
+}
+/*== Scroll Down Arrow ==*/
+.scroll-down-arrow {
+  position: absolute;
+  z-index: 3;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -16px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 20px;
+  text-align: center;
+  color: #000;
+}
+
+.scroll-down-arrow.bounce {
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@-webkit-keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
+}
+
 .method-login{
-    width: 100%;
+     width: 100%;
     border-radius: 12px;
     position: relative;
-    display: block;
-    padding: 30px 20px;
+    display: flex;
+	    flex-direction: column;
+    justify-content: space-evenly;
+    padding:  20px;
     background: #fff;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.0392156862745098);
+    box-shadow: 0 0 40px 5px rgb(0 0 0 / 5%);
     overflow: hidden;
     z-index: 0;
+    min-height: 280px;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 .method-login::before {
     content: '';
@@ -5553,12 +5663,15 @@ list-style: none;
     height: 5px;
     transition: all 0.4s ease-in-out;
 }
+.method-login:hover{
+	transform: translateY(-10px);
+}
 .method-login:hover:before {
     height: 100%;
 }
 .method-login h3{
     font-size: 20px;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     font-weight: 600;
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -5572,7 +5685,6 @@ list-style: none;
 }
 .method-login .icon-box{
     position: absolute;
-    background: #fff;
     /* height: 70px; */
     /* display: flex
 ; */
@@ -5582,12 +5694,12 @@ list-style: none;
     /* border-radius: 50%; */
     bottom: -5px;
     left: 10px;
-    opacity: 0.3;
-    z-index: -1;
+    opacity: 0.2;
+    /* z-index: -1; */
 }
 .method-login .icon-box img{
     width: auto;
-    height: 80px;
+    height: 120px;
 }
 
 /* .method-login .login-content{
@@ -5632,6 +5744,14 @@ list-style: none;
 .method-login:hover .login-btn{
     color: var(--white-color) !important;
 }
+.method-login:hover .icon-box{
+	opacity: 0.5;
+}
+.method-login:hover .icon-box img{
+    filter: brightness(0) invert(1);
+}
+
+
 
 /************************************/
 /***      33. Responsive css      ***/
@@ -5931,11 +6051,6 @@ border-bottom: 1px solid var(--divider-color);
 	.topbar-contact-info ul li img{
 		max-width: 18px;
 	}
-
-	.navbar{
-		padding: 20px 0;
-	}
-
 	.slicknav_nav li,
 	.slicknav_nav ul{
         display: block;
@@ -7124,6 +7239,9 @@ border-bottom: 1px solid var(--divider-color);
 	.file-links li{
 		  flex: 0 0 24%;
 	}
+	.method-login{
+		min-height:169px ;
+	}
 }
 @media only screen and (max-width: 767px){
 
@@ -7133,7 +7251,22 @@ border-bottom: 1px solid var(--divider-color);
 	.our-pricing-nav.style3 ul li{
 		    flex-basis: inherit;
 	}
-
+	.navbar-brand img {
+    width: 150px;
+    height: 50px;
+}
+.method-login .icon-box img {
+    height: 90px;
+}
+.scroll-down-arrow{
+	bottom: -54px;
+}
+.method-login{
+	min-height: 210px;
+}
+header.main-header{
+	position: relative;
+}
 .hero-image-style2{
 	border-radius: 20px;
 	    padding: 50px 0;

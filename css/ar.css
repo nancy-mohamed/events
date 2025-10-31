@@ -1,46 +1,46 @@
 @font-face {
-  font-family: 'Tajawal-Black';
+  font-family: 'IBMPlexSansArabic-Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-Black'), url('../webfonts/Tajawal/Tajawal-Black.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-Regular'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Regular.ttf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Tajawal-Bold';
+  font-family: 'IBMPlexSansArabic-SemiBold';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-Bold'), url('../webfonts/Tajawal/Tajawal-Bold.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-SemiBold'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-SemiBold.ttf') format('opentype');
 }
 
 @font-face {
-  font-family: 'Tajawal-ExtraBold';
+  font-family: 'IBMPlexSansArabic-Bold';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-ExtraBold'), url('../webfonts/Tajawal/Tajawal-ExtraBold.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-Bold'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Bold.ttf') format('opentype');
 }
 @font-face {
-  font-family: 'Tajawal-ExtraLight';
+  font-family: 'IBMPlexSansArabic-ExtraLight';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-ExtraLight'), url('../webfonts/Tajawal/Tajawal-ExtraLight.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-ExtraLight'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-ExtraLight.ttf') format('opentype');
 }
 @font-face {
-  font-family: 'Tajawal-Light';
+  font-family: 'IBMPlexSansArabic-Light';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-Light'), url('../webfonts/Tajawal/Tajawal-Light.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-Light'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Light.ttf') format('opentype');
 }
 @font-face {
-  font-family: 'Tajawal-Medium';
+  font-family: 'IBMPlexSansArabic-Medium';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-Medium'), url('../webfonts/Tajawal/Tajawal-Medium.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-Medium'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Medium.ttf') format('opentype');
 }
 @font-face {
-  font-family: 'Tajawal-Regular';
+  font-family: 'IBMPlexSansArabic-Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Tajawal-Regular'), url('../webfonts/Tajawal/Tajawal-Regular.ttf') format('opentype');
+  src: local('IBMPlexSansArabic-Regular'), url('../webfonts/IBM_Plex_Sans_Arabic/IBMPlexSansArabic-Regular.ttf') format('opentype');
 }
 body{
     direction: rtl;
@@ -49,7 +49,7 @@ body{
     direction: ltr;
 }
 body , h1 , h2 , h3 , h4 , h5 , a , p , span , label , input, button{
-    font-family: 'Tajawal-Regular' !important;
+    font-family: 'IBMPlexSansArabic-Regular' !important;
     font-style: normal;
     text-align: right;
 }

@@ -80,7 +80,7 @@
 					slidesPerView: 3,
 				},
 				1024:{
-					slidesPerView: 4,
+					slidesPerView: 3,
 				}
 			}
 		});
@@ -402,4 +402,17 @@
 })(jQuery);
  $(document).on("click", ".how_work", function() {
 	 $(this).siblings(".extra").slideToggle(); 
+ });
+$(document).ready(function() {
+  $('.smooth-scroll').on('click', function(e) {
+    e.preventDefault();
+    
+    // Get target section from href attribute
+    const target = $(this).attr('href');
+
+    // Animate scrolling
+    $('html, body').animate({
+      scrollTop: $(target).offset().top
+    }, 800); // 800ms = smooth scroll speed
+  });
 });
