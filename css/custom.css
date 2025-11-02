@@ -682,6 +682,7 @@ header.main-header .header-sticky{
 	position: relative;
 	top: 0;
 	z-index: 100;
+	background: #fff;
 }
 
 header.main-header .header-sticky.hide{
@@ -5567,6 +5568,13 @@ list-style: none;
     /* margin-top:-140px; */
    z-index: 10;
 }
+.our-login .bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    width: 750px;
+}
 .fullscreen {
     display: flex
 ;
@@ -5643,6 +5651,7 @@ list-style: none;
     justify-content: space-evenly;
     padding:  20px;
     background: #fff;
+	border: 1px solid #eee;
     box-shadow: 0 0 40px 5px rgb(0 0 0 / 5%);
     overflow: hidden;
     z-index: 0;
@@ -5699,7 +5708,7 @@ list-style: none;
 }
 .method-login .icon-box img{
     width: auto;
-    height: 120px;
+    height: 100px;
 }
 
 /* .method-login .login-content{
@@ -6007,6 +6016,14 @@ border-bottom: 1px solid var(--divider-color);
     background: #fff;
     width: fit-content;
     margin: -55px auto 0;
+}
+.vector-main{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 900px;
+    opacity: 0.2;
+    bottom: 0;
 }
 @media only screen and (max-width: 1800px){
 
