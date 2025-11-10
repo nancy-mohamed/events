@@ -63,9 +63,9 @@ body , h1 , h2 , h3 , h4 , h5 , a , p , span , label , input, button{
     margin-right: 8px;
     margin-left: 0;
 }
-.btn-default{
+/* .btn-default{
     padding: 17px 20px 17px 54px;
-}
+} */
 .btn-default::before{
     left: 0;
     right: inherit;
@@ -86,7 +86,7 @@ body , h1 , h2 , h3 , h4 , h5 , a , p , span , label , input, button{
 }
 
 
-.readmore-btn{
+/* .readmore-btn{
     padding-left: 32px;
     padding-right: 0;
 }
@@ -94,7 +94,7 @@ body , h1 , h2 , h3 , h4 , h5 , a , p , span , label , input, button{
 left: 0;
 right: inherit;
 transform: translate(-2px, -50%) rotate(180deg);
-}
+} */
 .section-title h3{
     padding-right: 18px;
     padding-left: 0;
