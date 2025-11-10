@@ -1742,20 +1742,51 @@ ease;
 .services-pagination{
 	position: relative;
 	text-align: center;
-	margin-top: 60px;
+	display: flex;
 }
 
 .services-pagination .swiper-pagination-bullet{
-    height: 10px;
-    width: 10px;
-    background: var(--secondary-color);
+    height: 15px;
+    width: 15px;
+    background:#e5e7eb;
     opacity: 1;
     margin: 0 3px;
     transition: all 0.4s ease-in-out;
 }
-
+.services-btn {
+	display: flex;
+	gap: 10px;
+}
+.services-btn .services-button-next, .services-btn .services-button-prev {
+    position: relative;
+background: #f9fafb;
+width: 34px;
+height: 34px;
+border-radius: 50%;
+    transition: all 0.4s 
+ease-in-out;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 18px;
+}
+.services-btn .services-button-next::before, .services-btn .services-button-prev::before {
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s 
+ease-in-out;
+font-family: 'bootstrap-icons';
+}
+ .services-btn .services-button-prev::before{
+	content:'\F284';
+}
+ .services-btn .services-button-next::before{
+	content:'\F285';
+}
 .services-pagination .swiper-pagination-bullet-active{
-    background: var(--accent-color);
+    background: var(--accent-secondary-color);
 }
 
 .section-footer-text{
@@ -5840,7 +5871,7 @@ list-style: none;
 	text-align: center;
 	z-index: 1;
 }
-.file-links li a::before {
+/* .file-links li a::before {
     content: '';
     position: absolute;
     left: 0;
@@ -5855,8 +5886,9 @@ list-style: none;
 .file-links li a:hover::before {
     height: 100%;
     border-radius: 0;
-}
+} */
 .file-links li a:hover{
+	background: #f9fafb;
 		color: var(--accent-secondary-color);
 }
 .file-links li a span{

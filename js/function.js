@@ -64,6 +64,10 @@
 			speed: 1000,
 			spaceBetween: 20,
 			loop: true,
+			navigation: {
+				nextEl: '.services-button-next',
+				prevEl: '.services-button-prev',
+			},
 			// autoplay: {
 			// 	delay: 5000,
 			// },
@@ -92,7 +96,7 @@
 			slidesPerView : 1,
 			speed: 1000,
 			spaceBetween: 30,
-			loop: true,
+			loop: false,
 			autoplay: {
 				delay: 5000,
 			},
