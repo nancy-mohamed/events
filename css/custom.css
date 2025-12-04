@@ -755,7 +755,7 @@ header.main-header .header-sticky.active{
     color: #158285;
     font-weight: 400;
     font-family: IBMPlexSansArabic-Medium !important;
-    letter-spacing: 39px;
+    /* letter-spacing: 39px; */
     line-height: 16px;
     border-right: 2px solid #d5cfcf;
     padding-right: 14px;
