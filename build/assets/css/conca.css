@@ -2617,4 +2617,139 @@ button {
 select.form-control{
   appearance: auto !important;
 }
+
+/* ── Course Detail Tabs ── */
+.course-tabs {
+  border-bottom: 1.5px solid var(--clr-border-gray);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 0;
+}
+.course-tabs::-webkit-scrollbar {
+  display: none;
+}
+.course-tabs .nav-item {
+  flex-shrink: 0;
+}
+.course-tabs .nav-link {
+  padding: 12px 16px;
+  color: var(--clr-text-custom-body);
+  background-color: transparent !important;
+  border: none !important;
+  border-bottom: 2.5px solid transparent !important;
+  border-radius: 0 !important;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-bottom: -1.5px;
+  outline: none;
+  box-shadow: none !important;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.course-tabs .nav-link:hover,
+.course-tabs .nav-link:focus {
+  color: var(--bs-primary);
+  border-bottom-color: transparent !important;
+  background-color: transparent !important;
+}
+.course-tabs .nav-link.active,
+.course-tabs .nav-item.show .nav-link {
+  color: var(--bs-primary);
+  background-color: transparent !important;
+  border-bottom: 2.5px solid var(--bs-primary) !important;
+  font-weight: 600;
+}
+
+/* ── Attendance filter pill buttons ── */
+.attendance-filter {
+  border-radius: 20px !important;
+  font-size: 13px;
+}
+
+/* ── Tab pane layout helpers ── */
+.tab-section {
+  margin-bottom: 1rem;
+}
+.tab-section.border-bottom {
+  border-bottom: 1px solid var(--clr-border-gray) !important;
+}
+
+/* Light gray note/callout block inside a tab section */
+.tab-note {
+  background-color: #E4EEF8;
+  border-radius: 0.625rem;
+  padding: 1rem 1.25rem;
+}
+
+/* Bordered item box (exam card, session row, accordion item) */
+.tab-item-box {
+  border: 1px solid var(--clr-border-gray);
+  border-radius: 0.625rem;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+      background: #F5FAFF;
+}
+
+.tab-item-box:last-child {
+  margin-bottom: 0;
+}
+
+/* Mini stat box inside attendance filter section */
+.tab-stat-box {
+  border: 1px solid var(--clr-border-gray);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.5rem;
+}
+
+/* ── Overview pane ── */
+.course-steps {
+  margin: 0;
+  padding-right: 1.1rem;
+  padding-left: 0;
+}
+.course-steps li {
+font-size: 15px;
+    color: var(--clr-text-custom-body);
+    padding: 0.2rem 0;
+    line-height: 1.65;
+}
+/* .course-steps li:not(:last-child) {
+  border-bottom: 1px solid var(--clr-border-gray);
+} */
+
+.course-meta-label {
+  font-size: 13px;
+  color: var(--clr-text-custom-body);
+}
+.course-meta-value {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* inline label : value row (overview info section) */
+.course-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0;
+  /* border-bottom: 1px solid var(--clr-border-gray); */
+}
+.course-info-row:last-of-type {
+  border-bottom: none;
+}
+.tab-border{
+      border-radius: 0.625rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid #ddd;
+}
+/* ── Material file card (one card per material item in the bag tab) ── */
+.material-file-card {
+  border: 1px solid var(--clr-border-gray);
+  border-radius: 0.625rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bs-body-bg, #fff);
+}
+
 /*# sourceMappingURL=conca.css.map */

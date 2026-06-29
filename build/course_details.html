@@ -647,9 +647,806 @@
                           
 
                       
-                            <div class="row">
-                                //Todo Write here 
+                            <!-- Course Detail Tabs -->
+                            <div class="col-12 mt-3">
+                                <div class="card shadow-custom rounded-custom overflow-hidden">
+                                <div class="card-body">
+
+                                <ul class="nav course-tabs px-3 mb-5" id="courseDetailTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active fw-medium" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-pane" type="button" role="tab">نظرة عامة</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link fw-medium" id="materials-tab" data-bs-toggle="tab" data-bs-target="#materials-pane" type="button" role="tab">الحقيبة التعليمية</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link fw-medium" id="attendance-tab" data-bs-toggle="tab" data-bs-target="#attendance-pane" type="button" role="tab">الحضور</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link fw-medium" id="survey-tab" data-bs-toggle="tab" data-bs-target="#survey-pane" type="button" role="tab">الاستبيان</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link fw-medium" id="exams-tab" data-bs-toggle="tab" data-bs-target="#exams-pane" type="button" role="tab">الاختبارات</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link fw-medium" id="certificates-tab" data-bs-toggle="tab" data-bs-target="#certificates-pane" type="button" role="tab">الشهادات</button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="courseDetailTabsContent">
+
+                                    <!-- ===== EXAMS TAB ===== -->
+                                    <div class="tab-pane fade" id="exams-pane" role="tabpanel">
+                                        <!-- Policy note -->
+                                        <div class="tab-section border-bottom">
+                                            <div class="tab-note">
+                                                <h6 class="fw-bold mb-2 fz-14px">سياسة المحاولات</h6>
+                                                <ul class="mb-0 fz-13px text-custom-body">
+                                                    <li>يحق لك محاولتان فقط لكل اختبار، وتُعتمد الدرجة الأعلى من المحاولتين كنتيجة نهائية.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Exam - Locked -->
+                                        <div class="tab-section" id="exam-card-locked">
+                                            <div class="tab-item-box">
+                                                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                                                    <span class="badge bg-secondary">الاختبار النهائي</span>
+                                                    <span class="badge bg-danger d-flex align-items-center gap-1">
+                                                        <i class="bi bi-lock-fill"></i> مقفل
+                                                    </span>
+                                                </div>
+                                                <h6 class="fw-bold mb-3">اختبار العقود العقارية</h6>
+                                                <div class="d-flex align-items-center gap-4 text-custom-body fz-13px mb-3 flex-wrap">
+                                                    <span><i class="bi bi-clock me-1"></i>60 د</span>
+                                                    <span><i class="bi bi-calendar me-1"></i>15/05/2026</span>
+                                                    <span><i class="bi bi-arrow-repeat me-1"></i>محاولات متبقية: 0/2</span>
+                                                </div>
+                                                <div class="alert alert-danger d-flex align-items-start gap-2 mb-0 py-2 px-3" role="alert">
+                                                    <i class="bi bi-lock-fill flex-shrink-0 mt-1"></i>
+                                                    <span class="fz-13px">مقفل: يجب إرسال استبيان تقييم الدورة أولاً لفتح الاختبار النهائي.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Exam - Unlocked (shown after survey submit) -->
+                                        <div class="tab-section d-none" id="exam-card-unlocked">
+                                            <div class="tab-item-box">
+                                                <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+                                                    <span class="badge bg-secondary">الاختبار النهائي</span>
+                                                    <span class="badge bg-success d-flex align-items-center gap-1">
+                                                        <i class="bi bi-unlock-fill"></i> مفعل
+                                                    </span>
+                                                </div>
+                                                <h6 class="fw-bold mb-3">اختبار العقود العقارية</h6>
+                                                <div class="d-flex align-items-center gap-4 text-custom-body fz-13px mb-3 flex-wrap">
+                                                    <span><i class="bi bi-clock me-1"></i>60 د</span>
+                                                    <span><i class="bi bi-calendar me-1"></i>15/05/2026</span>
+                                                    <span><i class="bi bi-arrow-repeat me-1"></i>محاولات متبقية: 0/2</span>
+                                                </div>
+                                                <button class="btn btn-primary w-100">بدأ الامتحان</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ===== SURVEY TAB ===== -->
+                                    <div class="tab-pane fade" id="survey-pane" role="tabpanel">
+                                        <!-- Header + note -->
+                                        <div class="tab-section border-bottom">
+                                            <h6 class="fw-bold mb-1 fz-14px">استبيان تقييم الدورة</h6>
+                                            <p class="text-custom-body fz-13px mb-3">مساهمتك تساعدنا على تحسين جودة التدريب. الحقول المعلّمة بـ * مطلوبة.</p>
+                                            <div class="tab-note">
+                                                <h6 class="fw-bold mb-2 fz-13px">ملاحظة هامة قبل البدء بالتقييم</h6>
+                                                <p class="text-custom-body fz-13px mb-0">لا يمكن تعبئة استبيان التقييم إلا بعد إكمال جميع جلسات الحضور، ويجب إرساله قبل فتح الاختبار النهائي. بعد إرسال التقييم سيتم تفعيل الاختبار تلقائياً.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Requirements - Locked -->
+                                        <div class="tab-section border-bottom" id="survey-req-locked">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="fw-bold mb-0 fz-14px">حالة المتطلبات</h6>
+                                                <span class="text-custom-body fz-13px">0/2 خطوات</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <span class="fz-13px">١. إكمال جلسات الحضور</span>
+                                                    <span class="fz-13px text-custom-body">75% | 3/4</span>
+                                                </div>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-primary" style="width: 75%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="bi bi-lock-fill text-muted fz-13px"></i>
+                                                <span class="fz-13px text-muted">٢. إرسال استبيان التقييم</span>
+                                                <span class="badge bg-danger ms-auto" style="font-size: 11px;">مقفل</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Locked warning -->
+                                        <div class="tab-section" id="survey-locked-warning">
+                                            <div class="tab-item-box" style="border-color: var(--bs-danger-border-subtle, #f1aeb5);">
+                                                <div class="d-flex align-items-start gap-2">
+                                                    <i class="bi bi-lock-fill text-danger flex-shrink-0 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="fw-bold text-danger mb-1 fz-14px">الاستبيان مقفل حالياً</h6>
+                                                        <p class="fz-13px text-custom-body mb-1">يجب إكمال جميع جلسات الحضور لتتمكن من تعبئة استبيان تقييم الدورة.</p>
+                                                        <p class="fz-13px text-custom-body mb-1">تقدّم الحضور: 3/4</p>
+                                                        <div class="progress" style="height: 6px; max-width: 200px;">
+                                                            <div class="progress-bar bg-primary" style="width: 75%;"></div>
+                                                        </div>
+                                                        <p class="fz-13px text-muted mt-1 mb-0">جلسات لم تبدأ بعد: 1</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Requirements - Unlocked -->
+                                        <div class="tab-section border-bottom d-none" id="survey-req-unlocked">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="fw-bold mb-0 fz-14px">حالة المتطلبات</h6>
+                                                <span class="text-custom-body fz-13px">1/2 خطوات</span>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <span class="fz-13px">١. إكمال جلسات الحضور</span>
+                                                    <span class="fz-13px text-custom-body">100% | 4/4</span>
+                                                </div>
+                                                <div class="progress" style="height: 6px;">
+                                                    <div class="progress-bar bg-success" style="width: 100%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <i class="bi bi-unlock-fill text-success fz-13px"></i>
+                                                <span class="fz-13px">٢. إرسال استبيان التقييم</span>
+                                                <span class="badge bg-success ms-auto" style="font-size: 11px;">مفتوح</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Survey available -->
+                                        <div class="tab-section d-none" id="survey-available-card">
+                                            <div class="tab-item-box" style="border-color: var(--bs-success-border-subtle, #a3cfbb);">
+                                                <div class="d-flex align-items-center gap-2 mb-2">
+                                                    <i class="bi bi-unlock-fill text-success"></i>
+                                                    <h6 class="fw-bold mb-0 fz-14px">استبيان تقييم الدورة</h6>
+                                                </div>
+                                                <p class="fz-13px text-custom-body mb-3">ساعدنا في تحسين تجربة التعلم من خلال مشاركة رأيك.</p>
+                                                <div class="d-flex align-items-center gap-3 fz-13px text-custom-body mb-3 flex-wrap">
+                                                    <span><i class="bi bi-list-ul me-1"></i>15 سؤال</span>
+                                                    <span><i class="bi bi-clock me-1"></i>3 دقائق</span>
+                                                    <span><i class="bi bi-calendar me-1"></i>متاح حتى: 31-03-2026</span>
+                                                </div>
+                                                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#surveyModal">
+                                                    <i class="bi bi-send me-1"></i> بدأ الاستبيان
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Demo toggle -->
+                                        <div class="tab-section py-3 text-center">
+                                            <button class="btn btn-sm btn-outline-secondary" onclick="toggleSurveyState()" id="survey-demo-btn">
+                                                <i class="bi bi-arrow-repeat me-1"></i> عرض حالة الاستبيان المفتوح (تجريبي)
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- ===== ATTENDANCE TAB ===== -->
+                                    <div class="tab-pane fade" id="attendance-pane" role="tabpanel">
+                                        <!-- Instructions -->
+                                        <div class="tab-section border-bottom">
+                                            <div class="tab-note">
+                                                <h6 class="fw-bold mb-3 fz-14px">إرشادات الحضور</h6>
+                                                <ul class="fz-13px text-custom-body mb-0">
+                                                    <li class="mb-1">يمكنك الانضمام للجلسة قبل بدايتها بـ 15 دقيقة.</li>
+                                                    <li class="mb-1">الوصول بعد بداية الجلسة يُحتسب تأخراً، والغياب الكامل يُسجَّل تلقائياً.</li>
+                                                    <li class="mb-1">يجب تحقيق نسبة حضور 75% فأكثر لاستحقاق الشهادة.</li>
+                                                    <li class="mb-0">في حال الاعتذار يجب إبلاغ الإشراف قبل يوم عمل واحد على الأقل.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Filter + Stats -->
+                                        <div class="tab-section border-bottom">
+                                            <div class="d-flex align-items-center gap-2 mb-4 flex-wrap">
+                                                <button class="btn btn-sm attendance-filter btn-outline-secondary" data-filter="all">الكل</button>
+                                                <button class="btn btn-sm attendance-filter btn-outline-secondary" data-filter="scheduled">مجدولة</button>
+                                                <button class="btn btn-sm attendance-filter btn-primary" data-filter="present">حاضر</button>
+                                                <button class="btn btn-sm attendance-filter btn-outline-secondary" data-filter="late">متأخر</button>
+                                                <button class="btn btn-sm attendance-filter btn-outline-secondary" data-filter="absent">غائب</button>
+                                            </div>
+                                            <div class="row g-3">
+                                                <div class="col-4">
+                                                    <div class="tab-stat-box text-center">
+                                                        <div class="course-meta-label mb-1">نسبة الحضور</div>
+                                                        <div class="fw-bold fs-6">67%</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="tab-stat-box text-center">
+                                                        <div class="course-meta-label mb-1">جلسات سابقة</div>
+                                                        <div class="fw-bold fs-6" id="prev-sessions-count">1</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="tab-stat-box text-center">
+                                                        <div class="course-meta-label mb-1">الجلسات القادمة</div>
+                                                        <div class="fw-bold fs-6" id="upcoming-count">0</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Sessions list -->
+                                        <div class="tab-section">
+                                            <div id="upcoming-section" class="d-none mb-4">
+                                                <h6 class="fw-bold mb-3 fz-14px">الجلسات القادمة</h6>
+                                                <div class="tab-item-box">
+                                                    <div class="d-flex align-items-center gap-3 fz-13px text-custom-body mb-3 flex-wrap">
+                                                        <span class="badge bg-secondary">محجوز</span>
+                                                        <span><i class="bi bi-calendar me-1"></i>06/05/2026</span>
+                                                        <span><i class="bi bi-clock me-1"></i>19:00</span>
+                                                        <span><i class="bi bi-hourglass-split me-1"></i>90 دقيقة</span>
+                                                    </div>
+                                                    <div class="d-flex gap-2 flex-wrap">
+                                                        <button class="btn btn-sm btn-outline-secondary fz-13px"><i class="bi bi-eye me-1"></i>التفاصيل</button>
+                                                        <button class="btn btn-sm btn-outline-secondary fz-13px"><i class="bi bi-check-circle me-1"></i>تأكيد الحضور</button>
+                                                        <button class="btn btn-sm btn-primary fz-13px"><i class="bi bi-play-fill me-1"></i>دخول</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="no-upcoming-section" class="mb-4">
+                                                <h6 class="fw-bold mb-2 fz-14px">الجلسات القادمة</h6>
+                                                <p class="text-custom-body fz-13px mb-0">لا توجد جلسات قادمة</p>
+                                            </div>
+
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h6 class="fw-bold mb-0 fz-14px">سجل الجلسات السابقة</h6>
+                                                <span class="text-custom-body fz-13px" id="past-sessions-label">(1/1)</span>
+                                            </div>
+
+                                            <div class="tab-item-box mb-2 attendance-item" data-status="present">
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                                    <div class="d-flex align-items-center gap-3 fz-13px text-custom-body flex-wrap">
+                                                        <span><i class="bi bi-calendar me-1"></i>06/05/2026</span>
+                                                        <span><i class="bi bi-clock me-1"></i>19:00</span>
+                                                        <span><i class="bi bi-hourglass-split me-1"></i>90 دقيقة</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="badge bg-success d-flex align-items-center gap-1"><i class="bi bi-person-check"></i>حاضر</span>
+                                                        <button class="btn btn-sm btn-outline-secondary fz-13px"><i class="bi bi-eye me-1"></i>التفاصيل</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-item-box mb-2 attendance-item d-none" data-status="late">
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                                    <div class="d-flex align-items-center gap-3 fz-13px text-custom-body flex-wrap">
+                                                        <span><i class="bi bi-calendar me-1"></i>06/05/2026</span>
+                                                        <span><i class="bi bi-clock me-1"></i>19:00</span>
+                                                        <span><i class="bi bi-hourglass-split me-1"></i>90 دقيقة</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="badge bg-warning text-dark d-flex align-items-center gap-1"><i class="bi bi-clock-history"></i>متأخر</span>
+                                                        <button class="btn btn-sm btn-outline-secondary fz-13px"><i class="bi bi-eye me-1"></i>التفاصيل</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="tab-item-box attendance-item d-none" data-status="absent">
+                                                <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                                                    <div class="d-flex align-items-center gap-3 fz-13px text-custom-body flex-wrap">
+                                                        <span><i class="bi bi-calendar me-1"></i>06/05/2026</span>
+                                                        <span><i class="bi bi-clock me-1"></i>19:00</span>
+                                                        <span><i class="bi bi-hourglass-split me-1"></i>90 دقيقة</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="badge bg-danger d-flex align-items-center gap-1"><i class="bi bi-person-x"></i>غائب</span>
+                                                        <button class="btn btn-sm btn-outline-secondary fz-13px"><i class="bi bi-eye me-1"></i>التفاصيل</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ===== MATERIALS TAB ===== -->
+                                    <div class="tab-pane fade" id="materials-pane" role="tabpanel">
+                                        <!-- Instructions -->
+                                        <div class="tab-section border-bottom">
+                                            <div class="tab-note">
+                                                <h6 class="fw-bold mb-3 fz-16x">تعليمات تصفّح المواد</h6>
+                                                <ul class="course-steps">
+                                                    <li class="mb-1">تُفتح المواد بالتسلسل: لا يمكن الانتقال لمادة جديدة قبل إكمال السابقة.</li>
+                                                    <li class="mb-1">يتم تحديث نسبة التقدّم في الدورة تلقائياً عند فتح كل مادة.</li>
+                                                    <li class="mb-0">يمكنك إعادة مراجعة أي مادة مكتملة في أي وقت.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Units Accordion -->
+                                        <div class="tab-section">
+                                            <!-- Unit 1 -->
+                                            <div class="tab-item-box mb-2">
+                                                <button class="btn w-100 justify-content-between d-flex align-items-center p-0 border-0 bg-transparent fw-semibold fz-14px" type="button" data-bs-toggle="collapse" data-bs-target="#unit1Collapse">
+                                                    <span>الوحدة الأولى : اساسيات الوساطة العقارية</span>
+                                                    <i class="bi bi-chevron-down text-muted"></i>
+                                                </button>
+                                                <div class="collapse" id="unit1Collapse">
+                                                    <div class="pt-3 fz-13px text-custom-body">لا توجد مواد متاحة في هذه الوحدة حتى الآن.</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Topic 2 -->
+                                            <div class="tab-item-box mb-2">
+                                                <button class="btn w-100 justify-content-between d-flex align-items-center p-0 border-0 bg-transparent fw-semibold fz-14px" type="button" data-bs-toggle="collapse" data-bs-target="#topic2Collapse" aria-expanded="true">
+                                                    <span>الموضوع الثاني : الوساطة العقارية</span>
+                                                  <i class="bi bi-chevron-up text-muted" id="topic2Icon"></i>
+                                                </button>
+                                                <div class="collapse show" id="topic2Collapse">
+                                                    <div class="pt-3">
+
+                                                        <!-- PDF - done -->
+                                                        <div class="material-file-card mb-2">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <i class="bi bi-check-circle-fill text-success fz-16px flex-shrink-0"></i>
+                                                                <div class="flex-fill">
+                                                                    <p class="fz-13px fw-medium mb-2 text-end">مفاهيم عن العقار-استخدامات العقارات</p>
+                                                                    <div class="d-flex align-items-center justify-content-between">
+                                                                        <button class="btn btn-sm btn-outline-secondary fz-12px" data-bs-toggle="modal" data-bs-target="#pdfModal">فتح</button>
+                                                                        <span class="badge bg-danger" style="font-size:11px;">PDF</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Video - done -->
+                                                        <div class="material-file-card mb-2">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <i class="bi bi-check-circle-fill text-success fz-16px flex-shrink-0"></i>
+                                                                <div class="flex-fill">
+                                                                    <p class="fz-13px fw-medium mb-2 text-end">خصائص الأصل العقاري-عناصر الإنتاج العقاري</p>
+                                                                    <div class="d-flex align-items-center justify-content-between">
+                                                                        <button class="btn btn-sm btn-outline-secondary fz-12px" data-bs-toggle="modal" data-bs-target="#videoModal">فتح</button>
+                                                                        <span class="badge bg-primary" style="font-size:11px;">فيديو</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Slides - not done -->
+                                                        <div class="material-file-card mb-2">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <i class="bi bi-dash-circle text-danger fz-16px flex-shrink-0"></i>
+                                                                <div class="flex-fill">
+                                                                    <p class="fz-13px fw-medium mb-2 text-end">عرض تقديمي — أنواع العقود</p>
+                                                                    <div class="d-flex align-items-center justify-content-between">
+                                                                        <button class="btn btn-sm btn-outline-secondary fz-12px">فتح</button>
+                                                                        <span class="badge bg-warning text-dark" style="font-size:11px;">شرائح</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- External link - locked -->
+                                                        <div class="material-file-card">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <i class="bi bi-lock-fill text-custom-body fz-16px flex-shrink-0"></i>
+                                                                <div class="flex-fill">
+                                                                    <p class="fz-13px text-custom-body mb-2 text-end">مرجع خارجي</p>
+                                                                    <div class="d-flex align-items-center justify-content-between">
+                                                                        <button class="btn btn-sm btn-outline-secondary fz-12px" disabled>فتح</button>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="badge bg-danger d-flex align-items-center gap-1" style="font-size:11px;"><i class="bi bi-lock-fill"></i>غير متاح</span>
+                                                                            <span class="badge bg-secondary" style="font-size:11px;">رابط</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Topic 3 -->
+                                            <div class="tab-item-box mb-2">
+                                                <button class="btn w-100 d-flex justify-content-between align-items-center p-0 border-0 bg-transparent fw-semibold fz-14px" type="button" data-bs-toggle="collapse" data-bs-target="#topic3Collapse">
+                                                    <span>الموضوع الثالث : التسويق والترويج العقاري</span>
+                                                    <i class="bi bi-chevron-down text-muted"></i>
+                                                </button>
+                                                <div class="collapse" id="topic3Collapse">
+                                                    <div class="pt-3 fz-13px text-custom-body">لا توجد مواد متاحة في هذا الموضوع حتى الآن.</div>
+                                                </div>
+                                            </div>
+
+                                          
+                                        </div>
+                                    </div>
+
+                                    <!-- ===== OVERVIEW TAB ===== -->
+                                    <div class="tab-pane fade show active" id="overview-pane" role="tabpanel">
+                                        <!-- Completion stages in a light card -->
+                                        <div class="tab-section">
+                                            <div class="tab-note">
+                                                <h6 class="fw-bold mb-3 fz-16x">مراحل إكمال الدورة</h6>
+                                                <ol class="course-steps">
+                                                    <li>حضور جميع الجلسات (75% فأكثر).</li>
+                                                    <li>فتح ومتابعة جميع المواد بالترتيب.</li>
+                                                    <li>تعبئة استبيان التقييم.</li>
+                                                    <li>اجتياز الاختبار النهائي.</li>
+                                                    <li>تنزيل الشهادة عند اكتمال المتطلبات.</li>
+                                                </ol>
+                                            </div>
+                                        </div>
+                                        <!-- Course info rows -->
+                                        <div class="tab-section">
+                                            <div class="tab-border">
+                                                <div class="course-info-row">
+                                                <span class="course-meta-label">البرنامج :</span>
+                                                <span class="course-meta-value">PATH-INV</span>
+                                            </div>
+                                            <div class="course-info-row">
+                                                <span class="course-meta-label">البداية :</span>
+                                                <span class="course-meta-value">01-03-2026</span>
+                                            </div>
+                                            <div class="course-info-row">
+                                                <span class="course-meta-label">النهاية :</span>
+                                                <span class="course-meta-value">31-03-2026</span>
+                                            </div>
+                                            <p class="fz-16px text-custom-body mb-0 mt-3">مدخل لفهم الاستثمار والعائد والمخاطر.</p>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <!-- ===== CERTIFICATES TAB ===== -->
+                                    <div class="tab-pane fade" id="certificates-pane" role="tabpanel">
+                                        <!-- Requirements -->
+                                        <div class="tab-section border-bottom">
+                                            <h6 class="fw-bold mb-3 fz-14px">متطلبات إصدار الشهادة</h6>
+                                            <ul class="list-unstyled mb-0">
+                                                <li class="d-flex align-items-start gap-2 mb-2 fz-13px">
+                                                    <i class="bi bi-check-circle-fill text-success flex-shrink-0 mt-1"></i>
+                                                    <span>إكمال 100% من المواد التعليمية.</span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 mb-2 fz-13px">
+                                                    <i class="bi bi-check-circle-fill text-success flex-shrink-0 mt-1"></i>
+                                                    <span>حضور 75% فأكثر من الجلسات.</span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 mb-2 fz-13px">
+                                                    <i class="bi bi-dash-circle text-danger flex-shrink-0 mt-1"></i>
+                                                    <span class="text-custom-body">اجتياز جميع الاختبارات بنجاح.</span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 mb-2 fz-13px">
+                                                    <i class="bi bi-dash-circle text-danger flex-shrink-0 mt-1"></i>
+                                                    <span class="text-custom-body">تعبئة استبيان التقييم.</span>
+                                                </li>
+                                                <li class="d-flex align-items-start gap-2 fz-13px">
+                                                    <i class="bi bi-dash-circle text-danger flex-shrink-0 mt-1"></i>
+                                                    <span class="text-custom-body">تصدر الشهادة تلقائياً برقم تحقق فريد ويمكن التحقق منها لاحقاً.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Certificate preview -->
+                                        <div class="tab-section">
+                                            <h6 class="fw-bold mb-3 fz-14px">شهادة الحضور</h6>
+                                            <div class="rounded-custom overflow-hidden d-flex align-items-center justify-content-center" style="min-height:180px; background: linear-gradient(135deg,#1a2f5a,#c8a84b);">
+                                                <div class="text-center text-white p-4">
+                                                    <div class="fw-bold mb-1" style="letter-spacing:2px; font-size:11px;">CERTIFICATE OF ACHIEVEMENT</div>
+                                                    <div class="my-2" style="font-size: 22px; font-weight: 300;">NAME &amp; FAMILY NAME</div>
+                                                    <div style="font-size:10px; opacity:.8;">شهادة حضور – برنامج تدريبي</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div><!-- tab-content end -->
+                                </div><!-- card-body end -->
+                                </div><!-- card end -->
+                            </div><!-- col-12 end -->
+
+                            <!-- ===== MODALS ===== -->
+
+                            <!-- Survey Modal -->
+                            <div class="modal fade" id="surveyModal" tabindex="-1" aria-hidden="true" dir="rtl">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0 pb-0">
+                                            <h5 class="modal-title fw-bold">الاستبيان</h5>
+                                            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body pt-2">
+                                            <!-- Questions View -->
+                                            <div id="survey-q-view">
+                                                <div class="d-flex align-items-center justify-content-between mb-1">
+                                                    <span class="text-muted fz-13px" id="survey-counter">السؤال 1 من 15</span>
+                                                </div>
+                                                <div class="progress mb-4" style="height: 4px;">
+                                                    <div class="progress-bar bg-primary" id="survey-bar" style="width: 6.67%;"></div>
+                                                </div>
+                                                <p class="fw-medium text-center mb-4" id="survey-q-text">سهولة التسجيل في منصة المعهد</p>
+                                                <div class="d-flex align-items-center justify-content-center gap-3 mb-4 flex-row-reverse" id="stars-container">
+                                                    <i class="bi bi-star survey-star" data-val="1" style="font-size:30px; cursor:pointer; color:#ccc;"></i>
+                                                    <i class="bi bi-star survey-star" data-val="2" style="font-size:30px; cursor:pointer; color:#ccc;"></i>
+                                                    <i class="bi bi-star survey-star" data-val="3" style="font-size:30px; cursor:pointer; color:#ccc;"></i>
+                                                    <i class="bi bi-star survey-star" data-val="4" style="font-size:30px; cursor:pointer; color:#ccc;"></i>
+                                                    <i class="bi bi-star survey-star" data-val="5" style="font-size:30px; cursor:pointer; color:#ccc;"></i>
+                                                </div>
+                                                <div class="d-flex gap-3">
+                                                    <button class="btn btn-primary flex-grow-1" id="survey-next-btn">
+                                                        <i class="bi bi-arrow-right me-1"></i> التالي
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary flex-grow-1" id="survey-prev-btn" disabled>
+                                                        السابق <i class="bi bi-arrow-left ms-1"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- Review View -->
+                                            <div id="survey-review-view" class="d-none">
+                                                <div class="d-flex align-items-center justify-content-between mb-2">
+                                                    <h6 class="fw-bold mb-0">راجع إجاباتك</h6>
+                                                </div>
+                                                <div class="progress mb-3" style="height: 4px;">
+                                                    <div class="progress-bar bg-primary" style="width: 100%;"></div>
+                                                </div>
+                                                <div id="review-list" style="max-height:340px; overflow-y:auto;"></div>
+                                                <div class="d-flex gap-3 mt-3">
+                                                    <button class="btn btn-primary flex-grow-1" id="submit-survey-btn">
+                                                        <i class="bi bi-send me-1"></i> إرسال الاستبيان
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary flex-grow-1" id="back-to-q-btn">
+                                                        السابق <i class="bi bi-arrow-left ms-1"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <!-- Survey Success Modal -->
+                            <div class="modal fade" id="surveySuccessModal" tabindex="-1" aria-hidden="true" dir="rtl">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body p-5 text-center">
+                                            <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:64px;height:64px;background:rgba(25,135,84,.1);">
+                                                <i class="bi bi-check-circle-fill text-success fs-3"></i>
+                                            </div>
+                                            <h5 class="fw-bold mb-2">شكراً على تقييمك!</h5>
+                                            <p class="text-custom-body fz-13px mb-4">تم إرسال الاستبيان بنجاح. سيتم تفعيل الاختبار النهائي قريباً.</p>
+                                            <button class="btn btn-primary w-100" id="close-success-btn">إغلاق</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PDF Modal -->
+                            <div class="modal fade" id="pdfModal" tabindex="-1" aria-hidden="true" dir="rtl">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h5 class="modal-title fw-bold">دليل العقود — ملف PDF</h5>
+                                            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body d-flex flex-column align-items-center justify-content-center py-5" style="min-height:220px;">
+                                            <i class="bi bi-file-earmark-pdf text-danger mb-3" style="font-size:64px;"></i>
+                                            <p class="text-muted fz-13px">سيتم عرض ملف PDF هنا</p>
+                                        </div>
+                                        <div class="modal-footer border-0 gap-3">
+                                            <button class="btn btn-primary flex-grow-1"><i class="bi bi-arrow-right me-1"></i>التالي</button>
+                                            <button class="btn btn-outline-secondary flex-grow-1" data-bs-dismiss="modal">السابق <i class="bi bi-arrow-left ms-1"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Video Modal -->
+                            <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true" dir="rtl">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h5 class="modal-title fw-bold">فيديو شرح بنود العقد</h5>
+                                            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body p-0 position-relative overflow-hidden" style="min-height:200px; background:#1a1a1a;">
+                                            <div class="d-flex align-items-center justify-content-center" style="min-height:200px;">
+                                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-white" style="width:56px;height:56px; cursor:pointer;">
+                                                    <i class="bi bi-play-fill fs-4 text-dark" style="margin-right:-3px;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer border-0 gap-3">
+                                            <button class="btn btn-primary flex-grow-1"><i class="bi bi-arrow-right me-1"></i>التالي</button>
+                                            <button class="btn btn-outline-secondary flex-grow-1" data-bs-dismiss="modal">السابق <i class="bi bi-arrow-left ms-1"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Detail Tabs JS -->
+                            <script>
+                            (function() {
+                                const surveyQuestions = [
+                                    'سهولة التسجيل في منصة المعهد',
+                                    'جودة المحتوى التعليمي المقدم',
+                                    'وضوح شرح المادة التدريبية',
+                                    'مدى ملاءمة المدة الزمنية للبرنامج التدريبي',
+                                    'جودة الوسائل والأدوات التعليمية المستخدمة',
+                                    'مستوى تنظيم وإدارة البرنامج التدريبي',
+                                    'مدى استجابة المدرب لاستفسارات المتدربين',
+                                    'جودة خدمات الدعم المقدمة للمتدربين',
+                                    'تنصح بهذا البرنامج التدريبي لمتدربين آخرين؟',
+                                    'تعاون وتجاوب فريق خدمة العملاء',
+                                    'هل ترى أن البرامج التدريبية المقدمة من المعهد العقاري السعودي قد تساعد في حصولك على التوظيف',
+                                    'هل ترى أن المعلومات الواردة في البرنامج التدريبي قد تساعدك في البرامج التدريبية القادمة',
+                                    'ما رأيك في نواتج التعلم المكتسبة من البرنامج التدريبي',
+                                    'كيف تقيّم طرق وأساليب واستراتيجيات التعلم التي تم تقديمها لك في البرنامج التدريبي',
+                                    'كيف تقيّم فاعلية أساليب القياس والتقويم و الاختبارات المطبّقة في البرنامج التدريبي'
+                                ];
+                                let curQ = 0;
+                                let answers = new Array(15).fill(0);
+
+                                function renderStars(rating, hover) {
+                                    const val = hover !== undefined ? hover : rating;
+                                    document.querySelectorAll('.survey-star').forEach((s, i) => {
+                                        const filled = i < val;
+                                        s.className = 'bi ' + (filled ? 'bi-star-fill' : 'bi-star') + ' survey-star';
+                                        s.style.color = filled ? '#FFC107' : '#ccc';
+                                    });
+                                }
+
+                                function updateQuestion() {
+                                    document.getElementById('survey-counter').textContent = 'السؤال ' + (curQ + 1) + ' من ' + surveyQuestions.length;
+                                    document.getElementById('survey-q-text').textContent = surveyQuestions[curQ];
+                                    document.getElementById('survey-bar').style.width = ((curQ + 1) / surveyQuestions.length * 100) + '%';
+                                    renderStars(answers[curQ]);
+                                    document.getElementById('survey-prev-btn').disabled = curQ === 0;
+                                    const nextBtn = document.getElementById('survey-next-btn');
+                                    if (curQ === surveyQuestions.length - 1) {
+                                        nextBtn.innerHTML = '<i class="bi bi-eye me-1"></i> مراجعة الإجابات';
+                                        nextBtn.onclick = showReview;
+                                    } else {
+                                        nextBtn.innerHTML = '<i class="bi bi-arrow-right me-1"></i> التالي';
+                                        nextBtn.onclick = nextQ;
+                                    }
+                                }
+
+                                function nextQ() { if (curQ < surveyQuestions.length - 1) { curQ++; updateQuestion(); } }
+                                function prevQ() { if (curQ > 0) { curQ--; updateQuestion(); } }
+
+                                function showReview() {
+                                    document.getElementById('survey-q-view').classList.add('d-none');
+                                    document.getElementById('survey-review-view').classList.remove('d-none');
+                                    const list = document.getElementById('review-list');
+                                    list.innerHTML = surveyQuestions.map((q, i) => {
+                                        const r = answers[i];
+                                        const stars = [1,2,3,4,5].map(j =>
+                                            '<i class="bi ' + (j <= r ? 'bi-star-fill' : 'bi-star') + '" style="color:' + (j <= r ? '#FFC107' : '#ccc') + ';font-size:14px;"></i>'
+                                        ).join('');
+                                        return '<div class="d-flex align-items-center justify-content-between py-2 border-bottom gap-2">' +
+                                            '<div class="d-flex align-items-start gap-2 flex-grow-1 min-w-0">' +
+                                            '<button class="btn btn-sm p-0 text-muted flex-shrink-0" onclick="editQ(' + i + ')"><i class="bi bi-pencil fz-13px"></i></button>' +
+                                            '<div class="min-w-0"><div class="fz-12px text-muted">السؤال ' + (i+1) + '</div><div class="fz-13px text-truncate">' + q + '</div></div>' +
+                                            '</div>' +
+                                            '<div class="d-flex gap-1 flex-shrink-0 ms-2">' + stars + '</div></div>';
+                                    }).join('');
+                                }
+
+                                window.editQ = function(i) {
+                                    curQ = i;
+                                    document.getElementById('survey-review-view').classList.add('d-none');
+                                    document.getElementById('survey-q-view').classList.remove('d-none');
+                                    updateQuestion();
+                                };
+
+                                document.getElementById('survey-prev-btn').addEventListener('click', prevQ);
+
+                                document.getElementById('back-to-q-btn').addEventListener('click', function() {
+                                    curQ = surveyQuestions.length - 1;
+                                    document.getElementById('survey-review-view').classList.add('d-none');
+                                    document.getElementById('survey-q-view').classList.remove('d-none');
+                                    updateQuestion();
+                                });
+
+                                document.getElementById('submit-survey-btn').addEventListener('click', function() {
+                                    bootstrap.Modal.getInstance(document.getElementById('surveyModal')).hide();
+                                    setTimeout(function() {
+                                        new bootstrap.Modal(document.getElementById('surveySuccessModal')).show();
+                                    }, 400);
+                                });
+
+                                document.getElementById('close-success-btn').addEventListener('click', function() {
+                                    bootstrap.Modal.getInstance(document.getElementById('surveySuccessModal')).hide();
+                                    // Unlock exam
+                                    document.getElementById('exam-card-locked').classList.add('d-none');
+                                    document.getElementById('exam-card-unlocked').classList.remove('d-none');
+                                    // Update survey tab state
+                                    document.getElementById('survey-req-locked').classList.add('d-none');
+                                    document.getElementById('survey-locked-warning').classList.add('d-none');
+                                    document.getElementById('survey-demo-btn').classList.add('d-none');
+                                });
+
+                                // Stars interaction
+                                const starsContainer = document.getElementById('stars-container');
+                                starsContainer.addEventListener('click', function(e) {
+                                    const star = e.target.closest('.survey-star');
+                                    if (star) { answers[curQ] = parseInt(star.dataset.val); renderStars(answers[curQ]); }
+                                });
+                                starsContainer.addEventListener('mouseover', function(e) {
+                                    const star = e.target.closest('.survey-star');
+                                    if (star) renderStars(answers[curQ], parseInt(star.dataset.val));
+                                });
+                                starsContainer.addEventListener('mouseleave', function() { renderStars(answers[curQ]); });
+
+                                // Reset survey on modal open
+                                document.getElementById('surveyModal').addEventListener('show.bs.modal', function() {
+                                    curQ = 0;
+                                    answers = new Array(15).fill(0);
+                                    document.getElementById('survey-q-view').classList.remove('d-none');
+                                    document.getElementById('survey-review-view').classList.add('d-none');
+                                    updateQuestion();
+                                });
+
+                                // Attendance filter
+                                document.querySelectorAll('.attendance-filter').forEach(function(btn) {
+                                    btn.addEventListener('click', function() {
+                                        document.querySelectorAll('.attendance-filter').forEach(function(b) {
+                                            b.classList.remove('btn-primary');
+                                            b.classList.add('btn-outline-secondary');
+                                        });
+                                        this.classList.remove('btn-outline-secondary');
+                                        this.classList.add('btn-primary');
+
+                                        const filter = this.dataset.filter;
+                                        const items = document.querySelectorAll('.attendance-item');
+
+                                        if (filter === 'all') {
+                                            items.forEach(function(it) { it.classList.remove('d-none'); });
+                                            document.getElementById('upcoming-section').classList.remove('d-none');
+                                            document.getElementById('no-upcoming-section').classList.add('d-none');
+                                            document.getElementById('prev-sessions-count').textContent = '3';
+                                            document.getElementById('upcoming-count').textContent = '1';
+                                            document.getElementById('past-sessions-label').textContent = '(2/3)';
+                                        } else {
+                                            document.getElementById('upcoming-section').classList.add('d-none');
+                                            document.getElementById('no-upcoming-section').classList.remove('d-none');
+                                            document.getElementById('upcoming-count').textContent = '0';
+                                            let count = 0;
+                                            items.forEach(function(it) {
+                                                if (it.dataset.status === filter) { it.classList.remove('d-none'); count++; }
+                                                else { it.classList.add('d-none'); }
+                                            });
+                                            document.getElementById('prev-sessions-count').textContent = count;
+                                            document.getElementById('past-sessions-label').textContent = '(' + count + '/' + count + ')';
+                                        }
+                                    });
+                                });
+
+                                // Survey demo toggle
+                                window.toggleSurveyState = function() {
+                                    const locked = document.getElementById('survey-req-locked');
+                                    const warning = document.getElementById('survey-locked-warning');
+                                    const unlocked = document.getElementById('survey-req-unlocked');
+                                    const available = document.getElementById('survey-available-card');
+                                    const btn = document.getElementById('survey-demo-btn');
+                                    const isLocked = !locked.classList.contains('d-none');
+                                    locked.classList.toggle('d-none', isLocked);
+                                    warning.classList.toggle('d-none', isLocked);
+                                    unlocked.classList.toggle('d-none', !isLocked);
+                                    available.classList.toggle('d-none', !isLocked);
+                                    btn.textContent = isLocked ? 'عرض حالة الاستبيان المقفل (تجريبي)' : 'عرض حالة الاستبيان المفتوح (تجريبي)';
+                                    btn.innerHTML = '<i class="bi bi-arrow-repeat me-1"></i>' + btn.textContent;
+                                };
+
+                                // Collapse icon toggle
+                                document.getElementById('topic2Collapse').addEventListener('show.bs.collapse', function() {
+                                    document.getElementById('topic2Icon').className = 'bi bi-chevron-up';
+                                });
+                                document.getElementById('topic2Collapse').addEventListener('hide.bs.collapse', function() {
+                                    document.getElementById('topic2Icon').className = 'bi bi-chevron-down';
+                                });
+                            })();
+                            </script>
                            
                       
                       
