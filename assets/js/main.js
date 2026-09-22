@@ -73,6 +73,17 @@ Version         : 1.0
             "<i class='far fa-long-arrow-left'></i>",
             "<i class='far fa-long-arrow-right'></i>"
         ],
+           responsive: {
+            0: {
+                 nav: false
+            },
+            600: {
+                nav: false
+            },
+            1000: {
+                nav: true
+            }
+        },
 
         onInitialized: function(event) {
         var $firstAnimatingElements = $('.owl-item').eq(event.item.index).find("[data-animation]");

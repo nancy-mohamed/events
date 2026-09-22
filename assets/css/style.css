@@ -1158,10 +1158,11 @@ label {
   }
 
   .header-top-social a {
-    width: 34px;
-    height: 34px;
-    line-height: 37px;
-    margin-left: 0;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        margin: 0 !important;
+        font-size: 13px;
   }
 
   .header-top-left {
@@ -2141,17 +2142,20 @@ label {
 
 @media all and (max-width: 991px) {
   .hero-single .hero-content .hero-title {
-    font-size: 50px;
+           font-size: 25px;
+        line-height: 40px;
+                margin: 10px 0;
   }
 }
 
 @media all and (max-width: 767px) {
    .hero-sub-title {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .hero-single .hero-content .hero-btn {
     gap: 1rem;
+    margin-top: 10px;
   }
 }
 
@@ -2545,11 +2549,7 @@ background: var(--color-white);
 }
 
 
-@media all and (max-width: 991px) {
-  .about-right {
-    margin-top: 80px;
-  }
-}
+
 
 @media all and (max-width: 767px) {
   .about-left{
@@ -3658,6 +3658,7 @@ width: 70px;
 @media (max-width: 991px) {
     .counter-area {
         padding: 45px 0 55px;
+            background-position: right;
 
         .counter-box {
             height: 140px;
@@ -3731,6 +3732,7 @@ width: 70px;
   position: relative;
 }
 .team-item{
+  height: 100%;
        transition: var(--transition);
     border-radius: 15px;
     padding: 40px 10px 20px;
@@ -6757,6 +6759,7 @@ content: "";
 @media all and (max-width: 991px) {
   .footer-widget-wrap {
     padding-bottom: 0px;
+    padding-top: 0;
   }
 
   .footer-list li a{
@@ -7226,7 +7229,92 @@ content: "";
     }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
+  .header-top-wrap{
+        padding-right: 0;
+        justify-content: center;
+  }
+  .header-top-list a , .header-top-lang .top-lang{
+    font-size: 12px;
+  }
+  .header-top-right{
+    gap: 7px;
+  }
+  .hero-sub-title img {
+    width: 40px !important;
+  }
+  .hero-single .hero-content p{
+    font-size: 14px;
+    line-height: 25px;
+            margin-bottom: 10px;
+  }
+  .theme-btn, .theme-btn2{
+    font-size: 12px;
+  }
+  .hero-slider .owl-dots{
+    bottom: 20px;
+  }
+  .feature-icon{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+ .view-all-btn{
+  margin: 10px  0 0;
+  font-size: 12px;
+ }
+  .hero-single{
+        padding-bottom: 60px;
+        padding-top: 100px;
+        height: auto;
+  }
+  .team-img img{
+    height: 60px;
+  }
+  .team-content h4 a{
+    font-size: 13px;
+  }
+  .team-content span {
+    font-size: 11px;
+    line-height: 19px;
+    display: block;
+}
+.py-100 {
+    padding: 30px 0;
+}
+.about-img img{
+  height: 300px;
+}
+
+
+.about-badge {
+      width: 150px;
+    height: 150px;
+    img {
+        width: 25px;
+                margin-bottom: 5px;
+    }
+        h5 {
+        font-size: 10px;
+    }
+        .about-badge-line {
+                  margin: 8px 0;
+        }
+        p{
+          font-size: 9px;
+        }
+}
+.about-badge-pattern{
+  margin-top: 1px;
+  span{
+    font-size: 15px;
+  }
+  i{
+            width: 10px;
+        height: 10px;
+        border: 1px solid var(--color-yellow);
+  }
+}
     .latest-listings-header {
         .section-heading {
             h2 {
@@ -7238,7 +7326,29 @@ content: "";
             }
         }
     }
-
+h5 {
+    font-size: 16px;
+}
+.header-top{
+  padding: 5px 0;
+}
+.site-title{
+      font-size: 20px;
+    margin-bottom: 10px;
+}
+.site-title-tagline{
+      font-size: 11px;
+    margin-bottom: 8px;
+}
+.blog-title{
+  font-size: 16px;
+}
+.footer-widget-box.about-us{
+  margin-right: 0;
+}
+.footer-area{
+      background-position: 99% 30%;
+}
     .listing-image {
         height: 200px;
     }
