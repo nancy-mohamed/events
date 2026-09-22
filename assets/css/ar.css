@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
+
+body{
+    font-family: "Alexandria", sans-serif;
+    direction: rtl;
+}
+h1 , h2 , h3 , h4 , h5 , h6,  p , button , a{
+        font-family: "Alexandria", sans-serif;
+}
+.hero-single{
+    direction: rtl;
+    text-align: right;
+}
+.owl-carousel{
+    direction: ltr;
+}
+.header-top .shape{
+    left: 0;
+    right: inherit;
+}
+.header-top .shape-1{
+        left: -50px;
+        right: inherit;
+         transform: skewX(-40deg);
+    border-left: 0;
+    border-right: 5px solid var(--color-white);
+    border-radius: 0 20px 0 0;
+}
+.header-top .shape-2{
+     left: inherit;
+    right: -30px;
+    transform: skewX(-40deg);
+    border-right: 0;
+    border-left: 5px solid var(--color-white);
+    border-radius: 0 0 0 20px;
+}
+.navbar::before{
+    right: 0;
+    left: inherit;
+}
+.header-top-list a i{
+    margin-left: 5px;
+    margin-right: 0;
+}
+.pe-0 {
+        padding-right: calc(var(--bs-gutter-x) * .8) !important;
+    padding-left: 0 !important;
+}
+.dropdown-toggle::after{
+   margin-right: .255em;
+   margin-left: 0;
+}
+.header-top-social a{
+     margin-right: 14px;
+   margin-left: 0;
+}
+@media (min-width: 992px) {
+ 
+        .nav-right {
+        margin-right: 45px;
+                 margin-left: 11em;
+    }
+}
+.navbar .dropdown-toggle::after{
+        margin-right: 5px;
+            margin-left: 0;
+}
+
+.hero-single::before {
+    left: auto;
+    right: -0.5px;
+    background: linear-gradient(
+        to bottom left,
+        rgba(6, 78, 90, 1) 0%,
+        rgba(6, 78, 90, 0) 100%
+    );
+}
+ .team-social-btn {
+        right: auto;
+        left: 11px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 50%;
+    }
+
+    .team-social-btn::before {
+        left: auto;
+        right: -18px;
+        box-shadow: -5px 5px 0 5px var(--color-white);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 50px;
+    }
+
+    .team-social-btn::after {
+        right: auto;
+        left: 6.5px;
+        box-shadow: -5px 5px 0 5px var(--color-white);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 50px;
+    }
+    .about-left{
+        margin-left: 40px;
+        margin-right: 0;
+    }
+    .service-item{
+        direction: rtl;
+        text-align: right;
+    }
+ .theme-btn i, .theme-btn2 i {
+    margin-right: 5px;
+    margin-left: 0;
+}
+.footer-widget-title::before{
+    right: 0;
+    left: inherit;
+}
+.footer-list li a i{
+    margin-left: 13px;
+    margin-right: 0;
+}
