@@ -1296,7 +1296,7 @@ label {
 @media all and (min-width: 992px) {
   .navbar .nav-item .nav-link {
     padding: 30px 0 30px 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--color-dark);
     text-transform: capitalize;
