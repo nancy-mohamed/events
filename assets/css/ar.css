@@ -131,3 +131,7 @@ h1 , h2 , h3 , h4 , h5 , h6,  p , button , a{
         right: 25px;
             left: inherit;
 }
+.navbar .offcanvas-header .btn-close{
+        margin-left: auto;
+    margin-right: auto;
+}
