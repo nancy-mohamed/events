@@ -1401,13 +1401,16 @@ label {
     top: 140%;
   }
 
+  .navbar .container-fluid {
+    margin-right: calc(100% - 92.5%);
+  }
   /* nav right */
   .nav-right {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin-left: 45px;
+    /* margin-left: 45px; */
   }
 
   .nav-right-link {
@@ -3032,55 +3035,83 @@ width: 70px;
 /* ===================
 26. Step/process css 
 ====================== */
-
-.process-item {
-  position: relative;
-  background: var(--color-white);
-  padding: 20px;
-  border-radius: 30px;
-  box-shadow: var(--box-shadow);
+.process-area{
+      background: #fffaf794;
+}
+.process-wrap .col-lg-4 {
+    position: relative;
 }
 
+.process-wrap .col-lg-4:not(:last-child)::after {
+      content: "";
+    position: absolute;
+    top: 50%;
+    left: -27px;
+    width: 55px;
+    height: 35px;
+    border-top: 3px dashed #c58a4b;
+    border-radius: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+    z-index: -1;
+}
+.process-item {
+    position: relative;
+        margin-top: 3em;   
+    background: var(--color-white);
+    padding: 30px 15px 20px;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    border: 1px solid #f6dcb9;
+    align-items: center;
+}
+.process-wrap .col-lg-4:nth-child(2) .process-item{
+  margin-top: 0;
+}
 .process-item .count{
-  display: block;
-  font-weight: 700;
-  color: var(--color-white);
-  font-size: 20px;
-  text-align: center;
-  background: var(--color-dark);
-  padding: 2px 6px;
-  border-radius: 50px 0 0 50px;
+     display: block;
+       font-weight: 600;
+    color: var(--color-white);
+    font-size: 20px;
+    text-align: center;
+    background: var(--color-dark);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    border-radius: 50px;
+    line-height: 45px;
+    border: 3px solid #f9e1c0;
 }
 
 .process-item .icon{
-  position: absolute;
-  right: -5px;
-  top: -8px;
-  width: 78px;
-  height: 78px;
-  line-height: 65px;
-  text-align: center;
-  background: var(--theme-color);
-  border: 5px solid var(--color-white);
-  border-radius: 50px;
+    width: 150px;
+    height: 150px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #fff5e9;
+    border-radius: 50%; */
 }
 
 .process-item .icon img{
-  width: 45px;
-  filter: brightness(0) invert(1);
+  width: 100%;
 }
 
 .process-item .content{
-  margin-top: 20px;
+ width: calc(100% - 150px);
 }
 
 .process-item .content h4{
   color: var(--color-dark);
+      font-size: 18px;
 }
 
 .process-item .content p{
   color: var(--body-text-color);
   margin-top: 10px;
+      font-size: 12px;
 }
 
 
@@ -7054,7 +7085,7 @@ content: "";
         transition: var(--transition);
 
         &:hover {
-            background: #e0aa6c;
+            background: #de2222;
             color: #fff;
         }
     }

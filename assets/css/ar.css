@@ -56,11 +56,15 @@ h1 , h2 , h3 , h4 , h5 , h6,  p , button , a{
    margin-left: 0;
 }
 @media (min-width: 992px) {
- 
+/*  
         .nav-right {
         margin-right: 45px;
                  margin-left: 11em;
-    }
+    } */
+      .navbar .container-fluid {
+    margin-left: calc(100% - 92.5%);
+    margin-right: 0;
+  } 
 }
 .navbar .dropdown-toggle::after{
         margin-right: 5px;
@@ -122,4 +126,8 @@ h1 , h2 , h3 , h4 , h5 , h6,  p , button , a{
     .about-left{
         margin-left: 0;
     }
+}
+.camel-step-card .step-number{
+        right: 25px;
+            left: inherit;
 }
