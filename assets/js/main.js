@@ -247,6 +247,9 @@ Version         : 1.0
         preloader: false,
         fixedContentPos: false
     });
+   $('.open-modal').magnificPopup({
+    type: 'inline'
+}); 
 
 
 
@@ -366,8 +369,10 @@ Version         : 1.0
     // flexslider
     if ($('.flexslider-thumbnails').length) {
         $('.flexslider-thumbnails').flexslider({
-            animation: "slide",
+              animation: "fade",
             controlNav: "thumbnails",
+        directionNav: true,
+        slideshow: false 
         });
     }
 

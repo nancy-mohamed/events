@@ -135,3 +135,51 @@ h1 , h2 , h3 , h4 , h5 , h6,  p , button , a{
         margin-left: auto;
     margin-right: auto;
 }
+.form-group .form-icon i{
+    right: 20px;
+    left: inherit;
+}
+.form-group .form-icon .form-control, .form-group .form-icon .form-select {
+    padding-right: 50px;
+    padding-left: 20px;
+}
+.auth-form .password-view i{
+        right: unset;
+    left: 20px;
+}
+.form-check .form-check-input {
+    float: right;
+    margin-right: -1.5em;
+    margin-left: 0;
+}
+.form-check{
+        padding-right: 1.5em;
+            padding-left: 0;
+}
+.theme-btn span, .theme-btn2 span {
+    margin-left: 5px;
+    margin-right: 0;
+}
+.shop-single-gallery{
+    direction: ltr;
+}
+.shop-single-gallery .flex-direction-nav .flex-prev {
+    left: 15px;
+    right: auto;
+}
+.shop-single-gallery .flex-direction-nav .flex-next {
+    right: 15px;
+    left: auto;
+}
+.form-select{
+        padding: .375rem .75rem .375rem 2.25rem;
+            background-position: left .75rem center;
+}
+.rating-summary {
+    border-right: 1px solid #e7dfd5;
+    border-left: none;
+    padding-left: 0;
+    padding-right: 25px;
+}
+
+
