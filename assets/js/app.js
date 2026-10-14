@@ -182,6 +182,58 @@
     });
   }
 
+  /* ---------- Department switcher (sidebar) ----------
+     Search filters the list; Ctrl+K or "تبديل الإدارة" in the account menu opens it. */
+  function bindDeptSwitcher() {
+    var btn = document.getElementById('btnDeptSwitch');
+    if (!btn) { return; }
+    var sidebar = document.getElementById('appSidebar');
+    var desktop = window.matchMedia('(min-width: 992px)');
+
+    function open() {
+      if (desktop.matches) {
+        $('body').removeClass('sidebar-collapsed');
+      } else {
+        bootstrap.Offcanvas.getOrCreateInstance(sidebar).show();
+      }
+      setTimeout(function () { bootstrap.Dropdown.getOrCreateInstance(btn).show(); }, desktop.matches ? 0 : 300);
+    }
+
+    $(btn).on('shown.bs.dropdown', function () {
+      $('#deptSwitchSearch').val('').trigger('input').trigger('focus');
+    });
+
+    $('#deptSwitchSearch').on('input', function () {
+      var query = $.trim($(this).val());
+      var shown = 0;
+      $('.dept-switch__item').each(function () {
+        var match = matches($(this), query);
+        $(this).toggleClass('d-none', !match);
+        if (match) { shown++; }
+      });
+      $('.dept-switch__empty').toggleClass('d-none', shown > 0);
+    }).on('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        var first = $('.dept-switch__item:not(.d-none)')[0];
+        if (first) { first.click(); }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        $('.dept-switch__item:not(.d-none)').first().trigger('focus');
+      }
+    });
+
+    $(document).on('click', '[data-dept-switch-open]', function (e) {
+      e.preventDefault();
+      open();
+    }).on('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        open();
+      }
+    });
+  }
+
   window.App = {
     numberFormat: numberFormat,
     fromTemplate: fromTemplate,
@@ -196,6 +248,7 @@
     bindTabLinks();
     bindTheme();
     bindFullscreen();
+    bindDeptSwitcher();
     $('#footerYear').text(new Date().getFullYear());
   });
 })(jQuery);
