@@ -39,6 +39,82 @@
       </div>
 
       <div class="px-3 pt-3">
+        <div class="dropdown dept-switch">
+          <button type="button" class="dept-switch__btn dept--navy w-100 d-flex align-items-center gap-2" id="btnDeptSwitch" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="تبديل الإدارة">
+            <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
+            <span class="flex-grow-1 min-w-0 text-start">
+              <span class="d-block dept-switch__label">الإدارة الحالية</span>
+              <span class="d-block fw-semibold text-truncate dept-switch__name">إدارة تطوير البرامج</span>
+            </span>
+            <i class="ph ph-caret-up-down app-muted"></i>
+          </button>
+          <div class="dropdown-menu shadow border-0 p-2 dept-switch__menu">
+            <div class="input-group input-group-sm mb-2">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="deptSwitchSearch" placeholder="انتقل إلى إدارة" aria-label="انتقل إلى إدارة" autocomplete="off">
+            </div>
+            <div class="dept-switch__list">
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2 active" href="index.html" aria-current="true">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تطوير البرامج</span>
+                  <span class="small dept-switch__meta">الحالية</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="departments.html#exec">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تنفيذ البرامج</span>
+                  <span class="small dept-switch__meta">4 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="departments.html#trainers">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chalkboard-teacher"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة المدربين</span>
+                  <span class="small dept-switch__meta">5 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--danger d-flex align-items-center gap-2" href="departments.html#support">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-headset"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الدعم الفني</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--warning d-flex align-items-center gap-2" href="departments.html#finance">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-coins"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>الإدارة المالية</span>
+                  <span class="small dept-switch__meta">4 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--cyan d-flex align-items-center gap-2" href="departments.html#reports">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chart-bar"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة التقارير</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--teal d-flex align-items-center gap-2" href="departments.html#trainee">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-user"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المتدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="departments.html#trainer">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-identification-badge"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="departments.html#org">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-buildings"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المنشأة</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2" href="departments.html#partners">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-handshake"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الشراكات</span>
+                  <span class="small dept-switch__meta">3 صفحات</span>
+                </a>
+            </div>
+            <p class="dept-switch__empty small app-muted text-center py-2 mb-0 d-none">لا توجد إدارة بهذا الاسم</p>
+            <div class="d-flex justify-content-between align-items-center border-top small pt-2 mt-1 px-1">
+              <a href="departments.html" class="text-decoration-none">عرض كل الإدارات</a>
+              <span class="app-muted"><kbd>Ctrl</kbd> + <kbd>K</kbd></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-3 pt-3">
         <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
       </div>
 
@@ -57,7 +133,7 @@
 
         <div class="app-nav__group">الإدارة</div>
         <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
-        <a href="#" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="departments.html" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
         <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
       </nav>
     </div>
@@ -155,7 +231,7 @@
           <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
             <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
             <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
-            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><a class="dropdown-item" href="departments.html" data-dept-switch-open><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
           </ul>
