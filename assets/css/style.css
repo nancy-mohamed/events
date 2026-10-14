@@ -801,3 +801,10 @@ body {
 .dropdown-menu{
       --bs-dropdown-link-active-bg: #00a888 !important;
 }
+
+/* New-program wizard: read-only system codes + admission conditions (shown when "نعم" is checked) */
+.app-code-field[readonly] { background-color: var(--app-green-soft); color: var(--app-green-700); }
+.app-conditions__body { display: none; }
+#admissionYes:checked ~ .app-conditions__body { display: block; }
+.app-rules__toggle[aria-expanded="true"] .ph-caret-down { transform: rotate(180deg); }
+.app-flex-fill { flex: 1 1 12rem; width: auto; min-width: 0; }

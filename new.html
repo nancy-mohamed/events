@@ -225,6 +225,20 @@
         <div class="col-lg-8 col-xl-9">
           <div class="tab-content">
             <section class="tab-pane fade show active" id="pane-identity" role="tabpanel" aria-labelledby="tab-identity" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-identity" aria-expanded="false" aria-controls="rules-identity">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">2</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-identity">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>حدد نوع الوحدة واسمها ورمزها ورخصتها — كود الرخصة يُعبأ تلقائيًا بجانب حقل «الرخصة».</li>
+                    <li>سؤال «هل القبول يتطلب شروطًا؟» يحدد هنا: الشروط ونوع المرفق المطلوب تظهر للمتدرب في البوابة وتصل مع طلبه لإدارة التنفيذ.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">1. التعريف</h2>
@@ -246,33 +260,61 @@
                     </div>
                   </div>
                   <div class="row g-3">
-                  <div class="col-md-8">
+                  <div class="col-md-6">
                     <label class="form-label small" for="unitName">الاسم <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="unitName" required>
                   </div>
-                  <div class="col-md-4">
-                    <label class="form-label small" for="unitCode">الكود</label>
-                    <input type="text" class="form-control" id="unitCode" placeholder="مثال: 60155">
+                  <div class="col-md-6">
+                    <label class="form-label small" for="unitCode">الكود (يُسند تلقائيًا من النظام)</label>
+                    <input type="text" class="form-control app-code-field fw-semibold" id="unitCode" value="PRG-2026-192" dir="ltr" readonly>
+                    <div class="form-text small">كود ثابت يميّز النوع: PRG برنامج فردي، TRK مسار، CRT شهادة مهنية، DIP دبلوم، WSH ورشة، CNS استشارة.</div>
                   </div>
-                  <div class="col-md-4">
-                    <label class="form-label small" for="unitLicense">رخصة فال</label>
-                    <select class="form-select" id="unitLicense"><option>بدون</option><option>المزادات</option><option>إدارة الأملاك</option><option>إدارة المرافق</option><option>الوساطة والتسويق</option><option>الاستشارات</option><option>التحليلات</option><option>المساهمات</option><option>المستوى التأسيسي للوساطة</option></select>
+                  <div class="col-md-6">
+                    <label class="form-label small" for="unitLicense">الرخصة</label>
+                    <select class="form-select" id="unitLicense"><option>بدون</option><option>رخصة فال للوساطة والتسويق العقاري</option><option>رخصة فال للوساطة والتسويق للمنصات العقارية الالكترونية</option><option>رخصة فال للاستشارات والتحليلات العقارية</option><option>رخصة فال لإدارة المرافق</option><option>رخصة فال لإدارة الأملاك</option><option>رخصة فال للمزادات العقارية</option><option>المساهمات</option><option>المستوى التأسيسي للوساطة</option></select>
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-6">
+                    <label class="form-label small" for="unitLicenseCode">كود الرخصة</label>
+                    <input type="text" class="form-control app-code-field" id="unitLicenseCode" value="—" readonly>
+                  </div>
+                  <div class="col-md-6">
                     <label class="form-label small" for="unitAudience">الفئة المستهدفة <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" id="unitAudience" required>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <label class="form-label small" for="unitClass">التصنيف <span class="text-danger">*</span></label>
                     <select class="form-select" id="unitClass" required><option>تأهيلي</option><option>تطويري</option></select>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <label class="form-label small" for="unitField">المجال</label>
                     <select class="form-select" id="unitField"><option value="">اختر المجال</option><option>الوساطة</option><option>التسويق</option><option>إدارة الأملاك</option><option>إدارة المرافق</option><option>المزايدات</option><option>الاستشارات</option><option>التحليلات</option><option>إدارة العقار المشترك</option><option>المساهمات</option><option>التسجيل العقاري</option><option>التطوير العقاري</option><option>التقييم والفحص</option><option>الأنظمة والتشريعات</option></select>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <label class="form-label small" for="unitCreated">تاريخ الإنشاء <span class="text-danger">*</span></label>
-                    <input type="date" class="form-control" id="unitCreated" value="2026-10-06" required>
+                    <input type="date" class="form-control" id="unitCreated" value="2026-10-14" required>
+                  </div>
+                  <div class="col-12">
+                    <div class="app-conditions border rounded-2 p-3 d-flex flex-wrap align-items-center gap-2">
+                      <span class="form-label small w-100 mb-0">هل القبول في البرنامج يتطلب شروطًا أو موافقات؟</span>
+                      <input type="radio" class="btn-check" name="admissionConditions" id="admissionYes" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand px-3" for="admissionYes">نعم</label>
+                      <input type="radio" class="btn-check" name="admissionConditions" id="admissionNo" autocomplete="off" checked>
+                      <label class="btn btn-sm btn-outline-brand px-3" for="admissionNo">لا</label>
+                      <div class="app-conditions__body w-100 mt-2">
+                        <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                          <input type="text" class="form-control app-flex-fill" placeholder="مثال: صورة رخصة الوساطة العقارية سارية" aria-label="الشرط">
+                          <div class="form-check mb-0">
+                            <input class="form-check-input" type="checkbox" id="condition-1-file" checked>
+                            <label class="form-check-label small" for="condition-1-file">يتطلب إرفاق ملف</label>
+                          </div>
+                          <button type="button" class="btn btn-sm app-filter-btn border text-danger"><i class="ph-duotone ph-trash me-1"></i>حذف</button>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                          <select class="form-select app-flex-fill" aria-label="إضافة شروط جاهزة"><option value="">إضافة شروط جاهزة حسب البرنامج…</option><option>فحص المباني الجاهزة</option><option>فحص جودة البناء</option><option>جميع دورات مستدام</option><option>فرز الوحدات العقارية</option><option>أساسيات التسجيل العيني للعقار</option><option>المهارات السلوكية والأخلاقيات للعاملين في التسجيل العيني</option><option>الاستشاري الهندسي لمشاريع البيع على الخارطة</option><option>رسم الخرائط والمسح - مقدمة في البيانات الجغرافية المكانية لأغراض التسجيل العيني</option></select>
+                          <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>شرط جديد</button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="col-12">
                     <label class="form-label small d-block">صورة البرنامج <span class="text-danger">*</span></label>
@@ -320,6 +362,20 @@
               </form>
             </section>
             <section class="tab-pane fade" id="pane-design" role="tabpanel" aria-labelledby="tab-design" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-design" aria-expanded="false" aria-controls="rules-design">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">2</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-design">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>قسّم المحتوى إلى أقسام بساعات — مجموعها يجب أن يساوي ساعات الوحدة.</li>
+                    <li>المسار والشهادة والدبلوم لا تصميم لها: تُرتب فيها البرامج المكونة فقط.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">2. التصميم التعليمي</h2>
@@ -357,6 +413,20 @@
               </form>
             </section>
             <section class="tab-pane fade" id="pane-materials" role="tabpanel" aria-labelledby="tab-materials" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-materials" aria-expanded="false" aria-controls="rules-materials">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">2</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-materials">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>ارفع مواد كل قسم وحدد جمهورها (متدرب أو مدرب).</li>
+                    <li>كل المواد تحمل حقوق المنصة وتُتاح للمتدربين للاطلاع فقط.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">3. المواد التعليمية</h2>
@@ -389,6 +459,19 @@
               </form>
             </section>
             <section class="tab-pane fade" id="pane-delivery" role="tabpanel" aria-labelledby="tab-delivery" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-delivery" aria-expanded="false" aria-controls="rules-delivery">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">1</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-delivery">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>حدد نمط التقديم (حضوري/عن بعد) والمقاعد — تفاصيل المواعيد تُضبط لاحقًا في جدولة إدارة التنفيذ بعد الاعتماد.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">4. التنفيذ والمقاعد</h2>
@@ -416,7 +499,7 @@
                   </div>
                   <div class="col-md-3">
                     <label class="form-label small" for="runStatus">حالة التشغيل</label>
-                    <select class="form-select" id="runStatus"><option>تقام</option><option>متوقفة</option><option>ملغية</option><option>لم تطلق</option></select>
+                    <select class="form-select" id="runStatus"><option>تقام</option><option>متوقفة</option><option>ملغية</option><option selected>لم تطلق</option></select>
                   </div>
                   <div class="col-md-3">
                     <label class="form-label small" for="hoursCalc">الساعات</label>
@@ -434,6 +517,19 @@
               </form>
             </section>
             <section class="tab-pane fade" id="pane-evaluation" role="tabpanel" aria-labelledby="tab-evaluation" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-evaluation" aria-expanded="false" aria-controls="rules-evaluation">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">1</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-evaluation">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>اربط الوحدة بنموذج اختبار واستبيان — يُنشأ استبيان رضا تلقائيًا لكل برنامج جديد.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">5. التقييم</h2>
@@ -458,15 +554,15 @@
                   </div>
                   <div class="col-md-4">
                     <label class="form-label small" for="evalCert">شرط الشهادة</label>
-                    <select class="form-select" id="evalCert"><option>حضور فقط</option><option>حضور واجتياز الاختبار</option></select>
+                    <select class="form-select" id="evalCert"><option>حضور فقط</option><option selected>حضور واجتياز الاختبار</option></select>
                   </div>
                   <div class="col-md-4">
                     <label class="form-label small" for="evalPass">درجة النجاح في الاختبار البعدي (من 100)</label>
-                    <input type="number" class="form-control" id="evalPass">
+                    <input type="number" class="form-control" id="evalPass" value="60">
                   </div>
                   <div class="col-md-4">
                     <label class="form-label small" for="evalAttendance">الحد الأدنى للحضور %</label>
-                    <input type="number" class="form-control" id="evalAttendance">
+                    <input type="number" class="form-control" id="evalAttendance" value="75">
                   </div>
                   </div>
                 </div>
@@ -480,6 +576,20 @@
               </form>
             </section>
             <section class="tab-pane fade" id="pane-pricing" role="tabpanel" aria-labelledby="tab-pricing" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-pricing" aria-expanded="false" aria-controls="rules-pricing">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">2</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-pricing">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>التسعير يدوي فقط: أدخل سعر الحضوري وعن بعد، والإجمالي يشمل ضريبة 15%.</li>
+                    <li>للمسارات: السعر = مجموع أسعار البرامج مع خصم اختياري.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">6. التسعير</h2>
@@ -487,7 +597,7 @@
                   <div class="row g-3 align-items-end">
                     <div class="col-md-6">
                       <label class="form-label small" for="priceLive">سعر التدريب «بث مباشر» (قبل الضريبة) <span class="text-danger">*</span></label>
-                      <div class="input-group"><input type="number" class="form-control" id="priceLive" value="0" required><span class="input-group-text">ريال</span></div>
+                      <input type="number" class="form-control" id="priceLive" value="0" min="0" required>
                     </div>
                     <div class="col-md-6">
                       <dl class="app-kv app-kv--3 mb-0">
@@ -508,6 +618,20 @@
               </form>
             </section>
             <section class="tab-pane fade" id="pane-review" role="tabpanel" aria-labelledby="tab-review" tabindex="0">
+              <div class="app-info app-rules rounded-2 mb-3">
+                <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-review" aria-expanded="false" aria-controls="rules-review">
+                  <i class="ph-duotone ph-info fs-5"></i>
+                  <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+                  <span class="badge rounded-pill badge-soft-info">2</span>
+                  <i class="ph ph-caret-down"></i>
+                </button>
+                <div class="collapse" id="rules-review">
+                  <ul class="small mb-0 ps-5 pe-3 pb-3">
+                    <li>راجع قائمة الاكتمال — لا يُرسل للاعتماد إلا بعد اكتمال كل البنود الإجبارية.</li>
+                    <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>بعد الإرسال تظهر الوحدة في «طلبات الاعتماد»، وبعد اعتمادها تنتقل لإدارة التنفيذ.</li>
+                  </ul>
+                </div>
+              </div>
               <form class="card app-card" data-static-form>
                 <div class="card-body p-4">
                   <h2 class="app-card__title fs-6 mb-3">7. المراجعة والاعتماد</h2>
@@ -593,7 +717,7 @@
                     <div class="fw-semibold mt-1">الإجمالي شامل الضريبة: 0 ريال</div>
                   </div>
                   <div class="d-flex flex-wrap align-items-center gap-3">
-                    <button type="button" class="btn btn-brand" disabled><i class="ph-duotone ph-paper-plane-tilt me-1"></i>إرسال للمراجعة</button>
+                    <button type="button" class="btn btn-brand" disabled><i class="ph-duotone ph-paper-plane-tilt me-1"></i>إرسال لاعتماد إدارة التطوير</button>
                     <span class="small text-brand-danger">يرجى استكمال البنود الناقصة أولًا.</span>
                     <a href="catalog.html" class="app-link small ms-auto">صفحة البرنامج <i class="ph ph-arrow-left"></i></a>
                   </div>
