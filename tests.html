@@ -1,0 +1,1429 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الاختبارات | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
+
+  <!-- Charts -->
+  <link rel="stylesheet" href="assets/css/charts/activity-bars.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="index.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="catalog.html" class="app-nav__link"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="approvals.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
+        </a>
+
+        <div class="app-nav__group">التقييم</div>
+        <a href="tests.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+
+        <div class="app-nav__group">الإدارة</div>
+        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="#" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">156</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <!-- Page title -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 pb-1">
+        <h1 class="app-page-title h5 mb-0">الاختبارات</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">الاختبارات</li>
+          </ol>
+        </nav>
+      </div>
+      <p class="app-page-subtitle small pb-3 mb-0">بنوك الأسئلة، نماذج الاختبارات، تسجيل المتدربين، متابعة الحضور والنتائج، والمراقبة المباشرة والمخالفات.</p>
+
+      <!-- Tabs -->
+      <div class="card app-card mb-3">
+        <div class="card-body py-0">
+          <ul class="nav nav-underline app-tabs flex-nowrap overflow-auto" id="testsTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="tab-banks" data-bs-toggle="tab" data-bs-target="#pane-banks" type="button" role="tab" aria-controls="pane-banks" aria-selected="true"><i class="ph-duotone ph-database"></i>بنوك الأسئلة</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-forms" data-bs-toggle="tab" data-bs-target="#pane-forms" type="button" role="tab" aria-controls="pane-forms" aria-selected="false"><i class="ph-duotone ph-exam"></i>نماذج الاختبارات</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-trainees" data-bs-toggle="tab" data-bs-target="#pane-trainees" type="button" role="tab" aria-controls="pane-trainees" aria-selected="false"><i class="ph-duotone ph-user-plus"></i>المتدربون</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-tracking" data-bs-toggle="tab" data-bs-target="#pane-tracking" type="button" role="tab" aria-controls="pane-tracking" aria-selected="false"><i class="ph-duotone ph-chart-bar"></i>متابعة الاختبارات</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-monitoring" data-bs-toggle="tab" data-bs-target="#pane-monitoring" type="button" role="tab" aria-controls="pane-monitoring" aria-selected="false"><i class="ph-duotone ph-monitor-play"></i>مراقبة الاختبارات<span class="app-live-dot" aria-hidden="true"></span></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="tab-violations" data-bs-toggle="tab" data-bs-target="#pane-violations" type="button" role="tab" aria-controls="pane-violations" aria-selected="false"><i class="ph-duotone ph-shield-warning"></i>مخالفات الاختبارات</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-content">
+
+        <!-- ================= Question banks ================= -->
+        <section class="tab-pane fade show active" id="pane-banks" role="tabpanel" aria-labelledby="tab-banks" tabindex="0">
+          <div class="row g-3 mb-3">
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">البنوك</div><div class="app-kpi-value" id="kpiBanks">15</div></div>
+                <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">الأسئلة الفعّالة</div><div class="app-kpi-value" id="kpiQuestions">1,975</div></div>
+                <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-question"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">مرتبطة ببرامج</div><div class="app-kpi-value"><span id="kpiLinked">12</span> <small class="app-muted fs-6 fw-normal">/ <span id="kpiBanksTotal">15</span></small></div></div>
+                <span class="icon-tile icon-tile--cyan"><i class="ph-duotone ph-link-simple"></i></span>
+              </div></div>
+            </div>
+          </div>
+
+          <div class="card app-card" data-search-target>
+            <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <div class="input-group input-group-sm app-toolbar-search">
+                  <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+                  <input type="search" class="form-control" id="bankSearch" placeholder="ابحث باسم البنك أو رمزه" aria-label="ابحث باسم البنك أو رمزه">
+                </div>
+                <select class="form-select form-select-sm w-auto app-select-wide" id="bankProgram" aria-label="البرنامج">
+                  <option value="">كل البرامج</option>
+                  <option value="__none">غير مرتبطة ببرنامج</option>
+                  <option value="إدارة الأملاك العقارية">إدارة الأملاك العقارية</option>
+                  <option value="الاحتيال ومكافحة غسل الأموال في القطاع العقاري">الاحتيال ومكافحة غسل الأموال في القطاع العقاري</option>
+                  <option value="التمويل العقاري">التمويل العقاري</option>
+                  <option value="المسوق العقاري لمشاريع البيع على الخارطة">المسوق العقاري لمشاريع البيع على الخارطة</option>
+                  <option value="الوساطة العقارية">الوساطة العقارية</option>
+                  <option value="برنامج تجريبي: التسويق العقاري">برنامج تجريبي: التسويق العقاري</option>
+                  <option value="دراسات الجدوى للمشاريع العقارية">دراسات الجدوى للمشاريع العقارية</option>
+                  <option value="دور التحكيم في المنازعات العقارية">دور التحكيم في المنازعات العقارية</option>
+                  <option value="فحص المباني الجاهزة">فحص المباني الجاهزة</option>
+                  <option value="مستدام للمجتمعات القائمة">مستدام للمجتمعات القائمة</option>
+                  <option value="منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</option>
+                  <option value="نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري">نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري</option>
+                </select>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <label class="btn btn-sm app-filter-btn border mb-0">
+                  <i class="ph-duotone ph-upload-simple me-1"></i>رفع ملف موحد
+                  <input type="file" class="d-none" accept=".xlsx,.xls,.csv" data-upload="ملف البنوك الموحد">
+                </label>
+                <button type="button" class="btn btn-sm btn-brand" data-bs-toggle="modal" data-bs-target="#bankModal"><i class="ph ph-plus me-1"></i>بنك جديد</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table app-table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">البنك</th>
+                    <th scope="col">الرمز</th>
+                    <th scope="col">البرنامج المرتبط</th>
+                    <th scope="col">الأسئلة</th>
+                    <th scope="col" class="text-center">إجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="banksBody">
+                  <tr data-bank data-code="RPM" data-program="إدارة الأملاك العقارية" data-questions="100">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>إدارة الاملاك العقارية</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>RPM</span></td>
+                    <td class="text-wrap">إدارة الأملاك العقارية</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="100" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:44.4%"></div>
+                      </div>
+                      <span class="fw-semibold">100</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة إدارة الاملاك العقارية"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل إدارة الاملاك العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="AMLF" data-program="الاحتيال ومكافحة غسل الأموال في القطاع العقاري" data-questions="159">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>الاحتيال و غسل الأموال</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>AMLF</span></td>
+                    <td class="text-wrap">الاحتيال ومكافحة غسل الأموال في القطاع العقاري</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="159" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:70.7%"></div>
+                      </div>
+                      <span class="fw-semibold">159</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة الاحتيال و غسل الأموال"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل الاحتيال و غسل الأموال"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="LINS" data-program="" data-questions="157">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>الايجار و التأمين</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>LINS</span></td>
+                    <td class="text-wrap"><span class="badge rounded-pill badge-soft-warning"><i class="ph ph-link-break me-1"></i>غير مرتبط ببرنامج</span></td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="157" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:69.8%"></div>
+                      </div>
+                      <span class="fw-semibold">157</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة الايجار و التأمين"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل الايجار و التأمين"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="REM-FND" data-program="برنامج تجريبي: التسويق العقاري" data-questions="117">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>التسويق العقاري المستوى التأسيس</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>REM-FND</span></td>
+                    <td class="text-wrap">برنامج تجريبي: التسويق العقاري</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="117" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:52.0%"></div>
+                      </div>
+                      <span class="fw-semibold">117</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة التسويق العقاري المستوى التأسيس"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل التسويق العقاري المستوى التأسيس"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="REF" data-program="التمويل العقاري" data-questions="141">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>التمويل العقاري</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>REF</span></td>
+                    <td class="text-wrap">التمويل العقاري</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="141" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:62.7%"></div>
+                      </div>
+                      <span class="fw-semibold">141</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة التمويل العقاري"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل التمويل العقاري"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="OPP-MKT" data-program="المسوق العقاري لمشاريع البيع على الخارطة" data-questions="30">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>المسوق العقاري لمشاريع البيع على الخارطة</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>OPP-MKT</span></td>
+                    <td class="text-wrap">المسوق العقاري لمشاريع البيع على الخارطة</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="30" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:13.3%"></div>
+                      </div>
+                      <span class="fw-semibold">30</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة المسوق العقاري لمشاريع البيع على الخارطة"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل المسوق العقاري لمشاريع البيع على الخارطة"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="REB" data-program="الوساطة العقارية" data-questions="208">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>الوساطة العقارية</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>REB</span></td>
+                    <td class="text-wrap">الوساطة العقارية</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="208" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:92.4%"></div>
+                      </div>
+                      <span class="fw-semibold">208</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة الوساطة العقارية"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل الوساطة العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="OPP-DEV" data-program="" data-questions="155">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>تأهيل المطورين العقاريين لمشاريع البيع على الخارطة</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>OPP-DEV</span></td>
+                    <td class="text-wrap"><span class="badge rounded-pill badge-soft-warning"><i class="ph ph-link-break me-1"></i>غير مرتبط ببرنامج</span></td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="155" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:68.9%"></div>
+                      </div>
+                      <span class="fw-semibold">155</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة تأهيل المطورين العقاريين لمشاريع البيع على الخارطة"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل تأهيل المطورين العقاريين لمشاريع البيع على الخارطة"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="REFS" data-program="دراسات الجدوى للمشاريع العقارية" data-questions="119">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>دراسة الجدوى في المشاريع العقارية</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>REFS</span></td>
+                    <td class="text-wrap">دراسات الجدوى للمشاريع العقارية</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="119" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:52.9%"></div>
+                      </div>
+                      <span class="fw-semibold">119</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة دراسة الجدوى في المشاريع العقارية"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل دراسة الجدوى في المشاريع العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="READR" data-program="دور التحكيم في المنازعات العقارية" data-questions="225">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>دور التحكيم في فض المنازعات العقارية</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>READR</span></td>
+                    <td class="text-wrap">دور التحكيم في المنازعات العقارية</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="225" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:100.0%"></div>
+                      </div>
+                      <span class="fw-semibold">225</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة دور التحكيم في فض المنازعات العقارية"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل دور التحكيم في فض المنازعات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="MAPS" data-program="" data-questions="140">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>رسم الخرائط و المسح</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>MAPS</span></td>
+                    <td class="text-wrap"><span class="badge rounded-pill badge-soft-warning"><i class="ph ph-link-break me-1"></i>غير مرتبط ببرنامج</span></td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="140" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:62.2%"></div>
+                      </div>
+                      <span class="fw-semibold">140</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة رسم الخرائط و المسح"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل رسم الخرائط و المسح"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="RBI" data-program="فحص المباني الجاهزة" data-questions="51">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>فحص المباني الجاهزة</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>RBI</span></td>
+                    <td class="text-wrap">فحص المباني الجاهزة</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="51" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:22.7%"></div>
+                      </div>
+                      <span class="fw-semibold">51</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة فحص المباني الجاهزة"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل فحص المباني الجاهزة"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="MCMT-EX" data-program="مستدام للمجتمعات القائمة" data-questions="38">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>مستدام للمجتمعات القائمة</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>MCMT-EX</span></td>
+                    <td class="text-wrap">مستدام للمجتمعات القائمة</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="38" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:16.9%"></div>
+                      </div>
+                      <span class="fw-semibold">38</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة مستدام للمجتمعات القائمة"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مستدام للمجتمعات القائمة"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="EJAR-BRK" data-program="منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)" data-questions="149">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>منصة ايجار و استخداماتها في الوساطة العقارية</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>EJAR-BRK</span></td>
+                    <td class="text-wrap">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="149" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:66.2%"></div>
+                      </div>
+                      <span class="fw-semibold">149</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة منصة ايجار و استخداماتها في الوساطة العقارية"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل منصة ايجار و استخداماتها في الوساطة العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr data-bank data-code="SAAR" data-program="نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري" data-questions="186">
+                    <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+                      <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+                      <span class="app-table__title" data-search>نظام التحكيم السعودي و لائحة القواعد الإجرائية</span>
+                    </div></td>
+                    <td><span class="app-code" data-search>SAAR</span></td>
+                    <td class="text-wrap">نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري</td>
+                    <td><div class="d-flex align-items-center gap-2">
+                      <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="186" aria-valuemin="0" aria-valuemax="225">
+                        <div class="progress-bar bg-brand-green" style="width:82.7%"></div>
+                      </div>
+                      <span class="fw-semibold">186</span>
+                    </div></td>
+                    <td class="text-center"><div class="d-inline-flex gap-1">
+                      <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض أسئلة نظام التحكيم السعودي و لائحة القواعد الإجرائية"><i class="ph-duotone ph-eye"></i></a>
+                      <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل نظام التحكيم السعودي و لائحة القواعد الإجرائية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                    </div></td>
+                  </tr>
+                  <tr class="d-none" data-empty>
+                    <td colspan="5" class="text-center app-muted py-5"><i class="ph-duotone ph-magnifying-glass fs-2 d-block mb-2"></i>لا توجد بنوك مطابقة.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-body pt-2 d-flex flex-wrap justify-content-between align-items-center gap-2 app-muted small">
+              <span id="banksCount"></span>
+              <nav aria-label="تصفح البنوك"><ul class="pagination pagination-sm app-pagination mb-0" id="banksPagination"></ul></nav>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= Test forms ================= -->
+        <section class="tab-pane fade" id="pane-forms" role="tabpanel" aria-labelledby="tab-forms" tabindex="0">
+          <div class="card app-card mb-3">
+            <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <div class="btn-group btn-group-sm flex-wrap" role="group" aria-label="فلترة حسب الحالة" id="formsStatus">
+                <button type="button" class="btn btn-outline-brand active" data-status="">كل الحالات <span class="opacity-75">(<span data-count>1</span>)</span></button>
+                <button type="button" class="btn btn-outline-brand" data-status="draft">مسودة <span class="opacity-75">(<span data-count>1</span>)</span></button>
+                <button type="button" class="btn btn-outline-brand" data-status="published">منشور <span class="opacity-75">(<span data-count>0</span>)</span></button>
+                <button type="button" class="btn btn-outline-brand" data-status="hidden">مخفي <span class="opacity-75">(<span data-count>0</span>)</span></button>
+                <button type="button" class="btn btn-outline-brand" data-status="active">نشط <span class="opacity-75">(<span data-count>0</span>)</span></button>
+              </div>
+              <button type="button" class="btn btn-sm btn-brand" id="btnNewForm"><i class="ph ph-plus me-1"></i>إنشاء نموذج اختبار</button>
+            </div>
+          </div>
+          <div class="row g-3" id="formsGrid">
+            <div class="col-md-6 col-xxl-4" data-form data-id="1" data-status="draft" data-program="إدارة الأملاك العقارية" data-type="بعدي" data-questions="20" data-duration="60" data-attempts="1" data-pass="60" data-random="true">
+              <article class="card app-card h-100">
+                <div class="card-body d-flex flex-column gap-3">
+                  <div class="d-flex justify-content-between align-items-start gap-2">
+                    <div class="d-flex align-items-center gap-2 min-w-0">
+                      <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-exam"></i></span>
+                      <div class="min-w-0"><h3 class="app-card__title mb-0" data-field="name">اختبار إدارة الأملاك البعدي</h3>
+                      <div class="small app-muted text-truncate" data-field="program">إدارة الأملاك العقارية</div></div>
+                    </div>
+                    <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+                  </div>
+                  <dl class="app-kv mb-0">
+                    <div><dt>النوع</dt><dd data-field="type">بعدي</dd></div>
+                    <div><dt>الأسئلة</dt><dd data-field="questions">20</dd></div>
+                    <div><dt>المدة</dt><dd><span data-field="duration">60</span> د</dd></div>
+                    <div><dt>المحاولات</dt><dd data-field="attempts">1</dd></div>
+                  </dl>
+                  <div class="small app-muted">بنك أسئلة واحد · النجاح <span data-field="pass">60</span>% · الترتيب <span data-field="order">عشوائي</span></div>
+                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+                    <a href="#" class="btn btn-navy btn-sm"><i class="ph ph-play me-1"></i>معاينة وتجربة</a>
+                    <div class="d-flex gap-1">
+                      <button type="button" class="btn-icon-soft" data-form-action="edit" title="تعديل" aria-label="تعديل"><i class="ph-duotone ph-pencil-simple"></i></button>
+                      <button type="button" class="btn-icon-soft" data-form-action="attempts" title="سجل المحاولات" aria-label="سجل المحاولات"><i class="ph-duotone ph-clock-counter-clockwise"></i></button>
+                      <button type="button" class="btn-icon-soft" data-form-action="copy" title="نسخ" aria-label="نسخ"><i class="ph-duotone ph-copy"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 d-none" data-empty>
+              <div class="card app-card"><div class="card-body text-center py-5">
+                <span class="icon-tile icon-tile--navy mx-auto mb-3 app-empty-icon"><i class="ph-duotone ph-exam"></i></span>
+                <h2 class="h6 fw-semibold mb-1">لا توجد نماذج بهذه الحالة</h2>
+                <p class="app-muted small mb-0">غيّر الفلتر أو أنشئ نموذجًا جديدًا.</p>
+              </div></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= Trainees ================= -->
+        <section class="tab-pane fade" id="pane-trainees" role="tabpanel" aria-labelledby="tab-trainees" tabindex="0">
+          <div class="app-info d-flex gap-2 rounded-2 p-3 mb-3">
+            <i class="ph-duotone ph-info fs-5 flex-shrink-0"></i>
+            <p class="small mb-0">أطلق نموذج اختبار لفرد محدد، يدخل المتدرب بوابة الاختبارات برقم هويته ويجد النموذج المسند إليه. لمتابعة كل النماذج والحالات استخدم تبويب <a href="#" data-open-tab="tracking">«متابعة الاختبارات»</a>.</p>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">إسنادات فردية</div><div class="app-kpi-value" id="kpiAssign">0</div></div>
+                <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-user-plus"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">نماذج لديها إسنادات</div><div class="app-kpi-value" id="kpiAssignForms">0</div></div>
+                <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-exam"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">مسندون في النموذج المحدد</div><div class="app-kpi-value" id="kpiAssignSelected">—</div></div>
+                <span class="icon-tile icon-tile--cyan"><i class="ph-duotone ph-funnel"></i></span>
+              </div></div>
+            </div>
+          </div>
+
+          <div class="card app-card">
+            <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <div class="input-group input-group-sm app-toolbar-search">
+                  <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+                  <input type="search" class="form-control" id="assignSearch" placeholder="ابحث بالاسم أو رقم الهوية" aria-label="ابحث بالاسم أو رقم الهوية">
+                </div>
+                <select class="form-select form-select-sm w-auto" id="assignForm" aria-label="نموذج الاختبار">
+                  <option value="">كل النماذج</option>
+                  <option value="1" data-label="اختبار إدارة الأملاك البعدي">اختبار إدارة الأملاك البعدي (0)</option>
+                </select>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <label class="btn btn-sm app-filter-btn border mb-0">
+                  <i class="ph-duotone ph-upload-simple me-1"></i>رفع ملف
+                  <input type="file" class="d-none" accept=".xlsx,.xls,.csv" data-upload="ملف المتدربين">
+                </label>
+                <button type="button" class="btn btn-sm btn-brand" id="btnNewAssign"><i class="ph-duotone ph-rocket-launch me-1"></i>إطلاق لمتدرب</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table app-table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">المتدرب</th>
+                    <th scope="col">رقم الهوية</th>
+                    <th scope="col">الجوال</th>
+                    <th scope="col">نموذج الاختبار</th>
+                    <th scope="col">موعد الاختبار</th>
+                    <th scope="col">الحالة</th>
+                    <th scope="col">تاريخ الإسناد</th>
+                    <th scope="col"><span class="visually-hidden">إجراءات</span></th>
+                  </tr>
+                </thead>
+                <tbody id="assignBody">
+                  <tr data-empty>
+                    <td colspan="8" class="text-center app-muted py-5"><i class="ph-duotone ph-user-plus fs-2 d-block mb-2"></i>لا توجد إسنادات مطابقة. أطلق نموذجًا لمتدرب محدد من زر «إطلاق لمتدرب».</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= Tracking ================= -->
+        <section class="tab-pane fade" id="pane-tracking" role="tabpanel" aria-labelledby="tab-tracking" tabindex="0">
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">نماذج الاختبارات</div><div class="app-kpi-value" id="kpiTrackForms">1</div></div>
+                <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-exam"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">المسجلون في البرامج</div><div class="app-kpi-value" id="kpiTrackRegistered">1</div></div>
+                <span class="icon-tile icon-tile--teal"><i class="ph-duotone ph-users-three"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">من أدوا الاختبار</div><div class="app-kpi-value" id="kpiTrackTested">1</div></div>
+                <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-user-check"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">لم يؤدوا الاختبار بعد</div><div class="app-kpi-value" id="kpiTrackNotTested">0</div></div>
+                <span class="icon-tile icon-tile--warning"><i class="ph-duotone ph-hourglass-medium"></i></span>
+              </div></div>
+            </div>
+          </div>
+
+          <div class="card app-card">
+            <div class="card-body pb-2">
+              <h2 class="app-card__title mb-0">الحضور والنتائج لكل نموذج</h2>
+            </div>
+            <div class="table-responsive">
+              <table class="table app-table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">النموذج</th>
+                    <th scope="col">البرنامج</th>
+                    <th scope="col">الموعد</th>
+                    <th scope="col">مسجل</th>
+                    <th scope="col">اختبر</th>
+                    <th scope="col">ناجح</th>
+                    <th scope="col">المتوسط</th>
+                    <th scope="col">لم يختبر</th>
+                  </tr>
+                </thead>
+                <tbody id="trackingBody">
+                  <tr data-form-id="1">
+                    <td><div class="app-table__title" data-field="name">اختبار إدارة الأملاك البعدي</div><div class="small app-muted" data-field="type">بعدي</div></td>
+                    <td class="text-wrap" data-field="program">إدارة الأملاك العقارية</td>
+                    <td class="app-muted">— – —</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td><div class="d-flex align-items-center gap-2"><div class="progress progress-xs app-qbar" role="progressbar" aria-label="المتوسط" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-danger" style="width:5%"></div></div>5%</div></td>
+                    <td>—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= Monitoring ================= -->
+        <section class="tab-pane fade" id="pane-monitoring" role="tabpanel" aria-labelledby="tab-monitoring" tabindex="0">
+          <div class="card app-card mb-3">
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                <h2 class="app-card__title mb-0 d-flex align-items-center gap-2"><span class="app-live-dot is-live" id="liveDot" aria-hidden="true"></span>المراقبة المباشرة</h2>
+                <div class="d-flex align-items-center gap-2 app-muted small">
+                  <span id="liveStatus">تحديث مباشر كل 5 ثوانٍ</span>
+                  <span>·</span>
+                  <span>آخر تحديث <span id="liveUpdated">—</span></span>
+                  <button type="button" class="btn btn-sm app-filter-btn border" id="btnLiveToggle" aria-pressed="false"><i class="ph ph-pause me-1"></i><span data-label>إيقاف مؤقت</span></button>
+                </div>
+              </div>
+              <div class="row g-3 mb-3">
+                <div class="col-sm-4"><div class="app-stat rounded-2 p-3"><div class="app-muted small">يختبرون الآن</div><div class="app-kpi-value" id="kpiLiveNow">0</div></div></div>
+                <div class="col-sm-4"><div class="app-stat rounded-2 p-3"><div class="app-muted small">نماذج نشطة</div><div class="app-kpi-value" id="kpiLiveForms">0</div></div></div>
+                <div class="col-sm-4"><div class="app-stat rounded-2 p-3"><div class="app-muted small">مخالفات أثناء المحاولات الجارية</div><div class="app-kpi-value" id="kpiLiveViolations">0</div></div></div>
+              </div>
+              <h3 class="small fw-semibold app-muted mb-2">المتدربون في الاختبار الآن</h3>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">المتدرب</th>
+                      <th scope="col">النموذج</th>
+                      <th scope="col">بدأ</th>
+                      <th scope="col">الوقت المتبقي</th>
+                      <th scope="col">نسبة الإجابة</th>
+                      <th scope="col">مخالفات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="liveBody">
+                    <tr data-empty>
+                      <td colspan="6" class="text-center app-muted py-5"><i class="ph-duotone ph-monitor fs-2 d-block mb-2"></i>لا يوجد متدربون في اختبار حاليًا.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">المحاولات المنفذة</div><div class="app-kpi-value" id="kpiAttempts">1</div></div>
+                <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-list-numbers"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">نسبة النجاح</div><div class="app-kpi-value" id="kpiPassRate">0%</div></div>
+                <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-seal-check"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">متوسط الدرجات</div><div class="app-kpi-value" id="kpiAvgScore">5%</div></div>
+                <span class="icon-tile icon-tile--cyan"><i class="ph-duotone ph-gauge"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">مخالفات قيد المراجعة</div><div class="app-kpi-value" id="kpiPendingViolations">0</div></div>
+                <span class="icon-tile icon-tile--warning"><i class="ph-duotone ph-shield-warning"></i></span>
+              </div></div>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-lg-5">
+              <div class="card app-card h-100">
+                <div class="card-body">
+                  <h2 class="app-card__title mb-1">أداء النماذج</h2>
+                  <p class="app-muted small mb-2">اختر نموذجًا لعرض محاولاته.</p>
+                  <div class="list-group list-group-flush app-list" id="formPerfList">
+                    <button type="button" class="list-group-item list-group-item-action d-flex align-items-center gap-2 px-2" data-perf-form="1">
+                      <span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-exam"></i></span>
+                      <span class="flex-grow-1 min-w-0">
+                        <span class="d-block fw-semibold text-truncate" data-field="name">اختبار إدارة الأملاك البعدي</span>
+                        <span class="d-block small app-muted">مسجل 0 · 1 محاولة · نجاح 0% · متوسط 5%</span>
+                      </span>
+                      <i class="ph ph-caret-left app-muted"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <div class="card app-card h-100">
+                <div class="card-body">
+                  <h2 class="app-card__title mb-3">النشاط آخر 30 يومًا</h2>
+                  <div id="chartActivity" data-end-date="2026-10-05"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card app-card" id="attemptsCard">
+            <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2 pb-2">
+              <h2 class="app-card__title mb-0">المحاولات المنفذة</h2>
+              <select class="form-select form-select-sm w-auto" id="attemptsForm" aria-label="النموذج">
+                <option value="">كل النماذج</option>
+                <option value="1">اختبار إدارة الأملاك البعدي</option>
+              </select>
+            </div>
+            <div class="table-responsive">
+              <table class="table app-table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">المتدرب</th>
+                    <th scope="col">النموذج</th>
+                    <th scope="col">الدرجة</th>
+                    <th scope="col">النتيجة</th>
+                    <th scope="col">المدة</th>
+                    <th scope="col">التاريخ</th>
+                  </tr>
+                </thead>
+                <tbody id="attemptsBody">
+                  <tr data-form-id="1" data-date="2026-10-04" data-passed="false">
+                    <td class="fw-semibold">محاولة تجريبية</td>
+                    <td>اختبار إدارة الأملاك البعدي</td>
+                    <td>1 / 20 <span class="app-muted">(5%)</span></td>
+                    <td><span class="badge rounded-pill badge-soft-danger">راسب</span></td>
+                    <td>0 د</td>
+                    <td>2026-10-04</td>
+                  </tr>
+                  <tr class="d-none" data-empty>
+                    <td colspan="6" class="text-center app-muted py-5"><i class="ph-duotone ph-list-numbers fs-2 d-block mb-2"></i>لا توجد محاولات مطابقة.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= Violations ================= -->
+        <section class="tab-pane fade" id="pane-violations" role="tabpanel" aria-labelledby="tab-violations" tabindex="0">
+          <div class="row g-3 mb-3">
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">إجمالي المخالفات</div><div class="app-kpi-value" id="kpiViolTotal">0</div></div>
+                <span class="icon-tile icon-tile--danger"><i class="ph-duotone ph-shield-warning"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">قيد المراجعة</div><div class="app-kpi-value" id="kpiViolPending">0</div></div>
+                <span class="icon-tile icon-tile--warning"><i class="ph-duotone ph-hourglass-medium"></i></span>
+              </div></div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-center">
+                <div><div class="app-muted small">رُصدت تلقائيًا</div><div class="app-kpi-value" id="kpiViolAuto">0</div></div>
+                <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-robot"></i></span>
+              </div></div>
+            </div>
+          </div>
+
+          <div class="card app-card">
+            <div class="card-body d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <div class="d-flex flex-wrap align-items-center gap-2">
+                <select class="form-select form-select-sm w-auto" id="violForm" aria-label="النموذج">
+                  <option value="">كل النماذج</option>
+                  <option value="1">اختبار إدارة الأملاك البعدي</option>
+                </select>
+                <select class="form-select form-select-sm w-auto" id="violStatus" aria-label="الحالة">
+                  <option value="">كل الحالات</option>
+                  <option value="pending">قيد المراجعة</option>
+                  <option value="confirmed">مؤكدة</option>
+                  <option value="rejected">مرفوضة</option>
+                </select>
+              </div>
+              <button type="button" class="btn btn-sm btn-brand" id="btnNewViolation"><i class="ph-duotone ph-note-pencil me-1"></i>رصد مخالفة يدويًا</button>
+            </div>
+            <div class="table-responsive">
+              <table class="table app-table align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">المتدرب</th>
+                    <th scope="col">تاريخ الاختبار</th>
+                    <th scope="col">النموذج</th>
+                    <th scope="col">نوع المخالفة</th>
+                    <th scope="col">تفاصيل الحدث</th>
+                    <th scope="col">الإجراء</th>
+                    <th scope="col">المصدر</th>
+                    <th scope="col">الحالة</th>
+                    <th scope="col"><span class="visually-hidden">مراجعة</span></th>
+                  </tr>
+                </thead>
+                <tbody id="violBody">
+                  <tr data-empty>
+                    <td colspan="9" class="text-center app-muted py-5"><i class="ph-duotone ph-shield-check fs-2 d-block mb-2"></i>لا توجد مخالفات مطابقة.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ================= Modals ================= -->
+    <div class="modal fade" id="bankModal" tabindex="-1" aria-labelledby="bankModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" id="bankForm">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="bankModalTitle"><span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>بنك أسئلة جديد</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label small" for="bankName">اسم البنك <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="bankName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small" for="bankCode">الرمز <span class="text-danger">*</span></label>
+              <input type="text" class="form-control text-uppercase" id="bankCode" required dir="ltr" placeholder="REB-ADV">
+            </div>
+            <div>
+              <label class="form-label small" for="bankProgramInput">البرنامج المرتبط</label>
+              <select class="form-select" id="bankProgramInput">
+                <option value="">غير مرتبط ببرنامج</option>
+                <option value="إدارة الأصول العقارية">إدارة الأصول العقارية</option>
+                <option value="إدارة الأملاك العقارية">إدارة الأملاك العقارية</option>
+                <option value="ادارة البيانات في الأسواق العقارية">ادارة البيانات في الأسواق العقارية</option>
+                <option value="إدارة العقود العقارية">إدارة العقود العقارية</option>
+                <option value="إدارة المخاطر العقارية">إدارة المخاطر العقارية</option>
+                <option value="إدارة المزادات العقارية">إدارة المزادات العقارية</option>
+                <option value="اساسيات التسجيل العيني">اساسيات التسجيل العيني</option>
+                <option value="أسس الاستشارات العقارية">أسس الاستشارات العقارية</option>
+                <option value="أسس الصناعة العقارية">أسس الصناعة العقارية</option>
+                <option value="إعداد التقارير العقارية">إعداد التقارير العقارية</option>
+                <option value="الاحتيال ومكافحة غسل الأموال في القطاع العقاري">الاحتيال ومكافحة غسل الأموال في القطاع العقاري</option>
+                <option value="الأخلاقيات في المجال العقاري">الأخلاقيات في المجال العقاري</option>
+                <option value="الإدارة المالية في القطاع العقاري">الإدارة المالية في القطاع العقاري</option>
+                <option value="الاستثمار في القطاع العقاري">الاستثمار في القطاع العقاري</option>
+                <option value="الاستشاري الهندسي لمشاريع البيع على الخارطة">الاستشاري الهندسي لمشاريع البيع على الخارطة</option>
+                <option value="التمويل العقاري">التمويل العقاري</option>
+                <option value="الرهن العقاري">الرهن العقاري</option>
+                <option value="السكن الجماعي للافراد">السكن الجماعي للافراد</option>
+                <option value="السوق العقاري السعودي">السوق العقاري السعودي</option>
+                <option value="المحاسب القانوني لمشاريع البيع على الخارطة">المحاسب القانوني لمشاريع البيع على الخارطة</option>
+                <option value="المساهمات العقارية">المساهمات العقارية</option>
+                <option value="المسوق العقاري لمشاريع البيع على الخارطة">المسوق العقاري لمشاريع البيع على الخارطة</option>
+                <option value="المهارات السلوكية والاخلاقيات للعاملين في التسجيل العيني">المهارات السلوكية والاخلاقيات للعاملين في التسجيل العيني</option>
+                <option value="الوساطة العقارية">الوساطة العقارية</option>
+                <option value="الوساطة العقارية في تملك غير السعوديين">الوساطة العقارية في تملك غير السعوديين</option>
+                <option value="برنامج تجريبي: التسويق العقاري">برنامج تجريبي: التسويق العقاري</option>
+                <option value="تحليل الأسواق العقارية">تحليل الأسواق العقارية</option>
+                <option value="تحليل المؤشرات العقارية">تحليل المؤشرات العقارية</option>
+                <option value="جمعية ملاك">جمعية ملاك</option>
+                <option value="دراسات الجدوى للمشاريع العقارية">دراسات الجدوى للمشاريع العقارية</option>
+                <option value="دور التحكيم في المنازعات العقارية">دور التحكيم في المنازعات العقارية</option>
+                <option value="صياغة وتقديم الاستشارات">صياغة وتقديم الاستشارات</option>
+                <option value="فحص المباني الجاهزة">فحص المباني الجاهزة</option>
+                <option value="فحص جودة تنفيذ البناء">فحص جودة تنفيذ البناء</option>
+                <option value="فرز الوحدات العقارية">فرز الوحدات العقارية</option>
+                <option value="قراءة التقارير العقارية">قراءة التقارير العقارية</option>
+                <option value="مدخل إلى إدارة مرافق">مدخل إلى إدارة مرافق</option>
+                <option value="مدخل حساب الملاءة المالية العقارية (مسار)">مدخل حساب الملاءة المالية العقارية (مسار)</option>
+                <option value="مدير عقار مشترك">مدير عقار مشترك</option>
+                <option value="مستدام للمباني التجارية الجديدة">مستدام للمباني التجارية الجديدة</option>
+                <option value="مستدام للمباني التجارية القائمة">مستدام للمباني التجارية القائمة</option>
+                <option value="مستدام للمباني السكنية الجديدة">مستدام للمباني السكنية الجديدة</option>
+                <option value="مستدام للمباني السكنية القائمة">مستدام للمباني السكنية القائمة</option>
+                <option value="مستدام للمجتمعات الجديدة">مستدام للمجتمعات الجديدة</option>
+                <option value="مستدام للمجتمعات القائمة">مستدام للمجتمعات القائمة</option>
+                <option value="مقدمة في التحليل العقاري">مقدمة في التحليل العقاري</option>
+                <option value="منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</option>
+                <option value="مهارات التفاوض والتواصل العقاري">مهارات التفاوض والتواصل العقاري</option>
+                <option value="مهارات التفكير وحل المشكلات">مهارات التفكير وحل المشكلات</option>
+                <option value="نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري">نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-sm btn-light px-3" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-sm btn-brand px-3">إضافة البنك</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form class="modal-content app-modal" id="testForm">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="formModalTitle"><span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-exam"></i></span><span id="formModalLabel">نموذج اختبار جديد</span></h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="formId">
+            <div class="row g-3">
+              <div class="col-md-7">
+                <label class="form-label small" for="formName">اسم النموذج <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="formName" required>
+              </div>
+              <div class="col-md-5">
+                <label class="form-label small" for="formType">النوع</label>
+                <select class="form-select" id="formType">
+                  <option value="قبلي">قبلي</option>
+                  <option value="بعدي">بعدي</option>
+                  <option value="نهائي">نهائي</option>
+                </select>
+              </div>
+              <div class="col-md-7">
+                <label class="form-label small" for="formProgram">البرنامج <span class="text-danger">*</span></label>
+                <select class="form-select" id="formProgram" required>
+                  <option value="">اختر برنامجًا...</option>
+                  <option value="إدارة الأصول العقارية">إدارة الأصول العقارية</option>
+                  <option value="إدارة الأملاك العقارية">إدارة الأملاك العقارية</option>
+                  <option value="ادارة البيانات في الأسواق العقارية">ادارة البيانات في الأسواق العقارية</option>
+                  <option value="إدارة العقود العقارية">إدارة العقود العقارية</option>
+                  <option value="إدارة المخاطر العقارية">إدارة المخاطر العقارية</option>
+                  <option value="إدارة المزادات العقارية">إدارة المزادات العقارية</option>
+                  <option value="اساسيات التسجيل العيني">اساسيات التسجيل العيني</option>
+                  <option value="أسس الاستشارات العقارية">أسس الاستشارات العقارية</option>
+                  <option value="أسس الصناعة العقارية">أسس الصناعة العقارية</option>
+                  <option value="إعداد التقارير العقارية">إعداد التقارير العقارية</option>
+                  <option value="الاحتيال ومكافحة غسل الأموال في القطاع العقاري">الاحتيال ومكافحة غسل الأموال في القطاع العقاري</option>
+                  <option value="الأخلاقيات في المجال العقاري">الأخلاقيات في المجال العقاري</option>
+                  <option value="الإدارة المالية في القطاع العقاري">الإدارة المالية في القطاع العقاري</option>
+                  <option value="الاستثمار في القطاع العقاري">الاستثمار في القطاع العقاري</option>
+                  <option value="الاستشاري الهندسي لمشاريع البيع على الخارطة">الاستشاري الهندسي لمشاريع البيع على الخارطة</option>
+                  <option value="التمويل العقاري">التمويل العقاري</option>
+                  <option value="الرهن العقاري">الرهن العقاري</option>
+                  <option value="السكن الجماعي للافراد">السكن الجماعي للافراد</option>
+                  <option value="السوق العقاري السعودي">السوق العقاري السعودي</option>
+                  <option value="المحاسب القانوني لمشاريع البيع على الخارطة">المحاسب القانوني لمشاريع البيع على الخارطة</option>
+                  <option value="المساهمات العقارية">المساهمات العقارية</option>
+                  <option value="المسوق العقاري لمشاريع البيع على الخارطة">المسوق العقاري لمشاريع البيع على الخارطة</option>
+                  <option value="المهارات السلوكية والاخلاقيات للعاملين في التسجيل العيني">المهارات السلوكية والاخلاقيات للعاملين في التسجيل العيني</option>
+                  <option value="الوساطة العقارية">الوساطة العقارية</option>
+                  <option value="الوساطة العقارية في تملك غير السعوديين">الوساطة العقارية في تملك غير السعوديين</option>
+                  <option value="برنامج تجريبي: التسويق العقاري">برنامج تجريبي: التسويق العقاري</option>
+                  <option value="تحليل الأسواق العقارية">تحليل الأسواق العقارية</option>
+                  <option value="تحليل المؤشرات العقارية">تحليل المؤشرات العقارية</option>
+                  <option value="جمعية ملاك">جمعية ملاك</option>
+                  <option value="دراسات الجدوى للمشاريع العقارية">دراسات الجدوى للمشاريع العقارية</option>
+                  <option value="دور التحكيم في المنازعات العقارية">دور التحكيم في المنازعات العقارية</option>
+                  <option value="صياغة وتقديم الاستشارات">صياغة وتقديم الاستشارات</option>
+                  <option value="فحص المباني الجاهزة">فحص المباني الجاهزة</option>
+                  <option value="فحص جودة تنفيذ البناء">فحص جودة تنفيذ البناء</option>
+                  <option value="فرز الوحدات العقارية">فرز الوحدات العقارية</option>
+                  <option value="قراءة التقارير العقارية">قراءة التقارير العقارية</option>
+                  <option value="مدخل إلى إدارة مرافق">مدخل إلى إدارة مرافق</option>
+                  <option value="مدخل حساب الملاءة المالية العقارية (مسار)">مدخل حساب الملاءة المالية العقارية (مسار)</option>
+                  <option value="مدير عقار مشترك">مدير عقار مشترك</option>
+                  <option value="مستدام للمباني التجارية الجديدة">مستدام للمباني التجارية الجديدة</option>
+                  <option value="مستدام للمباني التجارية القائمة">مستدام للمباني التجارية القائمة</option>
+                  <option value="مستدام للمباني السكنية الجديدة">مستدام للمباني السكنية الجديدة</option>
+                  <option value="مستدام للمباني السكنية القائمة">مستدام للمباني السكنية القائمة</option>
+                  <option value="مستدام للمجتمعات الجديدة">مستدام للمجتمعات الجديدة</option>
+                  <option value="مستدام للمجتمعات القائمة">مستدام للمجتمعات القائمة</option>
+                  <option value="مقدمة في التحليل العقاري">مقدمة في التحليل العقاري</option>
+                  <option value="منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</option>
+                  <option value="مهارات التفاوض والتواصل العقاري">مهارات التفاوض والتواصل العقاري</option>
+                  <option value="مهارات التفكير وحل المشكلات">مهارات التفكير وحل المشكلات</option>
+                  <option value="نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري">نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري</option>
+                </select>
+              </div>
+              <div class="col-md-5">
+                <label class="form-label small" for="formStatusInput">الحالة</label>
+                <select class="form-select" id="formStatusInput">
+                  <option value="draft">مسودة</option>
+                  <option value="published">منشور</option>
+                  <option value="hidden">مخفي</option>
+                  <option value="active">نشط</option>
+                </select>
+              </div>
+              <div class="col-6 col-md-3">
+                <label class="form-label small" for="formQuestions">عدد الأسئلة <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="formQuestions" required value="20">
+              </div>
+              <div class="col-6 col-md-3">
+                <label class="form-label small" for="formDuration">المدة (دقيقة) <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="formDuration" required value="60">
+              </div>
+              <div class="col-6 col-md-3">
+                <label class="form-label small" for="formAttempts">المحاولات <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="formAttempts" required value="1">
+              </div>
+              <div class="col-6 col-md-3">
+                <label class="form-label small" for="formPass">درجة النجاح % <span class="text-danger">*</span></label>
+                <input type="number" class="form-control" id="formPass" required value="60">
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="formRandom" checked>
+                  <label class="form-check-label small" for="formRandom">ترتيب الأسئلة عشوائيًا</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-sm btn-light px-3" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-sm btn-brand px-3" id="formSubmit">إنشاء النموذج</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal fade" id="assignModal" tabindex="-1" aria-labelledby="assignModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form class="modal-content app-modal" id="assignFormEl">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="assignModalTitle"><span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-rocket-launch"></i></span>إطلاق نموذج لمتدرب</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label small" for="assignName">اسم المتدرب <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="assignName" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label small" for="assignId">رقم الهوية <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="assignId" required dir="ltr" inputmode="numeric" placeholder="1xxxxxxxxx">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label small" for="assignMobile">الجوال</label>
+                <input type="tel" class="form-control" id="assignMobile" dir="ltr" placeholder="05xxxxxxxx">
+              </div>
+              <div class="col-12">
+                <label class="form-label small" for="assignFormInput">نموذج الاختبار <span class="text-danger">*</span></label>
+                <select class="form-select" id="assignFormInput" required>
+                  <option value="">اختر نموذجًا...</option>
+                  <option value="1">اختبار إدارة الأملاك البعدي</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label small" for="assignDate">تاريخ الاختبار <span class="text-danger">*</span></label>
+                <input type="date" class="form-control" id="assignDate" required>
+              </div>
+              <div class="col-6 col-md-4">
+                <label class="form-label small" for="assignStart">وقت البداية <span class="text-danger">*</span></label>
+                <input type="time" class="form-control" id="assignStart" required>
+              </div>
+              <div class="col-6 col-md-4">
+                <label class="form-label small" for="assignEnd">وقت الانتهاء <span class="text-danger">*</span></label>
+                <input type="time" class="form-control" id="assignEnd" required>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-sm btn-light px-3" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-sm btn-brand px-3">إطلاق</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal fade" id="violationModal" tabindex="-1" aria-labelledby="violationModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" id="violationForm">
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="violationModalTitle"><span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-shield-warning"></i></span>رصد مخالفة يدويًا</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label small" for="violName">اسم المتدرب <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="violName" required>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label small" for="violFormInput">نموذج الاختبار</label>
+                <select class="form-select" id="violFormInput">
+                  <option value="">غير محدد</option>
+                  <option value="1">اختبار إدارة الأملاك البعدي</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label small" for="violType">نوع المخالفة <span class="text-danger">*</span></label>
+                <select class="form-select" id="violType" required>
+                  <option value="">اختر النوع...</option>
+                  <option value="محاولة نسخ السؤال">محاولة نسخ السؤال</option>
+                  <option value="محاولة لصق نص">محاولة لصق نص</option>
+                  <option value="فتح تبويب أو متصفح آخر">فتح تبويب أو متصفح آخر</option>
+                  <option value="الخروج من نافذة الاختبار">الخروج من نافذة الاختبار</option>
+                  <option value="الغش">الغش</option>
+                  <option value="استخدام الجوال">استخدام الجوال</option>
+                  <option value="التحدث مع متدرب آخر">التحدث مع متدرب آخر</option>
+                  <option value="مغادرة القاعة دون إذن">مغادرة القاعة دون إذن</option>
+                  <option value="انتحال شخصية">انتحال شخصية</option>
+                  <option value="تصوير الأسئلة">تصوير الأسئلة</option>
+                  <option value="أخرى">أخرى</option>
+                </select>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small" for="violAction">الإجراء المتخذ</label>
+              <input type="text" class="form-control" id="violAction" placeholder="إنذار شفهي">
+            </div>
+            <div>
+              <label class="form-label small" for="violDetails">تفاصيل المخالفة</label>
+              <textarea class="form-control" id="violDetails" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-sm btn-light px-3" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-sm btn-danger px-3">حفظ المخالفة</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- ============ Templates (cloned by JS) ============ -->
+  <template id="pageItemTemplate">
+    <li class="page-item"><a class="page-link" href="#"></a></li>
+  </template>
+
+  <template id="pageGapTemplate">
+    <li class="page-item disabled"><span class="page-link">…</span></li>
+  </template>
+
+  <template id="pagePrevTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="السابق"><i class="ph ph-caret-right"></i></a></li>
+  </template>
+
+  <template id="pageNextTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="التالي"><i class="ph ph-caret-left"></i></a></li>
+  </template>
+
+  <template id="bankRowTemplate">
+    <tr data-bank>
+      <td class="app-table__name"><div class="d-flex align-items-center gap-2">
+        <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-database"></i></span>
+        <span class="app-table__title" data-search data-field="name"></span>
+      </div></td>
+      <td><span class="app-code" data-search data-field="code"></span></td>
+      <td class="text-wrap" data-field="program"></td>
+      <td><div class="d-flex align-items-center gap-2">
+        <div class="progress progress-xs app-qbar" role="progressbar" aria-label="عدد الأسئلة" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
+          <div class="progress-bar bg-brand-green" style="width:0.0%"></div>
+        </div>
+        <span class="fw-semibold">0</span>
+      </div></td>
+      <td class="text-center"><div class="d-inline-flex gap-1">
+        <a href="#" class="btn-icon-soft" title="عرض الأسئلة" aria-label="عرض الأسئلة"><i class="ph-duotone ph-eye"></i></a>
+        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل"><i class="ph-duotone ph-pencil-simple"></i></a>
+      </div></td>
+    </tr>
+  </template>
+
+  <template id="unlinkedBadgeTemplate">
+    <span class="badge rounded-pill badge-soft-warning"><i class="ph ph-link-break me-1"></i>غير مرتبط ببرنامج</span>
+  </template>
+
+  <template id="formCardTemplate">
+    <div class="col-md-6 col-xxl-4" data-form>
+      <article class="card app-card h-100">
+        <div class="card-body d-flex flex-column gap-3">
+          <div class="d-flex justify-content-between align-items-start gap-2">
+            <div class="d-flex align-items-center gap-2 min-w-0">
+              <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-exam"></i></span>
+              <div class="min-w-0"><h3 class="app-card__title mb-0" data-field="name"></h3>
+              <div class="small app-muted text-truncate" data-field="program"></div></div>
+            </div>
+            <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+          </div>
+          <dl class="app-kv mb-0">
+            <div><dt>النوع</dt><dd data-field="type"></dd></div>
+            <div><dt>الأسئلة</dt><dd data-field="questions">0</dd></div>
+            <div><dt>المدة</dt><dd><span data-field="duration">0</span> د</dd></div>
+            <div><dt>المحاولات</dt><dd data-field="attempts">0</dd></div>
+          </dl>
+          <div class="small app-muted">بنك أسئلة واحد · النجاح <span data-field="pass">0</span>% · الترتيب <span data-field="order">عشوائي</span></div>
+          <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-auto">
+            <a href="#" class="btn btn-navy btn-sm"><i class="ph ph-play me-1"></i>معاينة وتجربة</a>
+            <div class="d-flex gap-1">
+              <button type="button" class="btn-icon-soft" data-form-action="edit" title="تعديل" aria-label="تعديل"><i class="ph-duotone ph-pencil-simple"></i></button>
+              <button type="button" class="btn-icon-soft" data-form-action="attempts" title="سجل المحاولات" aria-label="سجل المحاولات"><i class="ph-duotone ph-clock-counter-clockwise"></i></button>
+              <button type="button" class="btn-icon-soft" data-form-action="copy" title="نسخ" aria-label="نسخ"><i class="ph-duotone ph-copy"></i></button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </template>
+
+  <template id="formStatus-draft">
+    <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+  </template>
+  <template id="formStatus-published">
+    <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-globe-simple me-1"></i>منشور</span>
+  </template>
+  <template id="formStatus-hidden">
+    <span class="badge rounded-pill badge-soft-muted" data-status-badge><i class="ph ph-eye-slash me-1"></i>مخفي</span>
+  </template>
+  <template id="formStatus-active">
+    <span class="badge rounded-pill badge-soft-warning" data-status-badge><i class="ph ph-broadcast me-1"></i>نشط</span>
+  </template>
+
+  <template id="trackingRowTemplate">
+    <tr>
+      <td><div class="app-table__title" data-field="name"></div><div class="small app-muted" data-field="type"></div></td>
+      <td class="text-wrap" data-field="program"></td>
+      <td class="app-muted">— – —</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>—</td>
+      <td>—</td>
+    </tr>
+  </template>
+
+  <template id="perfItemTemplate">
+    <button type="button" class="list-group-item list-group-item-action d-flex align-items-center gap-2 px-2">
+      <span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-exam"></i></span>
+      <span class="flex-grow-1 min-w-0">
+        <span class="d-block fw-semibold text-truncate" data-field="name"></span>
+        <span class="d-block small app-muted">مسجل 0 · 0 محاولة · نجاح 0% · متوسط 0%</span>
+      </span>
+      <i class="ph ph-caret-left app-muted"></i>
+    </button>
+  </template>
+
+  <template id="assignRowTemplate">
+    <tr class="app-row-new">
+      <td class="fw-semibold" data-field="name" data-search></td>
+      <td dir="ltr" class="text-end" data-field="nationalId" data-search></td>
+      <td dir="ltr" class="text-end" data-field="mobile"></td>
+      <td data-field="form"></td>
+      <td><span data-field="date"></span> · <span dir="ltr" data-field="time"></span></td>
+      <td><span class="badge rounded-pill badge-soft-info">مجدول</span></td>
+      <td data-field="assignedOn"></td>
+      <td><button type="button" class="btn btn-sm app-filter-btn text-danger" data-cancel-assign title="إلغاء الإسناد" aria-label="إلغاء الإسناد"><i class="ph-duotone ph-x-circle"></i></button></td>
+    </tr>
+  </template>
+
+  <template id="violationRowTemplate">
+    <tr class="app-row-new" data-status="pending" data-source="manual">
+      <td class="fw-semibold" data-field="trainee"></td>
+      <td data-field="date"></td>
+      <td data-field="form"></td>
+      <td data-field="type"></td>
+      <td class="text-wrap app-violation-details" data-field="details"></td>
+      <td data-field="action"></td>
+      <td><span class="badge rounded-pill badge-soft-muted">يدوي</span></td>
+      <td data-field="status"><span class="badge rounded-pill badge-soft-warning" data-status-badge>قيد المراجعة</span></td>
+      <td data-field="review">
+        <div class="d-inline-flex gap-1">
+          <button type="button" class="btn-icon-soft" data-review="confirmed" title="تأكيد المخالفة" aria-label="تأكيد المخالفة"><i class="ph-duotone ph-check"></i></button>
+          <button type="button" class="btn-icon-soft app-btn-icon-danger" data-review="rejected" title="رفض المخالفة" aria-label="رفض المخالفة"><i class="ph-duotone ph-x"></i></button>
+        </div>
+      </td>
+    </tr>
+  </template>
+
+  <template id="violStatus-pending">
+    <span class="badge rounded-pill badge-soft-warning" data-status-badge>قيد المراجعة</span>
+  </template>
+  <template id="violStatus-confirmed">
+    <span class="badge rounded-pill badge-soft-danger" data-status-badge>مؤكدة</span>
+  </template>
+  <template id="violStatus-rejected">
+    <span class="badge rounded-pill badge-soft-muted" data-status-badge>مرفوضة</span>
+  </template>
+
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  <!-- Charts -->
+  <script src="assets/js/charts/activity-bars.js"></script>
+
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/tests.js"></script>
+</body>
+</html>

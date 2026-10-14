@@ -1,1566 +1,774 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
 <head>
-    <!-- meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة التحكم | المعهد العقاري السعودي</title>
 
-    <!-- title -->
-    <title>مرابد</title>
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
 
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
 
-    <!-- css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all-fontawesome.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/nice-select.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
 
-    <link rel="stylesheet" href="assets/css/ar.css">
+  <!-- Charts -->
+  <link rel="stylesheet" href="assets/css/charts/approval-gauge.css">
+  <link rel="stylesheet" href="assets/css/charts/stages-stepper.css">
+  <link rel="stylesheet" href="assets/css/charts/type-distribution.css">
+  <link rel="stylesheet" href="assets/css/charts/classification-bar.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
 
-    <!-- preloader -->
-    <div class="preloader">
-        <div class="loader-ripple">
-            <div></div>
-            <div></div>
-        </div>
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="index.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="index.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="catalog.html" class="app-nav__link"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="approvals.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
+        </a>
+
+        <div class="app-nav__group">التقييم</div>
+        <a href="tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+
+        <div class="app-nav__group">الإدارة</div>
+        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="#" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
     </div>
-    <!-- preloader end -->
+  </aside>
 
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
 
-    <!-- header area -->
-    <header class="header">
-
-        <!-- header top -->
-        <div class="header-top">
-            <div class="shape">
-                <div class="shape-1"></div>
-                <div class="shape-2"></div>
-            </div>
-            <div class="container">
-                <div class="header-top-wrap">
-                    <div class="header-top-left">
-                        <div class="header-top-list">
-                            <ul>
-                                <li><a href="mailto:support@marabed.com"><i class="far fa-envelopes"></i>
-                                        support@marabed.com</a></li>
-                                <li><a href="tel:+21236547898"><i class="far fa-phone-volume"></i> (123) 345-6789</a>
-                                </li>
-                                <li><a href="#"><i class="far fa-location-pen"></i> الرياض, المملكة العربية السعودية</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="header-top-right">
-                        <div class="header-top-list">
-                            <a href="#my-modal" class="open-modal"><i class="far fa-sign-in"></i> تسجيل الدخول</a>
-                        </div>
-
-                        <div class="header-top-lang">
-                            <div class="dropdown">
-                                <a href="#" class="top-lang dropdown-toggle" data-bs-toggle="dropdown"><i
-                                        class="fal fa-globe"></i> Eng</a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="#">English</a></li>
-                                    <li><a class="dropdown-item" href="#">العربية</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="header-top-social">
-                            <span>تابعنا : </span>
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-x-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
         </div>
-        <!-- header top end -->
+      </div>
 
-        <!-- navbar -->
-        <div class="main-navigation">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid position-relative">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="assets/img/logo.png" alt="logo">
-                    </a>
-                    <div class="mobile-menu-right">
-                        <div class="mobile-menu-btn">
-                            <button type="button" class="nav-right-link search-box-outer"><i
-                                    class="far fa-search"></i></button>
-                        </div>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                            aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <a href="index.html" class="offcanvas-brand" id="offcanvasNavbarLabel">
-                                <img src="assets/img/logo.png" alt="">
-                            </a>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                                    class="far fa-xmark"></i></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-center flex-grow-1">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link active" href="#">الرئيسية</a>
-
-                                </li>
-                                <li class="nav-item"><a class="nav-link" href="#">من نحن</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">إبل للبيع</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#">الأعلاف</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"> االمنتجات البيطرية</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"> خدمات النقل</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"> لوازم الإبل</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#"> متفرقات الإبل</a></li>
-
-                                <li class="nav-item"><a class="nav-link" href="#">تواصل معانا</a></li>
-                            </ul>
-                            <!-- nav-right -->
-                            <div class="nav-right">
-                                <div class="search-btn">
-                                    <button type="button" class="nav-right-link search-box-outer"><i
-                                            class="far fa-search"></i></button>
-                                </div>
-                                <div class="shop-cart">
-                                    <a href="#" class="nav-right-link"><i
-                                            class="far fa-shopping-bag"></i><span>0</span></a>
-                                </div>
-                                <div class="nav-btn">
-                                    <a href="#" class="theme-btn">إضافة إعلان</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
         </div>
-        <!-- navbar end-->
 
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">156</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
-    <!-- header area end -->
 
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
 
-    <!-- popup search -->
-    <div class="search-popup">
-        <button class="close-search"><span class="far fa-times"></span></button>
-        <form action="#">
-            <div class="form-group">
-                <input type="search" name="search-field" class="form-control" placeholder="عن ماذا تبحث ؟" required>
-                <button type="submit"><i class="far fa-search"></i></button>
+      <!-- Page title -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 py-3">
+        <h1 class="app-page-title h5 mb-0">لوحة التحكم</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">لوحة التحكم</li>
+          </ol>
+        </nav>
+      </div>
+
+      <!-- KPIs -->
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="app-muted small">الوحدات التدريبية</div>
+                  <div class="app-kpi-value mt-1">139</div>
+                </div>
+                <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-books"></i></span>
+              </div>
+              <div class="d-flex flex-wrap gap-1 mt-2">
+                <span class="badge rounded-pill badge-soft-success">92 معتمد</span>
+                <span class="badge rounded-pill badge-soft-info">47 قيد التصميم</span>
+              </div>
             </div>
-        </form>
-    </div>
-    <!-- popup search end -->
-
-
-
-
-    <main class="main">
-
-        <!-- hero area -->
-        <div class="hero-section">
-            <div class="hero-slider owl-carousel">
-                <div class="hero-single" style="background-image: url(assets/img/hero.jpg);">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-lg-6">
-                                <div class="hero-content">
-                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">
-                                        <img src="assets/img/camal_white.png" alt="">
-                                        منصة مرابد
-                                    </h6>
-                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                        المنصة <span>السعودية</span> لكل ما يخص الإبل
-                                    </h1>
-                                    <p data-animation="fadeInLeft" data-delay=".75s">
-                                        منصة متكاملة لعرض وبيع الإبل وتنظيم المزادات والمزاينات إلكترونيًا، تجمع المربين
-                                        والمستثمرين في بيئة موثوقة وآمنة لإدارة عملياتهم بسهولة، بما يواكب مستهدفات رؤية
-                                        المملكة 2030 .
-                                    </p>
-                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                        <a href="#" class="theme-btn">سجل حلالك مجانا</a>
-                                        <a href="#" class="theme-btn2">تصفح السوق</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-single" style="background-image: url(assets/img/hero2.jpg);">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-lg-6">
-                                <div class="hero-content">
-                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">
-                                        <img src="assets/img/camal_white.png" alt="">
-                                        منصة مرابد
-                                    </h6>
-                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                        كل احتياجات <span>إبلك</span> في وجهة واحدة
-                                    </h1>
-                                    <p data-animation="fadeInLeft" data-delay=".75s">
-                                        خدمات متكاملة تسهل عليك العناية بإبلك وإدارة احتياجاتها من المتاجر المتخصصة.
-                                    </p>
-                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                        <a href="#" class="theme-btn">اكتشف الخدمة</a>
-                                        <a href="#" class="theme-btn2">خدماتنا</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-single" style="background-image: url(assets/img/hero.jpg);">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-md-12 col-lg-6">
-                                <div class="hero-content">
-                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">
-                                        <img src="assets/img/camal_white.png" alt="">
-                                        منصة مرابد
-                                    </h6>
-                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                        المنصة <span>السعودية</span> لكل ما يخص الإبل
-                                    </h1>
-                                    <p data-animation="fadeInLeft" data-delay=".75s">
-                                        منصة متكاملة لعرض وبيع الإبل وتنظيم المزادات والمزاينات إلكترونيًا، تجمع المربين
-                                        والمستثمرين في بيئة موثوقة وآمنة لإدارة عملياتهم بسهولة، بما يواكب مستهدفات رؤية
-                                        المملكة 2030 .
-                                    </p>
-                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                        <a href="#" class="theme-btn">سجل حلالك مجانا</a>
-                                        <a href="#" class="theme-btn2">تصفح السوق</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- hero area end -->
-
-        <!-- categories-area -->
-        <div class="team-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mx-auto">
-                        <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                            <span class="site-title-tagline justify-content-center">
-                                <img src="assets/img/camal-color.png" alt="">
-                                منصة مرابد
-                            </span>
-                            <h2 class="site-title">تسوّق حسب التصنيف</h2>
-                            <div class="heading-divider m-auto"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row g-3 g-md-4">
-                    <div class="col-6 col-md-4 col-lg-3 col-xl">
-                        <div class="team-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="team-img">
-                                <img src="assets/img/category1.png" alt="thumb">
-                                <!-- <div class="team-social-wrap">
-                                    <div class="team-social-btn">
-                                        <button type="button"><i class="far fa-arrow-left"></i></button>
-                                    </div>
-                                   
-                                </div> -->
-                            </div>
-                            <div class="team-content">
-                                <h4><a href="#">متاجر الإبل</a></h4>
-                                <span>شراء وبيع إبل السباق والتربية</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 col-xl">
-                        <div class="team-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="team-img">
-                                <img src="assets/img/category5.png" alt="thumb">
-
-                            </div>
-                            <div class="team-content">
-                                <h4><a href="#">متاجر مستلزمات الابل</a></h4>
-                                <span>متاجر مستلزمات الابل</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 col-xl">
-                        <div class="team-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="team-img">
-                                <img src="assets/img/category3.png" alt="thumb">
-
-                            </div>
-                            <div class="team-content">
-                                <h4><a href="#">متاجر الاغذية الحيوانية</a></h4>
-                                <span>متاجر الاغذية الحيوانية</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 col-xl">
-                        <div class="team-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="team-img">
-                                <img src="assets/img/category4.png" alt="thumb">
-
-                            </div>
-                            <div class="team-content">
-                                <h4><a href="#">المنتجات البيطرية</a></h4>
-                                <span>متاجر المنتجات البيطرية</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-md-4 col-lg-3 col-xl">
-                        <div class="team-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="team-img">
-                                <img src="assets/img/category1.png" alt="thumb">
-
-                            </div>
-                            <div class="team-content">
-                                <h4><a href="#">خدمات النقل </a></h4>
-                                <span>متاجر المنتجات البيطرية</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- team-area end -->
-
-
-        <!-- about area -->
-        <div class="about-area py-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="about-left wow fadeInLeft" data-wow-delay=".25s">
-                            <div class="about-img">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <img class="img-1" src="assets/img/hero2.jpg" alt="">
-                                    </div>
-                                    <div class="col-6">
-                                        <img class="img-2" src="assets/img/about1.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="about-badge">
-                                <img src="assets/img/camal-color2.png" alt="">
-
-                                <h5>في مكان واحد</h5>
-
-                                <span class="about-badge-line"></span>
-
-                                <p>مزاين <b>•</b> مزادات <b>•</b> معرفة</p>
-
-                                <div class="about-badge-pattern">
-                                    <span>‹‹</span>
-                                    <i></i>
-                                    <span>››</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about-right wow fadeInUp" data-wow-delay=".25s">
-
-                            <div class="site-heading wow fadeInDown mb-3" data-wow-delay=".25s">
-                                <span class="site-title-tagline">
-                                    <img src="assets/img/camal-color.png" alt="">
-                                    منصة مرابد
-                                </span>
-                                <h2 class="site-title">من نحن</h2>
-                                <div class="heading-divider"></div>
-
-                            </div>
-
-                            <h5 class="mb-2">مرابد.. حيث تلتقي الأصالة بالمستقبل</h5>
-                            <p class="about-text">
-                                مرابد منصة إلكترونية متكاملة متخصصة في بيع وتداول الإبل والنياق، تجمع بين أصالة التراث
-                                العربي وروح التقنية الحديثة، لتقدم تجربة رقمية موثوقة وسهلة لعشاق الإبل والمربين
-                                والمستثمرين.
-                            </p>
-                            <div class="choose-content-wrap">
-                                <div class="choose-item">
-                                    <div class="choose-item-icon">
-                                        <i class="far fa-eye"></i>
-                                    </div>
-                                    <div class="choose-item-info">
-                                        <h4>الرؤية</h4>
-                                        <p>
-                                            أن نكون المنصة الرائدة عربيًا في عالم الإبل، ونحوّل هذا الإرث العريق إلى
-                                            تجربة رقمية متطورة.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="choose-item">
-                                    <div class="choose-item-icon">
-                                        <i class="far fa-lightbulb"></i>
-                                    </div>
-                                    <div class="choose-item-info">
-                                        <h4>الرسالة</h4>
-                                        <p>
-                                            نبني سوقًا رقميًا موثوقًا يجمع التجارة والمعرفة والثقافة، ويصل بالمربين
-                                            وعشاق الإبل إلى مستقبل أكثر سهولة وابتكارًا.
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <a href="#" class="theme-btn">اعرف المزيد</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- about area end -->
-
-
-        <section class="latest-listings">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="site-heading wow fadeInDown flex-wrap mb-3 d-flex justify-content-between align-items-center"
-                            data-wow-delay=".25s">
-                            <div class="">
-                                <span class="site-title-tagline text-yellow">
-                                    <img src="assets/img/camal-color2.png" alt="">
-                                    منصة مرابد
-                                </span>
-                                <h2 class="site-title text-white">معروض <b>حديثاً</b> </h2>
-                                <div class="heading-divider light"></div>
-                                <p class="text-white">تصفح أحدث عروض الإبل والمستلزمات - صفقات موثوقة يومياً</p>
-                            </div>
-
-                            <a href="#" class="view-all-btn">
-                                عرض كل المعروضات
-                                <i class="bi bi-arrow-left"></i>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="row g-4">
-                    <div class="col-lg-12">
-                        <div class="service-slider owl-carousel">
-                            <div class="listing-card">
-
-                                <div class="listing-image">
-                                    <img src="assets/img/img.jpg" alt="قعود سمر طيب">
-
-                                    <span class="listing-badge new">جديد</span>
-
-                                    <button class="favorite-btn">
-                                        <i class="fal fa-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="listing-content">
-
-                                    <h3>قعود سمر طيب</h3>
-
-                                    <div class="location">
-                                        <i class="far fa-location-pen"></i>
-                                        مجاهيم • المدينة المنورة
-                                    </div>
-
-                                    <div class="listing-info">
-
-                                        <div>
-                                            <span>الفصيلة</span>
-                                            <strong>مجاهيم</strong>
-                                        </div>
-
-                                        <div>
-                                            <span>العمر</span>
-                                            <strong>7 سنوات</strong>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="listing-footer">
-                                        <div class="price">
-                                            <strong>155,000</strong>
-                                            <span>ريال</span>
-                                        </div>
-
-                                        <a href="#" class="details-btn">
-                                            عرض التفاصيل
-                                            <i class="bi bi-arrow-left"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="listing-card">
-
-                                <div class="listing-image">
-                                    <img src="assets/img/img2.avif" alt="قعود سمر طيب">
-
-                                    <span class="listing-badge featured">مميز</span>
-
-                                    <button class="favorite-btn">
-                                        <i class="fal fa-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="listing-content">
-
-                                    <h3>قعود سمر طيب</h3>
-
-                                    <div class="location">
-                                        <i class="far fa-location-pen"></i>
-                                        مجاهيم • المدينة المنورة
-                                    </div>
-
-                                    <div class="listing-info">
-
-                                        <div>
-                                            <span>الفصيلة</span>
-                                            <strong>مجاهيم</strong>
-                                        </div>
-
-                                        <div>
-                                            <span>العمر</span>
-                                            <strong>7 سنوات</strong>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="listing-footer">
-                                        <div class="price">
-                                            <strong>155,000</strong>
-                                            <span>ريال</span>
-                                        </div>
-
-                                        <a href="#" class="details-btn">
-                                            عرض التفاصيل
-                                            <i class="bi bi-arrow-left"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="listing-card">
-
-                                <div class="listing-image">
-                                    <img src="assets/img/img3.avif" alt="قعود سمر طيب">
-
-                                    <span class="listing-badge new">جديد</span>
-
-                                    <button class="favorite-btn">
-                                        <i class="fal fa-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="listing-content">
-
-                                    <h3>قعود سمر طيب</h3>
-
-                                    <div class="location">
-                                        <i class="far fa-location-pen"></i>
-                                        مجاهيم • المدينة المنورة
-                                    </div>
-
-                                    <div class="listing-info">
-
-                                        <div>
-                                            <span>الفصيلة</span>
-                                            <strong>مجاهيم</strong>
-                                        </div>
-
-                                        <div>
-                                            <span>العمر</span>
-                                            <strong>7 سنوات</strong>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="listing-footer">
-                                        <div class="price">
-                                            <strong>155,000</strong>
-                                            <span>ريال</span>
-                                        </div>
-
-                                        <a href="#" class="details-btn">
-                                            عرض التفاصيل
-                                            <i class="bi bi-arrow-left"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="listing-card">
-
-                                <div class="listing-image">
-                                    <img src="assets/img/hero2.jpg" alt="قعود سمر طيب">
-
-                                    <span class="listing-badge new">جديد</span>
-
-                                    <button class="favorite-btn">
-                                        <i class="fal fa-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="listing-content">
-
-                                    <h3>قعود سمر طيب</h3>
-
-                                    <div class="location">
-                                        <i class="far fa-location-pen"></i>
-                                        مجاهيم • المدينة المنورة
-                                    </div>
-
-                                    <div class="listing-info">
-
-                                        <div>
-                                            <span>الفصيلة</span>
-                                            <strong>مجاهيم</strong>
-                                        </div>
-
-                                        <div>
-                                            <span>العمر</span>
-                                            <strong>7 سنوات</strong>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="listing-footer">
-                                        <div class="price">
-                                            <strong>155,000</strong>
-                                            <span>ريال</span>
-                                        </div>
-
-                                        <a href="#" class="details-btn">
-                                            عرض التفاصيل
-                                            <i class="bi bi-arrow-left"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="listing-card">
-
-                                <div class="listing-image">
-                                    <img src="assets/img/img.jpg" alt="قعود سمر طيب">
-
-                                    <span class="listing-badge new">جديد</span>
-
-                                    <button class="favorite-btn">
-                                        <i class="fal fa-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="listing-content">
-
-                                    <h3>قعود سمر طيب</h3>
-
-                                    <div class="location">
-                                        <i class="far fa-location-pen"></i>
-                                        مجاهيم • المدينة المنورة
-                                    </div>
-
-                                    <div class="listing-info">
-
-                                        <div>
-                                            <span>الفصيلة</span>
-                                            <strong>مجاهيم</strong>
-                                        </div>
-
-                                        <div>
-                                            <span>العمر</span>
-                                            <strong>7 سنوات</strong>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="listing-footer">
-                                        <div class="price">
-                                            <strong>155,000</strong>
-                                            <span>ريال</span>
-                                        </div>
-
-                                        <a href="#" class="details-btn">
-                                            عرض التفاصيل
-                                            <i class="bi bi-arrow-left"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="listing-card">
-
-                                <div class="listing-image">
-                                    <img src="assets/img/img2.avif" alt="قعود سمر طيب">
-
-                                    <span class="listing-badge featured">مميز</span>
-
-                                    <button class="favorite-btn">
-                                        <i class="fal fa-heart"></i>
-                                    </button>
-                                </div>
-
-                                <div class="listing-content">
-
-                                    <h3>قعود سمر طيب</h3>
-
-                                    <div class="location">
-                                        <i class="far fa-location-pen"></i>
-                                        مجاهيم • المدينة المنورة
-                                    </div>
-
-                                    <div class="listing-info">
-
-                                        <div>
-                                            <span>الفصيلة</span>
-                                            <strong>مجاهيم</strong>
-                                        </div>
-
-                                        <div>
-                                            <span>العمر</span>
-                                            <strong>7 سنوات</strong>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="listing-footer">
-                                        <div class="price">
-                                            <strong>155,000</strong>
-                                            <span>ريال</span>
-                                        </div>
-
-                                        <a href="#" class="details-btn">
-                                            عرض التفاصيل
-                                            <i class="bi bi-arrow-left"></i>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-
-
-                        </div>
-                    </div>
-
-
-
-
-                </div>
-
-
-
-            </div>
-        </section>
-
-        <!-- <div class="service-area">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-12">
-                         <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                           <span class="site-title-tagline justify-content-center text-yellow">
-                            <img src="assets/img/camal-color2.png" alt="">
-                             منصة مرابد
-                            </span>
-                            <h2 class="site-title text-white">معروض حديثاً</h2>
-                            
-                            <div class="heading-divider light"></div>
-                              <p class="text-center text-white">
-                            تصفح أقوى عروض الإبل والمنقيات — مزادات وبيع مباشر
-                        </p>
-                        </div>
-                      
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="service-slider owl-carousel">
-                            <div class="service-item">
-                                <div class="service-img">
-                                    <img src="assets/img/img.jpg" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="assets/img/c1.jfif" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h4 class="service-title">
-                                        <a href="#">قعود سمر طيب يبشر بالخير - للبيع السمح</a>
-                                    </h4>
-                                    <p class="service-text">
-                                        قعود سمر السن: مفرود، القعود جبر وعظمه جليل، ووجهه طيب. شارب حليب لين شبعان ومطعم جميع التطعيمات، خالي من التوليع والامراض ولله الحمد. البيع سمح ان شاء الله وحدي فيه 15 الف.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                       <h5 class="price">
-                                                163.48
-                                                <svg width="1em" height="1em" viewBox="0 0 1263 1395" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ريال سعودي" class="inline-block shrink-0 align-[-0.125em] text-sm font-semibold"><path d="M1201.3 690.7C1246 680.9 1259.6 568.7 1262.7 536C1263.1 531.6 1259.1 528 1254.8 528.9L885.5 607.4V56.4C885.5 49.2 877.7 44.6 871.4 48.2C844 63.8 783.5 102.6 751.9 155.2C745.5 165.9 742.2 178.2 742.2 190.7V637.7L590.9 669.8L591.3 9.89998C591.3 2.69998 583.5 -1.90002 577.2 1.69998C549.8 17.3 489.3 56.1 457.7 108.7C451.3 119.4 448 131.7 448 144.2L447.4 700.3L133.8 766.9C91.3999 778.3 78.1999 890.6 75.1999 923.4C74.7999 927.8 78.7999 931.4 83.0999 930.4L447.2 852.3L447 1035.7C436.1 1051.6 106.2 1111.2 71.7999 1122.2C37.3999 1133.1 33.9999 1153.3 26.4999 1168.4C20.2999 1180.7 5.79993 1253.9 0.599934 1280.5C-0.300066 1285.1 3.79993 1289.1 8.29993 1288.2C67.6999 1276.2 385 1212 432.1 1197.6C484.1 1181.7 502.5 1148.8 538.4 1099.4C560 1069.7 575.1 1041.4 583.3 1024.6C588 1014.9 590.5 1004.3 590.5 993.5V821.7C590.6 821.7 742 789.2 742 789.2V1057.3C742 1064.5 748.6 1069.9 755.7 1068.4L1194.4 974.1C1239.1 964.3 1252.7 852 1255.8 819.3C1256.2 814.9 1252.2 811.3 1247.9 812.2L885.3 888.3V758.5L1201.2 690.8L1201.3 690.7Z"></path><path d="M1248.1 1136.7L801.6 1230.4C759.2 1241.8 746 1354.1 743 1386.9C742.6 1391.3 746.6 1394.9 750.9 1393.9L1194.6 1298.5C1239.3 1288.7 1252.9 1176.4 1256 1143.7C1256.4 1139.3 1252.4 1135.7 1248.1 1136.6V1136.7Z"></path></svg>
-                                            </h5>
-                                     <a href="#" class="theme-btn">
-                                        <i class="far fa-shopping-bag"></i>
-                                        أضف الي السلة 
-                                    </a>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                             <div class="service-item">
-                                <div class="service-img">
-                                    <img src="assets/img/img2.avif" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="assets/img/c2.webp" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h4 class="service-title">
-                                        <a href="#">قعود سمر طيب يبشر بالخير - للبيع السمح</a>
-                                    </h4>
-                                    <p class="service-text">
-                                        قعود سمر السن: مفرود، القعود جبر وعظمه جليل، ووجهه طيب. شارب حليب لين شبعان ومطعم جميع التطعيمات، خالي من التوليع والامراض ولله الحمد. البيع سمح ان شاء الله وحدي فيه 15 الف.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                       <h5 class="price">
-                                                163.48
-                                                <svg width="1em" height="1em" viewBox="0 0 1263 1395" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ريال سعودي" class="inline-block shrink-0 align-[-0.125em] text-sm font-semibold"><path d="M1201.3 690.7C1246 680.9 1259.6 568.7 1262.7 536C1263.1 531.6 1259.1 528 1254.8 528.9L885.5 607.4V56.4C885.5 49.2 877.7 44.6 871.4 48.2C844 63.8 783.5 102.6 751.9 155.2C745.5 165.9 742.2 178.2 742.2 190.7V637.7L590.9 669.8L591.3 9.89998C591.3 2.69998 583.5 -1.90002 577.2 1.69998C549.8 17.3 489.3 56.1 457.7 108.7C451.3 119.4 448 131.7 448 144.2L447.4 700.3L133.8 766.9C91.3999 778.3 78.1999 890.6 75.1999 923.4C74.7999 927.8 78.7999 931.4 83.0999 930.4L447.2 852.3L447 1035.7C436.1 1051.6 106.2 1111.2 71.7999 1122.2C37.3999 1133.1 33.9999 1153.3 26.4999 1168.4C20.2999 1180.7 5.79993 1253.9 0.599934 1280.5C-0.300066 1285.1 3.79993 1289.1 8.29993 1288.2C67.6999 1276.2 385 1212 432.1 1197.6C484.1 1181.7 502.5 1148.8 538.4 1099.4C560 1069.7 575.1 1041.4 583.3 1024.6C588 1014.9 590.5 1004.3 590.5 993.5V821.7C590.6 821.7 742 789.2 742 789.2V1057.3C742 1064.5 748.6 1069.9 755.7 1068.4L1194.4 974.1C1239.1 964.3 1252.7 852 1255.8 819.3C1256.2 814.9 1252.2 811.3 1247.9 812.2L885.3 888.3V758.5L1201.2 690.8L1201.3 690.7Z"></path><path d="M1248.1 1136.7L801.6 1230.4C759.2 1241.8 746 1354.1 743 1386.9C742.6 1391.3 746.6 1394.9 750.9 1393.9L1194.6 1298.5C1239.3 1288.7 1252.9 1176.4 1256 1143.7C1256.4 1139.3 1252.4 1135.7 1248.1 1136.6V1136.7Z"></path></svg>
-                                            </h5>
-                                     <a href="#" class="theme-btn">
-                                        <i class="far fa-shopping-bag"></i>
-                                        أضف الي السلة 
-                                    </a>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                                <div class="service-item">
-                                <div class="service-img">
-                                    <img src="assets/img/img3.avif" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="assets/img/c3.jpg" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h4 class="service-title">
-                                        <a href="#">قعود سمر طيب يبشر بالخير - للبيع السمح</a>
-                                    </h4>
-                                    <p class="service-text">
-                                        قعود سمر السن: مفرود، القعود جبر وعظمه جليل، ووجهه طيب. شارب حليب لين شبعان ومطعم جميع التطعيمات، خالي من التوليع والامراض ولله الحمد. البيع سمح ان شاء الله وحدي فيه 15 الف.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                       <h5 class="price">
-                                                163.48
-                                                <svg width="1em" height="1em" viewBox="0 0 1263 1395" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ريال سعودي" class="inline-block shrink-0 align-[-0.125em] text-sm font-semibold"><path d="M1201.3 690.7C1246 680.9 1259.6 568.7 1262.7 536C1263.1 531.6 1259.1 528 1254.8 528.9L885.5 607.4V56.4C885.5 49.2 877.7 44.6 871.4 48.2C844 63.8 783.5 102.6 751.9 155.2C745.5 165.9 742.2 178.2 742.2 190.7V637.7L590.9 669.8L591.3 9.89998C591.3 2.69998 583.5 -1.90002 577.2 1.69998C549.8 17.3 489.3 56.1 457.7 108.7C451.3 119.4 448 131.7 448 144.2L447.4 700.3L133.8 766.9C91.3999 778.3 78.1999 890.6 75.1999 923.4C74.7999 927.8 78.7999 931.4 83.0999 930.4L447.2 852.3L447 1035.7C436.1 1051.6 106.2 1111.2 71.7999 1122.2C37.3999 1133.1 33.9999 1153.3 26.4999 1168.4C20.2999 1180.7 5.79993 1253.9 0.599934 1280.5C-0.300066 1285.1 3.79993 1289.1 8.29993 1288.2C67.6999 1276.2 385 1212 432.1 1197.6C484.1 1181.7 502.5 1148.8 538.4 1099.4C560 1069.7 575.1 1041.4 583.3 1024.6C588 1014.9 590.5 1004.3 590.5 993.5V821.7C590.6 821.7 742 789.2 742 789.2V1057.3C742 1064.5 748.6 1069.9 755.7 1068.4L1194.4 974.1C1239.1 964.3 1252.7 852 1255.8 819.3C1256.2 814.9 1252.2 811.3 1247.9 812.2L885.3 888.3V758.5L1201.2 690.8L1201.3 690.7Z"></path><path d="M1248.1 1136.7L801.6 1230.4C759.2 1241.8 746 1354.1 743 1386.9C742.6 1391.3 746.6 1394.9 750.9 1393.9L1194.6 1298.5C1239.3 1288.7 1252.9 1176.4 1256 1143.7C1256.4 1139.3 1252.4 1135.7 1248.1 1136.6V1136.7Z"></path></svg>
-                                            </h5>
-                                     <a href="#" class="theme-btn">
-                                        <i class="far fa-shopping-bag"></i>
-                                        أضف الي السلة 
-                                    </a>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-
-
-                             <div class="service-item">
-                                <div class="service-img">
-                                    <img src="assets/img/img.jpg" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="assets/img/c1.jfif" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h4 class="service-title">
-                                        <a href="#">قعود سمر طيب يبشر بالخير - للبيع السمح</a>
-                                    </h4>
-                                    <p class="service-text">
-                                        قعود سمر السن: مفرود، القعود جبر وعظمه جليل، ووجهه طيب. شارب حليب لين شبعان ومطعم جميع التطعيمات، خالي من التوليع والامراض ولله الحمد. البيع سمح ان شاء الله وحدي فيه 15 الف.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                       <h5 class="price">
-                                                163.48
-                                                <svg width="1em" height="1em" viewBox="0 0 1263 1395" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ريال سعودي" class="inline-block shrink-0 align-[-0.125em] text-sm font-semibold"><path d="M1201.3 690.7C1246 680.9 1259.6 568.7 1262.7 536C1263.1 531.6 1259.1 528 1254.8 528.9L885.5 607.4V56.4C885.5 49.2 877.7 44.6 871.4 48.2C844 63.8 783.5 102.6 751.9 155.2C745.5 165.9 742.2 178.2 742.2 190.7V637.7L590.9 669.8L591.3 9.89998C591.3 2.69998 583.5 -1.90002 577.2 1.69998C549.8 17.3 489.3 56.1 457.7 108.7C451.3 119.4 448 131.7 448 144.2L447.4 700.3L133.8 766.9C91.3999 778.3 78.1999 890.6 75.1999 923.4C74.7999 927.8 78.7999 931.4 83.0999 930.4L447.2 852.3L447 1035.7C436.1 1051.6 106.2 1111.2 71.7999 1122.2C37.3999 1133.1 33.9999 1153.3 26.4999 1168.4C20.2999 1180.7 5.79993 1253.9 0.599934 1280.5C-0.300066 1285.1 3.79993 1289.1 8.29993 1288.2C67.6999 1276.2 385 1212 432.1 1197.6C484.1 1181.7 502.5 1148.8 538.4 1099.4C560 1069.7 575.1 1041.4 583.3 1024.6C588 1014.9 590.5 1004.3 590.5 993.5V821.7C590.6 821.7 742 789.2 742 789.2V1057.3C742 1064.5 748.6 1069.9 755.7 1068.4L1194.4 974.1C1239.1 964.3 1252.7 852 1255.8 819.3C1256.2 814.9 1252.2 811.3 1247.9 812.2L885.3 888.3V758.5L1201.2 690.8L1201.3 690.7Z"></path><path d="M1248.1 1136.7L801.6 1230.4C759.2 1241.8 746 1354.1 743 1386.9C742.6 1391.3 746.6 1394.9 750.9 1393.9L1194.6 1298.5C1239.3 1288.7 1252.9 1176.4 1256 1143.7C1256.4 1139.3 1252.4 1135.7 1248.1 1136.6V1136.7Z"></path></svg>
-                                            </h5>
-                                     <a href="#" class="theme-btn">
-                                        <i class="far fa-shopping-bag"></i>
-                                        أضف الي السلة 
-                                    </a>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                             <div class="service-item">
-                                <div class="service-img">
-                                    <img src="assets/img/img2.avif" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="assets/img/c2.webp" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h4 class="service-title">
-                                        <a href="#">قعود سمر طيب يبشر بالخير - للبيع السمح</a>
-                                    </h4>
-                                    <p class="service-text">
-                                        قعود سمر السن: مفرود، القعود جبر وعظمه جليل، ووجهه طيب. شارب حليب لين شبعان ومطعم جميع التطعيمات، خالي من التوليع والامراض ولله الحمد. البيع سمح ان شاء الله وحدي فيه 15 الف.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                       <h5 class="price">
-                                                163.48
-                                                <svg width="1em" height="1em" viewBox="0 0 1263 1395" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ريال سعودي" class="inline-block shrink-0 align-[-0.125em] text-sm font-semibold"><path d="M1201.3 690.7C1246 680.9 1259.6 568.7 1262.7 536C1263.1 531.6 1259.1 528 1254.8 528.9L885.5 607.4V56.4C885.5 49.2 877.7 44.6 871.4 48.2C844 63.8 783.5 102.6 751.9 155.2C745.5 165.9 742.2 178.2 742.2 190.7V637.7L590.9 669.8L591.3 9.89998C591.3 2.69998 583.5 -1.90002 577.2 1.69998C549.8 17.3 489.3 56.1 457.7 108.7C451.3 119.4 448 131.7 448 144.2L447.4 700.3L133.8 766.9C91.3999 778.3 78.1999 890.6 75.1999 923.4C74.7999 927.8 78.7999 931.4 83.0999 930.4L447.2 852.3L447 1035.7C436.1 1051.6 106.2 1111.2 71.7999 1122.2C37.3999 1133.1 33.9999 1153.3 26.4999 1168.4C20.2999 1180.7 5.79993 1253.9 0.599934 1280.5C-0.300066 1285.1 3.79993 1289.1 8.29993 1288.2C67.6999 1276.2 385 1212 432.1 1197.6C484.1 1181.7 502.5 1148.8 538.4 1099.4C560 1069.7 575.1 1041.4 583.3 1024.6C588 1014.9 590.5 1004.3 590.5 993.5V821.7C590.6 821.7 742 789.2 742 789.2V1057.3C742 1064.5 748.6 1069.9 755.7 1068.4L1194.4 974.1C1239.1 964.3 1252.7 852 1255.8 819.3C1256.2 814.9 1252.2 811.3 1247.9 812.2L885.3 888.3V758.5L1201.2 690.8L1201.3 690.7Z"></path><path d="M1248.1 1136.7L801.6 1230.4C759.2 1241.8 746 1354.1 743 1386.9C742.6 1391.3 746.6 1394.9 750.9 1393.9L1194.6 1298.5C1239.3 1288.7 1252.9 1176.4 1256 1143.7C1256.4 1139.3 1252.4 1135.7 1248.1 1136.6V1136.7Z"></path></svg>
-                                            </h5>
-                                     <a href="#" class="theme-btn">
-                                        <i class="far fa-shopping-bag"></i>
-                                        أضف الي السلة 
-                                    </a>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                                <div class="service-item">
-                                <div class="service-img">
-                                    <img src="assets/img/img3.avif" alt="">
-                                </div>
-                                <div class="service-icon">
-                                    <img src="assets/img/c3.jpg" alt="">
-                                </div>
-                                <div class="service-content">
-                                    <h4 class="service-title">
-                                        <a href="#">قعود سمر طيب يبشر بالخير - للبيع السمح</a>
-                                    </h4>
-                                    <p class="service-text">
-                                        قعود سمر السن: مفرود، القعود جبر وعظمه جليل، ووجهه طيب. شارب حليب لين شبعان ومطعم جميع التطعيمات، خالي من التوليع والامراض ولله الحمد. البيع سمح ان شاء الله وحدي فيه 15 الف.
-                                    </p>
-                                    <div class="d-flex align-items-center justify-content-between ">
-                                       <h5 class="price">
-                                                163.48
-                                                <svg width="1em" height="1em" viewBox="0 0 1263 1395" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ريال سعودي" class="inline-block shrink-0 align-[-0.125em] text-sm font-semibold"><path d="M1201.3 690.7C1246 680.9 1259.6 568.7 1262.7 536C1263.1 531.6 1259.1 528 1254.8 528.9L885.5 607.4V56.4C885.5 49.2 877.7 44.6 871.4 48.2C844 63.8 783.5 102.6 751.9 155.2C745.5 165.9 742.2 178.2 742.2 190.7V637.7L590.9 669.8L591.3 9.89998C591.3 2.69998 583.5 -1.90002 577.2 1.69998C549.8 17.3 489.3 56.1 457.7 108.7C451.3 119.4 448 131.7 448 144.2L447.4 700.3L133.8 766.9C91.3999 778.3 78.1999 890.6 75.1999 923.4C74.7999 927.8 78.7999 931.4 83.0999 930.4L447.2 852.3L447 1035.7C436.1 1051.6 106.2 1111.2 71.7999 1122.2C37.3999 1133.1 33.9999 1153.3 26.4999 1168.4C20.2999 1180.7 5.79993 1253.9 0.599934 1280.5C-0.300066 1285.1 3.79993 1289.1 8.29993 1288.2C67.6999 1276.2 385 1212 432.1 1197.6C484.1 1181.7 502.5 1148.8 538.4 1099.4C560 1069.7 575.1 1041.4 583.3 1024.6C588 1014.9 590.5 1004.3 590.5 993.5V821.7C590.6 821.7 742 789.2 742 789.2V1057.3C742 1064.5 748.6 1069.9 755.7 1068.4L1194.4 974.1C1239.1 964.3 1252.7 852 1255.8 819.3C1256.2 814.9 1252.2 811.3 1247.9 812.2L885.3 888.3V758.5L1201.2 690.8L1201.3 690.7Z"></path><path d="M1248.1 1136.7L801.6 1230.4C759.2 1241.8 746 1354.1 743 1386.9C742.6 1391.3 746.6 1394.9 750.9 1393.9L1194.6 1298.5C1239.3 1288.7 1252.9 1176.4 1256 1143.7C1256.4 1139.3 1252.4 1135.7 1248.1 1136.6V1136.7Z"></path></svg>
-                                            </h5>
-                                     <a href="#" class="theme-btn">
-                                        <i class="far fa-shopping-bag"></i>
-                                        أضف الي السلة 
-                                    </a>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                         
-                         
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-
-        <div class="feature-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mx-auto">
-                        <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                            <span class="site-title-tagline justify-content-center">
-                                <img src="assets/img/camal-color.png" alt="">
-                                مميزات المنصة
-                            </span>
-                            <h2 class="site-title">كل ما تحتاجه في مكان واحد</h2>
-                            <div class="heading-divider m-auto"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="feature-wrap">
-                    <div class="row g-3">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-item">
-                                <span class="count">01</span>
-                                <div class="feature-icon">
-                                    <i class="fal fa-clipboard"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>إدارة الحلال يومياً</h4>
-                                    <p>
-                                        تابع كل رأس في منقيتك — سجلات صحة ونسب وبيطرة من مكان واحد.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-item">
-                                <span class="count">02</span>
-                                <div class="feature-icon">
-                                    <i class="fal fa-gavel"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>مزاد حي بالوقت الفعلي</h4>
-                                    <p>
-                                        مزايدة فورية مع حماية ذكية من القنص في الثواني الأخيرة تلقائياً.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-item">
-                                <span class="count">03</span>
-                                <div class="feature-icon">
-                                    <i class="fal fa-lock"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>مزاد سري</h4>
-                                    <p>للمزادات الخاصة — السوم مختوم ولا يُكشف إلا لحظة الإغلاق.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-item">
-                                <span class="count">04</span>
-                                <div class="feature-icon">
-                                    <i class="fal fa-comment"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>دردشة مباشرة بالصور</h4>
-                                    <p>تواصل البائع والمشتري مباشرة وأرسل صوراً جديدة للإبل في أي وقت.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-item">
-                                <span class="count">05</span>
-                                <div class="feature-icon">
-                                    <i class="fal fa-bell"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>إشعارات فورية</h4>
-                                    <p> تنبيهات لحظية لكل سومة جديدة، رسالة، أو تحديث طبي في حلالك.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="feature-item">
-                                <span class="count">06</span>
-                                <div class="feature-icon">
-                                    <i class="fal fa-star"></i>
-                                </div>
-                                <div class="feature-content">
-                                    <h4>تقييم البائع والمشتري</h4>
-                                    <p> نظام تقييم يبني سمعة موثوقة تحمي حق الطرفين في كل صفقة.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
 
-
-        <!-- counter area -->
-        <div class="counter-area pt-40 pb-40">
-            <div class="container">
-
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                            <span class="site-title-tagline justify-content-center text-yellow">
-                                <img src="assets/img/camal-color2.png" alt="">
-                                منصة مرابد
-                            </span>
-                            <h2 class="site-title text-white">إرقام تحكي قصتنا</h2>
-
-                            <div class="heading-divider light m-auto"></div>
-                            <p class="text-white">
-                                نمضي بخطي ثابتة نحو تطوير قطاع الإبل في المملكة
-                            </p>
-
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="counter-box wow fadeInUp" data-wow-delay=".25s">
-                            <div class="icon">
-                                <img src="assets/img/purchasing.png" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="info">
-                                    <span class="counter" data-count="+" data-to="150" data-speed="3000">150</span>
-                                    <span class="unit">k</span>
-                                </div>
-                                <h6 class="title"> عمليات شراء</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="counter-box wow fadeInDown" data-wow-delay=".25s">
-                            <div class="icon">
-                                <img src="assets/img/002-doctor.png" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="info">
-                                    <span class="counter" data-count="+" data-to="25" data-speed="3000">25</span>
-                                    <span class="unit">K</span>
-                                </div>
-                                <h6 class="title">عدد الأطباء</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="counter-box wow fadeInUp" data-wow-delay=".25s">
-                            <div class="icon">
-                                <img src="assets/img/001-dromedary.png" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="info">
-                                    <span class="counter" data-count="+" data-to="120" data-speed="3000">120</span>
-                                    <span class="unit">+</span>
-                                </div>
-                                <h6 class="title">عدد المنتجات</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="counter-box wow fadeInDown" data-wow-delay=".25s">
-                            <div class="icon">
-                                <img src="assets/img/003-delivery.png" alt="">
-                            </div>
-                            <div class="content">
-                                <div class="info">
-                                    <span class="counter" data-count="+" data-to="50" data-speed="3000">50</span>
-                                    <span class="unit">+</span>
-                                </div>
-                                <h6 class="title">عمليات النقل</h6>
-                            </div>
-                        </div>
-                    </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="app-muted small">نسبة الاعتماد</div>
+                  <div class="app-kpi-value mt-1">66%</div>
                 </div>
+                <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-seal-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between app-muted small mt-2">
+                <span>من إجمالي الوحدات</span>
+                <span>92 / 139</span>
+              </div>
+              <div class="progress progress-xs mt-1" role="progressbar" aria-label="نسبة الاعتماد" aria-valuemin="0" aria-valuemax="100" aria-valuenow="66">
+                <div class="progress-bar bg-brand-green" style="width:66%"></div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- counter area end -->
 
-
-        <!-- process area -->
-        <div class="process-area pt-60 pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mx-auto">
-                        <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                            <span class="site-title-tagline justify-content-center">
-                                <img src="assets/img/camal-color.png" alt="">
-                                من الإرث إلى الإدارة إلى السوق
-                            </span>
-                            <h2 class="site-title">٣ خطوات — من سجل الإبل إلى إتمام الصفقة</h2>
-                            <div class="heading-divider m-auto"></div>
-                        </div>
-                    </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="app-muted small">متوسط اكتمال المسودات</div>
+                  <div class="app-kpi-value mt-1">32%</div>
                 </div>
-
-                <div class="process-wrap wow fadeInUp" data-wow-delay=".25s">
-                    <div class="row g-lg-5 g-3">
-                        <div class="col-md-6 col-lg-4">
-                            <div class="process-item">
-                                <span class="count"> 01</span>
-                                <div class="content">
-                                    <h4>سجّل إبلك وأدِرها</h4>
-                                    <p>أنشئ جواز رقمي لكل ناقة — نسب، صحة، بيطرة، وسجل يومي كامل. حلالك موثّق ومتابَع من
-                                        مكان واحد.</p>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/img/icon1.png" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="process-item">
-                                <span class="count"> 02</span>
-                                <div class="content">
-                                    <h4>اعرض للبيع حين تشاء</h4>
-                                    <p>اختر بيعاً مباشراً بسعر ثابت أو افتح مزاداً حياً. الإعلان يُنشر فوراً ويصل
-                                        للمشترين بأكبر سوق إبل في السعودية.</p>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/img/icon2.png" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-4">
-                            <div class="process-item">
-                                <span class="count"> 03</span>
-                                <div class="content">
-                                    <h4>أتمّ الصفقة بأمان</h4>
-                                    <p>تراسل مع المشتري مباشرة، تبادل الصور والتفاصيل، وأتمّ الاتفاق بحماية المنصة من
-                                        الطرفين.</p>
-                                </div>
-                                <div class="icon">
-                                    <img src="assets/img/icon3.png" alt="">
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+                <span class="icon-tile icon-tile--cyan"><i class="ph-duotone ph-pencil-simple-line"></i></span>
+              </div>
+              <div class="d-flex justify-content-between app-muted small mt-2">
+                <span>1 جاهز للاعتماد</span>
+                <span>32%</span>
+              </div>
+              <div class="progress progress-xs mt-1" role="progressbar" aria-label="متوسط اكتمال المسودات" aria-valuemin="0" aria-valuemax="100" aria-valuenow="32">
+                <div class="progress-bar bg-brand-cyan" style="width:32%"></div>
+              </div>
             </div>
+          </div>
         </div>
-        <!-- process area end -->
 
-
-        <!-- blog-area -->
-        <!-- <div class="blog-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mx-auto">
-                        <div class="site-heading text-center wow fadeInDown" data-wow-delay=".25s">
-                           <span class="site-title-tagline justify-content-center">
-                            <img src="assets/img/camal-color.png" alt="">
-                             المركز الإعلامي
-                            </span>
-                            <h2 class="site-title">آخر الأخبار والتغطيات</h2>
-                            <div class="heading-divider m-auto"></div>
-                        </div>
-                    </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="app-muted small">قيمة الكتالوج المعتمد</div>
+                  <div class="app-kpi-value mt-1">175,352 <small class="app-muted fs-6 fw-normal">ر.س</small></div>
                 </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog1.webp" alt="Thumb">
-                            </div>
-                            <div class="blog-date">
-                                <i class="far fa-calendar"></i>
-                                <span> 3 سبتمبر 2026</span>
-                            </div>
-                            <div class="blog-item-info">
-                               
-                                <h4 class="blog-title">
-                                    <a href="#">تعرف على مزاينات الإبل والتدريبات الخاصة بها</a>
-                                </h4>
-                                <p>
-                                تعرّف على عالم سباقات الإبل وكيف يتم تجهيز الإبل للمنافسات.
-اكتشف أساليب التدريب والتغذية والرعاية اليومية.
-تعرّف على أهم الصفات التي تجعل الإبل مناسبة للسباقات.
-                                </p>
-                                <a class="theme-btn" href="#">اقرأ المزيد<i class="fas fa-angle-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                   
-                     <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/blog2.jfif" alt="Thumb">
-                            </div>
-                            <div class="blog-date">
-                                <i class="far fa-calendar"></i>
-                                <span> 3 سبتمبر 2026</span>
-                            </div>
-                            <div class="blog-item-info">
-                               
-                                <h4 class="blog-title">
-                                    <a href="#">تعرف على مزاينات الإبل والتدريبات الخاصة بها</a>
-                                </h4>
-                                <p>
-                                تعرّف على عالم سباقات الإبل وكيف يتم تجهيز الإبل للمنافسات.
-اكتشف أساليب التدريب والتغذية والرعاية اليومية.
-تعرّف على أهم الصفات التي تجعل الإبل مناسبة للسباقات.
-                                </p>
-                                <a class="theme-btn" href="#">اقرأ المزيد<i class="fas fa-angle-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                      <div class="col-md-6 col-lg-4">
-                        <div class="blog-item wow fadeInUp" data-wow-delay=".25s">
-                            <div class="blog-item-img">
-                                <img src="assets/img/hero2.jpg" alt="Thumb">
-                            </div>
-                            <div class="blog-date">
-                                <i class="far fa-calendar"></i>
-                                <span> 3 سبتمبر 2026</span>
-                            </div>
-                            <div class="blog-item-info">
-                               
-                                <h4 class="blog-title">
-                                    <a href="#">تعرف على مزاينات الإبل والتدريبات الخاصة بها</a>
-                                </h4>
-                                <p>
-                                تعرّف على عالم سباقات الإبل وكيف يتم تجهيز الإبل للمنافسات.
-اكتشف أساليب التدريب والتغذية والرعاية اليومية.
-تعرّف على أهم الصفات التي تجعل الإبل مناسبة للسباقات.
-                                </p>
-                                <a class="theme-btn" href="#">اقرأ المزيد<i class="fas fa-angle-left"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                   
-
-
-                </div>
+                <span class="icon-tile icon-tile--teal"><i class="ph-duotone ph-coins"></i></span>
+              </div>
+              <div class="d-flex align-items-center gap-1 app-muted small mt-2">
+                <i class="ph-duotone ph-clock"></i>
+                <span>1,268 ساعة تدريبية معتمدة</span>
+              </div>
             </div>
-        </div> -->
-        <!-- blog-area end -->
+          </div>
+        </div>
+      </div>
 
+      <!-- Approval gauge / Stages / Quality -->
+      <div class="row g-3 mb-3">
+        <div class="col-md-6 col-xl-4">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h2 class="app-card__title mb-0">نسبة الاعتماد</h2>
+                <span class="app-muted small">139 وحدة</span>
+              </div>
+              <div id="chartApprovalGauge"></div>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-md-6 col-xl-5">
+          <div class="card app-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center gap-2 mb-3">
+                <h2 class="app-card__title mb-0">مراحل التطوير</h2>
+                <span class="app-muted small">المعتمد يُحال لإدارة التنفيذ</span>
+              </div>
+              <div class="flex-grow-1 d-flex align-items-center">
+                <div id="chartStagesStepper" class="w-100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-xl-3">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <h2 class="app-card__title mb-2">جودة المحتوى</h2>
+              <ul class="list-unstyled mb-0" id="qualityList">
+                <li class="quality-item d-flex justify-content-between align-items-center py-2">
+                  <span class="d-flex align-items-center gap-2"><i class="ph-duotone ph-file-x text-brand-danger"></i>دون مواد تعليمية</span>
+                  <span class="badge rounded-pill badge-soft-danger">118</span>
+                </li>
+                <li class="quality-item d-flex justify-content-between align-items-center py-2">
+                  <span class="d-flex align-items-center gap-2"><i class="ph-duotone ph-user-minus text-brand-danger"></i>دون فئة مستهدفة</span>
+                  <span class="badge rounded-pill badge-soft-danger">120</span>
+                </li>
+                <li class="quality-item d-flex justify-content-between align-items-center py-2">
+                  <span class="d-flex align-items-center gap-2"><i class="ph-duotone ph-clock-counter-clockwise text-brand-warning"></i>أقدم من 3 سنوات</span>
+                  <span class="badge rounded-pill badge-soft-warning">66</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type distribution / Classification -->
+      <div class="row g-3 mb-3">
+        <div class="col-lg-7">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="app-card__title mb-0">التوزيع حسب النوع</h2>
+                <span class="app-muted small">139 وحدة</span>
+              </div>
+              <div id="chartTypeDistribution"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card app-card h-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="app-card__title mb-0">التصنيف</h2>
+                <span class="app-muted small">139 وحدة</span>
+              </div>
+              <div id="chartClassification"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Units table / Smart alerts -->
+      <div class="row g-3">
+        <div class="col-xl-8">
+          <div class="card app-card h-100" data-search-target>
+            <div class="card-body pb-2">
+              <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <h2 class="app-card__title mb-0">تفاصيل الوحدات التدريبية</h2>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="dropdown">
+                    <button class="btn btn-sm app-filter-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="ph-duotone ph-funnel me-1"></i><span id="unitsFilterLabel">الكل</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0" id="unitsTypeMenu">
+                      <li><a class="dropdown-item active" href="#" data-type="">الكل</a></li>
+                      <li><a class="dropdown-item" href="#" data-type="مسار تدريبي">مسار تدريبي</a></li>
+                      <li><a class="dropdown-item" href="#" data-type="برنامج فردي">برنامج فردي</a></li>
+                      <li><a class="dropdown-item" href="#" data-type="استشارة / جلسة إرشادية">استشارة / جلسة إرشادية</a></li>
+                      <li><a class="dropdown-item" href="#" data-type="ورشة عمل">ورشة عمل</a></li>
+                      <li><a class="dropdown-item" href="#" data-type="شهادة مهنية احترافية">شهادة مهنية احترافية</a></li>
+                    </ul>
+                  </div>
+                  <a href="create.html" class="btn btn-sm btn-brand"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table app-table app-table--wide align-middle mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">الاسم</th>
+                    <th scope="col">النوع</th>
+                    <th scope="col">الحالة</th>
+                    <th scope="col">الاكتمال</th>
+                    <th scope="col">الساعات</th>
+                    <th scope="col">المواد</th>
+                    <th scope="col">التسعير</th>
+                    <th scope="col">الإجمالي</th>
+                    <th scope="col">إجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="unitsTableBody">
+                  <tr data-type="مسار تدريبي">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                        <span class="app-table__title" data-search>الوسيط العقاري المحترف</span>
+                      </div>
+                    </td>
+                    <td>مسار تدريبي</td>
+                    <td><span class="badge rounded-pill badge-soft-success">معتمد</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-brand-green" style="width:89%"></div>
+                        </div>
+                        <span class="small">89%</span>
+                      </div>
+                    </td>
+                    <td><span class="app-muted">14 <small>(من برامجه)</small></span></td>
+                    <td><span class="app-muted">—</span></td>
+                    <td class="app-muted">يدوي · خصم 10%</td>
+                    <td class="fw-semibold">1,449 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل الوسيط العقاري المحترف"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="برنامج فردي">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                        <span class="app-table__title" data-search>التمويل العقاري</span>
+                      </div>
+                    </td>
+                    <td>برنامج فردي</td>
+                    <td><span class="badge rounded-pill badge-soft-success">معتمد</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-brand-cyan" style="width:67%"></div>
+                        </div>
+                        <span class="small">67%</span>
+                      </div>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm app-hours-input" value="20" step="1" aria-label="ساعات التمويل العقاري"></td>
+                    <td><a href="#" class="app-link">0 مادة <i class="ph ph-arrow-left"></i></a></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">1,897.5 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل التمويل العقاري"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="برنامج فردي">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                        <span class="app-table__title" data-search>مسودة بدون اسم</span>
+                      </div>
+                    </td>
+                    <td>برنامج فردي</td>
+                    <td><span class="badge rounded-pill badge-soft-info">مسودة</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-warning" style="width:27%"></div>
+                        </div>
+                        <span class="small">27%</span>
+                      </div>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm app-hours-input" value="2" step="1" aria-label="ساعات مسودة بدون اسم"></td>
+                    <td><a href="#" class="app-link">0 مادة <i class="ph ph-arrow-left"></i></a></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">0 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="مسار تدريبي">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                        <span class="app-table__title" data-search>مسار التحليلات العقارية</span>
+                      </div>
+                    </td>
+                    <td>مسار تدريبي</td>
+                    <td><span class="badge rounded-pill badge-soft-success">معتمد</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-brand-cyan" style="width:56%"></div>
+                        </div>
+                        <span class="small">56%</span>
+                      </div>
+                    </td>
+                    <td><span class="app-muted">210 <small>(من برامجه)</small></span></td>
+                    <td><span class="app-muted">—</span></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">21,626.9 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار التحليلات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="استشارة / جلسة إرشادية">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--cyan"><i class="ph-duotone ph-chats-circle"></i></span>
+                        <span class="app-table__title" data-search>استشارة تأسيس مكتب وساطة عقارية</span>
+                      </div>
+                    </td>
+                    <td>استشارة / جلسة إرشادية</td>
+                    <td><span class="badge rounded-pill badge-soft-success">معتمد</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-brand-cyan" style="width:69%"></div>
+                        </div>
+                        <span class="small">69%</span>
+                      </div>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm app-hours-input" value="3" step="1" aria-label="ساعات استشارة تأسيس مكتب وساطة عقارية"></td>
+                    <td><a href="#" class="app-link">0 مادة <i class="ph ph-arrow-left"></i></a></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">1,380 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل استشارة تأسيس مكتب وساطة عقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="ورشة عمل">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--teal"><i class="ph-duotone ph-wrench"></i></span>
+                        <span class="app-table__title" data-search>ورشة صياغة العقود العقارية</span>
+                      </div>
+                    </td>
+                    <td>ورشة عمل</td>
+                    <td><span class="badge rounded-pill badge-soft-success">معتمد</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-brand-cyan" style="width:64%"></div>
+                        </div>
+                        <span class="small">64%</span>
+                      </div>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm app-hours-input" value="5" step="1" aria-label="ساعات ورشة صياغة العقود العقارية"></td>
+                    <td><a href="#" class="app-link">0 مادة <i class="ph ph-arrow-left"></i></a></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">690 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل ورشة صياغة العقود العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="برنامج فردي">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                        <span class="app-table__title" data-search>برنامج تطوير المهارات</span>
+                      </div>
+                    </td>
+                    <td>برنامج فردي</td>
+                    <td><span class="badge rounded-pill badge-soft-warning">معاد</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-brand-green" style="width:100%"></div>
+                        </div>
+                        <span class="small">100%</span>
+                      </div>
+                    </td>
+                    <td><input type="number" class="form-control form-control-sm app-hours-input" value="5" step="1" aria-label="ساعات برنامج تطوير المهارات"></td>
+                    <td><a href="#" class="app-link">3 مادة <i class="ph ph-arrow-left"></i></a></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">1,725 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل برنامج تطوير المهارات"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-type="شهادة مهنية احترافية">
+                    <td class="app-table__name">
+                      <div class="d-flex align-items-center gap-2">
+                        <span class="icon-tile icon-tile--sm icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                        <span class="app-table__title" data-search>مسودة بدون اسم</span>
+                      </div>
+                    </td>
+                    <td>شهادة مهنية احترافية</td>
+                    <td><span class="badge rounded-pill badge-soft-info">مسودة</span></td>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="progress progress-xs app-table__progress" role="progressbar" aria-label="الاكتمال" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar bg-warning" style="width:22%"></div>
+                        </div>
+                        <span class="small">22%</span>
+                      </div>
+                    </td>
+                    <td><span class="app-muted">0 <small>(من برامجه)</small></span></td>
+                    <td><span class="app-muted">—</span></td>
+                    <td class="app-muted">يدوي</td>
+                    <td class="fw-semibold">0 ر.س</td>
+                    <td>
+                      <div class="d-inline-flex align-items-center gap-1">
+                        <a href="#" class="btn btn-navy btn-sm py-0 px-2">عرض</a>
+                        <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="d-none" data-empty>
+                    <td colspan="9" class="text-center app-muted py-5"><i class="ph-duotone ph-tray fs-2 d-block mb-2"></i>لا توجد وحدات مطابقة</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="card-body pt-2 d-flex flex-wrap justify-content-between align-items-center gap-2 app-muted small">
+              <span id="unitsCount"></span>
+              <nav aria-label="تصفح الوحدات">
+                <ul class="pagination pagination-sm app-pagination mb-0" id="unitsPagination"></ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4">
+          <div class="card app-card h-100" id="alertsCard">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h2 class="app-card__title mb-0">التنبيهات الذكية</h2>
+                <span class="badge rounded-pill badge-soft-danger">156 إجراء</span>
+              </div>
+              <ul class="list-unstyled mb-0" id="alertsList">
+                <li class="alert-item">
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                      <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item">
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                      <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item">
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                      <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item">
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                      <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item">
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                      <span class="d-block small app-muted text-truncate">عاجل · استشارة تأسيس مكتب وساطة عقارية</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item d-none" data-extra>
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                      <span class="d-block small app-muted text-truncate">عاجل · ورشة صياغة العقود العقارية</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item d-none" data-extra>
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-user-minus"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">بدون فئة مستهدفة</span>
+                      <span class="d-block small app-muted text-truncate">ورشة التسويق الرقمي للعقار</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item d-none" data-extra>
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-clock-counter-clockwise"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">تصميم أقدم من 3 سنوات</span>
+                      <span class="d-block small app-muted text-truncate">إدارة الأصول العقارية</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item d-none" data-extra>
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-user-minus"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">بدون فئة مستهدفة</span>
+                      <span class="d-block small app-muted text-truncate">أسس الصناعة العقارية</span>
+                    </span>
+                  </a>
+                </li>
+                <li class="alert-item d-none" data-extra>
+                  <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2">
+                    <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-clock-counter-clockwise"></i></span>
+                    <span class="flex-grow-1 min-w-0">
+                      <span class="alert-item__title d-block">تصميم أقدم من 3 سنوات</span>
+                      <span class="d-block small app-muted text-truncate">تحليل الأسواق العقارية</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="border-top mt-auto pt-2 text-center">
+                <button type="button" class="btn btn-link btn-sm app-link-btn text-decoration-none" id="alertsToggle">عرض الكل</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <!-- footer area -->
-    <footer class="footer-area">
-
-        <div class="footer-widget">
-            <div class="container">
-                <div class="footer-widget-wrap pt-100 pb-50">
-                    <div class="row g-4">
-                        <div class="col-lg-5">
-                            <div class="footer-widget-box about-us">
-                                <a href="#" class="footer-logo">
-                                    <img src="assets/img/logo-white.png" alt="">
-                                </a>
-                                <p class="mb-4">
-                                    مرابد منصة إلكترونية متكاملة متخصصة في بيع وتداول الإبل والنياق، تجمع بين أصالة
-                                    التراث العربي وروح التقنية الحديثة، لتقدم تجربة رقمية موثوقة وسهلة لعشاق الإبل
-                                    والمربين والمستثمرين.
-                                </p>
-                                <ul class="footer-social">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-2">
-                            <div class="footer-widget-box list">
-                                <h4 class="footer-widget-title">روابط سريعة</h4>
-                                <ul class="footer-list">
-                                    <li><a href="#"><i class="far fa-angle-right"></i>من نحن</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>خدماتنا</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>اتصل بنا</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>الاسئلة الشائعة</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-lg-2">
-                            <div class="footer-widget-box list">
-                                <h4 class="footer-widget-title">روابط سريعة</h4>
-                                <ul class="footer-list">
-                                    <li><a href="#"><i class="far fa-angle-right"></i>إبل للبيع</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>مستلزمات الإبل</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>المنتجات البيطرية</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>الأعلاف</a></li>
-                                    <li><a href="#"><i class="far fa-angle-right"></i>خدمات النقل</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="footer-widget-box">
-                                <h4 class="footer-widget-title">تواصل معانا</h4>
-                                <ul class="footer-contact">
-                                    <li>
-                                        <div class="icon">
-                                            <i class="far fa-location-dot"></i>
-                                        </div>
-                                        <div class="content">
-                                            <p> الرياض, المملكة العربية السعودية</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="far fa-phone"></i>
-                                        </div>
-                                        <div class="content">
-                                            <a href="tel: (123) 345-6789"> (123) 345-6789</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <i class="far fa-envelope"></i>
-                                        </div>
-                                        <div class="content">
-                                            <a href="mailto:support@marabed.com">support@marabed.com</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-12 align-self-center">
-                        <p class="copyright-text">
-                            &copy; 2026 جميع الحقوق محفوظة لمنصة مرابد
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
     </footer>
-    <!-- footer area end -->
+  </div>
 
 
+  <!-- ============ Templates (cloned by JS) ============ -->
+  <template id="pageItemTemplate">
+    <li class="page-item"><a class="page-link" href="#"></a></li>
+  </template>
 
+  <template id="pageGapTemplate">
+    <li class="page-item disabled"><span class="page-link">…</span></li>
+  </template>
 
-    <!-- scroll-top -->
-    <a href="#" id="scroll-top"><i class="far fa-arrow-up"></i></a>
-    <!-- scroll-top end -->
+  <template id="pagePrevTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="السابق"><i class="ph ph-caret-right"></i></a></li>
+  </template>
 
+  <template id="pageNextTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="التالي"><i class="ph ph-caret-left"></i></a></li>
+  </template>
 
-<div id="my-modal" class="auth-form mfp-hide">
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 
- 
+  <!-- Data -->
+  <script src="assets/js/data.js"></script>
 
+  <!-- Charts -->
+  <script src="assets/js/charts/approval-gauge.js"></script>
+  <script src="assets/js/charts/stages-stepper.js"></script>
+  <script src="assets/js/charts/type-distribution.js"></script>
+  <script src="assets/js/charts/classification-bar.js"></script>
 
-    <!-- RIGHT SIDE -->
-    <div class="auth-content">
-
-
-        <div class="auth-header">
-
-            <img src="assets/img/logo.png" alt="مرابد">
-
-            <h3 class="site-title">تسجيل الدخول</h3>
-            <p>
-                ادخل رقم جوالك وسنرسل لك رمز تحقق لو ماعندك حساب ببنشئه تلقائياً
-            </p>
-
-        </div>
-
-
-        <form action="#">
-
-            <div class="form-group">
-
-                <div class="form-icon">
-
-                    <i class="far fa-phone"></i>
-
-                    <input type="text"
-                           class="form-control"
-                           placeholder="رقم الجوال">
-
-                </div>
-
-            </div>
-
-
-
-            <div class="auth-group">
-
-                <div class="form-check">
-
-                    <input class="form-check-input"
-                           type="checkbox"
-                           value=""
-                           id="remember">
-
-                    <label class="form-check-label" for="remember">
-                        تذكرني
-                    </label>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="auth-btn">
-
-                <button type="submit" class="theme-btn">
-                    ارسال رمز التحقق
-                </button>
-
-            </div>
-
-        </form>
-
-
-        <div class="auth-bottom">
-
-            <p class="auth-bottom-text">
-                بالمتابعة انت توافق علي 
-                <a href="#">الشروط والأحكام</a>
-                و 
-                <a href="#">سياسة الخصوصية</a>
-            </p>
-
-        </div>
-
-    </div>
-
-       <!-- LEFT SIDE -->
-    <div class="auth-cover">
-        <div class="auth-cover-overlay"></div>
-
-        <div class="auth-cover-content">
-
-     
-
-            <h2>
-                منصة <span>مرابد</span>
-                <br>
-              لكل ما يخص الإبل
-            </h2>
-
-           <div class="heading-divider m-auto light"></div>
-
-
-            <p>
-                نوفر لك بيئة موثوقة لعرض وبيع وشراء الإبل
-                وتنظيم المزادات والخدمات المتخصصة
-                بمستوى احترافي.
-            </p>
-
-        </div>
-    </div>
-
-</div>
-
-
-
-    <!-- js -->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/modernizr.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/jquery.appear.min.js"></script>
-    <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/counter-up.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/dashboard.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,49 @@
+/* Activity bars chart */
+.activity-bars__plot {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 110px;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.activity-bars__col {
+  flex: 1 1 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.activity-bars__bar {
+  position: relative;
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background-color: var(--chart-1);
+  overflow: hidden;
+  transition: opacity 0.15s;
+}
+
+.activity-bars__bar.is-empty { background-color: var(--chart-track); }
+.activity-bars__col:hover .activity-bars__bar { opacity: 0.8; }
+
+.activity-bars__passed {
+  position: absolute;
+  inset: auto 0 0 0;
+  background-color: var(--app-green);
+}
+
+.activity-bars__axis {
+  font-size: 0.7rem;
+  color: var(--app-muted);
+  padding-top: 0.25rem;
+}
+
+.activity-bars__legend { font-size: 0.75rem; color: var(--app-muted); }
+
+.activity-bars__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+.activity-bars__swatch--failed { background-color: var(--chart-1); }
+.activity-bars__swatch--passed { background-color: var(--app-green); }

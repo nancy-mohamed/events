@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رفع طلب دعم فني | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="index.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="catalog.html" class="app-nav__link"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="approvals.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
+        </a>
+
+        <div class="app-nav__group">التقييم</div>
+        <a href="tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+
+        <div class="app-nav__group">الإدارة</div>
+        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="#" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">156</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 pb-1">
+        <h1 class="app-page-title h5 mb-0">رفع طلب دعم فني</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+
+            <li class="breadcrumb-item active" aria-current="page">رفع طلب دعم فني</li>
+          </ol>
+        </nav>
+      </div>
+      <p class="app-page-subtitle small pb-3 mb-0">يُسجَّل تاريخ الطلب تلقائيًا ويُحال إلى فريق الدعم الفني لتصنيفه ومعالجته.</p>
+      <div class="row justify-content-center">
+        <div class="col-xl-9">
+          <form class="card app-card" data-static-form>
+            <div class="card-body p-4">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small" for="supDept">الإدارة <span class="text-danger">*</span></label>
+                  <select class="form-select" id="supDept" required><option value="">اختر الإدارة</option><option>إدارة تطوير البرامج</option><option>إدارة تنفيذ البرامج</option><option>إدارة المدربين</option><option>أخرى</option></select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small" for="supName">اسم مقدم الطلب <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="supName" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small" for="supPage">الصفحة التي ظهرت فيها المشكلة</label>
+                  <input type="text" class="form-control" id="supPage" placeholder="مثال: الجدولة">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small" for="supType">نوع المشكلة</label>
+                  <select class="form-select" id="supType"><option value="">اختر نوع المشكلة</option><option>الصفحة لا تفتح</option><option>زر أو إجراء لا يعمل</option><option>خطأ في البيانات المعروضة</option><option>بطء في التحميل</option><option>طلب تعديل أو ميزة</option><option>أخرى</option></select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small" for="supRef">إدارة المرجعية</label>
+                  <select class="form-select" id="supRef"><option value="">اختر الإدارة صاحبة العلاقة</option><option>إدارة تطوير البرامج</option><option>إدارة تنفيذ البرامج</option><option>إدارة المدربين</option><option>أخرى</option></select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small" for="supTitle">عنوان المشكلة <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="supTitle" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small" for="supBody">شرح المشكلة <span class="text-danger">*</span></label>
+                  <textarea class="form-control" id="supBody" rows="5" placeholder="صف ما حدث وخطوات ظهور المشكلة" required></textarea>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small d-block">صورة من المشكلة</label>
+                  <label class="app-upload d-flex flex-column align-items-center justify-content-center gap-1 rounded-2 p-4 text-center">
+                    <i class="ph-duotone ph-image fs-2"></i>
+                    <span class="fw-semibold">رفع صورة</span>
+                    <input type="file" class="d-none" accept="image/*">
+                  </label>
+                </div>
+              </div>
+              <div class="app-info d-flex gap-2 rounded-2 p-3 mt-4">
+                <i class="ph-duotone ph-clock-countdown fs-5 flex-shrink-0"></i>
+                <p class="small mb-0">اتفاقية مستوى الخدمة: يصنّف فريق الدعم الفني الطلب، وتُحتسب مدة الحل بأيام العمل: بسيطة 1 يوم، متوسطة 3 أيام، معقدة 5 أيام.</p>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent d-flex justify-content-end p-3">
+              <button type="submit" class="btn btn-sm btn-brand px-4"><i class="ph-duotone ph-paper-plane-tilt me-1"></i>إرسال الطلب</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- ============ Templates (cloned by JS) ============ -->
+  <template id="pageItemTemplate">
+    <li class="page-item"><a class="page-link" href="#"></a></li>
+  </template>
+
+  <template id="pageGapTemplate">
+    <li class="page-item disabled"><span class="page-link">…</span></li>
+  </template>
+
+  <template id="pagePrevTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="السابق"><i class="ph ph-caret-right"></i></a></li>
+  </template>
+
+  <template id="pageNextTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="التالي"><i class="ph ph-caret-left"></i></a></li>
+  </template>
+
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

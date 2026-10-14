@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رحلة إنشاء برنامج | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="index.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="catalog.html" class="app-nav__link"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="approvals.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
+        </a>
+
+        <div class="app-nav__group">التقييم</div>
+        <a href="tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+
+        <div class="app-nav__group">الإدارة</div>
+        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="#" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">156</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <div class="pt-3 pb-3">
+        <a href="create.html" class="app-back small"><i class="ph ph-arrow-right me-1"></i>كل الأنواع</a>
+        <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mt-2">
+          <div>
+            <h1 class="app-page-title h5 mb-1">برنامج فردي جديد</h1>
+            <p class="app-page-subtitle small mb-0">برنامج فردي · مسودة · يُحفظ تلقائيًا عند الانتقال بين الخطوات</p>
+          </div>
+          <div class="app-hero-progress">
+            <div class="d-flex justify-content-between small mb-1"><span>الاكتمال</span><span class="fw-semibold">20%</span></div>
+            <div class="progress progress-xs" role="progressbar" aria-label="الاكتمال" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar bg-brand-cyan" style="width:20%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-lg-4 col-xl-3">
+          <div class="card app-card app-sticky-card">
+            <div class="card-body p-2">
+              <nav class="nav nav-pills flex-column app-steps" id="wizardSteps" role="tablist" aria-orientation="vertical">
+                <button class="nav-link app-step active" id="tab-identity" data-bs-toggle="pill" data-bs-target="#pane-identity" type="button" role="tab" aria-controls="pane-identity" aria-selected="true">
+                  <span class="app-step__num">1</span>
+                  <span class="flex-grow-1 text-start">التعريف</span>
+                  <span class="badge rounded-pill badge-soft-danger">إجبارية</span>
+                </button>
+                <button class="nav-link app-step" id="tab-design" data-bs-toggle="pill" data-bs-target="#pane-design" type="button" role="tab" aria-controls="pane-design" aria-selected="false">
+                  <span class="app-step__num">2</span>
+                  <span class="flex-grow-1 text-start">التصميم التعليمي</span>
+                  <span class="badge rounded-pill badge-soft-danger">إجبارية</span>
+                </button>
+                <button class="nav-link app-step" id="tab-materials" data-bs-toggle="pill" data-bs-target="#pane-materials" type="button" role="tab" aria-controls="pane-materials" aria-selected="false">
+                  <span class="app-step__num">3</span>
+                  <span class="flex-grow-1 text-start">المواد التعليمية</span>
+                  <span class="badge rounded-pill badge-soft-danger">إجبارية</span>
+                </button>
+                <button class="nav-link app-step is-done" id="tab-delivery" data-bs-toggle="pill" data-bs-target="#pane-delivery" type="button" role="tab" aria-controls="pane-delivery" aria-selected="false">
+                  <span class="app-step__num"><i class="ph ph-check"></i></span>
+                  <span class="flex-grow-1 text-start">التنفيذ والمقاعد</span>
+                  <span class="badge rounded-pill badge-soft-danger">إجبارية</span>
+                </button>
+                <button class="nav-link app-step" id="tab-evaluation" data-bs-toggle="pill" data-bs-target="#pane-evaluation" type="button" role="tab" aria-controls="pane-evaluation" aria-selected="false">
+                  <span class="app-step__num">5</span>
+                  <span class="flex-grow-1 text-start">التقييم</span>
+                  <span class="badge rounded-pill badge-soft-danger">إجبارية</span>
+                </button>
+                <button class="nav-link app-step" id="tab-pricing" data-bs-toggle="pill" data-bs-target="#pane-pricing" type="button" role="tab" aria-controls="pane-pricing" aria-selected="false">
+                  <span class="app-step__num">6</span>
+                  <span class="flex-grow-1 text-start">التسعير</span>
+                  <span class="badge rounded-pill badge-soft-danger">إجبارية</span>
+                </button>
+                <button class="nav-link app-step is-done" id="tab-review" data-bs-toggle="pill" data-bs-target="#pane-review" type="button" role="tab" aria-controls="pane-review" aria-selected="false">
+                  <span class="app-step__num"><i class="ph ph-check"></i></span>
+                  <span class="flex-grow-1 text-start">المراجعة والاعتماد</span>
+                  <span class="badge rounded-pill badge-soft-muted">اختيارية</span>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-xl-9">
+          <div class="tab-content">
+            <section class="tab-pane fade show active" id="pane-identity" role="tabpanel" aria-labelledby="tab-identity" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">1. التعريف</h2>
+                  <div class="mb-4">
+                    <label class="form-label small d-block">النوع</label>
+                    <div class="d-flex flex-wrap gap-2">
+                      <input type="radio" class="btn-check" name="unitType" id="unitType-0" autocomplete="off" checked>
+                      <label class="btn btn-sm btn-outline-brand" for="unitType-0">برنامج فردي</label>
+                      <input type="radio" class="btn-check" name="unitType" id="unitType-1" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="unitType-1">مسار تدريبي</label>
+                      <input type="radio" class="btn-check" name="unitType" id="unitType-2" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="unitType-2">شهادة مهنية احترافية</label>
+                      <input type="radio" class="btn-check" name="unitType" id="unitType-3" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="unitType-3">دبلوم</label>
+                      <input type="radio" class="btn-check" name="unitType" id="unitType-4" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="unitType-4">ورشة عمل</label>
+                      <input type="radio" class="btn-check" name="unitType" id="unitType-5" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="unitType-5">استشارة / جلسة إرشادية</label>
+                    </div>
+                  </div>
+                  <div class="row g-3">
+                  <div class="col-md-8">
+                    <label class="form-label small" for="unitName">الاسم <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="unitName" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="unitCode">الكود</label>
+                    <input type="text" class="form-control" id="unitCode" placeholder="مثال: 60155">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="unitLicense">رخصة فال</label>
+                    <select class="form-select" id="unitLicense"><option>بدون</option><option>المزادات</option><option>إدارة الأملاك</option><option>إدارة المرافق</option><option>الوساطة والتسويق</option><option>الاستشارات</option><option>التحليلات</option><option>المساهمات</option><option>المستوى التأسيسي للوساطة</option></select>
+                  </div>
+                  <div class="col-md-8">
+                    <label class="form-label small" for="unitAudience">الفئة المستهدفة <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="unitAudience" required>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="unitClass">التصنيف <span class="text-danger">*</span></label>
+                    <select class="form-select" id="unitClass" required><option>تأهيلي</option><option>تطويري</option></select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="unitField">المجال</label>
+                    <select class="form-select" id="unitField"><option value="">اختر المجال</option><option>الوساطة</option><option>التسويق</option><option>إدارة الأملاك</option><option>إدارة المرافق</option><option>المزايدات</option><option>الاستشارات</option><option>التحليلات</option><option>إدارة العقار المشترك</option><option>المساهمات</option><option>التسجيل العقاري</option><option>التطوير العقاري</option><option>التقييم والفحص</option><option>الأنظمة والتشريعات</option></select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="unitCreated">تاريخ الإنشاء <span class="text-danger">*</span></label>
+                    <input type="date" class="form-control" id="unitCreated" value="2026-10-06" required>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small d-block">صورة البرنامج <span class="text-danger">*</span></label>
+                    <label class="app-upload d-flex flex-column align-items-center justify-content-center gap-1 rounded-2 p-4 text-center">
+                      <i class="ph-duotone ph-image fs-2"></i>
+                      <span class="fw-semibold">رفع صورة</span>
+                      <span class="small app-muted">صورة بصيغة JPG أو PNG أو WebP، بحد أقصى 10 ميجابايت.</span>
+                      <input type="file" class="d-none" accept="image/jpeg,image/png,image/webp">
+                    </label>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small d-block">الفئات المستفيدة <span class="app-muted">(اختر فئة واحدة أو أكثر)</span></label>
+                    <div class="d-flex flex-wrap gap-2">
+                      <input type="checkbox" class="btn-check" id="benef-0" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-0">المطورون والمستثمرون</label>
+                      <input type="checkbox" class="btn-check" id="benef-1" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-1">التسجيل العيني والمساحة</label>
+                      <input type="checkbox" class="btn-check" id="benef-2" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-2">المهندسون والفاحصون</label>
+                      <input type="checkbox" class="btn-check" id="benef-3" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-3">الوسطاء والمسوقون العقاريون</label>
+                      <input type="checkbox" class="btn-check" id="benef-4" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-4">الجهات الحكومية والشركات</label>
+                      <input type="checkbox" class="btn-check" id="benef-5" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-5">الراغبون في دخول القطاع</label>
+                      <input type="checkbox" class="btn-check" id="benef-6" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-6">المشترون والمحللون العقاريون</label>
+                      <input type="checkbox" class="btn-check" id="benef-7" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="benef-7">مديرو الأملاك والمرافق</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label small" for="unitAbout">النبذة <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="unitAbout" rows="4" required></textarea>
+                  </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" disabled><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+                    <button type="button" class="btn btn-sm btn-brand px-3" data-show-tab="#tab-design">حفظ والتالي<i class="ph ph-arrow-left ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="tab-pane fade" id="pane-design" role="tabpanel" aria-labelledby="tab-design" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">2. التصميم التعليمي</h2>
+                  <div class="mb-4">
+                    <label class="form-label small" for="goal-1">الأهداف <span class="text-danger">*</span></label>
+                    <div class="d-flex gap-2 mb-2"><input type="text" class="form-control" id="goal-1" placeholder="الهدف 1"><button type="button" class="btn btn-sm app-filter-btn border text-danger"><i class="ph-duotone ph-trash me-1"></i>حذف</button></div>
+                    <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>إضافة</button>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label small" for="outcome-1">المخرجات التعليمية <span class="text-danger">*</span></label>
+                    <div class="d-flex gap-2 mb-2"><input type="text" class="form-control" id="outcome-1" placeholder="بنهاية البرنامج يكون المتدرب قادر على…"><button type="button" class="btn btn-sm app-filter-btn border text-danger"><i class="ph-duotone ph-trash me-1"></i>حذف</button></div>
+                    <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>إضافة</button>
+                  </div>
+                  <div>
+                    <label class="form-label small" for="axis-1">المحاور <span class="text-danger">*</span></label>
+                    <div class="border rounded-2 p-3 mb-2">
+                      <div class="d-flex flex-wrap gap-2 mb-2">
+                        <input type="text" class="form-control flex-grow-1 w-auto" id="axis-1" placeholder="اسم المحور">
+                        <div class="input-group app-hours-group"><input type="number" class="form-control" value="2" aria-label="ساعات المحور"><span class="input-group-text">ساعة</span></div>
+                        <button type="button" class="btn btn-sm app-filter-btn border text-danger"><i class="ph-duotone ph-trash me-1"></i>حذف</button>
+                      </div>
+                      <textarea class="form-control" rows="2" placeholder="وصف المحور" aria-label="وصف المحور"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>إضافة المحور</button>
+                    <p class="small app-muted mt-3 mb-0"><i class="ph-duotone ph-clock me-1"></i>إجمالي الساعات: 2 ساعة — تُستخدم في التنفيذ والتسعير.</p>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" data-show-tab="#tab-identity"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+                    <button type="button" class="btn btn-sm btn-brand px-3" data-show-tab="#tab-materials">حفظ والتالي<i class="ph ph-arrow-left ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="tab-pane fade" id="pane-materials" role="tabpanel" aria-labelledby="tab-materials" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">3. المواد التعليمية</h2>
+                  <div class="app-info d-flex gap-2 rounded-2 p-3 mb-3">
+                    <i class="ph-duotone ph-info fs-5 flex-shrink-0"></i>
+                    <p class="small mb-0">قسّم المحتوى إلى المحور — مثلًا «المقدمة» وتضم فيديو، و«الفصل الأول» يضم ملف PDF. لكل مادة: الجمهور المستهدف والملف ونص الشرح الخاص بها.</p>
+                  </div>
+                  <div class="border rounded-2 p-3 mb-3">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                      <span class="fw-semibold">1.</span>
+                      <input type="text" class="form-control flex-grow-1 w-auto" placeholder="اسم الالمحور (مثال: المقدمة)" aria-label="اسم المحور">
+                      <div class="input-group app-hours-group"><input type="number" class="form-control" value="2" aria-label="ساعات المحور"><span class="input-group-text">ساعة</span></div>
+                      <button type="button" class="btn btn-sm app-filter-btn border text-danger"><i class="ph-duotone ph-trash me-1"></i>حذف الالمحور</button>
+                    </div>
+                    <div class="text-center app-muted small border rounded-2 py-3 mb-2"><i class="ph-duotone ph-files fs-4 d-block mb-1"></i>ما فيه مواد بعد.</div>
+                    <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>مادة جديدة</button>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <label class="btn btn-sm app-filter-btn border mb-0"><i class="ph-duotone ph-upload-simple me-1"></i>رفع عدة ملفات دفعة وحدة<input type="file" class="d-none" multiple></label>
+                    <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>إضافة المحور جديد</button>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" data-show-tab="#tab-design"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+                    <button type="button" class="btn btn-sm btn-brand px-3" data-show-tab="#tab-delivery">حفظ والتالي<i class="ph ph-arrow-left ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="tab-pane fade" id="pane-delivery" role="tabpanel" aria-labelledby="tab-delivery" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">4. التنفيذ والمقاعد</h2>
+                  <div class="mb-4">
+                    <label class="form-label small d-block">أنواع التدريب المتاحة لهذا البرنامج <span class="text-danger">*</span> <span class="app-muted">(اختر نوعًا واحدًا أو أكثر — يُسعَّر كل نوع على حدة)</span></label>
+                    <div class="d-flex flex-wrap gap-2">
+                      <input type="checkbox" class="btn-check" id="mode-0" autocomplete="off" checked>
+                      <label class="btn btn-sm btn-outline-brand" for="mode-0">بث مباشر</label>
+                      <input type="checkbox" class="btn-check" id="mode-1" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="mode-1">حضوري</label>
+                      <input type="checkbox" class="btn-check" id="mode-2" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="mode-2">مسجّلة</label>
+                      <input type="checkbox" class="btn-check" id="mode-3" autocomplete="off">
+                      <label class="btn btn-sm btn-outline-brand" for="mode-3">مدمج</label>
+                    </div>
+                  </div>
+                  <div class="row g-3">
+                  <div class="col-md-3">
+                    <label class="form-label small" for="seats">عدد المقاعد المسموحة <span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" id="seats" value="25" required>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label small" for="days">عدد الأيام</label>
+                    <input type="number" class="form-control" id="days" value="1">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label small" for="runStatus">حالة التشغيل</label>
+                    <select class="form-select" id="runStatus"><option>تقام</option><option>متوقفة</option><option>ملغية</option><option>لم تطلق</option></select>
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label small" for="hoursCalc">الساعات</label>
+                    <input type="text" class="form-control" id="hoursCalc" value="2 ساعة (محسوبة)" readonly>
+                  </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" data-show-tab="#tab-materials"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+                    <button type="button" class="btn btn-sm btn-brand px-3" data-show-tab="#tab-evaluation">حفظ والتالي<i class="ph ph-arrow-left ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="tab-pane fade" id="pane-evaluation" role="tabpanel" aria-labelledby="tab-evaluation" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">5. التقييم</h2>
+                  <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label small" for="evalSurvey">استبيان قياس الرضا <span class="text-danger">*</span> <span class="app-muted fw-normal">(إلزامي — يُرسل للمتدربين تلقائيًا بعد انتهاء البرنامج، ومستقل عن الاختبارين القبلي والبعدي)</span></label>
+                    <select class="form-select" id="evalSurvey" required><option value="">اختر استبيان قياس الرضا</option><option>SRV-P-9CCEE154 — استبيان رضا — المساهمات العقارية (تقييم البرنامج)</option><option>SRV-P-51756F52 — استبيان رضا — إعداد التقارير العقارية (تقييم البرنامج)</option><option>SRV-P-DFC83252 — استبيان رضا — تحليل المؤشرات العقارية (تقييم البرنامج)</option><option>SRV-P-6AECE5CB — استبيان رضا — تحليل الأسواق العقارية (تقييم البرنامج)</option><option>SRV-P-D896AE6F — استبيان رضا — مقدمة في التحليل العقاري (تقييم البرنامج)</option><option>SRV-P-925956B5 — استبيان رضا — قراءة التقارير العقارية (تقييم البرنامج)</option><option>SRV-P-37844CD8 — استبيان رضا — أسس الاستشارات العقارية (تقييم البرنامج)</option><option>SRV-P-DF537AE7 — استبيان رضا — مهارات التفكير وحل المشكلات (تقييم البرنامج)</option><option>SRV-P-4DBFA658 — استبيان رضا — أسس الصناعة العقارية (تقييم البرنامج)</option><option>SRV-P-B33C1034 — استبيان رضا — الإدارة المالية في القطاع العقاري (تقييم البرنامج)</option><option>SRV-P-32793B9D — استبيان رضا — التسويق العقاري الالكتروني (تقييم البرنامج)</option><option>SRV-P-9FE67127 — استبيان رضا — إدارة الأصول العقارية (تقييم البرنامج)</option></select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small" for="evalPre">الاختبار القبلي — قياس معرفي فقط، بلا درجة نجاح</label>
+                    <select class="form-select" id="evalPre"><option value="">بدون اختبار قبلي</option><option>TST-101 — اختبار أساسيات تحليل البيانات</option><option>TST-204 — اختبار مهارات الإشراف والقيادة</option><option>TST-318 — اختبار جودة الخدمة</option><option>TST-512 — اختبار الوعي بالأمن السيبراني</option><option>TST-620 — اختبار كتابة التقارير</option><option>TST-900 — اختبار عام: الحوكمة والالتزام</option></select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label small" for="evalPost">الاختبار البعدي (النهائي)</label>
+                    <select class="form-select" id="evalPost"><option value="">بدون اختبار بعدي</option><option>TST-101 — اختبار أساسيات تحليل البيانات</option><option>TST-204 — اختبار مهارات الإشراف والقيادة</option><option>TST-318 — اختبار جودة الخدمة</option><option>TST-512 — اختبار الوعي بالأمن السيبراني</option><option>TST-620 — اختبار كتابة التقارير</option><option>TST-900 — اختبار عام: الحوكمة والالتزام</option></select>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="evalPostRequired">
+                      <label class="form-check-label small" for="evalPostRequired">الاختبار البعدي إلزامي للاجتياز</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="evalCert">شرط الشهادة</label>
+                    <select class="form-select" id="evalCert"><option>حضور فقط</option><option>حضور واجتياز الاختبار</option></select>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="evalPass">درجة النجاح في الاختبار البعدي (من 100)</label>
+                    <input type="number" class="form-control" id="evalPass">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label small" for="evalAttendance">الحد الأدنى للحضور %</label>
+                    <input type="number" class="form-control" id="evalAttendance">
+                  </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" data-show-tab="#tab-delivery"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+                    <button type="button" class="btn btn-sm btn-brand px-3" data-show-tab="#tab-pricing">حفظ والتالي<i class="ph ph-arrow-left ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="tab-pane fade" id="pane-pricing" role="tabpanel" aria-labelledby="tab-pricing" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">6. التسعير</h2>
+                  <p class="app-muted small mb-3">أدخل السعر يدويًا قبل الضريبة. يُحدَّد سعر مستقل لكل نوع تدريب اخترته في خطوة التشغيل، ضمن البرنامج نفسه.</p>
+                  <div class="row g-3 align-items-end">
+                    <div class="col-md-6">
+                      <label class="form-label small" for="priceLive">سعر التدريب «بث مباشر» (قبل الضريبة) <span class="text-danger">*</span></label>
+                      <div class="input-group"><input type="number" class="form-control" id="priceLive" value="0" required><span class="input-group-text">ريال</span></div>
+                    </div>
+                    <div class="col-md-6">
+                      <dl class="app-kv app-kv--3 mb-0">
+                        <div><dt>السعر قبل الضريبة</dt><dd>0 ريال</dd></div>
+                        <div><dt>الضريبة 15%</dt><dd>0 ريال</dd></div>
+                        <div><dt>الإجمالي</dt><dd>0 ريال</dd></div>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" data-show-tab="#tab-evaluation"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+                    <button type="button" class="btn btn-sm btn-brand px-3" data-show-tab="#tab-review">حفظ والتالي<i class="ph ph-arrow-left ms-1"></i></button>
+                  </div>
+                </div>
+              </form>
+            </section>
+            <section class="tab-pane fade" id="pane-review" role="tabpanel" aria-labelledby="tab-review" tabindex="0">
+              <form class="card app-card" data-static-form>
+                <div class="card-body p-4">
+                  <h2 class="app-card__title fs-6 mb-3">7. المراجعة والاعتماد</h2>
+                  <ul class="list-group list-group-flush app-list mb-3">
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">اسم البرنامج</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-identity">التعريف <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">النبذة</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-identity">التعريف <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">الفئة المستهدفة</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-identity">التعريف <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-check-circle text-brand-green fs-5"></i>
+                      <span class="flex-grow-1">تاريخ الإنشاء</span>
+                      
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">صورة البرنامج</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-identity">التعريف <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">الأهداف</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-design">التصميم التعليمي <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">المخرجات التعليمية</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-design">التصميم التعليمي <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">المحور واحد على الأقل بساعات</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-design">التصميم التعليمي <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">مادة تعليمية واحدة على الأقل</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-materials">المواد التعليمية <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">كل مادة لها ملف مرفوع أو نص شرح</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-materials">المواد التعليمية <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-check-circle text-brand-green fs-5"></i>
+                      <span class="flex-grow-1">نوع التدريب</span>
+                      
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-check-circle text-brand-green fs-5"></i>
+                      <span class="flex-grow-1">عدد المقاعد</span>
+                      
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">استبيان قياس الرضا مرتبط (إلزامي بعد نهاية البرنامج)</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-evaluation">التقييم <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">الاختبار القبلي مرتبط (قياس معرفي)</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-evaluation">التقييم <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                    <li class="list-group-item px-0 d-flex align-items-center gap-2">
+                      <i class="ph-duotone ph-x-circle text-brand-danger fs-5"></i>
+                      <span class="flex-grow-1">السعر أكبر من صفر</span>
+                      <a href="#" class="app-link small" data-show-tab="#tab-pricing">التسعير <i class="ph ph-arrow-left"></i></a>
+                    </li>
+                  </ul>
+                  <div class="app-stat rounded-2 p-3 mb-3">
+                    <div class="small app-muted">· برنامج فردي · 2 ساعة · بث مباشر · 25 مقعد</div>
+                    <div class="fw-semibold mt-1">الإجمالي شامل الضريبة: 0 ريال</div>
+                  </div>
+                  <div class="d-flex flex-wrap align-items-center gap-3">
+                    <button type="button" class="btn btn-brand" disabled><i class="ph-duotone ph-paper-plane-tilt me-1"></i>إرسال للمراجعة</button>
+                    <span class="small text-brand-danger">يرجى استكمال البنود الناقصة أولًا.</span>
+                    <a href="catalog.html" class="app-link small ms-auto">صفحة البرنامج <i class="ph ph-arrow-left"></i></a>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent d-flex flex-wrap justify-content-between gap-2 p-3">
+                  <button type="button" class="btn btn-sm btn-light px-3" data-show-tab="#tab-pricing"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                  <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-sm app-filter-btn border px-3">حفظ ومتابعة لاحقًا</button>
+
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- ============ Templates (cloned by JS) ============ -->
+  <template id="pageItemTemplate">
+    <li class="page-item"><a class="page-link" href="#"></a></li>
+  </template>
+
+  <template id="pageGapTemplate">
+    <li class="page-item disabled"><span class="page-link">…</span></li>
+  </template>
+
+  <template id="pagePrevTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="السابق"><i class="ph ph-caret-right"></i></a></li>
+  </template>
+
+  <template id="pageNextTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="التالي"><i class="ph ph-caret-left"></i></a></li>
+  </template>
+
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

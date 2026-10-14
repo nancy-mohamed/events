@@ -1,0 +1,44 @@
+/* Approval gauge chart */
+.approval-gauge__svg {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.approval-gauge__track,
+.approval-gauge__value {
+  fill: none;
+  stroke-width: 13;
+  stroke-linecap: round;
+}
+
+.approval-gauge__track { stroke: var(--chart-track); }
+
+.approval-gauge__value {
+  stroke: var(--app-green);
+  stroke-dasharray: 0 100;
+  transition: stroke-dasharray 1s ease-out;
+}
+
+.approval-gauge__percent {
+  font-size: 22px;
+  font-weight: 600;
+  fill: var(--app-heading);
+}
+
+.approval-gauge__caption {
+  font-size: 9px;
+  fill: var(--app-muted);
+}
+
+.approval-gauge__stats { border-color: var(--app-border) !important; }
+
+.approval-gauge__stat {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--app-heading);
+}
+
+.approval-gauge__stat--approved { color: var(--app-green); }

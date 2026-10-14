@@ -1,0 +1,1502 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الكتالوج | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="index.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="catalog.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="approvals.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
+        </a>
+
+        <div class="app-nav__group">التقييم</div>
+        <a href="tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+
+        <div class="app-nav__group">الإدارة</div>
+        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="#" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">156</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--lg icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--lg icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--lg icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <!-- Page title -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 pb-1">
+        <h1 class="app-page-title h5 mb-0">الكتالوج</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">الكتالوج</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3">
+        <p class="app-page-subtitle small mb-0">كل الوحدات التدريبية في مكان واحد، كل وحدة بمحتواها وسعرها.</p>
+        <a href="create.html" class="btn btn-sm btn-brand"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <!-- Tabs + filters -->
+      <div class="card app-card mb-3" data-search-target>
+        <div class="card-body pb-0 pt-1">
+          <div class="catalog-tabs d-flex gap-4 overflow-auto" role="tablist" aria-label="أنواع الوحدات" id="catalogTabs">
+            <button type="button" class="catalog-tab active" role="tab" aria-selected="true" data-type="program" data-label="برنامج فردي">
+              <i class="ph-duotone ph-book-open-text"></i>برنامج فردي<span class="catalog-tab__count">17</span>
+            </button>
+            <button type="button" class="catalog-tab" role="tab" aria-selected="false" data-type="path" data-label="مسار تدريبي">
+              <i class="ph-duotone ph-path"></i>مسار تدريبي<span class="catalog-tab__count">8</span>
+            </button>
+            <button type="button" class="catalog-tab" role="tab" aria-selected="false" data-type="consultation" data-label="استشارة / جلسة إرشادية">
+              <i class="ph-duotone ph-chats-circle"></i>استشارة / جلسة إرشادية<span class="catalog-tab__count">4</span>
+            </button>
+            <button type="button" class="catalog-tab" role="tab" aria-selected="false" data-type="workshop" data-label="ورشة عمل">
+              <i class="ph-duotone ph-wrench"></i>ورشة عمل<span class="catalog-tab__count">3</span>
+            </button>
+            <button type="button" class="catalog-tab" role="tab" aria-selected="false" data-type="certificate" data-label="شهادة مهنية احترافية">
+              <i class="ph-duotone ph-certificate"></i>شهادة مهنية احترافية<span class="catalog-tab__count">1</span>
+            </button>
+            <button type="button" class="catalog-tab" role="tab" aria-selected="false" data-type="diploma" data-label="دبلوم">
+              <i class="ph-duotone ph-graduation-cap"></i>دبلوم<span class="catalog-tab__count">0</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-2 py-2">
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <div class="form-check mb-0 me-1">
+              <input class="form-check-input" type="checkbox" id="catalogSelectAll">
+              <label class="form-check-label small" for="catalogSelectAll">تحديد الكل</label>
+            </div>
+            <div class="input-group input-group-sm catalog-search">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="catalogSearch" placeholder="ابحث بالاسم" aria-label="ابحث بالاسم">
+            </div>
+          </div>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <select class="form-select form-select-sm w-auto" id="catalogStatus" aria-label="الحالة">
+              <option value="">كل الحالات</option>
+              <option value="approved">معتمد</option>
+              <option value="ready">جاهز للاعتماد</option>
+              <option value="draft">مسودة</option>
+              <option value="returned">معاد</option>
+            </select>
+            <select class="form-select form-select-sm w-auto" id="catalogClassification" aria-label="التصنيف">
+              <option value="">كل التصنيفات</option>
+              <option value="تأهيلي">تأهيلي</option>
+              <option value="تطويري">تطويري</option>
+            </select>
+            <select class="form-select form-select-sm w-auto" id="catalogSort" aria-label="الترتيب">
+              <option value="newest">الأحدث</option>
+              <option value="price-desc">الأعلى سعرًا</option>
+              <option value="price-asc">الأقل سعرًا</option>
+              <option value="name">الاسم</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bulk actions -->
+      <div class="catalog-bulk d-none align-items-center justify-content-between flex-wrap gap-2 rounded-2 px-3 py-2 mb-3" id="catalogBulk" role="region" aria-label="إجراءات المحدد">
+        <div class="d-flex align-items-center gap-2">
+          <i class="ph-duotone ph-check-square-offset fs-5"></i>
+          <span class="fw-semibold" id="catalogBulkCount"></span>
+        </div>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <button type="button" class="btn btn-sm catalog-bulk__btn" id="btnSendReview">
+            <i class="ph-duotone ph-paper-plane-tilt me-1"></i>إرسال المسودات للمراجعة <span class="badge rounded-pill badge-soft-info ms-1" id="catalogDraftCount">0</span>
+          </button>
+          <button type="button" class="btn btn-sm catalog-bulk__btn catalog-bulk__btn--danger" id="btnArchive">
+            <i class="ph-duotone ph-archive me-1"></i>أرشفة المحدد
+          </button>
+          <button type="button" class="btn btn-sm app-filter-btn" id="btnClearSelection" aria-label="إلغاء التحديد"><i class="ph ph-x"></i></button>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      <div class="row g-3" id="catalogGrid" aria-live="polite">
+        <div class="col-md-6 col-xxl-4" data-item data-id="50" data-type="certificate" data-status="draft" data-classification="تطويري" data-created="2026-10-05" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسودة بدون اسم">
+                  <span class="icon-tile icon-tile--lg icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+              </div>
+              <h3 class="catalog-card__title mb-0 is-unnamed" data-search>مسودة بدون اسم</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>0 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>0 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-05</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-05</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="42" data-type="workshop" data-status="draft" data-classification="تطويري" data-created="2026-10-05" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسودة بدون اسم">
+                  <span class="icon-tile icon-tile--lg icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+              </div>
+              <h3 class="catalog-card__title mb-0 is-unnamed" data-search>مسودة بدون اسم</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>2 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-05</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-05</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="27" data-type="path" data-status="draft" data-classification="تطويري" data-created="2026-10-05" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسودة بدون اسم">
+                  <span class="icon-tile icon-tile--lg icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+              </div>
+              <h3 class="catalog-card__title mb-0 is-unnamed" data-search>مسودة بدون اسم</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>0 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>0 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-05</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-05</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="26" data-type="path" data-status="draft" data-classification="تطويري" data-created="2026-10-05" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسودة بدون اسم">
+                  <span class="icon-tile icon-tile--lg icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+              </div>
+              <h3 class="catalog-card__title mb-0 is-unnamed" data-search>مسودة بدون اسم</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>2 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>1 برنامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-05</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-05</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="15" data-type="program" data-status="draft" data-classification="تطويري" data-created="2026-10-05" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسودة بدون اسم">
+                  <span class="icon-tile icon-tile--lg icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+              </div>
+              <h3 class="catalog-card__title mb-0 is-unnamed" data-search>مسودة بدون اسم</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>2 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-05</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-05</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="14" data-type="program" data-status="returned" data-classification="تأهيلي" data-created="2026-10-05" data-price="1500">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد برنامج تطوير المهارات">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-danger" data-status-badge><i class="ph ph-arrow-u-up-left me-1"></i>معاد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>برنامج تطوير المهارات</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>5 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-chalkboard-teacher"></i>حضوري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-05</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-05</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">1,500</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · حضوري · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل برنامج تطوير المهارات"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="16" data-type="program" data-status="draft" data-classification="تأهيلي" data-created="2026-10-04" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسودة بدون اسم">
+                  <span class="icon-tile icon-tile--lg icon-tile--muted"><i class="ph-duotone ph-file-dashed"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+              </div>
+              <h3 class="catalog-card__title mb-0 is-unnamed" data-search>مسودة بدون اسم</h3>
+              <p class="catalog-card__desc is-empty mb-0">لا يوجد وصف بعد</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>2 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip" title="بث مباشر، حضوري، مسجّلة، مدمج"><i class="ph-duotone ph-squares-four"></i>4 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-04</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-04</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر · حضوري · مسجّلة · مدمج</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسودة بدون اسم"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="41" data-type="workshop" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="350">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد ورشة التسويق الرقمي للعقار">
+                  <span class="icon-tile icon-tile--lg icon-tile--teal"><i class="ph-duotone ph-wrench"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>ورشة التسويق الرقمي للعقار</h3>
+              <p class="catalog-card__desc mb-0" title="ورشة عملية لبناء حملة تسويق رقمية لعقار." data-search>ورشة عملية لبناء حملة تسويق رقمية لعقار.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>4 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">350</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل ورشة التسويق الرقمي للعقار"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="40" data-type="workshop" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="600">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد ورشة صياغة العقود العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--teal"><i class="ph-duotone ph-wrench"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>ورشة صياغة العقود العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="ورشة تطبيقية لصياغة عقود البيع والإيجار وفق الأنظمة المعتمدة." data-search>ورشة تطبيقية لصياغة عقود البيع والإيجار وفق الأنظمة المعتمدة.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>5 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">600</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">300 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل ورشة صياغة العقود العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="33" data-type="consultation" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="700">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد إرشاد مديري الأملاك">
+                  <span class="icon-tile icon-tile--lg icon-tile--cyan"><i class="ph-duotone ph-chats-circle"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>إرشاد مديري الأملاك</h3>
+              <p class="catalog-card__desc mb-0" title="جلسات إرشاد جماعية لمديري الأملاك مع مرشد خبير: حلول عملية لمشكلات التشغيل والتحصيل والتعاقدات." data-search>جلسات إرشاد جماعية لمديري الأملاك مع مرشد خبير: حلول عملية لمشكلات التشغيل والتحصيل والتعاقدات.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>4 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">700</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">400 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل إرشاد مديري الأملاك"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="32" data-type="consultation" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="450">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد إرشاد الوسيط العقاري المبتدئ">
+                  <span class="icon-tile icon-tile--lg icon-tile--cyan"><i class="ph-duotone ph-chats-circle"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>إرشاد الوسيط العقاري المبتدئ</h3>
+              <p class="catalog-card__desc mb-0" title="جلسات إرشاد فردية أو جماعية مع مرشد معتمد للوسطاء الجدد: خطة عمل، متابعة أولى الصفقات، وتوجيه مهني حتى الاستقلالية." data-search>جلسات إرشاد فردية أو جماعية مع مرشد معتمد للوسطاء الجدد: خطة عمل، متابعة أولى الصفقات، وتوجيه مهني حتى الاستقلالية.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>6 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">450</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل إرشاد الوسيط العقاري المبتدئ"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="31" data-type="consultation" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="800">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد استشارة تقييم فرصة استثمار عقاري">
+                  <span class="icon-tile icon-tile--lg icon-tile--cyan"><i class="ph-duotone ph-chats-circle"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>استشارة تقييم فرصة استثمار عقاري</h3>
+              <p class="catalog-card__desc mb-0" title="استشارة فردية لدراسة جدوى فرصة استثمارية عقارية." data-search>استشارة فردية لدراسة جدوى فرصة استثمارية عقارية.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>2 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">800</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل استشارة تقييم فرصة استثمار عقاري"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="30" data-type="consultation" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1200">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد استشارة تأسيس مكتب وساطة عقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--cyan"><i class="ph-duotone ph-chats-circle"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>استشارة تأسيس مكتب وساطة عقارية</h3>
+              <p class="catalog-card__desc mb-0" title="استشارة لتأسيس مكتب وساطة واستيفاء متطلبات الترخيص." data-search>استشارة لتأسيس مكتب وساطة واستيفاء متطلبات الترخيص.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>3 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>—</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,200</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">900 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل استشارة تأسيس مكتب وساطة عقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="25" data-type="path" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="2700">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسار التحكيم العقاري">
+                  <span class="icon-tile icon-tile--lg icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مسار التحكيم العقاري</h3>
+              <p class="catalog-card__desc mb-0" title="مسار يضم 5 برامج من ملف برامج المعهد." data-search>مسار يضم 5 برامج من ملف برامج المعهد.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>120 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>5 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">2,700</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">لكل مسار · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار التحكيم العقاري"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="24" data-type="path" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="0">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسار رخصة المساهمات العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مسار رخصة المساهمات العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="مسار يضم برنامجين من ملف برامج المعهد." data-search>مسار يضم برنامجين من ملف برامج المعهد.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>25 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>2 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="catalog-card__price catalog-card__price--empty">لم يُسعّر</div>
+                  <div class="app-muted small mt-1">بث مباشر</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار رخصة المساهمات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="23" data-type="path" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="18050">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسار الاستشارات العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مسار الاستشارات العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="مسار يضم 14 برنامجاً من ملف برامج المعهد." data-search>مسار يضم 14 برنامجاً من ملف برامج المعهد.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>210 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>14 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">18,050</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">لكل مسار · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار الاستشارات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="22" data-type="path" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="900">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسار الوساطة العقارية المستوى التأسيسي">
+                  <span class="icon-tile icon-tile--lg icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مسار الوساطة العقارية المستوى التأسيسي</h3>
+              <p class="catalog-card__desc mb-0" title="مسار يضم 5 برامج من ملف برامج المعهد." data-search>مسار يضم 5 برامج من ملف برامج المعهد.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>65 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>5 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">900</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">لكل مسار · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار الوساطة العقارية المستوى التأسيسي"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="21" data-type="path" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="18806">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسار التحليلات العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مسار التحليلات العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="مسار يضم 14 برنامجاً من ملف برامج المعهد." data-search>مسار يضم 14 برنامجاً من ملف برامج المعهد.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>210 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>14 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">18,806</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">لكل مسار · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار التحليلات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="20" data-type="path" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="1260">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مسار نموذجي: الوسيط العقاري المحترف">
+                  <span class="icon-tile icon-tile--lg icon-tile--navy"><i class="ph-duotone ph-path"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مسار نموذجي: الوسيط العقاري المحترف</h3>
+              <p class="catalog-card__desc mb-0" title="مسار نموذجي جاهز يضم برنامجين معتمدين بمواد واستبيان واختبار شامل وسعر مخفّض." data-search>مسار نموذجي جاهز يضم برنامجين معتمدين بمواد واستبيان واختبار شامل وسعر مخفّض.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>14 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-stack"></i>2 برامج</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">1,260</span><span class="app-muted small">ر.س</span>
+                    <span class="badge rounded-pill badge-soft-success ms-1">خصم 10%</span>
+                  </div>
+                  <div class="app-muted small mt-1">لكل مسار · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مسار نموذجي: الوسيط العقاري المحترف"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="13" data-type="program" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="800">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد نموذج: التسويق العقاري الرقمي">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>نموذج: التسويق العقاري الرقمي</h3>
+              <p class="catalog-card__desc mb-0" title="برنامج نموذجي: التسويق العقاري الرقمي." data-search>برنامج نموذجي: التسويق العقاري الرقمي.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>8 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">800</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل نموذج: التسويق العقاري الرقمي"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="12" data-type="program" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="600">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد نموذج: أساسيات الوساطة العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>نموذج: أساسيات الوساطة العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="برنامج نموذجي: أساسيات الوساطة العقارية." data-search>برنامج نموذجي: أساسيات الوساطة العقارية.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>6 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">600</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل نموذج: أساسيات الوساطة العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="11" data-type="program" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="1700">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد التسويق العقاري الالكتروني">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>التسويق العقاري الالكتروني</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف هذا البرنامج إلى إكساب المتدرب أهم المعارف والمهارات اللازمة في مجال التسويق العقاري الإلكتروني ليقود عملية التسويق العقاري الإلكتروني بنجاح." data-search>يهدف هذا البرنامج إلى إكساب المتدرب أهم المعارف والمهارات اللازمة في مجال التسويق العقاري الإلكتروني ليقود عملية التسويق العقاري الإلكتروني بنجاح.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>20 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,700</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">750 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل التسويق العقاري الالكتروني"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="10" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1350">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد إدارة الأصول العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>إدارة الأصول العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف البرنامج إلى تمكين المتدربين من فهم الدور الاستراتيجي لمدير الأصول العقارية ضمن منظومة الاستثمار والتطوير العقاري، ومهامه في تعزيز كفاءة الأصول وتحقيق العوائد المستهدفة." data-search>يهدف البرنامج إلى تمكين المتدربين من فهم الدور الاستراتيجي لمدير الأصول العقارية ضمن منظومة الاستثمار والتطوير العقاري، ومهامه في تعزيز كفاءة الأصول وتحقيق العوائد المستهدفة.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>15 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,350</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">600 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل إدارة الأصول العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="9" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1650">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد فحص المباني الجاهزة">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>فحص المباني الجاهزة</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف البرنامج إلى تأهيل المشاركين على إجراء فحص المباني الجاهزة وفق المعايير المعتمدة، بما يمكّن الحاصلين عليه من الانضمام كفاحصين معتمدين في خدمة فحص المباني الجاهزة." data-search>يهدف البرنامج إلى تأهيل المشاركين على إجراء فحص المباني الجاهزة وفق المعايير المعتمدة، بما يمكّن الحاصلين عليه من الانضمام كفاحصين معتمدين في خدمة فحص المباني الجاهزة.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>25 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,650</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">680 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل فحص المباني الجاهزة"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="8" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1999">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد المسوق العقاري لمشاريع البيع على الخارطة">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>المسوق العقاري لمشاريع البيع على الخارطة</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف هذا البرنامج التدريبي إلى تمكين المسوقين العقاريين من المعارف والخبرات والمهارات لممارسة أدوارهم التخصصية في مشاريع البيع على الخارطة." data-search>يهدف هذا البرنامج التدريبي إلى تمكين المسوقين العقاريين من المعارف والخبرات والمهارات لممارسة أدوارهم التخصصية في مشاريع البيع على الخارطة.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>10 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">1,999</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل المسوق العقاري لمشاريع البيع على الخارطة"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="6" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="800">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد دور التحكيم في المنازعات العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>دور التحكيم في المنازعات العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="تنمية مهارات المشاركين، وإحاطتهم علمًا بالمنازعات العقارية التي يختص المركز السعودي للتحكيم العقاري بالفصل فيها، بالتعمق في فهم اللائحة الإجرائية لهذا المركز." data-search>تنمية مهارات المشاركين، وإحاطتهم علمًا بالمنازعات العقارية التي يختص المركز السعودي للتحكيم العقاري بالفصل فيها، بالتعمق في فهم اللائحة الإجرائية لهذا المركز.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>40 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-broadcast"></i>بث مباشر</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="catalog-card__price">800</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="app-muted small mt-1">للمتدرب · بث مباشر · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل دور التحكيم في المنازعات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="4" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1650">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد فرز الوحدات العقارية">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>فرز الوحدات العقارية</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف هذا البرنامج إلى تزويد المتدربين بالمعارف والمهارات والاتجاهات المهنية اللازمة لفهم نظام فرز الوحدات العقارية، وتمكينهم من تطبيقه بكفاءة وفعالية وفقًا للأنظمة والتشريعات المعمول بها في المملكة." data-search>يهدف هذا البرنامج إلى تزويد المتدربين بالمعارف والمهارات والاتجاهات المهنية اللازمة لفهم نظام فرز الوحدات العقارية، وتمكينهم من تطبيقه بكفاءة وفعالية وفقًا للأنظمة والتشريعات المعمول بها في المملكة.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>20 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,650</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">700 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل فرز الوحدات العقارية"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="3" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1650">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد التمويل العقاري">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>التمويل العقاري</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف البرنامج إلى تزويد المتدرب بالمعارف الأساسية المتعلقة بالتمويل العقاري، بما في ذلك العقود، والمنتجات، والجهات ذات العلاقة، والأنظمة واللوائح المنظمة له." data-search>يهدف البرنامج إلى تزويد المتدرب بالمعارف الأساسية المتعلقة بالتمويل العقاري، بما في ذلك العقود، والمنتجات، والجهات ذات العلاقة، والأنظمة واللوائح المنظمة له.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>20 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,650</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">700 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل التمويل العقاري"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="2" data-type="program" data-status="approved" data-classification="تطويري" data-created="2026-10-01" data-price="1250">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد مدير عقار مشترك">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>مدير عقار مشترك</h3>
+              <p class="catalog-card__desc mb-0" title="يهدف البرنامج إلى رفع المستوى المعرفي وتأهيل العاملين في السوق العقاري السعودي للقيام بمهام مدير العقار بكفاءة، من خلال تزويدهم بالمعارف والمهارات المتعلقة بمهام المدير والقوانين والأنظمة ذات الصلة." data-search>يهدف البرنامج إلى رفع المستوى المعرفي وتأهيل العاملين في السوق العقاري السعودي للقيام بمهام مدير العقار بكفاءة، من خلال تزويدهم بالمعارف والمهارات المتعلقة بمهام المدير والقوانين والأنظمة ذات الصلة.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>15 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تطويري</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,250</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">550 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل مدير عقار مشترك"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-6 col-xxl-4" data-item data-id="1" data-type="program" data-status="approved" data-classification="تأهيلي" data-created="2026-10-01" data-price="1650">
+          <article class="card app-card catalog-card h-100">
+            <div class="card-body d-flex flex-column gap-2">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center gap-2">
+                  <input class="form-check-input m-0 catalog-card__check" type="checkbox" aria-label="تحديد التسويق العقاري">
+                  <span class="icon-tile icon-tile--lg icon-tile--green"><i class="ph-duotone ph-book-open-text"></i></span>
+                </div>
+                <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+              </div>
+              <h3 class="catalog-card__title mb-0" data-search>التسويق العقاري</h3>
+              <p class="catalog-card__desc mb-0" title="يساهم هذا البرنامج في تأهيل المتدرب وبناء قدراته وفق أفضل ممارسات التسويق العقاري المحلية والعالمية، بما يساعد على رفع مستواه المهني، وتمكينه من التعرف على أهم الأخلاقيات التي يجب أن يتحلى بها المسوق العقاري." data-search>يساهم هذا البرنامج في تأهيل المتدرب وبناء قدراته وفق أفضل ممارسات التسويق العقاري المحلية والعالمية، بما يساعد على رفع مستواه المهني، وتمكينه من التعرف على أهم الأخلاقيات التي يجب أن يتحلى بها المسوق العقاري.</p>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="catalog-chip"><i class="ph-duotone ph-clock"></i>20 ساعة</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-tag"></i>تأهيلي</span>
+                <span class="catalog-chip" title="حضوري، بث مباشر"><i class="ph-duotone ph-squares-four"></i>2 أنواع تعلّم</span>
+                <span class="catalog-chip"><i class="ph-duotone ph-certificate"></i>حضور واجتياز الاختبار</span>
+              </div>
+              <dl class="catalog-card__dates mb-0">
+                <div><dt>الإنشاء</dt><dd>2026-10-01</dd></div>
+                <div><dt>آخر تحديث</dt><dd>2026-10-01</dd></div>
+                <div><dt>الاعتماد</dt><dd>2026-10-01</dd></div>
+              </dl>
+              <div class="catalog-card__footer d-flex justify-content-between align-items-end gap-2 mt-auto">
+                <div class="min-w-0">
+                  <div class="d-flex align-items-baseline gap-1 flex-wrap">
+                    <span class="small app-muted">حضوري</span>
+                    <span class="catalog-card__price">1,650</span><span class="app-muted small">ر.س</span>
+                  </div>
+                  <div class="small app-muted">بث مباشر: <span class="catalog-card__price-alt">700 ر.س</span></div>
+                  <div class="app-muted small mt-1">للمتدرب · قبل الضريبة</div>
+                </div>
+                <div class="d-flex align-items-center gap-1 flex-shrink-0">
+                  <a href="#" class="btn btn-navy btn-sm px-3">عرض</a>
+                  <a href="#" class="btn-icon-soft" title="تعديل" aria-label="تعديل التسويق العقاري"><i class="ph-duotone ph-pencil-simple"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 d-none" data-empty="type">
+          <div class="card app-card"><div class="card-body text-center py-5">
+            <span class="icon-tile icon-tile--navy mx-auto mb-3 catalog-empty__icon"><i class="ph-duotone ph-graduation-cap"></i></span>
+            <h2 class="h6 fw-semibold mb-1">لا توجد وحدات من نوع «<span data-empty-type></span>» بعد</h2>
+            <p class="app-muted small mb-3">أنشئ أول وحدة من هذا النوع لتظهر هنا.</p>
+            <a href="create.html" class="btn btn-sm btn-brand"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+          </div></div>
+        </div>
+        <div class="col-12 d-none" data-empty="filter">
+          <div class="card app-card"><div class="card-body text-center py-5">
+            <span class="icon-tile icon-tile--navy mx-auto mb-3 catalog-empty__icon"><i class="ph-duotone ph-magnifying-glass"></i></span>
+            <h2 class="h6 fw-semibold mb-1">لا توجد نتائج مطابقة</h2>
+            <p class="app-muted small mb-3">جرّب تغيير كلمات البحث أو الفلاتر.</p>
+            <button type="button" class="btn btn-sm btn-outline-secondary" id="btnResetFilters">مسح الفلاتر</button>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3 app-muted small">
+        <span id="catalogCount"></span>
+        <nav aria-label="تصفح الكتالوج">
+          <ul class="pagination pagination-sm app-pagination mb-0" id="catalogPagination"></ul>
+        </nav>
+      </div>
+    </main>
+
+    <!-- Archive confirmation -->
+    <div class="modal fade" id="archiveModal" tabindex="-1" aria-labelledby="archiveModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content app-modal">
+          <div class="modal-body text-center p-4">
+            <span class="icon-tile icon-tile--danger mx-auto mb-3 app-modal__icon"><i class="ph-duotone ph-archive"></i></span>
+            <h2 class="h6 fw-semibold mb-2" id="archiveModalTitle">أرشفة الوحدات المحددة؟</h2>
+            <p class="app-muted small mb-0" id="archiveModalText"></p>
+          </div>
+          <div class="modal-footer border-0 justify-content-center gap-2 pt-0 pb-4">
+            <button type="button" class="btn btn-sm btn-light px-3" data-bs-dismiss="modal">إلغاء</button>
+            <button type="button" class="btn btn-sm btn-danger px-3" id="btnConfirmArchive">أرشفة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- ============ Templates (cloned by JS) ============ -->
+  <template id="pageItemTemplate">
+    <li class="page-item"><a class="page-link" href="#"></a></li>
+  </template>
+
+  <template id="pageGapTemplate">
+    <li class="page-item disabled"><span class="page-link">…</span></li>
+  </template>
+
+  <template id="pagePrevTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="السابق"><i class="ph ph-caret-right"></i></a></li>
+  </template>
+
+  <template id="pageNextTemplate">
+    <li class="page-item"><a class="page-link" href="#" aria-label="التالي"><i class="ph ph-caret-left"></i></a></li>
+  </template>
+
+  <template id="statusBadge-approved">
+    <span class="badge rounded-pill badge-soft-success" data-status-badge><i class="ph ph-seal-check me-1"></i>معتمد</span>
+  </template>
+
+  <template id="statusBadge-ready">
+    <span class="badge rounded-pill badge-soft-warning" data-status-badge><i class="ph ph-hourglass-medium me-1"></i>جاهز للاعتماد</span>
+  </template>
+
+  <template id="statusBadge-draft">
+    <span class="badge rounded-pill badge-soft-info" data-status-badge><i class="ph ph-pencil-simple-line me-1"></i>مسودة</span>
+  </template>
+
+  <template id="statusBadge-returned">
+    <span class="badge rounded-pill badge-soft-danger" data-status-badge><i class="ph ph-arrow-u-up-left me-1"></i>معاد</span>
+  </template>
+
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/catalog.js"></script>
+</body>
+</html>
