@@ -895,4 +895,50 @@ a.dept-page:hover { background-color: var(--app-surface-hover); border-color: va
 .ex-search { width: 320px; max-width: 100%; }
 .app-table td.ex-wrap { white-space: normal; min-width: 180px; max-width: 320px; }
 .ex-note { margin-top: 0.3rem; font-size: 0.75rem; color: var(--app-muted); background-color: var(--app-bg); border-radius: 4px; padding: 0.25rem 0.5rem; white-space: normal; word-break: break-word; }
-.ex-table-menu { overflow: visible; }
+.ex-tool { border: 1px solid var(--app-border); background-color: var(--app-surface); }
+.ex-tool[aria-expanded="true"] { border-color: var(--app-green); background-color: var(--app-green-soft); }
+.ex-choice { white-space: normal; height: 100%; }
+.ex-check-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 0.25rem 1rem; max-height: 260px; }
+.ex-check-grid .form-check { display: flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.25rem 0; font-size: 0.8rem; }
+.ex-check-grid .form-check-input { float: none; margin: 0; flex-shrink: 0; }
+.ex-check-grid .form-check-label { flex-grow: 1; }
+.ex-cap-input { width: 110px; }
+
+/* Calendar */
+.ex-cal-wrap { overflow-x: auto; }
+.ex-cal { display: grid; grid-template-columns: repeat(7, minmax(120px, 1fr)); gap: 4px; min-width: 840px; }
+.ex-cal__head { text-align: center; font-size: 0.75rem; font-weight: 600; color: var(--app-muted); padding: 0.25rem 0; }
+.ex-cal__cell { min-height: 96px; border: 1px solid var(--app-border); border-radius: 6px; padding: 0.3rem; display: flex; flex-direction: column; gap: 3px; background-color: var(--app-surface); }
+.ex-cal__cell.is-empty { background-color: transparent; border-style: dashed; }
+.ex-cal__cell.is-weekend { background-color: var(--app-bg); }
+.ex-cal__day { font-size: 0.75rem; font-weight: 700; color: var(--app-heading); }
+.ex-cal__ev { font-size: 0.68rem; line-height: 1.35; border-radius: 4px; padding: 0.15rem 0.3rem; text-decoration: none; }
+.ex-cal__ev--navy { background-color: var(--app-navy-soft); color: var(--app-heading); }
+.ex-cal__ev--info { background-color: var(--app-cyan-soft); color: var(--app-cyan-700); }
+.ex-cal__ev--success { background-color: var(--app-green-soft); color: var(--app-green-700); }
+.ex-cal__ev--warning { background-color: var(--app-warning-soft); color: var(--app-warning); }
+.ex-cal__more { font-size: 0.68rem; color: var(--app-muted); }
+
+/* Trainee tracking */
+.ex-stages { display: flex; align-items: center; }
+.ex-stages span { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; background-color: var(--app-border); color: var(--app-muted); }
+.ex-stages span + span { margin-inline-start: 12px; position: relative; }
+.ex-stages span + span::before { content: ""; position: absolute; inset-inline-end: 100%; width: 12px; height: 2px; background-color: var(--app-border-strong); }
+.ex-stages .is-done { background-color: var(--app-navy); color: #fff; }
+.ex-stages .is-fail { background-color: var(--app-danger); color: #fff; }
+.ex-stages .is-current { background-color: var(--app-warning-soft); color: var(--app-warning); box-shadow: 0 0 0 2px var(--app-warning); }
+.ex-att { min-width: 170px; }
+.ex-days { display: flex; gap: 4px; margin-top: 4px; }
+.ex-days span { font-size: 0.68rem; border-radius: 4px; padding: 0 0.35rem; background-color: var(--app-border); color: var(--app-muted); }
+.ex-days .is-in { background-color: var(--app-green-soft); color: var(--app-green-700); }
+.ex-days .is-out { background-color: var(--app-danger-soft); color: var(--app-danger); }
+.ex-plan-card:hover { border-color: var(--app-green); }
+.ex-profile { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 0.75rem 1rem; }
+.ex-profile dt { font-weight: 400; font-size: 0.72rem; color: var(--app-muted); }
+.ex-profile dd { margin: 0; font-weight: 600; color: var(--app-text); word-break: break-word; }
+
+/* Session evaluation + leave request timeline */
+.ex-criterion { padding: 0.6rem 0; border-bottom: 1px solid var(--app-border); }
+.ex-timeline li { position: relative; padding-inline-start: 1.1rem; }
+.ex-timeline li::before { content: ""; position: absolute; inset-inline-start: 0; top: 0.45rem; width: 8px; height: 8px; border-radius: 50%; background-color: var(--app-green); }
+@media (min-width: 768px) { .apv-kv.ex-kv-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

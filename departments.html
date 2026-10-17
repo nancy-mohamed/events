@@ -59,7 +59,7 @@
                   <span class="flex-grow-1 text-truncate" data-search>إدارة تطوير البرامج</span>
                   <span class="small dept-switch__meta">الحالية</span>
                 </a>
-                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="departments.html#exec">
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="exec-dashboard.html">
                   <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
                   <span class="flex-grow-1 text-truncate" data-search>إدارة تنفيذ البرامج</span>
                   <span class="small dept-switch__meta">4 صفحات</span>
@@ -317,7 +317,7 @@
           </template>
         </div>
         <div class="col-lg-6" data-dept-card>
-          <a href="#exec" class="card app-card app-card--link dept-card dept--green h-100 text-decoration-none" data-dept="exec" data-dept-href="">
+          <a href="#exec" class="card app-card app-card--link dept-card dept--green h-100 text-decoration-none" data-dept="exec" data-dept-href="exec-dashboard.html">
             <div class="card-body d-flex flex-column gap-3">
               <div class="d-flex align-items-start gap-3">
                 <span class="icon-tile dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
@@ -325,7 +325,6 @@
                   <h2 class="dept-card__title mb-0" data-search>إدارة تنفيذ البرامج</h2>
                   <span class="small app-muted">4 صفحات</span>
                 </div>
-                <span class="badge rounded-pill badge-soft-warning">قريبًا</span>
               </div>
               <p class="dept-card__desc small app-muted mb-0" data-search>استلام البرامج المعتمدة وجدولتها ومتابعة الحضور والنتائج والشهادات.</p>
               <div class="d-flex flex-wrap gap-1" data-search><span class="dept-chip">لوحة التحكم</span><span class="dept-chip">طلبات الاعتماد</span><span class="dept-chip">الجدولة</span><span class="dept-chip">المتدربون</span></div>
@@ -336,26 +335,26 @@
           </a>
           <template data-dept-pages>
           <div>
-            <div class="dept-page d-flex align-items-center gap-3">
+            <a class="dept-page d-flex align-items-center gap-3" href="exec-dashboard.html">
               <span class="dept-page__num">1</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">لوحة التحكم</span><span class="d-block small app-muted">مؤشرات تنفيذ البرامج</span></span>
-              <span class="badge rounded-pill badge-soft-muted">قريبًا</span>
-            </div>
-            <div class="dept-page d-flex align-items-center gap-3">
+              <i class="ph ph-arrow-left app-muted"></i>
+            </a>
+            <a class="dept-page d-flex align-items-center gap-3" href="exec-admissions.html">
               <span class="dept-page__num">2</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">طلبات الاعتماد</span><span class="d-block small app-muted">قبول المتدربين وانسحابهم</span></span>
-              <span class="badge rounded-pill badge-soft-muted">قريبًا</span>
-            </div>
-            <div class="dept-page d-flex align-items-center gap-3">
+              <i class="ph ph-arrow-left app-muted"></i>
+            </a>
+            <a class="dept-page d-flex align-items-center gap-3" href="exec-scheduling.html">
               <span class="dept-page__num">3</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">الجدولة</span><span class="d-block small app-muted">تقويم الدورات والقاعات</span></span>
-              <span class="badge rounded-pill badge-soft-muted">قريبًا</span>
-            </div>
-            <div class="dept-page d-flex align-items-center gap-3">
+              <i class="ph ph-arrow-left app-muted"></i>
+            </a>
+            <a class="dept-page d-flex align-items-center gap-3" href="exec-trainees.html">
               <span class="dept-page__num">4</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">المتدربون</span><span class="d-block small app-muted">سجل المتدربين ونتائجهم</span></span>
-              <span class="badge rounded-pill badge-soft-muted">قريبًا</span>
-            </div>
+              <i class="ph ph-arrow-left app-muted"></i>
+            </a>
           </div>
           </template>
         </div>

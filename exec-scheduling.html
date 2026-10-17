@@ -1,0 +1,1510 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>الجدولة | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="exec-dashboard.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <div class="dropdown dept-switch">
+          <button type="button" class="dept-switch__btn dept--green w-100 d-flex align-items-center gap-2" id="btnDeptSwitch" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="تبديل الإدارة">
+            <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
+            <span class="flex-grow-1 min-w-0 text-start">
+              <span class="d-block dept-switch__label">الإدارة الحالية</span>
+              <span class="d-block fw-semibold text-truncate dept-switch__name">إدارة تنفيذ البرامج</span>
+            </span>
+            <i class="ph ph-caret-up-down app-muted"></i>
+          </button>
+          <div class="dropdown-menu shadow border-0 p-2 dept-switch__menu">
+            <div class="input-group input-group-sm mb-2">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="deptSwitchSearch" placeholder="انتقل إلى إدارة" aria-label="انتقل إلى إدارة" autocomplete="off">
+            </div>
+            <div class="dept-switch__list">
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2" href="index.html">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تطوير البرامج</span>
+                  <span class="small dept-switch__meta">6 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2 active" href="exec-dashboard.html" aria-current="true">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تنفيذ البرامج</span>
+                  <span class="small dept-switch__meta">الحالية</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="departments.html#trainers">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chalkboard-teacher"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة المدربين</span>
+                  <span class="small dept-switch__meta">5 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--danger d-flex align-items-center gap-2" href="departments.html#support">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-headset"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الدعم الفني</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--warning d-flex align-items-center gap-2" href="departments.html#finance">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-coins"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>الإدارة المالية</span>
+                  <span class="small dept-switch__meta">4 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--cyan d-flex align-items-center gap-2" href="departments.html#reports">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chart-bar"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة التقارير</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--teal d-flex align-items-center gap-2" href="departments.html#trainee">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-user"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المتدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="departments.html#trainer">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-identification-badge"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="departments.html#org">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-buildings"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المنشأة</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2" href="departments.html#partners">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-handshake"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الشراكات</span>
+                  <span class="small dept-switch__meta">3 صفحات</span>
+                </a>
+            </div>
+            <p class="dept-switch__empty small app-muted text-center py-2 mb-0 d-none">لا توجد إدارة بهذا الاسم</p>
+            <div class="d-flex justify-content-between align-items-center border-top small pt-2 mt-1 px-1">
+              <a href="departments.html" class="text-decoration-none">عرض كل الإدارات</a>
+              <span class="app-muted"><kbd>Ctrl</kbd> + <kbd>K</kbd></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="exec-dashboard.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <div class="app-nav__group">التنفيذ</div>
+        <a href="exec-admissions.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">8</span>
+        </a>
+        <a href="exec-scheduling.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-calendar-dots"></i><span>الجدولة</span></a>
+        <a href="exec-trainees.html" class="app-nav__link"><i class="ph-duotone ph-student"></i><span>المتدربون</span></a>
+        <div class="app-nav__group">الإدارة</div>
+        <a href="departments.html" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">126</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="exec-dashboard.html#alertsCard" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-user-circle-minus"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">جلسة بلا مدرب</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فحص المباني الجاهزة (تجريبي) · 2026-10-18</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="exec-dashboard.html#alertsCard" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-user-circle-minus"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">جلسة بلا مدرب</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي · 2026-10-18</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="exec-dashboard.html#alertsCard" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-user-circle-minus"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">جلسة بلا مدرب</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فحص المباني الجاهزة (تجريبي) · 2026-10-19</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="exec-dashboard.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تنفيذ البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="departments.html" data-dept-switch-open><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <!-- Page title -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 pb-1">
+        <h1 class="app-page-title h5 mb-0">الجدولة</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="departments.html">الإدارات</a></li>
+            <li class="breadcrumb-item"><a href="exec-dashboard.html">إدارة تنفيذ البرامج</a></li>
+            <li class="breadcrumb-item active" aria-current="page">الجدولة</li>
+          </ol>
+        </nav>
+      </div>
+      <p class="app-page-subtitle small pb-3 mb-0">جدولة البرامج والمواعيد وتقويم الدورات وإدارة المقاعد في مكان واحد.</p>
+
+      <!-- Tabs -->
+      <div class="card app-card mb-3">
+        <div class="card-body py-0">
+          <ul class="nav nav-underline app-tabs flex-nowrap overflow-auto" role="tablist">
+            <li class="nav-item" role="presentation"><button class="nav-link active" id="tab-sched" data-bs-toggle="tab" data-bs-target="#pane-sched" type="button" role="tab" aria-controls="pane-sched" aria-selected="true"><i class="ph-duotone ph-calendar-plus"></i>الجدولة والمواعيد</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tab-plans" data-bs-toggle="tab" data-bs-target="#pane-plans" type="button" role="tab" aria-controls="pane-plans" aria-selected="false"><i class="ph-duotone ph-clipboard-text"></i>الخطة</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tab-calendar" data-bs-toggle="tab" data-bs-target="#pane-calendar" type="button" role="tab" aria-controls="pane-calendar" aria-selected="false"><i class="ph-duotone ph-calendar-dots"></i>تقويم الدورات</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tab-seats" data-bs-toggle="tab" data-bs-target="#pane-seats" type="button" role="tab" aria-controls="pane-seats" aria-selected="false"><i class="ph-duotone ph-armchair"></i>إدارة المقاعد</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tab-supervisor" data-bs-toggle="tab" data-bs-target="#pane-supervisor" type="button" role="tab" aria-controls="pane-supervisor" aria-selected="false"><i class="ph-duotone ph-user-gear"></i>مشرف البرنامج</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="tab-log" data-bs-toggle="tab" data-bs-target="#pane-log" type="button" role="tab" aria-controls="pane-log" aria-selected="false"><i class="ph-duotone ph-clock-counter-clockwise"></i>سجل التغييرات</button></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-content">
+
+        <!-- ================= Scheduling & slots ================= -->
+        <section class="tab-pane fade show active" id="pane-sched" role="tabpanel" aria-labelledby="tab-sched" tabindex="0">
+          <div class="app-info app-rules rounded-2 mb-3">
+            <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-sched" aria-expanded="false" aria-controls="rules-sched">
+              <i class="ph-duotone ph-info fs-5"></i>
+              <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+              <span class="badge rounded-pill badge-soft-info">11</span>
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="collapse" id="rules-sched">
+              <ul class="small mb-0 ps-5 pe-3 pb-3">
+                <li>تظهر هنا فقط البرامج المعتمدة التي حالة تشغيلها «تقام» — المتوقفة والملغية وغير المطلقة مخفية.</li>
+                <li>حدّد عدد المقاعد وموعد إغلاق التسجيل لدورات البث المباشر (قبل الانعقاد بـ 24 ساعة على الأقل)، والدورات المسجلة تُترك مفتوحة دون ربطها بعدد مقاعد أو موعد.</li>
+                <li>عند إلغاء برنامج، سجّل قيمته رصيدًا إلكترونيًا للمتدربين المسجلين.</li>
+                <li>عند تغيير موعد برنامج، اجعل الموعد الجديد بعد 5 أيام عمل على الأقل.</li>
+                <li><span class="badge rounded-pill badge-soft-warning me-1">تنبيهات</span>عند تغيير تاريخ خطة يصل تنبيه تلقائي للمتدربين المسجلين فيها.</li>
+                <li>رقم الخطة هو المعرف الأساسي ويظهر في كل البطاقات والرسائل وفي «متابعة الاختبارات».</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>لا تُجدول إلا البرامج المعتمدة من إدارة التطوير، ويصل تنبيه لإدارة التنفيذ عند اعتماد أي برنامج؛ والخطة تُنشأ بلا مدرب ويُسند مدربها من «إسناد الدورات» بإدارة المدربين. الخطة المجدولة هنا تظهر في «تقويم الدورات» و«إدارة المقاعد» وتحدد يوم إتاحة الاختبار.</li>
+                <li>تُنشأ الخطة بلا مدرب — إسناد المدرب يتم حصريًا من صفحة «إسناد الدورات» في إدارة المدربين، وينعكس هنا تلقائيًا.</li>
+                <li>قواعد العمل تُطبَّق تلقائيًا عند الحفظ: يُمنع الموعد إذا كان تاريخه في الماضي، أو يوافق الجمعة أو السبت، أو عطلة رسمية، أو كان تاريخ الانتهاء قبل البدء؛ وإن طابق القواعد يُفعَّل مباشرة بحالة «مجدولة» دون اعتماد يدوي.</li>
+                <li>نوع الخطة يُحدَّد عند الجدولة: «منشور في البوابة» يظهر في بوابتي المتدرب والمنشأة، «خاص» لا يظهر في البوابات، «شركات» يظهر للمنشآت فقط.</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>الموعد المفعّل يظهر فورًا في «تقويم الدورات» و«إدارة المقاعد» و«إسناد الدورات» بإدارة المدربين، وفي بوابة المتدرب أو المنشأة حسب نوع الخطة.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div id="schedTools">
+            <div class="row g-3 mb-3 row-cols-1 row-cols-sm-2 row-cols-xl-5">
+              <div class="col"><button type="button" class="card app-card app-card--link h-100 w-100 text-start ex-tool" data-bs-toggle="collapse" data-bs-target="#toolProgram" aria-expanded="false" aria-controls="toolProgram"><span class="card-body d-block"><span class="d-block fw-semibold app-heading-text"><i class="ph ph-plus me-1"></i>جدولة برنامج</span><span class="d-block small app-muted">مفرد، متعدد الأيام، أو متكرر</span></span></button></div>
+              <div class="col"><button type="button" class="card app-card app-card--link h-100 w-100 text-start ex-tool" data-bs-toggle="collapse" data-bs-target="#toolPath" aria-expanded="false" aria-controls="toolPath"><span class="card-body d-block"><span class="d-block fw-semibold app-heading-text"><i class="ph ph-plus me-1"></i>جدولة مسار</span><span class="d-block small app-muted">برامج المسار بتواريخ متوالية</span></span></button></div>
+              <div class="col"><button type="button" class="card app-card app-card--link h-100 w-100 text-start ex-tool" data-bs-toggle="collapse" data-bs-target="#toolMonth" aria-expanded="false" aria-controls="toolMonth"><span class="card-body d-block"><span class="d-block fw-semibold app-heading-text"><i class="ph ph-plus me-1"></i>جدولة شهر كامل</span><span class="d-block small app-muted">عدة برامج دفعة واحدة</span></span></button></div>
+              <div class="col"><button type="button" class="card app-card app-card--link h-100 w-100 text-start ex-tool" data-bs-toggle="collapse" data-bs-target="#toolCopy" aria-expanded="false" aria-controls="toolCopy"><span class="card-body d-block"><span class="d-block fw-semibold app-heading-text"><i class="ph ph-plus me-1"></i>جدولة نسخ شهر سابق</span><span class="d-block small app-muted">تكرار جدول شهر لشهر جديد</span></span></button></div>
+              <div class="col"><button type="button" class="card app-card app-card--link h-100 w-100 text-start ex-tool" data-bs-toggle="collapse" data-bs-target="#toolHolidays" aria-expanded="false" aria-controls="toolHolidays"><span class="card-body d-block"><span class="d-block fw-semibold app-heading-text"><i class="ph-duotone ph-calendar-x me-1"></i>العطل والإجازات</span><span class="d-block small app-muted">33 رسمية + 0 مخصصة · نهاية الأسبوع الجمعة والسبت</span></span></button></div>
+            </div>
+
+            <!-- Schedule a program -->
+            <div class="collapse" id="toolProgram" data-bs-parent="#schedTools">
+              <form class="card app-card mb-3" data-static-form>
+                <div class="card-body">
+                  <h2 class="app-card__title mb-2">جدولة برنامج</h2>
+                  <p class="small app-muted">الفكرة: تحويل برنامج معتمد إلى موعد فعلي يبدأ التسجيل فيه. تُحدِّد تاريخ التنفيذ، وساعة البدء والانتهاء، والمقر، وطريقة التنفيذ، وعدد المقاعد، وآخر موعد لإغلاق تسجيل المتدربين (قبل البدء بعدد من الأيام والساعة). وإذا كان البرنامج يمتد عدة أيام يُنشأ موعد لكل يوم، ويمكن تكراره أسبوعيًا أو كل أسبوعين أو شهريًا لعدة مرات. يتخطى النظام الجمعة والسبت والعطل الرسمية وينقل الموعد إلى أقرب يوم عمل، ويكشف تعارض المقر قبل الاعتماد، ثم تظهر معاينة قابلة للتعديل لكل موعد على حدة. تُنشأ الخطة بلا مدرب، ويُسنَد المدرب من صفحة «إسناد الدورات» في إدارة المدربين.</p>
+                  <div class="row g-3">
+                    <div class="col-lg-6">
+                      <label class="form-label small" for="spProgram">البرنامج المعتمد <span class="text-danger">*</span></label>
+                      <select class="form-select" id="spProgram" required>
+                    <option value="" selected>اختر البرنامج</option>
+                    <option>فحص المباني الجاهزة (تجريبي) — 15 ساعة · 3 أيام</option>
+                    <option>ورشة التسويق الرقمي للعقار — 4 ساعة</option>
+                    <option>استشارة تقييم فرصة استثمار عقاري — 2 ساعة</option>
+                    <option>إرشاد مديري الأملاك — 4 ساعة · 2 أيام</option>
+                    <option>ورشة صياغة العقود العقارية — 5 ساعة</option>
+                    <option>إرشاد الوسيط العقاري المبتدئ — 6 ساعة · 3 أيام</option>
+                    <option>استشارة تأسيس مكتب وساطة عقارية — 3 ساعة</option>
+                    <option>نموذج: أساسيات الوساطة العقارية — 6 ساعة · 2 أيام</option>
+                    <option>نموذج: التسويق العقاري الرقمي — 8 ساعة · 2 أيام</option>
+                    <option>مستدام للمباني السكنية الجديدة — 15 ساعة · 3 أيام</option>
+                    <option>الايجار والتأمين العقاري — 15 ساعة · 3 أيام</option>
+                    <option>التســويـــق العقاري مسجلة — 0 ساعة</option>
+                    <option>نظام مستدام للمباني الخضراء — 10 ساعة · 2 أيام</option>
+                    <option>الأخلاقيات في المجال العقاري — 10 ساعة · 2 أيام</option>
+                    <option>الاستشاري الهندسي لمشــــاريع البيــــع علــــى الخارطة — 10 ساعة · 2 أيام</option>
+                    <option>الاستثمار في القطاع العقاري — 15 ساعة · 3 أيام</option>
+                    <option>دراسات الجدوى للمشاريع العقارية — 10 ساعة · 2 أيام</option>
+                    <option>( صياغة وتقديم الاستشارات) — 25 ساعة · 5 أيام</option>
+                    <option>إدارة مرافق العقارية — 25 ساعة · 5 أيام</option>
+                    <option>الادارة المالية بالمساهمات العقارية — 10 ساعة · 2 أيام</option>
+                    <option>الوساطة العقارية — 10 ساعة · 2 أيام</option>
+                    <option>التسويق العقاري — 20 ساعة · 4 أيام</option>
+                    <option>التسويق العقاري الالكتروني — 20 ساعة · 4 أيام</option>
+                    <option>الإدارة المالية في القطاع العقاري — 25 ساعة · 5 أيام</option>
+                    <option>أسس الصناعة العقارية — 15 ساعة · 3 أيام</option>
+                    <option>قراءة التقارير العقارية — 10 ساعة · 2 أيام</option>
+                    <option>مهارات التفكير وحل المشكلات — 5 ساعة</option>
+                    <option>تحليل الأسواق العقارية — 25 ساعة · 5 أيام</option>
+                    <option>تحليل المؤشرات العقارية — 25 ساعة · 5 أيام</option>
+                    <option>السوق العقاري السعودي — 5 ساعة</option>
+                    <option>إدارة الأملاك العقارية — 25 ساعة · 5 أيام</option>
+                    <option>رسم الخرائط والمسح مقدمة للبيانات الجغرافية و المكانية لأغراض التسجيل العيني — 50 ساعة · 10 أيام</option>
+                    <option>التمويل العقاري — 20 ساعة · 4 أيام</option>
+                    <option>مدير عقار مشترك — 15 ساعة · 3 أيام</option>
+                    <option>فرز الوحدات العقارية — 20 ساعة · 4 أيام</option>
+                    <option>فحص المباني الجاهزة — 25 ساعة · 5 أيام</option>
+                    <option>إدارة الأصول العقارية — 15 ساعة · 3 أيام</option>
+                    <option>أسس الاستشارات العقارية — 20 ساعة · 4 أيام</option>
+                    <option>مقدمة في التحليل العقاري — 15 ساعة · 3 أيام</option>
+                    <option>التمويل في المساهمات العقارية — 10 ساعة · 2 أيام</option>
+                    <option>الرهن العقاري — 25 ساعة · 5 أيام</option>
+                    <option>المساهمات العقارية — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمباني السكنية القائمة — 15 ساعة · 3 أيام</option>
+                    <option>الوساطة العقارية في تملك غير السعوديين — 25 ساعة · 5 أيام</option>
+                    <option>التسويـــق العقــاري الإلكترونـي مسجلة — 0 ساعة</option>
+                    <option>الوســـاطـــة العقـــاريــة مسجلة — 0 ساعة</option>
+                    <option>إدارة المخاطر العقارية — 15 ساعة · 3 أيام</option>
+                    <option>إعداد التقارير العقارية — 10 ساعة · 2 أيام</option>
+                    <option>المهارات السلوكية والاخلاقيات للعاملين في التسجيل العيني — 10 ساعة · 2 أيام</option>
+                    <option>المطور العقاري لمشاريع البيع على الخارطة — 15 ساعة · 3 أيام</option>
+                    <option>المحاسب القانوني لمشاريع البيع على الخارطة — 10 ساعة · 2 أيام</option>
+                    <option>ادارة البيانات في الأسواق العقارية — 20 ساعة · 4 أيام</option>
+                    <option>جمعية ملاك — 5 ساعة</option>
+                    <option>مدخل إلى إدارة مرافق — 15 ساعة · 3 أيام</option>
+                    <option>فحص جودة  تنفيذ البناء — 65 ساعة · 13 أيام</option>
+                    <option>مستدام للمباني التجارية الجديدة — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمباني التجارية القائمة — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمجتمعات الجديدة — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمجتمعات القائمة — 15 ساعة · 3 أيام</option>
+                    <option>إدارة المزادات العقارية — 25 ساعة · 5 أيام</option>
+                    <option>اساسيات التسجيل العيني — 20 ساعة · 4 أيام</option>
+                    <option>مهارات التفاوض والتواصل العقاري — 10 ساعة · 2 أيام</option>
+                    <option>إدارة العقود العقارية — 15 ساعة · 3 أيام</option>
+                    <option>برنامج تجريبي: أساسيات الوساطة — 6 ساعة</option>
+                    <option>برنامج تجريبي: التسويق العقاري — 4 ساعة</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="spDate">تاريخ التنفيذ <span class="text-danger">*</span></label><input type="date" class="form-control" id="spDate" required></div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="spDays">عدد أيام البرنامج</label><input type="number" class="form-control" id="spDays" value="1"></div>
+                    <div class="col-12"><p class="small app-muted mb-0">تُنشأ الخطة بلا مدرب، ويُسنَد المدرب لاحقًا من صفحة «إسناد الدورات» في إدارة المدربين.</p></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-start">وقت البدء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc2-start" value="09:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-end">وقت الانتهاء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc2-end" value="13:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-closeDays">إغلاق التسجيل قبل البدء بـ (أيام)</label><input type="number" class="form-control" id="sc2-closeDays" value="2"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-closeTime">وقت إغلاق التسجيل</label><input type="time" class="form-control" id="sc2-closeTime" value="23:59"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-mode">طريقة التنفيذ</label><select class="form-select" id="sc2-mode"><option selected>حضوري</option><option>عن بعد</option><option>مدمج</option></select></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-venue">المقر</label><input type="text" class="form-control" id="sc2-venue" placeholder="اسم القاعة أو المبنى"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-seats">عدد المقاعد</label><input type="number" class="form-control" id="sc2-seats" value="30"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc2-sup">مشرف الدورة (من المنصة)</label><select class="form-select" id="sc2-sup"><option selected>اختر المشرف</option></select></div>
+                <div class="col-12"><p class="small app-muted mb-0">من فريق إدارة التنفيذ؛ يشرف على إطلاق الاجتماع والحضور، ويرفع تقييم المدرب بعد نهاية الدورة.</p></div>
+                <div class="col-12">
+                  <label class="form-label small d-block">نوع الخطة</label>
+                  <div class="row g-2">
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc2-type" id="sc2-type0" checked><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc2-type0"><span class="d-block fw-semibold">منشور في البوابة</span><span class="d-block small">يظهر في بوابة المتدربين وبوابة المنشآت ويسجل فيه الجميع</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc2-type" id="sc2-type1"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc2-type1"><span class="d-block fw-semibold">خاص</span><span class="d-block small">لا يظهر في البوابات، والتسجيل عبر رابط أو إدخال داخلي</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc2-type" id="sc2-type2"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc2-type2"><span class="d-block fw-semibold">شركات</span><span class="d-block small">يظهر في بوابة المنشآت فقط لشراء المقاعد لمنسوبيها</span></label></div>
+                  </div>
+                </div>
+                    <div class="col-12">
+                      <label class="form-label small d-block">التكرار</label>
+                      <div class="d-flex flex-wrap gap-2">
+                        <input type="radio" class="btn-check" name="spRepeat" id="spRepeat0" checked><label class="btn btn-sm btn-outline-brand" for="spRepeat0">بدون تكرار</label>
+                        <input type="radio" class="btn-check" name="spRepeat" id="spRepeat1"><label class="btn btn-sm btn-outline-brand" for="spRepeat1">أسبوعيًا</label>
+                        <input type="radio" class="btn-check" name="spRepeat" id="spRepeat2"><label class="btn btn-sm btn-outline-brand" for="spRepeat2">كل أسبوعين</label>
+                        <input type="radio" class="btn-check" name="spRepeat" id="spRepeat3"><label class="btn btn-sm btn-outline-brand" for="spRepeat3">شهريًا</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button type="submit" class="btn btn-brand">معاينة المواعيد</button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#toolProgram">إغلاق</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Schedule a path -->
+            <div class="collapse" id="toolPath" data-bs-parent="#schedTools">
+              <form class="card app-card mb-3" data-static-form>
+                <div class="card-body">
+                  <h2 class="app-card__title mb-2">جدولة مسار — تواريخ متوالية لبرامج المسار</h2>
+                  <p class="small app-muted">الفكرة: بدل جدولة برامج المسار واحدًا واحدًا، يُقرَّر موعد واحد للمُسار فيُجدَّول جميع برامجه بالترتيب تلقائيًا، ولكل برنامج موعده ومدربه ومقاعدُه وآخر موعد لتسجيل المتدربين فيه.</p>
+                  <div class="app-stat rounded-2 p-3 mb-3">
+                    <div class="small fw-semibold app-heading-text mb-1">آلية العمل</div>
+                    <ol class="small mb-0 pe-3">
+                      <li>يُختار المسار المعتمد، وتُعرض برامجه بترتيبها المحفوظ في تصميم المسار.</li>
+                      <li>يُحدَّد تاريخ بدء أول برنامج، والفاصل بين البرامج (يوميًا، كل 3 أيام، أسبوعيًا، أو كل أسبوعين)، ووقت بدء وانتهاء واحد يُطبَّق على الجميع، مع المقر وطريقة التنفيذ وعدد المقاعد.</li>
+                      <li>يُنقل تاريخ البداية تلقائيًا إلى أقرب يوم عمل، ثم يبدأ كل برنامج لاحق في اليوم التالي من تاريخ سابقه مضافًا إليه الفاصل المحدَّد، مع تخطّي الجمعة والسبت والعطل الرسمية في كل خطوة.</li>
+                      <li>تُنشأ مواعيد برامج المسار بلا مدرب، ويُسنَد مدرب كل برنامج لاحقًا من صفحة «إسناد الدورات» في إدارة المدربين.</li>
+                      <li>يُحسب إغلاق التسجيل لكل موعد على حدة: قبل تاريخ برنامجه بعدد الأيام المحدَّد وفي الساعة المحدَّدة، فيُغلق تسجيل كل برنامج قبل بدئه.</li>
+                      <li>تظهر معاينة بكل المواعيد مرتّبة (1، 2، 3…) مع فحص التعارضات، ويمكن تعديل تاريخ أو وقت أو مدرب أي برنامج قبل الاعتماد.</li>
+                      <li>عند الاعتماد تُنشأ مجموعة مواعيد واحدة تحمل اسم المسار، ويظهر اسم المسار وترتيب كل برنامج داخله في جدول المواعيد المجدولة.</li>
+                    </ol>
+                  </div>
+                  <div class="row g-3">
+                    <div class="col-lg-6">
+                      <label class="form-label small" for="ppPath">المسار المعتمد <span class="text-danger">*</span></label>
+                      <select class="form-select" id="ppPath" required>
+                        <option value="" selected>اختر المسار</option>
+                        <option>مسار تدريبي — مسار تجريبي: الوساطة والتسويق (2 برامج)</option>
+                        <option>مسار تدريبي — مسار نموذجي: الوسيط العقاري المحترف (2 برامج)</option>
+                        <option>مسار تدريبي — مسار التحليلات العقارية (14 برامج)</option>
+                        <option>مسار تدريبي — مسار رخصة المساهمات العقارية (2 برامج)</option>
+                        <option>مسار تدريبي — مسار التحكيم العقاري (5 برامج)</option>
+                        <option>مسار تدريبي — مسار الوساطة العقارية المستوى التأسيسي (5 برامج)</option>
+                        <option>مسار تدريبي — مسار الاستشارات العقارية (14 برامج)</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="ppDate">تاريخ بدء أول برنامج <span class="text-danger">*</span></label><input type="date" class="form-control" id="ppDate" required></div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="ppGap">الفاصل بين البرامج (أيام)</label><input type="number" class="form-control" id="ppGap" value="7"></div>
+                    <div class="col-12 d-flex flex-wrap gap-2">
+                      <input type="radio" class="btn-check" name="ppGapPreset" id="ppG0"><label class="btn btn-sm btn-outline-brand" for="ppG0">يوميًا</label>
+                      <input type="radio" class="btn-check" name="ppGapPreset" id="ppG1"><label class="btn btn-sm btn-outline-brand" for="ppG1">كل 3 أيام</label>
+                      <input type="radio" class="btn-check" name="ppGapPreset" id="ppG2" checked><label class="btn btn-sm btn-outline-brand" for="ppG2">أسبوعيًا</label>
+                      <input type="radio" class="btn-check" name="ppGapPreset" id="ppG3"><label class="btn btn-sm btn-outline-brand" for="ppG3">كل أسبوعين</label>
+                    </div>
+                    <div class="col-12"><p class="small app-muted mb-0">تُنشأ مواعيد المسار بلا مدرب، ويُسنَد مدرب كل برنامج لاحقًا من صفحة «إسناد الدورات» في إدارة المدربين.</p></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-start">وقت البدء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc3-start" value="09:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-end">وقت الانتهاء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc3-end" value="13:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-closeDays">إغلاق التسجيل قبل البدء بـ (أيام)</label><input type="number" class="form-control" id="sc3-closeDays" value="2"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-closeTime">وقت إغلاق التسجيل</label><input type="time" class="form-control" id="sc3-closeTime" value="23:59"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-mode">طريقة التنفيذ</label><select class="form-select" id="sc3-mode"><option selected>حضوري</option><option>عن بعد</option><option>مدمج</option></select></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-venue">المقر</label><input type="text" class="form-control" id="sc3-venue" placeholder="اسم القاعة أو المبنى"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-seats">عدد المقاعد</label><input type="number" class="form-control" id="sc3-seats" value="30"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc3-sup">مشرف الدورة (من المنصة)</label><select class="form-select" id="sc3-sup"><option selected>اختر المشرف</option></select></div>
+                <div class="col-12"><p class="small app-muted mb-0">من فريق إدارة التنفيذ؛ يشرف على إطلاق الاجتماع والحضور، ويرفع تقييم المدرب بعد نهاية الدورة.</p></div>
+                <div class="col-12">
+                  <label class="form-label small d-block">نوع الخطة</label>
+                  <div class="row g-2">
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc3-type" id="sc3-type0" checked><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc3-type0"><span class="d-block fw-semibold">منشور في البوابة</span><span class="d-block small">يظهر في بوابة المتدربين وبوابة المنشآت ويسجل فيه الجميع</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc3-type" id="sc3-type1"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc3-type1"><span class="d-block fw-semibold">خاص</span><span class="d-block small">لا يظهر في البوابات، والتسجيل عبر رابط أو إدخال داخلي</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc3-type" id="sc3-type2"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc3-type2"><span class="d-block fw-semibold">شركات</span><span class="d-block small">يظهر في بوابة المنشآت فقط لشراء المقاعد لمنسوبيها</span></label></div>
+                  </div>
+                </div>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button type="submit" class="btn btn-brand">معاينة المواعيد</button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#toolPath">إغلاق</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Schedule a whole month -->
+            <div class="collapse" id="toolMonth" data-bs-parent="#schedTools">
+              <form class="card app-card mb-3" data-static-form>
+                <div class="card-body">
+                  <h2 class="app-card__title mb-2">جدولة شهر كامل دفعة واحدة</h2>
+                  <p class="small app-muted">الفكرة: اختر الشهر وعدة برامج دفعة واحدة، ويوزّعها النظام تلقائيًا على أيام الشهر (متباعدة بالتساوي أو متتالية من بدايته) مع تخطّي الجمعة والسبت والعطل الرسمية. يُحدَّد وقت واحد ينطبق على جميع البرامج: ساعة البدء والانتهاء (صباحًا أو مساءً)، وقبل الاعتماد تظهر معاينة يمكن فيها تعديل تاريخ أو وقت أي برنامج على حدة.</p>
+                  <div class="row g-3">
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="pmMonth">الشهر <span class="text-danger">*</span></label><input type="month" class="form-control" id="pmMonth" required></div>
+                    <div class="col-sm-6 col-lg-4">
+                      <label class="form-label small d-block">طريقة التوزيع</label>
+                      <div class="d-flex flex-wrap gap-2">
+                        <input type="radio" class="btn-check" name="pmDist" id="pmDist0" checked><label class="btn btn-sm btn-outline-brand" for="pmDist0">توزيع متساوٍ على أيام الشهر</label>
+                        <input type="radio" class="btn-check" name="pmDist" id="pmDist1"><label class="btn btn-sm btn-outline-brand" for="pmDist1">متتالية من بداية الشهر</label>
+                      </div>
+                    </div>
+                    <div class="col-lg-5">
+                      <label class="form-label small d-block">نطاق الشهر</label>
+                      <div class="d-flex flex-wrap gap-2">
+                        <input type="radio" class="btn-check" name="pmRange" id="pmR0" checked><label class="btn btn-sm btn-outline-brand" for="pmR0">الشهر كامل</label>
+                        <input type="radio" class="btn-check" name="pmRange" id="pmR1"><label class="btn btn-sm btn-outline-brand" for="pmR1">الأسبوع الأول</label>
+                        <input type="radio" class="btn-check" name="pmRange" id="pmR2"><label class="btn btn-sm btn-outline-brand" for="pmR2">الأسبوع الثاني</label>
+                        <input type="radio" class="btn-check" name="pmRange" id="pmR3"><label class="btn btn-sm btn-outline-brand" for="pmR3">الأسبوع الثالث</label>
+                        <input type="radio" class="btn-check" name="pmRange" id="pmR4"><label class="btn btn-sm btn-outline-brand" for="pmR4">الأسبوع الرابع</label>
+                      </div>
+                      <div class="small app-muted mt-1">أيام العمل في النطاق المختار: 22 يومًا</div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label small">البرامج (0 مختارة) — بترتيب الاختيار</label>
+                      <div class="border rounded-2 p-2 app-scroll-list ex-check-grid">
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">فحص المباني الجاهزة (تجريبي)</span><span class="small app-muted">4 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">ورشة التسويق الرقمي للعقار</span><span class="small app-muted">0 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">استشارة تقييم فرصة استثمار عقاري</span><span class="small app-muted">5 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">إرشاد مديري الأملاك</span><span class="small app-muted">7 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">ورشة صياغة العقود العقارية</span><span class="small app-muted">0 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">إرشاد الوسيط العقاري المبتدئ</span><span class="small app-muted">8 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">استشارة تأسيس مكتب وساطة عقارية</span><span class="small app-muted">3 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">نموذج: أساسيات الوساطة العقارية</span><span class="small app-muted">4 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">نموذج: التسويق العقاري الرقمي</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مستدام للمباني السكنية الجديدة</span><span class="small app-muted">0 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">الايجار والتأمين العقاري</span><span class="small app-muted">0 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">الاستثمار في القطاع العقاري</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">دراسات الجدوى للمشاريع العقارية</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">( صياغة وتقديم الاستشارات)</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">إدارة مرافق العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">الادارة المالية بالمساهمات العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">الوساطة العقارية</span><span class="small app-muted">4 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">التسويق العقاري</span><span class="small app-muted">0 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">الإدارة المالية في القطاع العقاري</span><span class="small app-muted">3 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">أسس الصناعة العقارية</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">قراءة التقارير العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مهارات التفكير وحل المشكلات</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">تحليل الأسواق العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">تحليل المؤشرات العقارية</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">السوق العقاري السعودي</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">التمويل العقاري</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مدير عقار مشترك</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">فرز الوحدات العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">أسس الاستشارات العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مقدمة في التحليل العقاري</span><span class="small app-muted">3 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">المساهمات العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">إدارة المخاطر العقارية</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">إعداد التقارير العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">المطور العقاري لمشاريع البيع على الخارطة</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">ادارة البيانات في الأسواق العقارية</span><span class="small app-muted">3 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">جمعية ملاك</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مدخل إلى إدارة مرافق</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مستدام للمباني التجارية الجديدة</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">مستدام للمباني التجارية القائمة</span><span class="small app-muted">2 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">إدارة المزادات العقارية</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">برنامج تجريبي: أساسيات الوساطة</span><span class="small app-muted">1 موعد</span></label>
+                        <label class="form-check"><input class="form-check-input" type="checkbox"><span class="form-check-label">برنامج تجريبي: التسويق العقاري</span><span class="small app-muted">0 موعد</span></label>
+                      </div>
+                    </div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-start">وقت البدء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc4-start" value="09:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-end">وقت الانتهاء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc4-end" value="13:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-closeDays">إغلاق التسجيل قبل البدء بـ (أيام)</label><input type="number" class="form-control" id="sc4-closeDays" value="2"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-closeTime">وقت إغلاق التسجيل</label><input type="time" class="form-control" id="sc4-closeTime" value="23:59"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-mode">طريقة التنفيذ</label><select class="form-select" id="sc4-mode"><option selected>حضوري</option><option>عن بعد</option><option>مدمج</option></select></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-venue">المقر</label><input type="text" class="form-control" id="sc4-venue" placeholder="اسم القاعة أو المبنى"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-seats">عدد المقاعد</label><input type="number" class="form-control" id="sc4-seats" value="30"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc4-sup">مشرف الدورة (من المنصة)</label><select class="form-select" id="sc4-sup"><option selected>اختر المشرف</option></select></div>
+                <div class="col-12"><p class="small app-muted mb-0">من فريق إدارة التنفيذ؛ يشرف على إطلاق الاجتماع والحضور، ويرفع تقييم المدرب بعد نهاية الدورة.</p></div>
+                <div class="col-12">
+                  <label class="form-label small d-block">نوع الخطة</label>
+                  <div class="row g-2">
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc4-type" id="sc4-type0" checked><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc4-type0"><span class="d-block fw-semibold">منشور في البوابة</span><span class="d-block small">يظهر في بوابة المتدربين وبوابة المنشآت ويسجل فيه الجميع</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc4-type" id="sc4-type1"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc4-type1"><span class="d-block fw-semibold">خاص</span><span class="d-block small">لا يظهر في البوابات، والتسجيل عبر رابط أو إدخال داخلي</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc4-type" id="sc4-type2"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc4-type2"><span class="d-block fw-semibold">شركات</span><span class="d-block small">يظهر في بوابة المنشآت فقط لشراء المقاعد لمنسوبيها</span></label></div>
+                  </div>
+                </div>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button type="submit" class="btn btn-brand">توزيع ومعاينة</button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#toolMonth">إغلاق</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Copy a previous month -->
+            <div class="collapse" id="toolCopy" data-bs-parent="#schedTools">
+              <form class="card app-card mb-3" data-static-form>
+                <div class="card-body">
+                  <h2 class="app-card__title mb-2">نسخ جدول شهر سابق</h2>
+                  <p class="small app-muted">يُنسخ كل موعد إلى اليوم المقابل في الشهر الجديد (مثل: ثاني ثلاثاء ← ثاني ثلاثاء)، مع نفس الوقت والمدرب والمقر، ثم يمكن التعديل قبل الاعتماد.</p>
+                  <div class="row g-3">
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="cpFrom">من شهر <span class="text-danger">*</span></label><input type="month" class="form-control" id="cpFrom" value="2027-03" required><div class="small app-muted mt-1">7 موعد في مارس ٢٠٢٧</div></div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="cpTo">إلى شهر <span class="text-danger">*</span></label><input type="month" class="form-control" id="cpTo" required></div>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button type="submit" class="btn btn-brand">نسخ ومعاينة</button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#toolCopy">إغلاق</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Holidays -->
+            <div class="collapse" id="toolHolidays" data-bs-parent="#schedTools">
+              <div class="card app-card mb-3">
+                <div class="card-body">
+                  <h2 class="app-card__title mb-2">العطل والإجازات</h2>
+                  <div class="app-stat rounded-2 p-3 mb-3">
+                    <div class="small fw-semibold app-heading-text mb-1">كيف تعمل هذه الخاصية؟</div>
+                    <p class="small mb-1">تُعرَّف هنا أيام نهاية الأسبوع والعطل الرسمية والإجازات مرة واحدة، ويتعرّف عليها النظام تلقائيًا في جميع أدوات الجدولة:</p>
+                    <ul class="small mb-0 pe-3">
+                      <li>عند جدولة برنامج أو مسار أو شهر كامل، يتخطى النظام هذه الأيام وينقل الموعد إلى أقرب يوم عمل.</li>
+                      <li>عند اختيار تاريخ يوافق عطلة يدويًا، يظهر تنبيه في معاينة المواعيد قبل الاعتماد.</li>
+                      <li>تُحفظ القائمة لجميع أعضاء الفريق، وتسري على كل جدولة جديدة.</li>
+                    </ul>
+                  </div>
+                  <label class="form-label small d-block">أيام نهاية الأسبوع</label>
+                  <div class="d-flex flex-wrap gap-2 mb-3">
+                    <input type="checkbox" class="btn-check" id="wk0"><label class="btn btn-sm btn-outline-brand" for="wk0">الأحد</label>
+                    <input type="checkbox" class="btn-check" id="wk1"><label class="btn btn-sm btn-outline-brand" for="wk1">الإثنين</label>
+                    <input type="checkbox" class="btn-check" id="wk2"><label class="btn btn-sm btn-outline-brand" for="wk2">الثلاثاء</label>
+                    <input type="checkbox" class="btn-check" id="wk3"><label class="btn btn-sm btn-outline-brand" for="wk3">الأربعاء</label>
+                    <input type="checkbox" class="btn-check" id="wk4"><label class="btn btn-sm btn-outline-brand" for="wk4">الخميس</label>
+                    <input type="checkbox" class="btn-check" id="wk5" checked><label class="btn btn-sm btn-outline-brand" for="wk5">الجمعة</label>
+                    <input type="checkbox" class="btn-check" id="wk6" checked><label class="btn btn-sm btn-outline-brand" for="wk6">السبت</label>
+                  </div>
+                  <p class="small fw-semibold app-heading-text mb-3"><i class="ph-duotone ph-flag me-1"></i>العطل الرسمية للمملكة — مضافة تلقائيًا (33 يومًا، 2026–2028)</p>
+                  <label class="form-label small d-block">العطل والإجازات المخصصة</label>
+                  <form class="d-flex flex-wrap gap-2 mb-2" data-static-form>
+                    <input type="date" class="form-control w-auto" aria-label="تاريخ العطلة" required>
+                    <input type="text" class="form-control app-select-wide" placeholder="اسم العطلة (مثال: اليوم الوطني)" aria-label="اسم العطلة" required>
+                    <button type="submit" class="btn btn-brand"><i class="ph ph-plus me-1"></i>إضافة</button>
+                  </form>
+                  <p class="small app-muted">لم تُضف عطل بعد.</p>
+                  <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#toolHolidays">إغلاق</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Edit a slot -->
+            <div class="collapse" id="toolEdit" data-bs-parent="#schedTools">
+              <form class="card app-card mb-3" data-static-form>
+                <div class="card-body">
+                  <h2 class="app-card__title mb-3">تعديل الموعد</h2>
+                  <div class="row g-3">
+                    <div class="col-lg-6">
+                      <label class="form-label small" for="seProgram">البرنامج المعتمد <span class="text-danger">*</span></label>
+                      <select class="form-select" id="seProgram" required>
+                    <option value="" selected>اختر البرنامج</option>
+                    <option>فحص المباني الجاهزة (تجريبي) — 15 ساعة · 3 أيام</option>
+                    <option>ورشة التسويق الرقمي للعقار — 4 ساعة</option>
+                    <option>استشارة تقييم فرصة استثمار عقاري — 2 ساعة</option>
+                    <option>إرشاد مديري الأملاك — 4 ساعة · 2 أيام</option>
+                    <option>ورشة صياغة العقود العقارية — 5 ساعة</option>
+                    <option>إرشاد الوسيط العقاري المبتدئ — 6 ساعة · 3 أيام</option>
+                    <option>استشارة تأسيس مكتب وساطة عقارية — 3 ساعة</option>
+                    <option>نموذج: أساسيات الوساطة العقارية — 6 ساعة · 2 أيام</option>
+                    <option>نموذج: التسويق العقاري الرقمي — 8 ساعة · 2 أيام</option>
+                    <option>مستدام للمباني السكنية الجديدة — 15 ساعة · 3 أيام</option>
+                    <option>الايجار والتأمين العقاري — 15 ساعة · 3 أيام</option>
+                    <option>التســويـــق العقاري مسجلة — 0 ساعة</option>
+                    <option>نظام مستدام للمباني الخضراء — 10 ساعة · 2 أيام</option>
+                    <option>الأخلاقيات في المجال العقاري — 10 ساعة · 2 أيام</option>
+                    <option>الاستشاري الهندسي لمشــــاريع البيــــع علــــى الخارطة — 10 ساعة · 2 أيام</option>
+                    <option>الاستثمار في القطاع العقاري — 15 ساعة · 3 أيام</option>
+                    <option>دراسات الجدوى للمشاريع العقارية — 10 ساعة · 2 أيام</option>
+                    <option>( صياغة وتقديم الاستشارات) — 25 ساعة · 5 أيام</option>
+                    <option>إدارة مرافق العقارية — 25 ساعة · 5 أيام</option>
+                    <option>الادارة المالية بالمساهمات العقارية — 10 ساعة · 2 أيام</option>
+                    <option>الوساطة العقارية — 10 ساعة · 2 أيام</option>
+                    <option>التسويق العقاري — 20 ساعة · 4 أيام</option>
+                    <option>التسويق العقاري الالكتروني — 20 ساعة · 4 أيام</option>
+                    <option>الإدارة المالية في القطاع العقاري — 25 ساعة · 5 أيام</option>
+                    <option>أسس الصناعة العقارية — 15 ساعة · 3 أيام</option>
+                    <option>قراءة التقارير العقارية — 10 ساعة · 2 أيام</option>
+                    <option>مهارات التفكير وحل المشكلات — 5 ساعة</option>
+                    <option>تحليل الأسواق العقارية — 25 ساعة · 5 أيام</option>
+                    <option>تحليل المؤشرات العقارية — 25 ساعة · 5 أيام</option>
+                    <option>السوق العقاري السعودي — 5 ساعة</option>
+                    <option>إدارة الأملاك العقارية — 25 ساعة · 5 أيام</option>
+                    <option>رسم الخرائط والمسح مقدمة للبيانات الجغرافية و المكانية لأغراض التسجيل العيني — 50 ساعة · 10 أيام</option>
+                    <option>التمويل العقاري — 20 ساعة · 4 أيام</option>
+                    <option>مدير عقار مشترك — 15 ساعة · 3 أيام</option>
+                    <option>فرز الوحدات العقارية — 20 ساعة · 4 أيام</option>
+                    <option>فحص المباني الجاهزة — 25 ساعة · 5 أيام</option>
+                    <option>إدارة الأصول العقارية — 15 ساعة · 3 أيام</option>
+                    <option>أسس الاستشارات العقارية — 20 ساعة · 4 أيام</option>
+                    <option>مقدمة في التحليل العقاري — 15 ساعة · 3 أيام</option>
+                    <option>التمويل في المساهمات العقارية — 10 ساعة · 2 أيام</option>
+                    <option>الرهن العقاري — 25 ساعة · 5 أيام</option>
+                    <option>المساهمات العقارية — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمباني السكنية القائمة — 15 ساعة · 3 أيام</option>
+                    <option>الوساطة العقارية في تملك غير السعوديين — 25 ساعة · 5 أيام</option>
+                    <option>التسويـــق العقــاري الإلكترونـي مسجلة — 0 ساعة</option>
+                    <option>الوســـاطـــة العقـــاريــة مسجلة — 0 ساعة</option>
+                    <option>إدارة المخاطر العقارية — 15 ساعة · 3 أيام</option>
+                    <option>إعداد التقارير العقارية — 10 ساعة · 2 أيام</option>
+                    <option>المهارات السلوكية والاخلاقيات للعاملين في التسجيل العيني — 10 ساعة · 2 أيام</option>
+                    <option>المطور العقاري لمشاريع البيع على الخارطة — 15 ساعة · 3 أيام</option>
+                    <option>المحاسب القانوني لمشاريع البيع على الخارطة — 10 ساعة · 2 أيام</option>
+                    <option>ادارة البيانات في الأسواق العقارية — 20 ساعة · 4 أيام</option>
+                    <option>جمعية ملاك — 5 ساعة</option>
+                    <option>مدخل إلى إدارة مرافق — 15 ساعة · 3 أيام</option>
+                    <option>فحص جودة  تنفيذ البناء — 65 ساعة · 13 أيام</option>
+                    <option>مستدام للمباني التجارية الجديدة — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمباني التجارية القائمة — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمجتمعات الجديدة — 15 ساعة · 3 أيام</option>
+                    <option>مستدام للمجتمعات القائمة — 15 ساعة · 3 أيام</option>
+                    <option>إدارة المزادات العقارية — 25 ساعة · 5 أيام</option>
+                    <option>اساسيات التسجيل العيني — 20 ساعة · 4 أيام</option>
+                    <option>مهارات التفاوض والتواصل العقاري — 10 ساعة · 2 أيام</option>
+                    <option>إدارة العقود العقارية — 15 ساعة · 3 أيام</option>
+                    <option>برنامج تجريبي: أساسيات الوساطة — 6 ساعة</option>
+                    <option>برنامج تجريبي: التسويق العقاري — 4 ساعة</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sePlan">رقم خطة الجدولة</label><input type="text" class="form-control" id="sePlan" value="خطة-2026-0055/ت2" readonly></div>
+                    <div class="col-sm-6 col-lg-3"><label class="form-label small" for="seDate">تاريخ التنفيذ <span class="text-danger">*</span></label><input type="date" class="form-control" id="seDate" value="2026-07-05" required></div>
+                    <div class="col-12"><p class="small app-muted mb-0">يُعيَّن تلقائيًا عند الحفظ، ويزيد رقم التعديل (ت1، ت2…) مع كل تغيير لاحق. تُنشأ الخطة بلا مدرب، ويُسنَد المدرب لاحقًا من صفحة «إسناد الدورات» في إدارة المدربين.</p></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-start">وقت البدء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc6-start" value="09:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-end">وقت الانتهاء <span class="text-danger">*</span></label><input type="time" class="form-control" id="sc6-end" value="13:00" required></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-closeDays">إغلاق التسجيل قبل البدء بـ (أيام)</label><input type="number" class="form-control" id="sc6-closeDays" value="2"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-closeTime">وقت إغلاق التسجيل</label><input type="time" class="form-control" id="sc6-closeTime" value="23:59"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-mode">طريقة التنفيذ</label><select class="form-select" id="sc6-mode"><option selected>حضوري</option><option>عن بعد</option><option>مدمج</option></select></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-venue">المقر</label><input type="text" class="form-control" id="sc6-venue" placeholder="اسم القاعة أو المبنى"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-seats">عدد المقاعد</label><input type="number" class="form-control" id="sc6-seats" value="30"></div>
+                <div class="col-sm-6 col-lg-3"><label class="form-label small" for="sc6-sup">مشرف الدورة (من المنصة)</label><select class="form-select" id="sc6-sup"><option selected>اختر المشرف</option></select></div>
+                <div class="col-12"><p class="small app-muted mb-0">من فريق إدارة التنفيذ؛ يشرف على إطلاق الاجتماع والحضور، ويرفع تقييم المدرب بعد نهاية الدورة.</p></div>
+                <div class="col-12">
+                  <label class="form-label small d-block">نوع الخطة</label>
+                  <div class="row g-2">
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc6-type" id="sc6-type0" checked><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc6-type0"><span class="d-block fw-semibold">منشور في البوابة</span><span class="d-block small">يظهر في بوابة المتدربين وبوابة المنشآت ويسجل فيه الجميع</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc6-type" id="sc6-type1"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc6-type1"><span class="d-block fw-semibold">خاص</span><span class="d-block small">لا يظهر في البوابات، والتسجيل عبر رابط أو إدخال داخلي</span></label></div>
+                    <div class="col-md-4"><input type="radio" class="btn-check" name="sc6-type" id="sc6-type2"><label class="btn btn-outline-brand w-100 text-start ex-choice" for="sc6-type2"><span class="d-block fw-semibold">شركات</span><span class="d-block small">يظهر في بوابة المنشآت فقط لشراء المقاعد لمنسوبيها</span></label></div>
+                  </div>
+                </div>
+                  </div>
+                  <div class="d-flex gap-2 mt-3">
+                    <button type="submit" class="btn btn-brand">حفظ التعديل</button>
+                    <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#toolEdit">إغلاق</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <section class="card app-card" aria-labelledby="slotsTitle">
+            <div class="card-body">
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                <h2 class="app-card__title mb-0" id="slotsTitle">المواعيد المجدولة (96)</h2>
+                <div class="d-flex align-items-center gap-2"><label class="small app-muted text-nowrap" for="slotMonth">تصفية بالشهر</label><input type="month" class="form-control form-control-sm" id="slotMonth"></div>
+              </div>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table app-table--wide align-middle mb-0">
+                  <thead><tr><th>البرنامج</th><th>التاريخ</th><th>الوقت</th><th>المدرب</th><th>التنفيذ / المقاعد</th><th>آخر موعد للتسجيل</th><th>حالة التسجيل</th><th>الإجراءات</th></tr></thead>
+                  <tbody>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">جمعية ملاك</a><div class="small app-muted">رقم الخطة: خطة-2026-0055/ت2</div></td>
+                      <td>الأحد، ٥ يوليو ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">5 ساعة</div></td>
+                      <td class="ex-wrap"><span class="text-brand-danger">بلا مدرب</span></td>
+                      <td>حضوري · 30 مقعد<div class="small app-muted">مقر المعهد — الرياض</div></td>
+                      <td>٥ يوليو ٢٠٢٦، ١٢:٠٠ ص</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">جلسة استشارية: قرار الشراء</a><div class="small app-muted">رقم الخطة: خطة-2026-0076/ت1</div></td>
+                      <td>الأحد، ٣٠ أغسطس ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>10:00 – 12:00<div class="small app-muted">2 ساعة</div></td>
+                      <td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td>
+                      <td>افتراضي · — مقعد<div class="small app-muted">عن بُعد</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">مستدام للمباني التجارية القائمة</a><div class="small app-muted">رقم الخطة: خطة-2026-0093/ت1</div></td>
+                      <td>الجمعة، ١١ سبتمبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 15:00<div class="small app-muted">6 ساعة</div></td>
+                      <td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td>
+                      <td>حضوري · — مقعد<div class="small app-muted">الدمام</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">مقدمة في التحليل العقاري</a><div class="small app-muted">رقم الخطة: خطة-2026-0090/ت1</div></td>
+                      <td>الثلاثاء، ١٥ سبتمبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>14:00 – 18:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap">خالد عبدالمحسن محمد البشري</td>
+                      <td>بث مباشر · — مقعد<div class="small app-muted">جدة</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">مقدمة في التحليل العقاري</a><div class="small app-muted">رقم الخطة: خطة-2026-0012/ت2</div><div class="small text-brand-green">مسار التحليلات العقارية · 11/14</div></td>
+                      <td>الاثنين، ٢١ سبتمبر ٢٠٢٦<div class="small app-muted">3 مسجل · حضر 4/5</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap"><span class="text-brand-danger">بلا مدرب</span></td>
+                      <td>حضوري · 30 مقعد</td>
+                      <td>٦ مارس ٢٠٢٧، ٠١:٥٩ ص</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">الوساطة العقارية</a><div class="small app-muted">رقم الخطة: خطة-2026-0027/ت1</div><div class="small text-brand-green">مسار الوساطة العقارية المستوى التأسيسي · 1/5</div></td>
+                      <td>الأحد، ٤ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap">سالم بن راشد بن عمران العزيزي</td>
+                      <td>— · 30 مقعد</td>
+                      <td>٣ أكتوبر ٢٠٢٦، ٠٢:٥٩ ص</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">جلسة إرشاد فردية: خطة دخول سوق الوساطة — المستفيد: محمد العتيبي</a><div class="small app-muted">رقم الخطة: خطة-2026-0062/ت1</div></td>
+                      <td>الثلاثاء، ٦ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>16:00 – 17:30<div class="small app-muted">1.5 ساعة</div></td>
+                      <td class="ex-wrap">أيمن شجاع سعود الحربي</td>
+                      <td>بث مباشر · 1 مقعد<div class="small app-muted">عن بعد</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">عام</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</a><div class="small app-muted">رقم الخطة: خطة-2026-0026/ت1</div><div class="small text-brand-green">مسار الوساطة العقارية المستوى التأسيسي · 2/5</div></td>
+                      <td>الأحد، ١١ أكتوبر ٢٠٢٦<div class="small app-muted">4 مسجل · حضر 6/6</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap">أيمن شجاع سعود الحربي</td>
+                      <td>— · 30 مقعد</td>
+                      <td>١٠ أكتوبر ٢٠٢٦، ٠٢:٥٩ ص</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">جلسة إرشاد جماعية: معالجة مشكلات التحصيل والتعثر (مرشد ومجموعة)</a><div class="small app-muted">رقم الخطة: خطة-2026-0063/ت1</div></td>
+                      <td>الخميس، ١٥ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>10:00 – 12:00<div class="small app-muted">2 ساعة</div></td>
+                      <td class="ex-wrap">علي جارالله محمد العيد</td>
+                      <td>حضوري · 8 مقعد<div class="small app-muted">قاعة المعهد</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-muted">منتهية</span><div class="small app-muted">عام</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">فحص المباني الجاهزة (تجريبي)</a><div class="small app-muted">رقم الخطة: خطة-2026-0102/ت1</div><div class="small text-brand-green">فحص المباني الجاهزة (تجريبي) · 1/3</div></td>
+                      <td>الأحد، ١٨ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap"><span class="text-brand-danger">بلا مدرب</span></td>
+                      <td>حضوري · 30 مقعد</td>
+                      <td>١٦ أكتوبر ٢٠٢٦، ١١:٥٩ م</td>
+                      <td><span class="badge badge-soft-danger">التسجيل مغلق</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">الوساطة العقارية</a><div class="small app-muted">رقم الخطة: خطة-2026-0023/ت2</div><div class="small text-brand-green">مسار الاستشارات العقارية · 1/14</div></td>
+                      <td>الأحد، ١٨ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td>
+                      <td>— · 30 مقعد</td>
+                      <td>١٢ أكتوبر ٢٠٢٦، ٠١:٤٨ م</td>
+                      <td><span class="badge badge-soft-danger">التسجيل مغلق</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي</a><div class="small app-muted">رقم الخطة: خطة-2026-0001/ت2</div></td>
+                      <td>الأحد، ١٨ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>17:00 – 20:00<div class="small app-muted">8 ساعة</div></td>
+                      <td class="ex-wrap"><span class="text-brand-danger">بلا مدرب</span></td>
+                      <td>— · — مقعد<div class="small app-muted">بث مباشر (Zoom)</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-warning">لم يُحدد موعد الإغلاق</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">جلسة إرشاد: التعامل مع الاعتراضات</a><div class="small app-muted">رقم الخطة: خطة-2026-0067/ت1</div></td>
+                      <td>الاثنين، ١٩ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>11:00 – 13:00<div class="small app-muted">2 ساعة</div></td>
+                      <td class="ex-wrap">بدر علي أحمد العجيمان</td>
+                      <td>افتراضي · — مقعد<div class="small app-muted">عن بُعد</div></td>
+                      <td>—</td>
+                      <td><span class="badge badge-soft-warning">لم يُحدد موعد الإغلاق</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">التسويق العقاري (مدمجة)</a><div class="small app-muted">رقم الخطة: خطة-2026-0017/ت1</div><div class="small text-brand-green">مسار الوساطة العقارية المستوى التأسيسي · 4/5</div></td>
+                      <td>الأحد، ٢٥ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap"><span class="text-brand-danger">بلا مدرب</span></td>
+                      <td>— · 30 مقعد</td>
+                      <td>٢٤ أكتوبر ٢٠٢٦، ٠٢:٥٩ ص</td>
+                      <td><span class="badge badge-soft-success">التسجيل مفتوح</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-secondary">إيقاف التسجيل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                    <tr>
+                      <td class="ex-wrap"><a href="exec-session.html" class="fw-semibold app-heading-text text-decoration-none">المساهمات العقارية</a><div class="small app-muted">رقم الخطة: خطة-2026-0040/ت1</div><div class="small text-brand-green">مسار رخصة المساهمات العقارية · 1/2</div></td>
+                      <td>الأحد، ٢٥ أكتوبر ٢٠٢٦<div class="small app-muted">0 مسجل</div></td>
+                      <td>09:00 – 13:00<div class="small app-muted">4 ساعة</div></td>
+                      <td class="ex-wrap"><span class="text-brand-danger">بلا مدرب</span></td>
+                      <td>— · 30 مقعد</td>
+                      <td>٢٤ أكتوبر ٢٠٢٦، ٠٢:٥٩ ص</td>
+                      <td><span class="badge badge-soft-success">التسجيل مفتوح</span><div class="small app-muted">منشور في البوابة</div></td>
+                      <td><div class="d-flex gap-1"><button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#toolEdit">تعديل</button><button type="button" class="btn btn-sm btn-outline-secondary">إيقاف التسجيل</button><button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelSlotModal">إلغاء</button></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- ================= Plans ================= -->
+        <section class="tab-pane fade" id="pane-plans" role="tabpanel" aria-labelledby="tab-plans" tabindex="0">
+          <div class="app-info app-rules rounded-2 mb-3">
+            <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-plans" aria-expanded="false" aria-controls="rules-plans">
+              <i class="ph-duotone ph-info fs-5"></i>
+              <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+              <span class="badge rounded-pill badge-soft-info">5</span>
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="collapse" id="rules-plans">
+              <ul class="small mb-0 ps-5 pe-3 pb-3">
+                <li>تُجمَّع المواعيد في خطط برقم الخطة، وتعرض كل خطة مواعيدها وفترتها ونوعها.</li>
+                <li>الاعتماد اليدوي اختياري: زر «إرسال طلب اعتماد لمدير العمليات» يحوّل مواعيد الخطة إلى «بانتظار اعتماد المدير» وتُخفى من البوابات وإدارة المقاعد حتى يُبتّ فيها.</li>
+                <li>قرار مدير العمليات: «اعتماد الخطة» يجعل مواعيدها «مجدولة» وتُنشر حسب نوعها، و«رفض» يجعلها «ملغية».</li>
+                <li><span class="badge rounded-pill badge-soft-warning me-1">تنبيهات</span>عند اعتماد خطة من نوع «منشور في البوابة» أو «شركات» يصل تنبيه لكل منشأة شريكة بوجود موعد جديد يمكن حجز مقاعد فيه.</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>الخطة المعتمدة تنعكس مباشرة في «تقويم الدورات» و«إدارة المقاعد» وبوابة المنشأة، ويُسند مدربها من «إسناد الدورات».</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card app-card mb-3">
+            <div class="card-body d-flex flex-wrap align-items-center justify-content-between gap-2">
+              <div><h2 class="app-card__title mb-1">بناء خطة جديدة</h2><p class="small app-muted mb-0">ابنِ خطة (برنامج، مسار، شهر كامل، أو نسخ شهر) من أدوات الجدولة، ثم أرسلها من هنا لاعتماد مدير العمليات قبل نشرها.</p></div>
+              <button type="button" class="btn btn-sm btn-brand" data-show-tab="#tab-sched"><i class="ph ph-plus me-1"></i>بناء خطة جديدة</button>
+            </div>
+          </div>
+          <h2 class="app-card__title mb-2">بانتظار اعتماد مدير العمليات (4)</h2>
+          <div class="row g-3 mb-4">
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">إعداد التقارير العقارية</h3><span class="badge badge-soft-warning">بانتظار اعتماد مدير العمليات</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0015/ت2 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الاثنين، ١٥ مارس ٢٠٢٧ — الاثنين، ١٥ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الاثنين، ١٥ مارس ٢٠٢٧ · 09:00–13:00 · حضوري · قاعة التدريب 3</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-brand">اعتماد الخطة</button><button type="button" class="btn btn-sm btn-outline-danger">رفض</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">إدارة المرافق</h3><span class="badge badge-soft-warning">بانتظار اعتماد مدير العمليات</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0098/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الاثنين، ١٦ نوفمبر ٢٠٢٦ — الاثنين، ١٦ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الاثنين، ١٦ نوفمبر ٢٠٢٦ · 16:00–20:00 · حضوري · قاعة التدريب 2</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-brand">اعتماد الخطة</button><button type="button" class="btn btn-sm btn-outline-danger">رفض</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">التسويق العقاري الإلكتروني</h3><span class="badge badge-soft-warning">بانتظار اعتماد مدير العمليات</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0097/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الاثنين، ٩ نوفمبر ٢٠٢٦ — الاثنين، ٩ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الاثنين، ٩ نوفمبر ٢٠٢٦ · 09:00–13:00 · عن بعد</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-brand">اعتماد الخطة</button><button type="button" class="btn btn-sm btn-outline-danger">رفض</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">الوساطة العقارية</h3><span class="badge badge-soft-warning">بانتظار اعتماد مدير العمليات</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0096/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الاثنين، ٢ نوفمبر ٢٠٢٦ — الاثنين، ٢ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الاثنين، ٢ نوفمبر ٢٠٢٦ · 09:00–13:00 · حضوري · قاعة التدريب 1</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-brand">اعتماد الخطة</button><button type="button" class="btn btn-sm btn-outline-danger">رفض</button></div>
+                </div></div>
+              </div>
+          </div>
+          <h2 class="app-card__title mb-2">الخطط القائمة (92)</h2>
+          <div class="row g-3">
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">تحليل المؤشرات العقارية</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0014/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الثلاثاء، ٩ مارس ٢٠٢٧ — الثلاثاء، ٩ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الثلاثاء، ٩ مارس ٢٠٢٧ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">تحليل الأسواق العقارية</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0013/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الاثنين، ٨ مارس ٢٠٢٧ — الاثنين، ٨ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الاثنين، ٨ مارس ٢٠٢٧ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">ادارة البيانات في الأسواق العقارية</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0011/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الخميس، ٤ مارس ٢٠٢٧ — الخميس، ٤ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الخميس، ٤ مارس ٢٠٢٧ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">الاستثمار في القطاع العقاري</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0010/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الأربعاء، ٣ مارس ٢٠٢٧ — الأربعاء، ٣ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الأربعاء، ٣ مارس ٢٠٢٧ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">دراسات الجدوى للمشاريع العقارية</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0009/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الثلاثاء، ٢ مارس ٢٠٢٧ — الثلاثاء، ٢ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الثلاثاء، ٢ مارس ٢٠٢٧ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">مهارات التفكير وحل المشكلات</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2027-0008/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الاثنين، ١ مارس ٢٠٢٧ — الاثنين، ١ مارس ٢٠٢٧</div>
+                  <div class="small app-muted mb-3">• الاثنين، ١ مارس ٢٠٢٧ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">نموذج: أساسيات الوساطة العقارية</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0101/ت1 · 1 موعدًا · منشور في البوابة</div>
+                  <div class="small mb-1">الفترة: الخميس، ١٩ نوفمبر ٢٠٢٦ — الخميس، ١٩ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الخميس، ١٩ نوفمبر ٢٠٢٦ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">نموذج: أساسيات الوساطة العقارية</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0100/ت1 · 1 موعدًا · منشور في البوابة</div>
+                  <div class="small mb-1">الفترة: الأربعاء، ١٨ نوفمبر ٢٠٢٦ — الأربعاء، ١٨ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الأربعاء، ١٨ نوفمبر ٢٠٢٦ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">فحص المباني الجاهزة (تجريبي)</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0099/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الثلاثاء، ٣ نوفمبر ٢٠٢٦ — الثلاثاء، ٣ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الثلاثاء، ٣ نوفمبر ٢٠٢٦ · 09:00–14:00 · حضوري · الرياض</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+              <div class="col-md-6 col-xl-4">
+                <div class="card app-card h-100"><div class="card-body d-flex flex-column">
+                  <div class="d-flex align-items-start gap-2 mb-1"><h3 class="fs-6 fw-semibold app-heading-text mb-0 flex-grow-1">السوق العقاري السعودي</h3><span class="badge badge-soft-success">معتمدة ومنشورة</span></div>
+                  <div class="small app-muted mb-2">رقم الخطة: خطة-2026-0025/ت1 · 1 موعدًا · عامة</div>
+                  <div class="small mb-1">الفترة: الأحد، ١ نوفمبر ٢٠٢٦ — الأحد، ١ نوفمبر ٢٠٢٦</div>
+                  <div class="small app-muted mb-3">• الأحد، ١ نوفمبر ٢٠٢٦ · 09:00–13:00 · حضوري</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto"><button type="button" class="btn btn-sm btn-outline-brand">إرسال طلب اعتماد لمدير العمليات</button></div>
+                </div></div>
+              </div>
+          </div>
+        </section>
+
+        <!-- ================= Calendar ================= -->
+        <section class="tab-pane fade" id="pane-calendar" role="tabpanel" aria-labelledby="tab-calendar" tabindex="0">
+          <div class="app-info app-rules rounded-2 mb-3">
+            <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-calendar" aria-expanded="false" aria-controls="rules-calendar">
+              <i class="ph-duotone ph-info fs-5"></i>
+              <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+              <span class="badge rounded-pill badge-soft-info">2</span>
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="collapse" id="rules-calendar">
+              <ul class="small mb-0 ps-5 pe-3 pb-3">
+                <li>يعرض الخطط المجدولة بحالاتها، وأي قرار في «إدارة المقاعد» ينعكس هنا تلقائيًا.</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>يقرأ نفس بيانات الجدولة — تأكيد أو تأجيل أو إلغاء خطة يظهر فورًا في التقويم.</li>
+              </ul>
+            </div>
+          </div>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                <button type="button" class="btn btn-sm btn-light"><i class="ph ph-arrow-right me-1"></i>السابق</button>
+                <h2 class="app-card__title mb-0">أكتوبر ٢٠٢٦ — 32 دورة</h2>
+                <button type="button" class="btn btn-sm btn-light">التالي<i class="ph ph-arrow-left ms-1"></i></button>
+              </div>
+              <div class="ex-cal-wrap">
+              <div class="ex-cal">
+                <div class="ex-cal__head">الأحد</div><div class="ex-cal__head">الإثنين</div><div class="ex-cal__head">الثلاثاء</div><div class="ex-cal__head">الأربعاء</div><div class="ex-cal__head">الخميس</div><div class="ex-cal__head">الجمعة</div><div class="ex-cal__head">السبت</div>
+                <div class="ex-cal__cell is-empty"></div>
+                <div class="ex-cal__cell is-empty"></div>
+                <div class="ex-cal__cell is-empty"></div>
+                <div class="ex-cal__cell is-empty"></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">1</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">2</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">3</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">4</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">الوساطة العقارية</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">5</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">برنامج تجريبي: أساسيات الوساطة</span><span class="d-block">مجدولة</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--navy"><span class="d-block text-truncate">جلسة استشارية: الهيكل التشغيلي</span><span class="d-block">أقيمت</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">6</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">جلسة إرشاد فردية: خطة دخول سوق الوساطة — المستفيد: محمد العتيبي</span><span class="d-block">مجدولة · متبقي 1 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--navy"><span class="d-block text-truncate">نموذج: أساسيات الوساطة العقارية — ضمن المسار النموذجي</span><span class="d-block">أقيمت</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">7</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">مدير عقار مشترك</span><span class="d-block">مجدولة</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">8</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--navy"><span class="d-block text-truncate">جلسة إرشاد: التعامل مع الملاك</span><span class="d-block">أقيمت</span></a></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">9</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">10</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">11</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">الوساطة العقارية</span><span class="d-block">مجدولة · متبقي 23 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</span><span class="d-block">مجدولة · متبقي 26 مقعد</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">12</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">إرشاد مديري الأملاك</span><span class="d-block">مجدولة</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--warning"><span class="d-block text-truncate">جلسة استشارية: مخاطر الاستثمار</span><span class="d-block">مخططة</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">13</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">جلسة إرشاد 1: بناء خطة العمل للوسيط المبتدئ (مرشد ومستفيد)</span><span class="d-block">مجدولة · متبقي 1 مقعد</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">14</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">15</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">جلسة إرشاد جماعية: معالجة مشكلات التحصيل والتعثر (مرشد ومجموعة)</span><span class="d-block">مجدولة · متبقي 8 مقعد</span></a></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">16</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">17</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">18</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">فحص المباني الجاهزة (تجريبي)</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">الوساطة العقارية</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a><span class="ex-cal__more">+3 دورات</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">19</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">فحص المباني الجاهزة (تجريبي)</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--warning"><span class="d-block text-truncate">جلسة إرشاد: التعامل مع الاعتراضات</span><span class="d-block">مخططة</span></a><span class="ex-cal__more">+1 دورات</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">20</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">فحص المباني الجاهزة (تجريبي)</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">جلسة إرشاد 2: مرافقة أول صفقة وساطة (مرشد ومستفيد)</span><span class="d-block">مجدولة · متبقي 1 مقعد</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">21</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">22</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">جلسة إرشاد جماعية: التعاقدات وإدارة الملاك (مرشد ومجموعة)</span><span class="d-block">مجدولة · متبقي 8 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--warning"><span class="d-block text-truncate">جلسة استشارية: التراخيص والامتثال</span><span class="d-block">مخططة</span></a></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">23</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">24</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">25</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">التسويق العقاري (مدمجة)</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">التمويل العقاري</span><span class="d-block">مجدولة · متبقي 30 مقعد</span></a><span class="ex-cal__more">+2 دورات</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">26</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">إرشاد مديري الأملاك</span><span class="d-block">مجدولة</span></a><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--warning"><span class="d-block text-truncate">جلسة إرشاد: تحصيل الإيجارات</span><span class="d-block">مخططة</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">27</span><a href="exec-session.html" class="ex-cal__ev ex-cal__ev--success"><span class="d-block text-truncate">جلسة إرشاد 3: مراجعة الأداء والتوجيه المهني (مرشد ومستفيد)</span><span class="d-block">مجدولة · متبقي 1 مقعد</span></a></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">28</span></div>
+                <div class="ex-cal__cell"><span class="ex-cal__day">29</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">30</span></div>
+                <div class="ex-cal__cell is-weekend"><span class="ex-cal__day">31</span></div>
+              </div>
+              </div>
+              <div class="d-flex flex-wrap align-items-center gap-2 mt-3 small">
+                <span class="app-muted">حالة الدورة:</span>
+                <span class="badge badge-soft-navy">أقيمت (3)</span> <span class="badge badge-soft-info">مؤكدة (1)</span> <span class="badge badge-soft-success">مجدولة (24)</span> <span class="badge badge-soft-warning">مخططة (4)</span>
+              </div>
+            </div>
+          </section>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                <h2 class="app-card__title mb-0 me-2">دورات أكتوبر ٢٠٢٦</h2>
+                <span class="badge badge-soft-navy">أقيمت 3</span> <span class="badge badge-soft-info">مؤكدة 1</span> <span class="badge badge-soft-success">مجدولة 24</span> <span class="badge badge-soft-warning">مخططة 4</span>
+              </div>
+              <p class="small app-muted mb-3">المشاركون 0 · الحضور 0 · الغياب 0 · الناجحون 0 · الراسبون 0</p>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table app-table--wide align-middle mb-0">
+                  <thead><tr><th>الدورة</th><th>المصدر</th><th>التاريخ</th><th>التوقيت</th><th>الأيام/الساعات</th><th>المدرب</th><th>المقر</th><th>الحالة</th><th>المقاعد المتبقية</th><th>المشاركون</th><th>الحضور</th><th>الغياب</th><th>الناجحون</th><th>الراسبون</th></tr></thead>
+                  <tbody>
+                    <tr><td class="ex-wrap fw-semibold">الوساطة العقارية</td><td>جدولة</td><td>الأحد، ٤ أكتوبر ٢٠٢٦</td><td>09:00 — 13:00</td><td>1 يوم / 4 س</td><td class="ex-wrap">سالم بن راشد بن عمران العزيزي</td><td>—</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>30 / 30</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">برنامج تجريبي: أساسيات الوساطة</td><td>جدولة</td><td>الاثنين، ٥ أكتوبر ٢٠٢٦</td><td>— · بث مباشر</td><td>1 يوم / 6 س</td><td class="ex-wrap">—</td><td>—</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">جلسة استشارية: الهيكل التشغيلي</td><td>جدولة</td><td>الاثنين، ٥ أكتوبر ٢٠٢٦</td><td>09:00 — 11:00 · افتراضي</td><td>1 يوم / 2 س</td><td class="ex-wrap">تركي فيصل غازي الحساني</td><td>عن بُعد</td><td><span class="badge badge-soft-navy">أقيمت</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">جلسة إرشاد فردية: خطة دخول سوق الوساطة — المستفيد: محمد العتيبي</td><td>جدولة</td><td>الثلاثاء، ٦ أكتوبر ٢٠٢٦</td><td>16:00 — 17:30 · بث مباشر</td><td>1 يوم / 1.5 س</td><td class="ex-wrap">أيمن شجاع سعود الحربي</td><td>عن بعد</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>1 / 1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">نموذج: أساسيات الوساطة العقارية — ضمن المسار النموذجي</td><td>جدولة</td><td>الثلاثاء، ٦ أكتوبر ٢٠٢٦</td><td>17:00 — 20:00</td><td>1 يوم / 6 س</td><td class="ex-wrap">—</td><td>بث مباشر (Zoom)</td><td><span class="badge badge-soft-navy">أقيمت</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">مدير عقار مشترك</td><td>جدولة</td><td>الأربعاء، ٧ أكتوبر ٢٠٢٦</td><td>09:00 — 14:00</td><td>1 يوم / 5 س</td><td class="ex-wrap">—</td><td>—</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">الوساطة العقارية</td><td>جدولة</td><td>الأحد، ١١ أكتوبر ٢٠٢٦</td><td>09:00 — 13:00</td><td>1 يوم / 4 س</td><td class="ex-wrap">خالد بن سعد الحربي</td><td>—</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>23 / 30</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">منصة إيجار واستخداماتها في الوساطة العقارية (برنامج ومسار)</td><td>جدولة</td><td>الأحد، ١١ أكتوبر ٢٠٢٦</td><td>09:00 — 13:00</td><td>1 يوم / 4 س</td><td class="ex-wrap">أيمن شجاع سعود الحربي</td><td>—</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>26 / 30</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">جلسة استشارية: مخاطر الاستثمار</td><td>جدولة</td><td>الاثنين، ١٢ أكتوبر ٢٠٢٦</td><td>14:00 — 16:00 · افتراضي</td><td>1 يوم / 2 س</td><td class="ex-wrap">حسين سهل عمر العطاس</td><td>عن بُعد</td><td><span class="badge badge-soft-warning">مخططة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">جلسة إرشاد جماعية: معالجة مشكلات التحصيل والتعثر (مرشد ومجموعة)</td><td>جدولة</td><td>الخميس، ١٥ أكتوبر ٢٠٢٦</td><td>10:00 — 12:00 · حضوري</td><td>1 يوم / 2 س</td><td class="ex-wrap">علي جارالله محمد العيد</td><td>قاعة المعهد</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>8 / 8</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي</td><td>جدولة</td><td>الأحد، ١٨ أكتوبر ٢٠٢٦</td><td>17:00 — 20:00</td><td>1 يوم / 8 س</td><td class="ex-wrap">—</td><td>بث مباشر (Zoom)</td><td><span class="badge badge-soft-info">مؤكدة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">مقدمة في التحليل العقاري</td><td>جدولة</td><td>الاثنين، ١٩ أكتوبر ٢٠٢٦</td><td>14:00 — 18:00 · بث مباشر</td><td>1 يوم / 4 س</td><td class="ex-wrap">خالد عبدالمحسن محمد البشري</td><td>جدة</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">جلسة استشارية: التراخيص والامتثال</td><td>جدولة</td><td>الخميس، ٢٢ أكتوبر ٢٠٢٦</td><td>13:00 — 15:00 · افتراضي</td><td>1 يوم / 2 س</td><td class="ex-wrap">حسن محمد علي صميلي</td><td>عن بُعد</td><td><span class="badge badge-soft-warning">مخططة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">المساهمات العقارية</td><td>جدولة</td><td>الأحد، ٢٥ أكتوبر ٢٠٢٦</td><td>09:00 — 13:00</td><td>1 يوم / 4 س</td><td class="ex-wrap">—</td><td>—</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>29 / 30</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap fw-semibold">إرشاد مديري الأملاك</td><td>جدولة</td><td>الاثنين، ٢٦ أكتوبر ٢٠٢٦</td><td>09:00 — 15:00 · حضوري</td><td>1 يوم / 6 س</td><td class="ex-wrap">—</td><td>الدمام</td><td><span class="badge badge-soft-success">مجدولة</span></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="card app-card">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">الدورات القادمة (56)</h2>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead><tr><th>الدورة</th><th>تاريخ البدء</th><th>تاريخ النهاية</th><th>المدرب</th><th>المسجلون</th></tr></thead>
+                  <tbody>
+                    <tr><td class="ex-wrap">فحص المباني الجاهزة (تجريبي)</td><td>الأحد، ١٨ أكتوبر ٢٠٢٦</td><td>2026-10-17</td><td>—</td><td>—</td></tr>
+                    <tr><td class="ex-wrap">الوساطة العقارية</td><td>الأحد، ١٨ أكتوبر ٢٠٢٦</td><td>2026-10-17</td><td>بندر ابراهيم حسن الفرشوطي</td><td>—</td></tr>
+                    <tr><td class="ex-wrap">جمعية ملاك</td><td>الأحد، ١٨ أكتوبر ٢٠٢٦</td><td>2026-10-17</td><td>عبدالله سعد المقرن</td><td>—</td></tr>
+                    <tr><td class="ex-wrap">الاحتيال ومكافحة غسل الأموال في القطاع العقاري</td><td>الأحد، ١٨ أكتوبر ٢٠٢٦</td><td>2026-10-17</td><td>خالد عبدالمحسن محمد البشري</td><td>—</td></tr>
+                    <tr><td class="ex-wrap">نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي</td><td>الأحد، ١٨ أكتوبر ٢٠٢٦</td><td>2026-10-17</td><td>—</td><td>—</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- ================= Seats ================= -->
+        <section class="tab-pane fade" id="pane-seats" role="tabpanel" aria-labelledby="tab-seats" tabindex="0">
+          <div class="app-info app-rules rounded-2 mb-3">
+            <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-seats" aria-expanded="false" aria-controls="rules-seats">
+              <i class="ph-duotone ph-info fs-5"></i>
+              <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+              <span class="badge rounded-pill badge-soft-info">6</span>
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="collapse" id="rules-seats">
+              <ul class="small mb-0 ps-5 pe-3 pb-3">
+                <li>القرارات على الخطة: تأكيد، أُقيمت، تأجيل، نقل المتدربين، أو إلغاء — ويمكن تطبيقها جماعيًا على عدة خطط.</li>
+                <li>بعد إقامة الدورة يمكن تعديل آخر يوم (تقليص أو تمديد يومين كحد أقصى) عبر طلب يوافق عليه مشرف البرنامج ثم مدير التنفيذ.</li>
+                <li><span class="badge rounded-pill badge-soft-warning me-1">تنبيهات</span>عند اعتماد تعديل آخر يوم يُفتح الاختبار في اليوم الجديد ويُنبَّه المتدربون المسجلون تلقائيًا.</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>آخر يوم المعتمد هنا هو الذي تحسب منه بوابة المتدرب يوم إتاحة الاختبار، وتتبعه «متابعة الاختبارات».</li>
+                <li>تظهر هنا الخطط المعتمدة فقط (مجدولة وغير منتهية) — الخطط «بانتظار اعتماد المدير» والملغية لا تظهر.</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>المقاعد المحجوزة تأتي من طلبات القبول المدفوعة في بوابة المتدرب ومن حجوزات المنشآت لموظفيها، والانسحاب المقبول يُعيد المقعد.</li>
+              </ul>
+            </div>
+          </div>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-1">طلبات تعديل آخر يوم بعد الإقامة</h2>
+              <p class="small app-muted mb-3">تقليص أو تمديد يوم أو يومين فقط، بموافقة مشرف البرنامج ثم مدير التنفيذ. بعد الاعتماد يُتاح نموذج الاختبار في آخر يوم الجديد.</p>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead><tr><th>رقم الخطة</th><th>آخر يوم الحالي</th><th>الجديد</th><th>السبب</th><th>مقدم الطلب</th><th>مشرف البرنامج</th><th>مدير التنفيذ</th><th>الحالة</th><th>الإجراء</th></tr></thead>
+                  <tbody><tr><td>خطة-2026-0044/ت1</td><td>2026-10-11</td><td>2026-10-09</td><td class="ex-wrap">تقليص يومين بسبب ظرف المدرب — طلب تجريبي</td><td>شيخة العتيبي</td><td class="text-brand-green">✓ مشرف البرنامج التجريبي</td><td class="text-brand-green">✓ مدير التنفيذ التجريبي</td><td><span class="badge badge-soft-success">معتمد</span></td><td></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-2">ما فكرة إدارة المقاعد؟</h2>
+              <p class="small">إدارة المقاعد هي المرحلة التي تلي الجدولة مباشرة: بعد أن تُجدول الدورة وتصدر لها خطة برقم خطة (مثل خطة-2026-0012)، تبدأ هنا متابعة كل ما يخص المسجلين فيها حتى يوم الإقامة. الفكرة أن كل خطة لها سعة مقاعد محددة، وهذه الشاشة تُريك لحظة بلحظة كم مقعدًا حُجز، وكم تبقى، ومن هم المسجلون، وما حالة كل طلب.</p>
+              <ul class="small mb-0 pe-3">
+                <li><b>متابعة المسجلين:</b> كل طلب تسجيل متدرب يظهر هنا فورًا ويخصم من المقاعد المتبقية، وتنعكس النتيجة تلقائيًا في التقويم.</li>
+                <li><b>قرارات المقاعد:</b> قبول الطلبات أو رفضها، ومعالجة الطلبات التي تفوق السعة، ونقل متدرب أو مجموعة متدربين من خطة إلى خطة أخرى لنفس الدورة.</li>
+                <li><b>متابعة الانسحابات:</b> أي طلب انسحاب على مسجّل يظهر كتنبيه على الخطة ليُعاد احتساب المقاعد المتاحة.</li>
+                <li><b>تأكيد حالة الدورة:</b> قبل الإقامة تتخذ القرار النهائي للخطة — تأكيد الإقامة، تسجيل أنها «أُقيمت»، تأجيلها، أو إلغاؤها — وينعكس القرار مباشرة على التقويم والتقارير.</li>
+                <li><b>قفل الإدارة:</b> تُقفل إدارة المقاعد تلقائيًا قبل موعد الإقامة بـ 3 ساعات حتى تثبت قائمة الحضور النهائية.</li>
+              </ul>
+            </div>
+          </section>
+          <div class="row g-3 mb-3 row-cols-2 row-cols-md-4">
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">برامج قادمة</div><div class="app-kpi-value app-heading-text">53</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">إجمالي المقاعد</div><div class="app-kpi-value app-heading-text">1383</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">طلبات الحجز النشطة</div><div class="app-kpi-value app-heading-text">0</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">برامج يفوق طلبها السعة</div><div class="app-kpi-value app-heading-text">0</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">طلبات تتجاوز السعة</div><div class="app-kpi-value app-heading-text">0</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">أغلق تسجيلها وعليها طلبات</div><div class="app-kpi-value app-heading-text">0</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">انتهى وقت إدارتها</div><div class="app-kpi-value app-heading-text">1</div></div></div></div>
+            <div class="col"><div class="card app-card h-100"><div class="card-body"><div class="app-muted small">مرشحة للإلغاء (إقبال ضعيف)</div><div class="app-kpi-value text-brand-warning">13</div></div></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <input type="radio" class="btn-check" name="seatFilter" id="sf0" checked><label class="btn btn-sm btn-outline-brand" for="sf0">الكل</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf1"><label class="btn btn-sm btn-outline-brand" for="sf1">طلب يفوق السعة</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf2"><label class="btn btn-sm btn-outline-brand" for="sf2">إقبال ضعيف</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf3"><label class="btn btn-sm btn-outline-brand" for="sf3">مكتمل</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf4"><label class="btn btn-sm btn-outline-brand" for="sf4">شبه مكتمل</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf5"><label class="btn btn-sm btn-outline-brand" for="sf5">متاح</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf6"><label class="btn btn-sm btn-outline-brand" for="sf6">أغلق وعليه طلبات</label>
+            <input type="radio" class="btn-check" name="seatFilter" id="sf7"><label class="btn btn-sm btn-outline-brand" for="sf7">انتهى وقت إدارتها</label>
+          </div>
+          <div class="catalog-bulk rounded d-flex flex-wrap align-items-center gap-2 px-3 py-2 mb-3">
+            <div class="form-check mb-0 me-auto"><input class="form-check-input" type="checkbox" id="seatSelectAll"><label class="form-check-label small fw-semibold" for="seatSelectAll">تحديد كل الخطط (53)</label></div>
+            <button type="button" class="btn btn-sm btn-brand">قبول طلبات الخطط المحددة</button>
+            <button type="button" class="btn btn-sm btn-outline-danger">رفض طلبات الخطط المحددة</button>
+          </div>
+          <div class="row g-3">
+              <div class="col-lg-6">
+                <div class="card app-card h-100"><div class="card-body">
+                  <div class="d-flex align-items-start gap-2 mb-1">
+                    <input class="form-check-input mt-1" type="checkbox" aria-label="تحديد الخطة">
+                    <div class="flex-grow-1 min-w-0"><span class="app-code">خطة-2026-0076/ت1</span><h3 class="fs-6 fw-semibold app-heading-text mt-1 mb-0">جلسة استشارية: قرار الشراء</h3></div>
+                    <div class="d-flex flex-column align-items-end gap-1"><span class="badge badge-soft-warning">إقبال ضعيف</span></div>
+                  </div>
+                  <div class="small app-muted">الأحد، ٣٠ أغسطس · 10:00 · افتراضي · عن بُعد</div>
+                  <div class="small text-brand-green mb-3">التسجيل مفتوح · الإغلاق: —</div>
+                  <div class="row g-2 row-cols-5 mb-3"><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">السعة</div><div class="fw-semibold app-heading-text">1</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">مقبول</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">متبقٍ</div><div class="fw-semibold app-heading-text">1</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">تحت المراجعة</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">زيادة الطلب</div><div class="fw-semibold app-heading-text">0</div></div></div></div>
+                  <div class="app-stat rounded-2 small p-2 mb-3">انتهى وقت إدارة المقاعد لهذا البرنامج (تُقفل الإدارة قبل الإقامة بـ 3 ساعات).</div>
+                  <div class="border-top pt-2">
+                    <div class="small app-muted mb-2">قرار حالة الدورة · الحالة الحالية: <b class="app-heading-text">ملغاة</b> · خطة-2026-0076/ت1</div>
+                    <div class="d-flex flex-wrap gap-2 mb-2"><button type="button" class="btn btn-sm btn-brand">تأكيد الإقامة</button><button type="button" class="btn btn-sm btn-outline-brand">أُقيمت</button><button type="button" class="btn btn-sm btn-outline-secondary">تأجيل</button><button type="button" class="btn btn-sm btn-outline-secondary">نقل المتدربين لخطة أخرى</button><button type="button" class="btn btn-sm btn-outline-danger">إلغاء لعدم الإقبال</button></div>
+                    <button type="button" class="btn btn-sm btn-link px-0 apv-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#seatDet0" aria-expanded="false"><span class="apv-toggle__show">عرض التفاصيل (▼)</span><span class="apv-toggle__hide">إخفاء التفاصيل (▲)</span></button>
+                    <div class="collapse" id="seatDet0"><p class="small app-muted app-stat rounded-2 p-2 mb-0">لا يوجد متدربون مسجلون في هذه الخطة. يمكن تسجيلهم من صفحة طلبات القبول عبر «تسجيل متدرب».</p></div>
+                  </div>
+                </div></div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card app-card h-100"><div class="card-body">
+                  <div class="d-flex align-items-start gap-2 mb-1">
+                    <input class="form-check-input mt-1" type="checkbox" aria-label="تحديد الخطة">
+                    <div class="flex-grow-1 min-w-0"><span class="app-code">خطة-2026-0102/ت1</span><h3 class="fs-6 fw-semibold app-heading-text mt-1 mb-0">فحص المباني الجاهزة (تجريبي)</h3></div>
+                    <div class="d-flex flex-column align-items-end gap-1"><span class="badge badge-soft-warning">إقبال ضعيف</span></div>
+                  </div>
+                  <div class="small app-muted">الأحد، ١٨ أكتوبر · 09:00 · حضوري · —</div>
+                  <div class="small text-brand-danger mb-3">التسجيل مغلق · الإغلاق: ١٦ أكتوبر ٢٠٢٦، ١١:٥٩ م</div>
+                  <div class="row g-2 row-cols-5 mb-3"><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">السعة</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">مقبول</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">متبقٍ</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">تحت المراجعة</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">زيادة الطلب</div><div class="fw-semibold app-heading-text">0</div></div></div></div>
+                  <form class="d-flex flex-wrap gap-2 mb-3" data-static-form><button type="button" class="btn btn-sm btn-light">+5 مقاعد</button><input type="number" class="form-control form-control-sm ex-cap-input" placeholder="سعة جديدة" aria-label="سعة جديدة"><button type="submit" class="btn btn-sm btn-brand">حفظ</button><button type="button" class="btn btn-sm btn-outline-brand">إعادة فتح التسجيل</button></form>
+                  <div class="border-top pt-2">
+                    <div class="small app-muted mb-2">قرار حالة الدورة · الحالة الحالية: <b class="app-heading-text">مجدولة</b> · خطة-2026-0102/ت1</div>
+                    <div class="d-flex flex-wrap gap-2 mb-2"><button type="button" class="btn btn-sm btn-brand">تأكيد الإقامة</button><button type="button" class="btn btn-sm btn-outline-secondary">تأجيل</button><button type="button" class="btn btn-sm btn-outline-secondary">نقل المتدربين لخطة أخرى</button><button type="button" class="btn btn-sm btn-outline-danger">إلغاء لعدم الإقبال</button></div>
+                    <button type="button" class="btn btn-sm btn-link px-0 apv-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#seatDet1" aria-expanded="false"><span class="apv-toggle__show">عرض التفاصيل (▼)</span><span class="apv-toggle__hide">إخفاء التفاصيل (▲)</span></button>
+                    <div class="collapse" id="seatDet1"><p class="small app-muted app-stat rounded-2 p-2 mb-0">لا يوجد متدربون مسجلون في هذه الخطة. يمكن تسجيلهم من صفحة طلبات القبول عبر «تسجيل متدرب».</p></div>
+                  </div>
+                </div></div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card app-card h-100"><div class="card-body">
+                  <div class="d-flex align-items-start gap-2 mb-1">
+                    <input class="form-check-input mt-1" type="checkbox" aria-label="تحديد الخطة">
+                    <div class="flex-grow-1 min-w-0"><span class="app-code">خطة-2026-0023/ت2</span><h3 class="fs-6 fw-semibold app-heading-text mt-1 mb-0">الوساطة العقارية</h3></div>
+                    <div class="d-flex flex-column align-items-end gap-1"><span class="badge badge-soft-warning">إقبال ضعيف</span></div>
+                  </div>
+                  <div class="small app-muted">الأحد، ١٨ أكتوبر · 09:00 · — · —</div>
+                  <div class="small text-brand-danger mb-3">التسجيل مغلق · الإغلاق: ١٢ أكتوبر ٢٠٢٦، ٠١:٤٨ م</div>
+                  <div class="row g-2 row-cols-5 mb-3"><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">السعة</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">مقبول</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">متبقٍ</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">تحت المراجعة</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">زيادة الطلب</div><div class="fw-semibold app-heading-text">0</div></div></div></div>
+                  <form class="d-flex flex-wrap gap-2 mb-3" data-static-form><button type="button" class="btn btn-sm btn-light">+5 مقاعد</button><input type="number" class="form-control form-control-sm ex-cap-input" placeholder="سعة جديدة" aria-label="سعة جديدة"><button type="submit" class="btn btn-sm btn-brand">حفظ</button><button type="button" class="btn btn-sm btn-outline-brand">إعادة فتح التسجيل</button></form>
+                  <div class="border-top pt-2">
+                    <div class="small app-muted mb-2">قرار حالة الدورة · الحالة الحالية: <b class="app-heading-text">مجدولة</b> · خطة-2026-0023/ت2</div>
+                    <div class="d-flex flex-wrap gap-2 mb-2"><button type="button" class="btn btn-sm btn-brand">تأكيد الإقامة</button><button type="button" class="btn btn-sm btn-outline-secondary">تأجيل</button><button type="button" class="btn btn-sm btn-outline-secondary">نقل المتدربين لخطة أخرى</button><button type="button" class="btn btn-sm btn-outline-danger">إلغاء لعدم الإقبال</button></div>
+                    <button type="button" class="btn btn-sm btn-link px-0 apv-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#seatDet2" aria-expanded="false"><span class="apv-toggle__show">عرض التفاصيل (▼)</span><span class="apv-toggle__hide">إخفاء التفاصيل (▲)</span></button>
+                    <div class="collapse" id="seatDet2"><p class="small app-muted app-stat rounded-2 p-2 mb-0">لا يوجد متدربون مسجلون في هذه الخطة. يمكن تسجيلهم من صفحة طلبات القبول عبر «تسجيل متدرب».</p></div>
+                  </div>
+                </div></div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card app-card h-100"><div class="card-body">
+                  <div class="d-flex align-items-start gap-2 mb-1">
+                    <input class="form-check-input mt-1" type="checkbox" aria-label="تحديد الخطة">
+                    <div class="flex-grow-1 min-w-0"><span class="app-code">خطة-2026-0001/ت2</span><h3 class="fs-6 fw-semibold app-heading-text mt-1 mb-0">نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي</h3></div>
+                    <div class="d-flex flex-column align-items-end gap-1"><span class="badge badge-soft-warning">إقبال ضعيف</span><span class="badge badge-soft-info">مؤكدة · مقفلة للطلبات الجديدة</span></div>
+                  </div>
+                  <div class="small app-muted">الأحد، ١٨ أكتوبر · 17:00 · — · بث مباشر (Zoom)</div>
+                  <div class="small text-brand-green mb-3">التسجيل مفتوح · الإغلاق: —</div>
+                  <div class="row g-2 row-cols-5 mb-3"><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">السعة</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">مقبول</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">متبقٍ</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">تحت المراجعة</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">زيادة الطلب</div><div class="fw-semibold app-heading-text">0</div></div></div></div>
+                  <form class="d-flex flex-wrap gap-2 mb-3" data-static-form><button type="button" class="btn btn-sm btn-light">+5 مقاعد</button><input type="number" class="form-control form-control-sm ex-cap-input" placeholder="سعة جديدة" aria-label="سعة جديدة"><button type="submit" class="btn btn-sm btn-brand">حفظ</button></form>
+                  <div class="border-top pt-2">
+                    <div class="small app-muted mb-2">قرار حالة الدورة · الحالة الحالية: <b class="app-heading-text">مؤكدة</b> · خطة-2026-0001/ت2</div>
+                    <div class="d-flex flex-wrap gap-2 mb-2"><button type="button" class="btn btn-sm btn-outline-secondary">تأجيل</button><button type="button" class="btn btn-sm btn-outline-secondary">نقل المتدربين لخطة أخرى</button><button type="button" class="btn btn-sm btn-outline-danger">إلغاء لعدم الإقبال</button></div>
+                    <button type="button" class="btn btn-sm btn-link px-0 apv-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#seatDet3" aria-expanded="false"><span class="apv-toggle__show">عرض التفاصيل (▼)</span><span class="apv-toggle__hide">إخفاء التفاصيل (▲)</span></button>
+                    <div class="collapse" id="seatDet3"><p class="small app-muted app-stat rounded-2 p-2 mb-0">لا يوجد متدربون مسجلون في هذه الخطة. يمكن تسجيلهم من صفحة طلبات القبول عبر «تسجيل متدرب».</p></div>
+                  </div>
+                </div></div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card app-card h-100"><div class="card-body">
+                  <div class="d-flex align-items-start gap-2 mb-1">
+                    <input class="form-check-input mt-1" type="checkbox" aria-label="تحديد الخطة">
+                    <div class="flex-grow-1 min-w-0"><span class="app-code">خطة-2026-0092/ت1</span><h3 class="fs-6 fw-semibold app-heading-text mt-1 mb-0">مقدمة في التحليل العقاري</h3></div>
+                    <div class="d-flex flex-column align-items-end gap-1"><span class="badge badge-soft-warning">إقبال ضعيف</span></div>
+                  </div>
+                  <div class="small app-muted">الاثنين، ١٩ أكتوبر · 14:00 · بث مباشر · جدة</div>
+                  <div class="small text-brand-green mb-3">التسجيل مفتوح · الإغلاق: —</div>
+                  <div class="row g-2 row-cols-5 mb-3"><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">السعة</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">مقبول</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">متبقٍ</div><div class="fw-semibold app-heading-text">30</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">تحت المراجعة</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">زيادة الطلب</div><div class="fw-semibold app-heading-text">0</div></div></div></div>
+                  <form class="d-flex flex-wrap gap-2 mb-3" data-static-form><button type="button" class="btn btn-sm btn-light">+5 مقاعد</button><input type="number" class="form-control form-control-sm ex-cap-input" placeholder="سعة جديدة" aria-label="سعة جديدة"><button type="submit" class="btn btn-sm btn-brand">حفظ</button></form>
+                  <div class="border-top pt-2">
+                    <div class="small app-muted mb-2">قرار حالة الدورة · الحالة الحالية: <b class="app-heading-text">مجدولة</b> · خطة-2026-0092/ت1</div>
+                    <div class="d-flex flex-wrap gap-2 mb-2"><button type="button" class="btn btn-sm btn-brand">تأكيد الإقامة</button><button type="button" class="btn btn-sm btn-outline-secondary">تأجيل</button><button type="button" class="btn btn-sm btn-outline-secondary">نقل المتدربين لخطة أخرى</button><button type="button" class="btn btn-sm btn-outline-danger">إلغاء لعدم الإقبال</button></div>
+                    <button type="button" class="btn btn-sm btn-link px-0 apv-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#seatDet4" aria-expanded="false"><span class="apv-toggle__show">عرض التفاصيل (▼)</span><span class="apv-toggle__hide">إخفاء التفاصيل (▲)</span></button>
+                    <div class="collapse" id="seatDet4"><p class="small app-muted app-stat rounded-2 p-2 mb-0">لا يوجد متدربون مسجلون في هذه الخطة. يمكن تسجيلهم من صفحة طلبات القبول عبر «تسجيل متدرب».</p></div>
+                  </div>
+                </div></div>
+              </div>
+              <div class="col-lg-6">
+                <div class="card app-card h-100"><div class="card-body">
+                  <div class="d-flex align-items-start gap-2 mb-1">
+                    <input class="form-check-input mt-1" type="checkbox" aria-label="تحديد الخطة">
+                    <div class="flex-grow-1 min-w-0"><span class="app-code">خطة-2026-0067/ت1</span><h3 class="fs-6 fw-semibold app-heading-text mt-1 mb-0">جلسة إرشاد: التعامل مع الاعتراضات</h3></div>
+                    <div class="d-flex flex-column align-items-end gap-1"><span class="badge badge-soft-warning">إقبال ضعيف</span></div>
+                  </div>
+                  <div class="small app-muted">الاثنين، ١٩ أكتوبر · 11:00 · افتراضي · عن بُعد</div>
+                  <div class="small text-brand-green mb-3">التسجيل مفتوح · الإغلاق: —</div>
+                  <div class="row g-2 row-cols-5 mb-3"><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">السعة</div><div class="fw-semibold app-heading-text">10</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">مقبول</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">متبقٍ</div><div class="fw-semibold app-heading-text">10</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">تحت المراجعة</div><div class="fw-semibold app-heading-text">0</div></div></div><div class="col"><div class="app-stat rounded-2 p-2 text-center h-100"><div class="small app-muted">زيادة الطلب</div><div class="fw-semibold app-heading-text">0</div></div></div></div>
+                  <form class="d-flex flex-wrap gap-2 mb-3" data-static-form><button type="button" class="btn btn-sm btn-light">+5 مقاعد</button><input type="number" class="form-control form-control-sm ex-cap-input" placeholder="سعة جديدة" aria-label="سعة جديدة"><button type="submit" class="btn btn-sm btn-brand">حفظ</button></form>
+                  <div class="border-top pt-2">
+                    <div class="small app-muted mb-2">قرار حالة الدورة · الحالة الحالية: <b class="app-heading-text">مخططة</b> · خطة-2026-0067/ت1</div>
+                    <div class="d-flex flex-wrap gap-2 mb-2"><button type="button" class="btn btn-sm btn-brand">تأكيد الإقامة</button><button type="button" class="btn btn-sm btn-outline-secondary">تأجيل</button><button type="button" class="btn btn-sm btn-outline-secondary">نقل المتدربين لخطة أخرى</button><button type="button" class="btn btn-sm btn-outline-danger">إلغاء لعدم الإقبال</button></div>
+                    <button type="button" class="btn btn-sm btn-link px-0 apv-toggle collapsed" data-bs-toggle="collapse" data-bs-target="#seatDet5" aria-expanded="false"><span class="apv-toggle__show">عرض التفاصيل (▼)</span><span class="apv-toggle__hide">إخفاء التفاصيل (▲)</span></button>
+                    <div class="collapse" id="seatDet5"><p class="small app-muted app-stat rounded-2 p-2 mb-0">لا يوجد متدربون مسجلون في هذه الخطة. يمكن تسجيلهم من صفحة طلبات القبول عبر «تسجيل متدرب».</p></div>
+                  </div>
+                </div></div>
+              </div>
+          </div>
+        </section>
+
+        <!-- ================= Program supervisor ================= -->
+        <section class="tab-pane fade" id="pane-supervisor" role="tabpanel" aria-labelledby="tab-supervisor" tabindex="0">
+          <div class="app-info app-rules rounded-2 mb-3">
+            <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-supervisor" aria-expanded="false" aria-controls="rules-supervisor">
+              <i class="ph-duotone ph-info fs-5"></i>
+              <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+              <span class="badge rounded-pill badge-soft-info">4</span>
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="collapse" id="rules-supervisor">
+              <ul class="small mb-0 ps-5 pe-3 pb-3">
+                <li>يُعيَّن مشرف الدورة من فريق إدارة التنفيذ عند الجدولة، ويطلق اجتماع الزوم لتسجيل الحضور.</li>
+                <li>بعد نهاية الدورة يرفع المشرف تقييم المدرب وفق نموذج البرنامج المعتمد من زر «رفع التقييم».</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>تقييم المشرف يظهر في «تقييمات المدربين» وملف المدرب، وحضور الزوم يُسجَّل في «متابعة المتدربين».</li>
+                <li><span class="badge rounded-pill badge-soft-warning me-1">تنبيهات</span>يصل المشرف تذكير قبل يوم من بدء الدورة، وتذكير قبل 24 ساعة من آخر يوم (يوم إتاحة الاختبار).</li>
+              </ul>
+            </div>
+          </div>
+          <section class="card app-card">
+            <div class="card-body">
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                <span class="small app-muted">المشرف:</span>
+                <input type="radio" class="btn-check" name="supFilter" id="supF0" checked><label class="btn btn-sm btn-outline-brand" for="supF0">الكل</label>
+                <input type="radio" class="btn-check" name="supFilter" id="supF1"><label class="btn btn-sm btn-outline-brand" for="supF1">عبداللطيف عبدالعزيز حمد الصالح</label>
+                <input type="radio" class="btn-check" name="supFilter" id="supF2"><label class="btn btn-sm btn-outline-brand" for="supF2">مشرف تجريبي</label>
+                <input type="radio" class="btn-check" name="supFilter" id="supF3"><label class="btn btn-sm btn-outline-brand" for="supF3">منى العتيبي</label>
+              </div>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table app-table--wide align-middle mb-0">
+                  <thead><tr><th>التاريخ</th><th>الدورة</th><th>المدرب</th><th>المشرف</th><th>اجتماع الزوم</th><th>الحضور</th><th>تقييم المشرف</th><th></th></tr></thead>
+                  <tbody>
+                    <tr><td>الاثنين، ١٥ مارس ٢٠٢٧<div class="small app-muted">09:00 – 13:00</div></td><td class="ex-wrap fw-semibold">إعداد التقارير العقارية</td><td class="ex-wrap">—</td><td>مشرف تجريبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الاثنين، ١٦ نوفمبر ٢٠٢٦<div class="small app-muted">16:00 – 20:00</div></td><td class="ex-wrap fw-semibold">إدارة المرافق</td><td class="ex-wrap">—</td><td>مشرف تجريبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الاثنين، ٢ نوفمبر ٢٠٢٦<div class="small app-muted">09:00 – 13:00</div></td><td class="ex-wrap fw-semibold">الوساطة العقارية</td><td class="ex-wrap">—</td><td>مشرف تجريبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الاثنين، ٢٦ أكتوبر ٢٠٢٦<div class="small app-muted">09:00 – 15:00</div></td><td class="ex-wrap fw-semibold">إرشاد مديري الأملاك</td><td class="ex-wrap">—</td><td>منى العتيبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الاثنين، ١٩ أكتوبر ٢٠٢٦<div class="small app-muted">14:00 – 18:00</div></td><td class="ex-wrap fw-semibold">مقدمة في التحليل العقاري</td><td class="ex-wrap">خالد عبدالمحسن محمد البشري</td><td>منى العتيبي</td><td>بث مباشر</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الاثنين، ١٢ أكتوبر ٢٠٢٦<div class="small app-muted">09:00 – 14:00</div></td><td class="ex-wrap fw-semibold">إرشاد مديري الأملاك</td><td class="ex-wrap">سارة محمد الدوسري</td><td>منى العتيبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الخميس، ٨ أكتوبر ٢٠٢٦<div class="small app-muted">10:00 – 12:00</div></td><td class="ex-wrap fw-semibold">جلسة إرشاد: التعامل مع الملاك</td><td class="ex-wrap">خالد بن سعد الحربي</td><td>عبداللطيف عبدالعزيز حمد الصالح</td><td>افتراضي</td><td>—</td><td><span class="badge badge-soft-muted">لم يُسلَّم</span></td><td><div class="d-flex gap-1"><a href="exec-session.html#eval" class="btn btn-sm btn-brand">رفع التقييم</a><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الثلاثاء، ٢٩ سبتمبر ٢٠٢٦<div class="small app-muted">14:00 – 18:00</div></td><td class="ex-wrap fw-semibold">استشارة تقييم فرصة استثمار عقاري</td><td class="ex-wrap">خالد عبدالمحسن محمد البشري</td><td>منى العتيبي</td><td>بث مباشر</td><td>—</td><td><span class="badge badge-soft-info">79% — متمكن</span></td><td><div class="d-flex gap-1"><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الجمعة، ٢٥ سبتمبر ٢٠٢٦<div class="small app-muted">09:00 – 15:00</div></td><td class="ex-wrap fw-semibold">مستدام للمباني التجارية الجديدة</td><td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td><td>منى العتيبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-success">90% — متميز</span></td><td><div class="d-flex gap-1"><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الثلاثاء، ٢٢ سبتمبر ٢٠٢٦<div class="small app-muted">09:00 – 14:00</div></td><td class="ex-wrap fw-semibold">استشارة تقييم فرصة استثمار عقاري</td><td class="ex-wrap">عبدالله سعد المقرن</td><td>منى العتيبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-info">88% — متمكن</span></td><td><div class="d-flex gap-1"><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الثلاثاء، ١٥ سبتمبر ٢٠٢٦<div class="small app-muted">14:00 – 18:00</div></td><td class="ex-wrap fw-semibold">مقدمة في التحليل العقاري</td><td class="ex-wrap">خالد عبدالمحسن محمد البشري</td><td>منى العتيبي</td><td>بث مباشر</td><td>—</td><td><span class="badge badge-soft-info">84% — متمكن</span></td><td><div class="d-flex gap-1"><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الجمعة، ١١ سبتمبر ٢٠٢٦<div class="small app-muted">09:00 – 15:00</div></td><td class="ex-wrap fw-semibold">مستدام للمباني التجارية القائمة</td><td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td><td>منى العتيبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-info">76% — متمكن</span></td><td><div class="d-flex gap-1"><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                    <tr><td>الثلاثاء، ٨ سبتمبر ٢٠٢٦<div class="small app-muted">09:00 – 14:00</div></td><td class="ex-wrap fw-semibold">إرشاد الوسيط العقاري المبتدئ</td><td class="ex-wrap">عبدالله سعد المقرن</td><td>منى العتيبي</td><td>حضوري</td><td>—</td><td><span class="badge badge-soft-success">92% — متميز</span></td><td><div class="d-flex gap-1"><a href="exec-session.html" class="btn btn-sm btn-light">فتح الجلسة <i class="ph ph-arrow-left"></i></a></div></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- ================= Change log ================= -->
+        <section class="tab-pane fade" id="pane-log" role="tabpanel" aria-labelledby="tab-log" tabindex="0">
+          <div class="app-info app-rules rounded-2 mb-3">
+            <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-log" aria-expanded="false" aria-controls="rules-log">
+              <i class="ph-duotone ph-info fs-5"></i>
+              <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+              <span class="badge rounded-pill badge-soft-info">2</span>
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="collapse" id="rules-log">
+              <ul class="small mb-0 ps-5 pe-3 pb-3">
+                <li>سجل بكل تعديل على الخطط: ما تغيّر ومتى ومن طلبه.</li>
+                <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>يشمل تعديلات المواعيد من «الجدولة والمواعيد» وطلبات تعديل آخر يوم من «إدارة المقاعد».</li>
+              </ul>
+            </div>
+          </div>
+          <section class="card app-card">
+            <div class="card-body">
+              <p class="small app-muted">سجل تلقائي: كل تغيير في الجدولة (التاريخ، الوقت، المدرب، المقر، طريقة التنفيذ) يُحفظ هنا برقم الخطة ورقم التعديل ونوع التغيير.</p>
+              <div class="input-group input-group-sm ex-search mb-3">
+                <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+                <input type="search" class="form-control" placeholder="بحث برقم الخطة أو اسم الدورة أو المدرب…" aria-label="بحث في سجل التغييرات">
+              </div>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table app-table--wide align-middle mb-0">
+                  <thead><tr><th>رقم الخطة</th><th>الدورة</th><th>نوع التعديل</th><th>موعد الدورة</th><th>المدرب</th><th>المشرف</th><th>المقر / الرابط</th><th>تاريخ التغيير</th></tr></thead>
+                  <tbody>
+                    <tr><td><span class="app-code">خطة-2026-0060/ت2</span></td><td class="ex-wrap">جلسة إرشاد 2: مرافقة أول صفقة وساطة (مرشد ومستفيد)</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>٢٠‏/١٠‏/٢٠٢٦ · 17:00</td><td class="ex-wrap">—</td><td>—</td><td>عن بعد</td><td>١٣‏/١٠‏/٢٠٢٦، ١٢:٥٦ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0105/ت1</span></td><td class="ex-wrap">برنامج تجريبي: أساسيات الوساطة</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>٥‏/١٠‏/٢٠٢٦</td><td class="ex-wrap">—</td><td>—</td><td>—</td><td>١٢‏/١٠‏/٢٠٢٦، ٦:٤٦ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0102/ت1</span></td><td class="ex-wrap">فحص المباني الجاهزة (تجريبي)</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>١٨‏/١٠‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>—</td><td>—</td><td>١٢‏/١٠‏/٢٠٢٦، ٢:١٨ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0100/ت1</span></td><td class="ex-wrap">نموذج: أساسيات الوساطة العقارية</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>١٨‏/١١‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>—</td><td>—</td><td>١٢‏/١٠‏/٢٠٢٦، ١:٤٠ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0099/ت1</span></td><td class="ex-wrap">فحص المباني الجاهزة (تجريبي)</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>٣‏/١١‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>—</td><td>الرياض</td><td>١٢‏/١٠‏/٢٠٢٦، ١٠:٥١ ص</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0096/ت1</span></td><td class="ex-wrap">الوساطة العقارية</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>٢‏/١١‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>مشرف تجريبي</td><td>قاعة التدريب 1</td><td>١٢‏/١٠‏/٢٠٢٦، ٩:٥٠ ص</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0098/ت1</span></td><td class="ex-wrap">إدارة المرافق</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>١٦‏/١١‏/٢٠٢٦ · 16:00</td><td class="ex-wrap">—</td><td>مشرف تجريبي</td><td>قاعة التدريب 2</td><td>١٢‏/١٠‏/٢٠٢٦، ٩:٥٠ ص</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0095/ت2</span></td><td class="ex-wrap">إرشاد مديري الأملاك</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>٢٦‏/١٠‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>منى العتيبي</td><td>الدمام</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٤٣ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0089/ت3</span></td><td class="ex-wrap">إرشاد مديري الأملاك</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>١٢‏/١٠‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">سارة محمد الدوسري</td><td>منى العتيبي</td><td>الرياض</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٣٤ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0089/ت2</span></td><td class="ex-wrap">إرشاد مديري الأملاك</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>١٢‏/١٠‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>منى العتيبي</td><td>الرياض</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٢٩ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0049/ت2</span></td><td class="ex-wrap">التمويل في المساهمات العقارية</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>٢‏/٨‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">—</td><td>—</td><td>مقر المعهد — الرياض</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٠٧ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0001/ت2</span></td><td class="ex-wrap">نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>١٨‏/١٠‏/٢٠٢٦ · 17:00</td><td class="ex-wrap">—</td><td>—</td><td>بث مباشر (Zoom)</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٠٧ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0023/ت2</span></td><td class="ex-wrap">الوساطة العقارية</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>١٨‏/١٠‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td><td>—</td><td>—</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٠١ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0019/ت2</span></td><td class="ex-wrap">جمعية ملاك</td><td><span class="badge badge-soft-warning">تعديل: المدرب</span></td><td>١٨‏/١٠‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">عبدالله سعد المقرن</td><td>—</td><td>—</td><td>٠٧‏/١٠‏/٢٠٢٦، ١:٠١ م</td></tr>
+                    <tr><td><span class="app-code">خطة-2026-0093/ت1</span></td><td class="ex-wrap">مستدام للمباني التجارية القائمة</td><td><span class="badge badge-soft-success">جدولة أولى</span></td><td>١١‏/٩‏/٢٠٢٦ · 09:00</td><td class="ex-wrap">بندر ابراهيم حسن الفرشوطي</td><td>منى العتيبي</td><td>الدمام</td><td>٠٧‏/١٠‏/٢٠٢٦، ١١:٥٤ ص</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+
+      </div>
+
+    </main>
+
+    <div class="modal fade" id="cancelSlotModal" tabindex="-1" aria-labelledby="cancelSlotModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content app-modal">
+          <div class="modal-body text-center p-4">
+            <span class="app-modal__icon icon-tile--danger d-inline-flex align-items-center justify-content-center mb-3"><i class="ph-duotone ph-calendar-x"></i></span>
+            <h2 class="h6 fw-semibold" id="cancelSlotModalTitle">إلغاء الموعد؟</h2>
+            <p class="small app-muted mb-0">عند إلغاء برنامج، سجّل قيمته رصيدًا إلكترونيًا للمتدربين المسجلين.</p>
+          </div>
+          <div class="modal-footer border-0 justify-content-center gap-2 pt-0 pb-4">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">رجوع</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إلغاء الموعد</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
