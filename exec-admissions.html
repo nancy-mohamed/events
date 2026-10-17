@@ -1515,7 +1515,224 @@
       </div>
     </div>
 
-<!-- @leave-modals -->
+    <!-- Leave decision: not accepting the excuse -->
+    <div class="modal fade" id="notAcceptModal" tabindex="-1" aria-labelledby="notAcceptModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" data-static-form>
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="notAcceptModalTitle"><span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-x-circle"></i></span>إدخال مطلوب</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <label class="form-label small" for="notAcceptReason">سبب عدم قبول العذر: <span class="text-danger">*</span></label>
+            <textarea class="form-control" id="notAcceptReason" rows="3" required></textarea>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-danger">حفظ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Leave decision: mandatory attendance -->
+    <div class="modal fade" id="mandateModal" tabindex="-1" aria-labelledby="mandateModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" data-static-form>
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="mandateModalTitle"><span class="icon-tile icon-tile--sm icon-tile--warning"><i class="ph-duotone ph-user-focus"></i></span>إدخال مطلوب</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <label class="form-label small" for="mandateNote">ملاحظة الإلزام بالحضور (اختياري):</label>
+            <textarea class="form-control" id="mandateNote" rows="3"></textarea>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-brand">حفظ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Leave decision: reschedule the exam / retake the exam -->
+    <div class="modal fade" id="rescheduleExamModal" tabindex="-1" aria-labelledby="rescheduleExamModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" data-static-form>
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="rescheduleExamModalTitle"><span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-calendar-dots"></i></span>تغيير جدولة الاختبار</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <p class="small app-muted">يُحدَّث موعد اختبار المتدرب في بوابة الاختبارات.</p>
+            <div class="mb-3">
+              <label class="form-label small" for="rsForm">نموذج الاختبار <span class="text-danger">*</span></label>
+              <select class="form-select" id="rsForm" required>
+                <option value="" selected>— اختر —</option>
+                <option>اختبار ( صياغة وتقديم الاستشارات)</option>
+                <option>اختبار أسس الاستشارات العقارية</option>
+                <option>اختبار أسس الصناعة العقارية</option>
+                <option>اختبار إدارة الأصول العقارية</option>
+                <option>اختبار إدارة الأملاك البعدي (نسخة)</option>
+                <option>اختبار إدارة العقود العقارية</option>
+                <option>اختبار إدارة المخاطر العقارية</option>
+                <option>اختبار إدارة المزادات العقارية</option>
+                <option>اختبار إعداد التقارير العقارية</option>
+                <option>اختبار ادارة البيانات في الأسواق العقارية</option>
+                <option>اختبار اساسيات التسجيل العيني</option>
+                <option>اختبار الأخلاقيات في المجال العقاري</option>
+                <option>اختبار الإدارة المالية في القطاع العقاري</option>
+                <option>اختبار الاحتيال ومكافحة غسل الأموال في القطاع العقاري</option>
+                <option>اختبار الاستثمار في القطاع العقاري</option>
+                <option>اختبار التمويل العقاري</option>
+                <option>اختبار الرهن العقاري</option>
+                <option>اختبار السوق العقاري السعودي</option>
+                <option>اختبار المساهمات العقارية</option>
+                <option>اختبار الوساطة العقارية</option>
+                <option>اختبار تحليل الأسواق العقارية</option>
+                <option>اختبار تحليل المؤشرات العقارية</option>
+                <option>اختبار جمعية ملاك</option>
+                <option>اختبار دراسات الجدوى للمشاريع العقارية</option>
+                <option>اختبار فحص المباني الجاهزة</option>
+                <option>اختبار فرز الوحدات العقارية</option>
+                <option>اختبار قراءة التقارير العقارية</option>
+                <option>اختبار مقدمة في التحليل العقاري</option>
+                <option>اختبار مهارات التفكير وحل المشكلات</option>
+              </select>
+            </div>
+            <div class="row g-2">
+              <div class="col-sm-4"><label class="form-label small" for="rsDate">التاريخ <span class="text-danger">*</span></label><input type="date" class="form-control" id="rsDate" required></div>
+              <div class="col-sm-4"><label class="form-label small" for="rsFrom">من</label><input type="time" class="form-control" id="rsFrom"></div>
+              <div class="col-sm-4"><label class="form-label small" for="rsTo">إلى</label><input type="time" class="form-control" id="rsTo"></div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-brand">تنفيذ القرار</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal fade" id="retakeExamModal" tabindex="-1" aria-labelledby="retakeExamModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" data-static-form>
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="retakeExamModalTitle"><span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-arrow-counter-clockwise"></i></span>إعادة الاختبار</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <p class="small app-muted">تُفتح محاولة جديدة للمتدرب في الموعد المحدد.</p>
+            <div class="mb-3">
+              <label class="form-label small" for="rtForm">نموذج الاختبار <span class="text-danger">*</span></label>
+              <select class="form-select" id="rtForm" required>
+                <option value="" selected>— اختر —</option>
+                <option>اختبار ( صياغة وتقديم الاستشارات)</option>
+                <option>اختبار أسس الاستشارات العقارية</option>
+                <option>اختبار أسس الصناعة العقارية</option>
+                <option>اختبار إدارة الأصول العقارية</option>
+                <option>اختبار إدارة الأملاك البعدي (نسخة)</option>
+                <option>اختبار إدارة العقود العقارية</option>
+                <option>اختبار إدارة المخاطر العقارية</option>
+                <option>اختبار إدارة المزادات العقارية</option>
+                <option>اختبار إعداد التقارير العقارية</option>
+                <option>اختبار ادارة البيانات في الأسواق العقارية</option>
+                <option>اختبار اساسيات التسجيل العيني</option>
+                <option>اختبار الأخلاقيات في المجال العقاري</option>
+                <option>اختبار الإدارة المالية في القطاع العقاري</option>
+                <option>اختبار الاحتيال ومكافحة غسل الأموال في القطاع العقاري</option>
+                <option>اختبار الاستثمار في القطاع العقاري</option>
+                <option>اختبار التمويل العقاري</option>
+                <option>اختبار الرهن العقاري</option>
+                <option>اختبار السوق العقاري السعودي</option>
+                <option>اختبار المساهمات العقارية</option>
+                <option>اختبار الوساطة العقارية</option>
+                <option>اختبار تحليل الأسواق العقارية</option>
+                <option>اختبار تحليل المؤشرات العقارية</option>
+                <option>اختبار جمعية ملاك</option>
+                <option>اختبار دراسات الجدوى للمشاريع العقارية</option>
+                <option>اختبار فحص المباني الجاهزة</option>
+                <option>اختبار فرز الوحدات العقارية</option>
+                <option>اختبار قراءة التقارير العقارية</option>
+                <option>اختبار مقدمة في التحليل العقاري</option>
+                <option>اختبار مهارات التفكير وحل المشكلات</option>
+              </select>
+            </div>
+            <div class="row g-2">
+              <div class="col-sm-4"><label class="form-label small" for="rtDate">التاريخ <span class="text-danger">*</span></label><input type="date" class="form-control" id="rtDate" required></div>
+              <div class="col-sm-4"><label class="form-label small" for="rtFrom">من</label><input type="time" class="form-control" id="rtFrom"></div>
+              <div class="col-sm-4"><label class="form-label small" for="rtTo">إلى</label><input type="time" class="form-control" id="rtTo"></div>
+            </div>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-brand">تنفيذ القرار</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Leave decision: move the trainee to another plan -->
+    <div class="modal fade" id="transferPlanModal" tabindex="-1" aria-labelledby="transferPlanModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content app-modal" data-static-form>
+          <div class="modal-header border-0 pb-0">
+            <h2 class="modal-title h6 fw-semibold d-flex align-items-center gap-2" id="transferPlanModalTitle"><span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-arrows-left-right"></i></span>نقل لخطة أخرى</h2>
+            <button type="button" class="btn-close ms-0 me-auto" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+          </div>
+          <div class="modal-body">
+            <p class="small app-muted">يُنقل تسجيل المتدرب إلى الخطة المختارة — تظهر فقط الخطط «المجدولة» التي لم تُقَم بعد.</p>
+            <label class="form-label small" for="tpPlan">الخطة الجديدة <span class="text-danger">*</span></label>
+            <select class="form-select" id="tpPlan" required>
+              <option value="" selected>— اختر الخطة —</option>
+              <option>خطة-2026-0102/ت1 · فحص المباني الجاهزة (تجريبي) · 2026-10-18</option>
+              <option>خطة-2026-0023/ت2 · الوساطة العقارية · 2026-10-18</option>
+              <option>خطة-2026-0019/ت2 · جمعية ملاك · 2026-10-18</option>
+              <option>خطة-2026-0016/ت2 · الاحتيال ومكافحة غسل الأموال في القطاع العقاري · 2026-10-18</option>
+              <option>خطة-2026-0103/ت1 · فحص المباني الجاهزة (تجريبي) · 2026-10-19</option>
+              <option>خطة-2026-0092/ت1 · مقدمة في التحليل العقاري · 2026-10-19</option>
+              <option>خطة-2026-0060/ت2 · جلسة إرشاد 2: مرافقة أول صفقة وساطة (مرشد ومستفيد) · 2026-10-20</option>
+              <option>خطة-2026-0104/ت1 · فحص المباني الجاهزة (تجريبي) · 2026-10-20</option>
+              <option>خطة-2026-0064/ت1 · جلسة إرشاد جماعية: التعاقدات وإدارة الملاك (مرشد ومجموعة) · 2026-10-22</option>
+              <option>خطة-2026-0017/ت1 · التسويق العقاري (مدمجة) · 2026-10-25</option>
+              <option>خطة-2026-0024/ت1 · التمويل العقاري · 2026-10-25</option>
+              <option>خطة-2026-0020/ت1 · مدير عقار مشترك · 2026-10-25</option>
+              <option>خطة-2026-0040/ت1 · المساهمات العقارية · 2026-10-25</option>
+              <option>خطة-2026-0095/ت2 · إرشاد مديري الأملاك · 2026-10-26</option>
+              <option>خطة-2026-0061/ت1 · جلسة إرشاد 3: مراجعة الأداء والتوجيه المهني (مرشد ومستفيد) · 2026-10-27</option>
+              <option>خطة-2026-0025/ت1 · السوق العقاري السعودي · 2026-11-01</option>
+              <option>خطة-2026-0041/ت1 · الادارة المالية بالمساهمات العقارية · 2026-11-01</option>
+              <option>خطة-2026-0042/ت1 · نموذج: أساسيات الوساطة العقارية · 2026-11-01</option>
+              <option>خطة-2026-0018/ت1 · مدخل حساب الملاءة المالية العقارية (مسار) · 2026-11-01</option>
+              <option>خطة-2026-0021/ت1 · دور التحكيم في المنازعات العقارية · 2026-11-01</option>
+              <option>خطة-2026-0099/ت1 · فحص المباني الجاهزة (تجريبي) · 2026-11-03</option>
+              <option>خطة-2026-0022/ت1 · نظام التحكيم السعودي والقواعد الإجرائية لمركز التحكيم العقاري · 2026-11-08</option>
+              <option>خطة-2026-0043/ت1 · نموذج: التسويق العقاري الرقمي · 2026-11-08</option>
+              <option>خطة-2026-0029/ت1 · الإدارة المالية في القطاع العقاري · 2026-11-08</option>
+              <option>خطة-2026-0030/ت1 · إدارة المخاطر العقارية · 2026-11-15</option>
+              <option>خطة-2026-0100/ت1 · نموذج: أساسيات الوساطة العقارية · 2026-11-18</option>
+              <option>خطة-2026-0101/ت1 · نموذج: أساسيات الوساطة العقارية · 2026-11-19</option>
+              <option>خطة-2026-0031/ت1 · المطور العقاري لمشاريع البيع على الخارطة · 2026-11-22</option>
+              <option>خطة-2026-0032/ت1 · أسس الصناعة العقارية · 2026-11-29</option>
+              <option>خطة-2026-0033/ت1 · مهارات التفكير وحل المشكلات · 2026-12-06</option>
+              <option>خطة-2026-0034/ت1 · دراسات الجدوى للمشاريع العقارية · 2026-12-13</option>
+              <option>خطة-2026-0035/ت1 · الاستثمار في القطاع العقاري · 2026-12-20</option>
+              <option>خطة-2026-0036/ت1 · ادارة البيانات في الأسواق العقارية · 2026-12-27</option>
+              <option>خطة-2027-0037/ت1 · أسس الاستشارات العقارية · 2027-01-03</option>
+              <option>خطة-2027-0038/ت1 · قراءة التقارير العقارية · 2027-01-10</option>
+              <option>خطة-2027-0039/ت1 · ( صياغة وتقديم الاستشارات) · 2027-01-17</option>
+              <option>خطة-2027-0002/ت1 · الوساطة العقارية · 2027-02-18</option>
+              <option>خطة-2027-0003/ت1 · السوق العقاري السعودي · 2027-02-21</option>
+              <option>خطة-2027-0004/ت1 · الإدارة المالية في القطاع العقاري · 2027-02-23</option>
+            </select>
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+            <button type="submit" class="btn btn-brand">تنفيذ القرار</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <footer class="app-footer text-center small py-3 border-top">
       © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
