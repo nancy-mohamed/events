@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>لوحة تحكم تنفيذ البرامج | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="assets/vendor/phosphor/duotone/style.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="exec-dashboard.html" class="d-inline-flex">
+          <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <div class="dropdown dept-switch">
+          <button type="button" class="dept-switch__btn dept--green w-100 d-flex align-items-center gap-2" id="btnDeptSwitch" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="تبديل الإدارة">
+            <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
+            <span class="flex-grow-1 min-w-0 text-start">
+              <span class="d-block dept-switch__label">الإدارة الحالية</span>
+              <span class="d-block fw-semibold text-truncate dept-switch__name">إدارة تنفيذ البرامج</span>
+            </span>
+            <i class="ph ph-caret-up-down app-muted"></i>
+          </button>
+          <div class="dropdown-menu shadow border-0 p-2 dept-switch__menu">
+            <div class="input-group input-group-sm mb-2">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="deptSwitchSearch" placeholder="انتقل إلى إدارة" aria-label="انتقل إلى إدارة" autocomplete="off">
+            </div>
+            <div class="dept-switch__list">
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2" href="index.html">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تطوير البرامج</span>
+                  <span class="small dept-switch__meta">6 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2 active" href="exec-dashboard.html" aria-current="true">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تنفيذ البرامج</span>
+                  <span class="small dept-switch__meta">الحالية</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="departments.html#trainers">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chalkboard-teacher"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة المدربين</span>
+                  <span class="small dept-switch__meta">5 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--danger d-flex align-items-center gap-2" href="departments.html#support">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-headset"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الدعم الفني</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--warning d-flex align-items-center gap-2" href="departments.html#finance">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-coins"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>الإدارة المالية</span>
+                  <span class="small dept-switch__meta">4 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--cyan d-flex align-items-center gap-2" href="departments.html#reports">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chart-bar"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة التقارير</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--teal d-flex align-items-center gap-2" href="departments.html#trainee">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-user"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المتدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="departments.html#trainer">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-identification-badge"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="departments.html#org">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-buildings"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المنشأة</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2" href="departments.html#partners">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-handshake"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الشراكات</span>
+                  <span class="small dept-switch__meta">3 صفحات</span>
+                </a>
+            </div>
+            <p class="dept-switch__empty small app-muted text-center py-2 mb-0 d-none">لا توجد إدارة بهذا الاسم</p>
+            <div class="d-flex justify-content-between align-items-center border-top small pt-2 mt-1 px-1">
+              <a href="departments.html" class="text-decoration-none">عرض كل الإدارات</a>
+              <span class="app-muted"><kbd>Ctrl</kbd> + <kbd>K</kbd></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="exec-dashboard.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <div class="app-nav__group">التنفيذ</div>
+        <a href="exec-admissions.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">8</span>
+        </a>
+        <a href="exec-scheduling.html" class="app-nav__link"><i class="ph-duotone ph-calendar-dots"></i><span>الجدولة</span></a>
+        <a href="exec-trainees.html" class="app-nav__link"><i class="ph-duotone ph-student"></i><span>المتدربون</span></a>
+        <div class="app-nav__group">الإدارة</div>
+        <a href="departments.html" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">126</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="exec-dashboard.html#alertsCard" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-user-circle-minus"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">جلسة بلا مدرب</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فحص المباني الجاهزة (تجريبي) · 2026-10-18</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="exec-dashboard.html#alertsCard" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-user-circle-minus"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">جلسة بلا مدرب</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي · 2026-10-18</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="exec-dashboard.html#alertsCard" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-user-circle-minus"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">جلسة بلا مدرب</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فحص المباني الجاهزة (تجريبي) · 2026-10-19</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="exec-dashboard.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تنفيذ البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="departments.html" data-dept-switch-open><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <!-- Page title -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 pb-1">
+        <h1 class="app-page-title h5 mb-0">لوحة تحكم تنفيذ البرامج</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="departments.html">الإدارات</a></li>
+            <li class="breadcrumb-item"><a href="exec-dashboard.html">إدارة تنفيذ البرامج</a></li>
+            <li class="breadcrumb-item active" aria-current="page">لوحة التحكم</li>
+          </ol>
+        </nav>
+      </div>
+      <p class="app-page-subtitle small pb-3 mb-0">متابعة الدورات المنفذة والملغاة والحضور والغياب والنتائج وساعات المدربين، مع تقويم الدورات التفصيلي.</p>
+
+      <!-- Business rules -->
+      <div class="app-info app-rules rounded-2 mb-3">
+        <button class="btn app-rules__toggle w-100 d-flex align-items-center gap-2 p-3 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#rules-dashboard" aria-expanded="false" aria-controls="rules-dashboard">
+          <i class="ph-duotone ph-info fs-5"></i>
+          <span class="fw-semibold small flex-grow-1">قواعد العمل في هذا التبويب</span>
+          <span class="badge rounded-pill badge-soft-info">3</span>
+          <i class="ph ph-caret-down"></i>
+        </button>
+        <div class="collapse" id="rules-dashboard">
+          <ul class="small mb-0 ps-5 pe-3 pb-3">
+            <li>لوحة التحكم للعرض والمتابعة فقط — كل إجراء يتم في شاشته: الجدولة، طلبات الاعتماد، المتدربون.</li>
+            <li>تُحسب الدورات المنفذة والملغاة والحضور والنتائج من الخطط المجدولة وسجلات الحضور ومحاولات الاختبار.</li>
+            <li><span class="badge rounded-pill badge-soft-info me-1">ترابط</span>تستقبل البرامج المعتمدة من إدارة التطوير، وأسماء المدربين من «إسناد الدورات» بإدارة المدربين، والطلبات من بوابتي المتدرب والمنشأة.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="card app-card mb-3">
+        <div class="card-body d-flex flex-wrap align-items-center gap-2">
+          <span class="small fw-semibold app-heading-text">الفلاتر:</span>
+          <select class="form-select form-select-sm w-auto" aria-label="الفترة">
+            <option selected>الكل</option>
+            <option>الشهر الحالي</option>
+            <option>آخر 3 أشهر</option>
+            <option>السنة الحالية</option>
+          </select>
+          <select class="form-select form-select-sm w-auto" aria-label="الشهر">
+            <option selected>كل الأشهر</option>
+            <option>سبتمبر</option>
+            <option>أغسطس</option>
+            <option>يوليو</option>
+            <option>يونيو</option>
+            <option>مايو</option>
+            <option>ابريل</option>
+            <option>مارس</option>
+            <option>فبراير</option>
+            <option>يناير</option>
+          </select>
+          <div class="input-group input-group-sm app-toolbar-search">
+            <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+            <input type="search" class="form-control" placeholder="بحث باسم الدورة أو المدرب" aria-label="بحث باسم الدورة أو المدرب">
+          </div>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <div class="row g-3 mb-3">
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-start">
+            <div><div class="app-muted small">دورات منفذة</div><div class="app-kpi-value">369</div><div class="small text-brand-danger">9 دورة ملغاة</div></div>
+            <span class="icon-tile icon-tile--green"><i class="ph-duotone ph-calendar-check"></i></span>
+          </div></div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-start">
+            <div><div class="app-muted small">عدد المسجلين</div><div class="app-kpi-value">18468</div><div class="small app-muted">17721 حاضرون · 747 غائبون</div></div>
+            <span class="icon-tile icon-tile--navy"><i class="ph-duotone ph-users-three"></i></span>
+          </div></div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-start">
+            <div><div class="app-muted small">ساعات المدربين</div><div class="app-kpi-value">١٣٧٬٣٠٠</div><div class="small app-muted">إجمالي ساعات التدريب المنفذة</div></div>
+            <span class="icon-tile icon-tile--cyan"><i class="ph-duotone ph-clock"></i></span>
+          </div></div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="card app-card h-100"><div class="card-body d-flex justify-content-between align-items-start">
+            <div><div class="app-muted small">جلسات قادمة</div><div class="app-kpi-value">56</div><div class="small app-muted">12 هذا الأسبوع</div></div>
+            <span class="icon-tile icon-tile--warning"><i class="ph-duotone ph-calendar-dots"></i></span>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- Alerts / Upcoming sessions -->
+      <div class="row g-3 mb-3">
+        <div class="col-lg-8">
+          <section class="card app-card h-100" id="alertsCard" aria-labelledby="alertsTitle">
+            <div class="card-body">
+              <h2 class="app-card__title d-flex align-items-center gap-2 mb-3" id="alertsTitle">
+                <span class="icon-tile icon-tile--sm icon-tile--danger"><i class="ph-duotone ph-bell-ringing"></i></span>التنبيهات
+                <span class="badge rounded-pill badge-soft-danger ms-auto">126</span>
+              </h2>
+              <ul class="list-unstyled mb-0 app-scroll-list ex-alerts">
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «فحص المباني الجاهزة (تجريبي)» بتاريخ 2026-10-18 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي» بتاريخ 2026-10-18 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «فحص المباني الجاهزة (تجريبي)» بتاريخ 2026-10-19 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «جلسة إرشاد 2: مرافقة أول صفقة وساطة (مرشد ومستفيد)» بتاريخ 2026-10-20 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «فحص المباني الجاهزة (تجريبي)» بتاريخ 2026-10-20 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «التسويق العقاري (مدمجة)» بتاريخ 2026-10-25 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «التمويل العقاري» بتاريخ 2026-10-25 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «مدير عقار مشترك» بتاريخ 2026-10-25 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «المساهمات العقارية» بتاريخ 2026-10-25 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «إرشاد مديري الأملاك» بتاريخ 2026-10-26 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «السوق العقاري السعودي» بتاريخ 2026-11-01 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «الادارة المالية بالمساهمات العقارية» بتاريخ 2026-11-01 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «نموذج: أساسيات الوساطة العقارية» بتاريخ 2026-11-01 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «مدخل حساب الملاءة المالية العقارية (مسار)» بتاريخ 2026-11-01 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+                <li class="ex-alert"><a href="exec-scheduling.html" class="d-flex align-items-center gap-2"><span class="badge badge-soft-danger">عاجل</span><span class="flex-grow-1">جلسة «دور التحكيم في المنازعات العقارية» بتاريخ 2026-11-01 بلا مدرب</span><i class="ph ph-arrow-left"></i></a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-4">
+          <section class="card app-card h-100" aria-labelledby="upcomingTitle">
+            <div class="card-body">
+              <div class="d-flex align-items-center justify-content-between mb-3">
+                <h2 class="app-card__title d-flex align-items-center gap-2 mb-0" id="upcomingTitle"><span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-calendar-dots"></i></span>الجلسات القادمة</h2>
+                <a href="exec-scheduling.html" class="app-link small">الكل <i class="ph ph-arrow-left"></i></a>
+              </div>
+              <ul class="list-unstyled mb-0 ex-sessions">
+                <li><a href="exec-session.html"><span class="d-block fw-semibold">فحص المباني الجاهزة (تجريبي)</span><span class="d-block small app-muted">2026-10-18 · 09:00 · بلا مدرب</span></a></li>
+                <li><a href="exec-session.html"><span class="d-block fw-semibold">الوساطة العقارية</span><span class="d-block small app-muted">2026-10-18 · 09:00 · بندر ابراهيم حسن الفرشوطي</span></a></li>
+                <li><a href="exec-session.html"><span class="d-block fw-semibold">جمعية ملاك</span><span class="d-block small app-muted">2026-10-18 · 09:00 · عبدالله سعد المقرن</span></a></li>
+                <li><a href="exec-session.html"><span class="d-block fw-semibold">نموذج: التسويق العقاري الرقمي — ضمن المسار النموذجي</span><span class="d-block small app-muted">2026-10-18 · 17:00 · بلا مدرب</span></a></li>
+                <li><a href="exec-session.html"><span class="d-block fw-semibold">الاحتيال ومكافحة غسل الأموال في القطاع العقاري</span><span class="d-block small app-muted">2026-10-18 · 09:00 · خالد عبدالمحسن محمد البشري</span></a></li>
+                <li><a href="exec-session.html"><span class="d-block fw-semibold">فحص المباني الجاهزة (تجريبي)</span><span class="d-block small app-muted">2026-10-19 · 09:00 · بلا مدرب</span></a></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Admissions (live) -->
+      <section class="card app-card mb-3" aria-labelledby="admLiveTitle">
+        <div class="card-body">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <h2 class="app-card__title d-flex align-items-center gap-2 mb-0" id="admLiveTitle"><span class="icon-tile icon-tile--sm icon-tile--navy"><i class="ph-duotone ph-paperclip"></i></span>طلبات القبول والمرفقات — مباشر <span class="app-live-dot is-live ms-1"></span></h2>
+            <a href="exec-admissions.html" class="app-link small">صفحة طلبات الاعتماد <i class="ph ph-arrow-left"></i></a>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">الطلبات المقدمة</div><div class="fs-5 fw-semibold app-heading-text">5,954</div><div class="small app-muted">9 متدرب</div></div></div>
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">المقبولة</div><div class="fs-5 fw-semibold text-brand-green">4,599</div><div class="small app-muted">8 تحت المراجعة</div></div></div>
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">المرفوضة</div><div class="fs-5 fw-semibold text-brand-danger">1,347</div><div class="small app-muted">0 ملغى</div></div></div>
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">أُعيد رفعها وقُبلت</div><div class="fs-5 fw-semibold app-heading-text">14</div><div class="small app-muted">من 20 حالة مرت برفض</div></div></div>
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">رفض نهائي (لم تُقبل)</div><div class="fs-5 fw-semibold text-brand-danger">6</div><div class="small app-muted">حالات انتهت بالرفض</div></div></div>
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">رُفضت 3 مرات فأكثر</div><div class="fs-5 fw-semibold text-brand-warning">16</div><div class="small app-muted">من 48 حالة فريدة</div></div></div>
+            <div class="col-6 col-md-3"><div class="app-stat rounded-2 p-3 h-100"><div class="small app-muted">متدربون بلا أي قبول</div><div class="fs-5 fw-semibold app-heading-text">1</div><div class="small app-muted">لم يُقبل لهم أي مرفق</div></div></div>
+          </div>
+          <div class="row g-3">
+            <div class="col-lg-6">
+              <h3 class="apv-h">أكثر الدورات رفضًا</h3>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead><tr><th>الاسم</th><th>الطلبات</th><th>مقبولة</th><th>مرفوضة</th></tr></thead>
+                  <tbody>
+                    <tr><td class="app-table__name">المهارات السلوكية والأخلاقيات للعاملين في التسجيل العيني</td><td>1,864</td><td class="text-brand-green">1,149</td><td class="text-brand-danger">715</td></tr>
+                    <tr><td class="app-table__name">أساسيات التسجيــل العيني للعقار</td><td>1,736</td><td class="text-brand-green">1,455</td><td class="text-brand-danger">281</td></tr>
+                    <tr><td class="app-table__name">فحص المباني الجاهزة</td><td>652</td><td class="text-brand-green">564</td><td class="text-brand-danger">88</td></tr>
+                    <tr><td class="app-table__name">الأستشاري الهندسي لمشاريع البيع على الخارطة</td><td>505</td><td class="text-brand-green">426</td><td class="text-brand-danger">79</td></tr>
+                    <tr><td class="app-table__name">فحص جودة البناء</td><td>133</td><td class="text-brand-green">75</td><td class="text-brand-danger">58</td></tr>
+                    <tr><td class="app-table__name">فرز الوحدات العقارية</td><td>376</td><td class="text-brand-green">341</td><td class="text-brand-danger">35</td></tr>
+                    <tr><td class="app-table__name">غير محددة</td><td>26</td><td class="text-brand-green">10</td><td class="text-brand-danger">16</td></tr>
+                    <tr><td class="app-table__name">دورة مستدام للمباني التجارية الجديدة</td><td>223</td><td class="text-brand-green">208</td><td class="text-brand-danger">15</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h3 class="apv-h">أكثر أنواع المرفقات رفضًا</h3>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead><tr><th>الاسم</th><th>الطلبات</th><th>مرفوضة</th></tr></thead>
+                  <tbody>
+                    <tr><td class="app-table__name">شهادة اجتياز دورة اساسيات التسجيل العيني</td><td>1,868</td><td class="text-brand-danger">717</td></tr>
+                    <tr><td class="app-table__name">شهادة بكالوريوس في تخصص القانون او تخصص الشريعة الإسلامية.</td><td>1,742</td><td class="text-brand-danger">281</td></tr>
+                    <tr><td class="app-table__name">رخصة من الهيئة السعودية للمهندسين</td><td>505</td><td class="text-brand-danger">79</td></tr>
+                    <tr><td class="app-table__name">شهادة بكالوريوس هندسة مدنية او معمارية و عضوية الهيئة السعودية للمهندسين سارية المفعول، وخبرة لا تقل عن 3 سنوات في مجال الإشراف الهندسي.</td><td>133</td><td class="text-brand-danger">58</td></tr>
+                    <tr><td class="app-table__name">عضوية هيئة المهندسين فقط ( عضوية اعتماد مهني / عضوية طالب )</td><td>577</td><td class="text-brand-danger">52</td></tr>
+                    <tr><td class="app-table__name">حاصل على بكالوريوس هندسي (مدني،معماري، ميكانيكي، كهربائي)</td><td>328</td><td class="text-brand-danger">49</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Monthly report -->
+      <section class="card app-card mb-3" aria-labelledby="monthlyTitle">
+        <div class="card-body">
+          <h2 class="app-card__title d-flex align-items-center gap-2 mb-1" id="monthlyTitle"><span class="icon-tile icon-tile--sm icon-tile--teal"><i class="ph-duotone ph-table"></i></span>تقرير الدورات الشامل — حسب الشهر</h2>
+          <p class="small app-muted mb-3">أرقام كل الأشهر — اضغط اسم الشهر لعرض مؤشراته</p>
+          <div class="table-responsive border rounded-2">
+            <table class="table app-table align-middle mb-0">
+              <thead><tr><th>الشهر</th><th>الدورات</th><th>ملغاة</th><th>المسجلون</th><th>الحضور</th><th>الغياب</th><th>الناجحون</th><th>الراسبون</th><th>ساعات المدربين</th></tr></thead>
+              <tbody>
+                <tr><td><a href="#" class="app-link fw-semibold">يناير</a></td><td>45</td><td>3</td><td>1942</td><td>1927</td><td>15</td><td>1473</td><td>186</td><td>١٥٬٦٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">فبراير</a></td><td>42</td><td>3</td><td>2040</td><td>2019</td><td>21</td><td>1694</td><td>243</td><td>١٦٬٢٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">مارس</a></td><td>28</td><td>1</td><td>1031</td><td>1018</td><td>13</td><td>768</td><td>150</td><td>١٠٬٢٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">ابريل</a></td><td>42</td><td>—</td><td>2256</td><td>2109</td><td>147</td><td>1464</td><td>180</td><td>١٥٬٠٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">مايو</a></td><td>37</td><td>2</td><td>1473</td><td>1456</td><td>17</td><td>1193</td><td>183</td><td>١٢٬٣٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">يونيو</a></td><td>44</td><td>—</td><td>2087</td><td>1914</td><td>173</td><td>1444</td><td>215</td><td>١٥٬٤٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">يوليو</a></td><td>52</td><td>—</td><td>2643</td><td>2448</td><td>195</td><td>1752</td><td>196</td><td>١٩٬١٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">أغسطس</a></td><td>59</td><td>—</td><td>3582</td><td>3421</td><td>161</td><td>2663</td><td>233</td><td>٢٢٬٣٠٠</td></tr>
+                <tr><td><a href="#" class="app-link fw-semibold">سبتمبر</a></td><td>29</td><td>—</td><td>1414</td><td>1409</td><td>5</td><td>546</td><td>58</td><td>١١٬٢٠٠</td></tr>
+              </tbody>
+              <tfoot class="ex-total"><tr><th>الإجمالي</th><th>378</th><th>9</th><th>18468</th><th>17721</th><th>747</th><th>12997</th><th>1644</th><th>١٣٧٬٣٠٠</th></tr></tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scheduled sessions by month -->
+      <section class="card app-card" aria-labelledby="byMonthTitle">
+        <div class="card-body">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <h2 class="app-card__title d-flex align-items-center gap-2 mb-0" id="byMonthTitle"><span class="icon-tile icon-tile--sm icon-tile--green"><i class="ph-duotone ph-calendar-dots"></i></span>الجلسات المجدولة — حسب الشهر</h2>
+            <select class="form-select form-select-sm w-auto" aria-label="الشهر">
+              <option selected>2027-03</option>
+              <option>2027-02</option>
+              <option>2027-01</option>
+              <option>2026-12</option>
+              <option>2026-11</option>
+              <option>2026-10</option>
+              <option>2026-09</option>
+              <option>2026-08</option>
+              <option>2026-07</option>
+            </select>
+          </div>
+          <div class="table-responsive border rounded-2">
+            <table class="table app-table align-middle mb-0">
+              <thead><tr><th>البرنامج</th><th>المدرب</th><th>التاريخ</th><th>الوقت</th><th>المقاعد</th><th>المقبولون</th><th>التسجيل</th></tr></thead>
+              <tbody>
+                <tr><td class="app-table__name">مهارات التفكير وحل المشكلات</td><td>—</td><td>2027-03-01</td><td>09:00 — 13:00</td><td>30</td><td>0</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+                <tr><td class="app-table__name">دراسات الجدوى للمشاريع العقارية</td><td>—</td><td>2027-03-02</td><td>09:00 — 13:00</td><td>30</td><td>3</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+                <tr><td class="app-table__name">الاستثمار في القطاع العقاري</td><td>—</td><td>2027-03-03</td><td>09:00 — 13:00</td><td>30</td><td>0</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+                <tr><td class="app-table__name">ادارة البيانات في الأسواق العقارية</td><td>—</td><td>2027-03-04</td><td>09:00 — 13:00</td><td>30</td><td>0</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+                <tr><td class="app-table__name">تحليل الأسواق العقارية</td><td>—</td><td>2027-03-08</td><td>09:00 — 13:00</td><td>30</td><td>0</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+                <tr><td class="app-table__name">تحليل المؤشرات العقارية</td><td>—</td><td>2027-03-09</td><td>09:00 — 13:00</td><td>30</td><td>0</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+                <tr><td class="app-table__name">إعداد التقارير العقارية</td><td>—</td><td>2027-03-15</td><td>09:00 — 13:00</td><td>30</td><td>0</td><td><span class="badge badge-soft-success">مفتوح</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- Vendors -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <!-- App -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

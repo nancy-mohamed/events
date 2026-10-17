@@ -883,3 +883,16 @@ a.dept-page:hover { background-color: var(--app-surface-hover); border-color: va
   flex-shrink: 0;
 }
 .dept-page__title { color: var(--app-heading); }
+
+/* ---------- Exec department (إدارة تنفيذ البرامج) ---------- */
+.ex-alert + .ex-alert { margin-top: 0.4rem; }
+.ex-alert a { color: inherit; text-decoration: none; border: 1px solid var(--app-danger-soft); background-color: var(--app-danger-soft); border-radius: 6px; padding: 0.5rem 0.75rem; font-size: 0.82rem; }
+.ex-alert a:hover { border-color: var(--app-danger); }
+.ex-sessions li + li { border-top: 1px solid var(--app-border); }
+.ex-sessions a { display: block; padding: 0.6rem 0; color: inherit; text-decoration: none; }
+.ex-sessions a:hover .fw-semibold { color: var(--app-heading); text-decoration: underline; }
+.ex-total th { background-color: var(--app-bg); color: var(--app-heading); }
+.ex-search { width: 320px; max-width: 100%; }
+.app-table td.ex-wrap { white-space: normal; min-width: 180px; max-width: 320px; }
+.ex-note { margin-top: 0.3rem; font-size: 0.75rem; color: var(--app-muted); background-color: var(--app-bg); border-radius: 4px; padding: 0.25rem 0.5rem; white-space: normal; word-break: break-word; }
+.ex-table-menu { overflow: visible; }
