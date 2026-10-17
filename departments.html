@@ -32,7 +32,7 @@
   <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
     <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
       <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
-        <a href="index.html" class="d-inline-flex">
+        <a href="dev/index.html" class="d-inline-flex">
           <img src="assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
         </a>
         <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
@@ -54,12 +54,12 @@
               <input type="search" class="form-control" id="deptSwitchSearch" placeholder="انتقل إلى إدارة" aria-label="انتقل إلى إدارة" autocomplete="off">
             </div>
             <div class="dept-switch__list">
-                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2 active" href="index.html" aria-current="true">
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2 active" href="dev/index.html" aria-current="true">
                   <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
                   <span class="flex-grow-1 text-truncate" data-search>إدارة تطوير البرامج</span>
                   <span class="small dept-switch__meta">الحالية</span>
                 </a>
-                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="exec-dashboard.html">
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="exec/dashboard.html">
                   <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
                   <span class="flex-grow-1 text-truncate" data-search>إدارة تنفيذ البرامج</span>
                   <span class="small dept-switch__meta">4 صفحات</span>
@@ -115,24 +115,24 @@
       </div>
 
       <div class="px-3 pt-3">
-        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+        <a href="dev/create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
       </div>
 
       <nav class="app-nav flex-grow-1 overflow-auto py-2">
         <div class="app-nav__group">الرئيسية</div>
-        <a href="index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
-        <a href="catalog.html" class="app-nav__link"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
-        <a href="approvals.html" class="app-nav__link">
+        <a href="dev/index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="dev/catalog.html" class="app-nav__link"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="dev/approvals.html" class="app-nav__link">
           <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
           <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
         </a>
 
         <div class="app-nav__group">التقييم</div>
-        <a href="tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
-        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+        <a href="dev/tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="dev/surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
 
         <div class="app-nav__group">الإدارة</div>
-        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="dev/mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
         <a href="departments.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
         <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
       </nav>
@@ -216,7 +216,7 @@
                 </a>
               </li>
             </ul>
-            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+            <a href="dev/index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
           </div>
         </div>
 
@@ -245,7 +245,7 @@
         <h1 class="app-page-title h5 mb-0">الإدارات</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb app-breadcrumb small mb-0">
-            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item"><a href="dev/index.html">الرئيسية</a></li>
             <li class="breadcrumb-item active" aria-current="page">الإدارات</li>
           </ol>
         </nav>
@@ -264,7 +264,7 @@
 
       <div class="row g-3" id="deptGrid" data-search-target>
         <div class="col-lg-6" data-dept-card>
-          <a href="#dev" class="card app-card app-card--link dept-card dept--navy h-100 text-decoration-none" data-dept="dev" data-dept-href="index.html">
+          <a href="#dev" class="card app-card app-card--link dept-card dept--navy h-100 text-decoration-none" data-dept="dev" data-dept-href="dev/index.html">
             <div class="card-body d-flex flex-column gap-3">
               <div class="d-flex align-items-start gap-3">
                 <span class="icon-tile dept-tile"><i class="ph-duotone ph-stack"></i></span>
@@ -283,32 +283,32 @@
           </a>
           <template data-dept-pages>
           <div>
-            <a class="dept-page d-flex align-items-center gap-3" href="index.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="dev/index.html">
               <span class="dept-page__num">1</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">لوحة التحكم</span><span class="d-block small app-muted">ملخص البرامج وحالة الاعتماد</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="catalog.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="dev/catalog.html">
               <span class="dept-page__num">2</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">الكتالوج</span><span class="d-block small app-muted">الوحدات التدريبية والمسارات</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="tests.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="dev/tests.html">
               <span class="dept-page__num">3</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">الاختبارات</span><span class="d-block small app-muted">بنك الأسئلة ونماذج الاختبارات</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="surveys.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="dev/surveys.html">
               <span class="dept-page__num">4</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">الاستبيانات</span><span class="d-block small app-muted">استبيانات تقييم البرامج</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="approvals.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="dev/approvals.html">
               <span class="dept-page__num">5</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">طلبات الاعتماد</span><span class="d-block small app-muted">متابعة طلبات اعتماد البرامج</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="mentors.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="dev/mentors.html">
               <span class="dept-page__num">6</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">إدارة المرشدين</span><span class="d-block small app-muted">المرشدون وتوزيعهم على البرامج</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
@@ -317,7 +317,7 @@
           </template>
         </div>
         <div class="col-lg-6" data-dept-card>
-          <a href="#exec" class="card app-card app-card--link dept-card dept--green h-100 text-decoration-none" data-dept="exec" data-dept-href="exec-dashboard.html">
+          <a href="#exec" class="card app-card app-card--link dept-card dept--green h-100 text-decoration-none" data-dept="exec" data-dept-href="exec/dashboard.html">
             <div class="card-body d-flex flex-column gap-3">
               <div class="d-flex align-items-start gap-3">
                 <span class="icon-tile dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
@@ -335,22 +335,22 @@
           </a>
           <template data-dept-pages>
           <div>
-            <a class="dept-page d-flex align-items-center gap-3" href="exec-dashboard.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="exec/dashboard.html">
               <span class="dept-page__num">1</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">لوحة التحكم</span><span class="d-block small app-muted">مؤشرات تنفيذ البرامج</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="exec-admissions.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="exec/admissions.html">
               <span class="dept-page__num">2</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">طلبات الاعتماد</span><span class="d-block small app-muted">قبول المتدربين وانسحابهم</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="exec-scheduling.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="exec/scheduling.html">
               <span class="dept-page__num">3</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">الجدولة</span><span class="d-block small app-muted">تقويم الدورات والقاعات</span></span>
               <i class="ph ph-arrow-left app-muted"></i>
             </a>
-            <a class="dept-page d-flex align-items-center gap-3" href="exec-trainees.html">
+            <a class="dept-page d-flex align-items-center gap-3" href="exec/trainees.html">
               <span class="dept-page__num">4</span>
               <span class="flex-grow-1 min-w-0"><span class="d-block fw-semibold dept-page__title">المتدربون</span><span class="d-block small app-muted">سجل المتدربين ونتائجهم</span></span>
               <i class="ph ph-arrow-left app-muted"></i>

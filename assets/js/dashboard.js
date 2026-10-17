@@ -1,5 +1,5 @@
 /* =========================================================
-   Dashboard — page behavior (index.html)
+   Dashboard — page behavior (dev/index.html)
    Markup is static HTML; this file only filters/pages it.
    Charts still render from assets/js/data.js.
    ========================================================= */

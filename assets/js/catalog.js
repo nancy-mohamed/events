@@ -1,5 +1,5 @@
 /* =========================================================
-   Catalog — page behavior (catalog.html)
+   Catalog — page behavior (dev/catalog.html)
    Cards are static HTML ([data-item]); this file filters, sorts,
    pages and selects them. Status badges come from
    <template id="statusBadge-*">.

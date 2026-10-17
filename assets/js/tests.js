@@ -1,5 +1,5 @@
 /* =========================================================
-   Tests — page behavior (tests.html)
+   Tests — page behavior (dev/tests.html)
    All rows and cards are static HTML. New ones are cloned
    from the <template> elements at the end of the page.
    ========================================================= */
