@@ -942,3 +942,7 @@ a.dept-page:hover { background-color: var(--app-surface-hover); border-color: va
 .ex-timeline li { position: relative; padding-inline-start: 1.1rem; }
 .ex-timeline li::before { content: ""; position: absolute; inset-inline-start: 0; top: 0.45rem; width: 8px; height: 8px; border-radius: 50%; background-color: var(--app-green); }
 @media (min-width: 768px) { .apv-kv.ex-kv-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.ex-row-link { cursor: pointer; }
+.ex-row-link:hover > td { background-color: var(--app-surface-hover); }
+.ex-kv-table th { width: 40%; white-space: normal; background-color: var(--app-bg); color: var(--app-heading); font-weight: 600; }
+.ex-kv-table td { white-space: normal; }

@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تفاصيل البرنامج | المعهد العقاري السعودي</title>
+
+  <!-- Apply the saved theme before paint -->
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('app-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+      }
+    } catch (e) {}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="../assets/fonts/cairo/cairo.css">
+
+  <!-- Vendors -->
+  <link rel="stylesheet" href="../assets/vendor/bootstrap/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="../assets/vendor/phosphor/regular/style.css">
+  <link rel="stylesheet" href="../assets/vendor/phosphor/duotone/style.css">
+
+  <!-- App -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============ Sidebar ============ -->
+  <aside id="appSidebar" class="app-sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="القائمة الرئيسية">
+    <div class="app-sidebar__inner d-flex flex-column w-100 h-100">
+      <div class="app-sidebar__brand d-flex align-items-center justify-content-between px-3">
+        <a href="index.html" class="d-inline-flex">
+          <img src="../assets/img/logo.png" alt="المعهد العقاري السعودي" class="app-logo">
+        </a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#appSidebar" aria-label="إغلاق"></button>
+      </div>
+
+      <div class="px-3 pt-3">
+        <div class="dropdown dept-switch">
+          <button type="button" class="dept-switch__btn dept--navy w-100 d-flex align-items-center gap-2" id="btnDeptSwitch" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="تبديل الإدارة">
+            <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
+            <span class="flex-grow-1 min-w-0 text-start">
+              <span class="d-block dept-switch__label">الإدارة الحالية</span>
+              <span class="d-block fw-semibold text-truncate dept-switch__name">إدارة تطوير البرامج</span>
+            </span>
+            <i class="ph ph-caret-up-down app-muted"></i>
+          </button>
+          <div class="dropdown-menu shadow border-0 p-2 dept-switch__menu">
+            <div class="input-group input-group-sm mb-2">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="deptSwitchSearch" placeholder="انتقل إلى إدارة" aria-label="انتقل إلى إدارة" autocomplete="off">
+            </div>
+            <div class="dept-switch__list">
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2 active" href="index.html" aria-current="true">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-stack"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تطوير البرامج</span>
+                  <span class="small dept-switch__meta">الحالية</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="../program-execution/index.html">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-calendar-check"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة تنفيذ البرامج</span>
+                  <span class="small dept-switch__meta">4 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="../departments.html#trainers">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chalkboard-teacher"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة المدربين</span>
+                  <span class="small dept-switch__meta">5 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--danger d-flex align-items-center gap-2" href="../departments.html#support">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-headset"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الدعم الفني</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--warning d-flex align-items-center gap-2" href="../departments.html#finance">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-coins"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>الإدارة المالية</span>
+                  <span class="small dept-switch__meta">4 صفحات</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--cyan d-flex align-items-center gap-2" href="../departments.html#reports">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-chart-bar"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة التقارير</span>
+                  <span class="small dept-switch__meta">صفحتان</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--teal d-flex align-items-center gap-2" href="../departments.html#trainee">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-user"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المتدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--purple d-flex align-items-center gap-2" href="../departments.html#trainer">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-identification-badge"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المدرب الفرد</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--green d-flex align-items-center gap-2" href="../departments.html#org">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-buildings"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>رحلة المنشأة</span>
+                  <span class="small dept-switch__meta">صفحة واحدة</span>
+                </a>
+                <a class="dropdown-item dept-switch__item dept--navy d-flex align-items-center gap-2" href="../departments.html#partners">
+                  <span class="icon-tile icon-tile--sm dept-tile"><i class="ph-duotone ph-handshake"></i></span>
+                  <span class="flex-grow-1 text-truncate" data-search>إدارة الشراكات</span>
+                  <span class="small dept-switch__meta">3 صفحات</span>
+                </a>
+            </div>
+            <p class="dept-switch__empty small app-muted text-center py-2 mb-0 d-none">لا توجد إدارة بهذا الاسم</p>
+            <div class="d-flex justify-content-between align-items-center border-top small pt-2 mt-1 px-1">
+              <a href="../departments.html" class="text-decoration-none">عرض كل الإدارات</a>
+              <span class="app-muted"><kbd>Ctrl</kbd> + <kbd>K</kbd></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-3 pt-3">
+        <a href="create.html" class="btn btn-brand w-100"><i class="ph ph-plus me-1"></i>إنشاء جديد</a>
+      </div>
+
+      <nav class="app-nav flex-grow-1 overflow-auto py-2">
+        <div class="app-nav__group">الرئيسية</div>
+        <a href="index.html" class="app-nav__link"><i class="ph-duotone ph-squares-four"></i><span>لوحة التحكم</span></a>
+        <a href="catalog.html" class="app-nav__link active" aria-current="page"><i class="ph-duotone ph-books"></i><span>الكتالوج</span></a>
+        <a href="approvals.html" class="app-nav__link">
+          <i class="ph-duotone ph-seal-check"></i><span>طلبات الاعتماد</span>
+          <span class="badge rounded-pill badge-soft-warning ms-auto">1</span>
+        </a>
+
+        <div class="app-nav__group">التقييم</div>
+        <a href="tests.html" class="app-nav__link"><i class="ph-duotone ph-exam"></i><span>الاختبارات</span></a>
+        <a href="surveys.html" class="app-nav__link"><i class="ph-duotone ph-list-checks"></i><span>الاستبيانات</span></a>
+
+        <div class="app-nav__group">الإدارة</div>
+        <a href="mentors.html" class="app-nav__link"><i class="ph-duotone ph-users-three"></i><span>إدارة المرشدين</span></a>
+        <a href="../departments.html" class="app-nav__link"><i class="ph-duotone ph-buildings"></i><span>الإدارات</span></a>
+        <a href="support.html" class="app-nav__link"><i class="ph-duotone ph-headset"></i><span>رفع طلب دعم فني</span></a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- ============ Main ============ -->
+  <div class="app-main position-relative">
+    <div class="app-hero" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="app-header position-relative d-flex align-items-center justify-content-between gap-3 px-3 px-lg-4">
+      <div class="d-flex align-items-center gap-1">
+        <button class="btn app-header__btn" type="button" id="btnSidebar" aria-controls="appSidebar" aria-label="القائمة">
+          <i class="ph ph-list"></i>
+        </button>
+        <div class="dropdown">
+          <button class="btn app-header__btn d-flex align-items-center gap-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            العربية <i class="ph ph-caret-down small"></i>
+          </button>
+          <ul class="dropdown-menu shadow-sm border-0">
+            <li><a class="dropdown-item active" href="#">العربية</a></li>
+            <li><span class="dropdown-item disabled">English (قريباً)</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-1">
+        <div class="dropdown">
+          <button class="btn app-header__btn" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-label="بحث" id="btnSearch">
+            <i class="ph ph-magnifying-glass"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 p-2 app-search-menu">
+            <div class="input-group input-group-sm">
+              <span class="input-group-text"><i class="ph ph-magnifying-glass"></i></span>
+              <input type="search" class="form-control" id="globalSearch" placeholder="ابحث عن وحدة تدريبية" aria-label="ابحث عن وحدة تدريبية">
+            </div>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn" type="button" id="btnTheme" aria-label="الوضع الداكن">
+          <i class="ph ph-moon"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="الإشعارات">
+            <i class="ph ph-bell"></i>
+            <span class="app-header__dot position-absolute rounded-circle"></span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-start shadow-sm border-0 py-0 app-notify-menu">
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom">
+              <span class="fw-semibold">الإشعارات</span>
+              <span class="badge rounded-pill badge-soft-danger">156</span>
+            </div>
+            <ul class="list-unstyled mb-0" id="notifyList">
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--lg icon-tile--danger"><i class="ph-duotone ph-warning"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">مسودة تعطل اعتماد مسار</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · مسودة بدون اسم</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--lg icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · التمويل العقاري</span>
+                  </span>
+                </a>
+              </li>
+              <li class="notify-item">
+                <a href="#" class="alert-item__link d-flex align-items-start gap-2 py-2 px-3">
+                  <span class="icon-tile icon-tile--lg icon-tile--warning"><i class="ph-duotone ph-file-x"></i></span>
+                  <span class="flex-grow-1 min-w-0">
+                    <span class="alert-item__title d-block">معتمد بدون مواد تعليمية</span>
+                    <span class="d-block small app-muted text-truncate">عاجل · فرز الوحدات العقارية</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <a href="index.html#alertsCard" class="d-block text-center small py-2 border-top text-decoration-none">عرض كل التنبيهات</a>
+          </div>
+        </div>
+
+        <button class="btn app-header__btn d-none d-sm-inline-flex" type="button" id="btnFullscreen" aria-label="ملء الشاشة">
+          <i class="ph ph-corners-out"></i>
+        </button>
+
+        <div class="dropdown">
+          <button class="btn app-header__btn p-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="حسابي">
+            <span class="app-avatar rounded-circle d-inline-flex align-items-center justify-content-center">ش</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-start shadow-sm border-0">
+            <li><h6 class="dropdown-header">إدارة تطوير البرامج</h6></li>
+            <li><a class="dropdown-item" href="#"><i class="ph-duotone ph-user-circle me-2"></i>الملف الشخصي</a></li>
+            <li><a class="dropdown-item" href="../departments.html" data-dept-switch-open><i class="ph-duotone ph-arrows-left-right me-2"></i>تبديل الإدارة</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="#"><i class="ph-duotone ph-sign-out me-2"></i>تسجيل الخروج</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-content position-relative px-3 px-lg-4 pb-4">
+
+      <!-- Page title -->
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pt-3 pb-1">
+        <h1 class="app-page-title h5 mb-0">تفاصيل البرنامج</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb app-breadcrumb small mb-0">
+            <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+            <li class="breadcrumb-item"><a href="catalog.html">الكتالوج</a></li>
+            <li class="breadcrumb-item active" aria-current="page">تفاصيل البرنامج</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 pb-3">
+        <a href="catalog.html" class="app-back small"><i class="ph ph-arrow-right me-1"></i>الكتالوج</a>
+        <a href="new.html" class="btn btn-sm btn-light"><i class="ph-duotone ph-pencil-simple me-1"></i>تعديل في الرحلة</a>
+      </div>
+
+      <!-- Header -->
+      <section class="card app-card mb-3">
+        <div class="card-body">
+          <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+            <span class="badge badge-soft-navy">برنامج فردي</span>
+            <span class="badge badge-soft-info">الرخصة: رخصة فال للوساطة والتسويق العقاري (RBM0201)</span>
+          </div>
+          <h2 class="fs-4 fw-bold app-heading-text mb-1">نموذج: أساسيات الوساطة العقارية</h2>
+          <p class="small app-muted mb-2">PRG-2026-086 · تقام</p>
+          <p class="mb-3">برنامج نموذجي: نموذج: أساسيات الوساطة العقارية.</p>
+          <dl class="ex-profile mb-3">
+            <div><dt>تاريخ الإنشاء:</dt><dd>2026-10-01</dd></div>
+            <div><dt>تاريخ الاعتماد:</dt><dd>2026-10-01</dd></div>
+            <div><dt>المدة:</dt><dd>6 ساعة</dd></div>
+            <div><dt>الأيام:</dt><dd>2</dd></div>
+            <div><dt>نوع التعلّم:</dt><dd>بث مباشر</dd></div>
+            <div><dt>الشهادة:</dt><dd>حضور واجتياز الاختبار</dd></div>
+            <div><dt>الفئة المستهدفة:</dt><dd>الوسطاء والمسوقون العقاريون</dd></div>
+          </dl>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <span class="badge badge-soft-success fs-6 fw-semibold"><i class="ph-duotone ph-seal-check me-1"></i>معتمد — جاهز للجدولة</span>
+            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#unapproveProgramModal">إلغاء الاعتماد</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#archiveProgramModal">أرشفة</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <!-- Price per trainee -->
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">سعر المتدرب الواحد</h2>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead><tr><th>النوع</th><th>السعر</th><th>الضريبة</th><th>الإجمالي</th></tr></thead>
+                  <tbody><tr><td>بث مباشر</td><td>٦٠٠ ريال</td><td>٩٠ ريال</td><td class="fw-semibold">٦٩٠ ريال</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Program card (platform columns) -->
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">بطاقة البرنامج (حسب أعمدة ملف المنصة)</h2>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0 ex-kv-table">
+                  <tbody>
+                    <tr><th>الكود</th><td>PRG-2026-086</td></tr>
+                    <tr><th>اسم المسار التابع للبرنامج</th><td>—</td></tr>
+                    <tr><th>هل يتم التدريب عليها</th><td>تقام</td></tr>
+                    <tr><th>اسم البرنامج</th><td>نموذج: أساسيات الوساطة العقارية</td></tr>
+                    <tr><th>نمط التدريب</th><td>بث مباشر</td></tr>
+                    <tr><th>نبذة</th><td>برنامج نموذجي: نموذج: أساسيات الوساطة العقارية.</td></tr>
+                    <tr><th>الفئة</th><td>الوسطاء والمسوقون العقاريون</td></tr>
+                    <tr><th>المحاور</th><td>مقدمة الوساطة، العقود والتوثيق</td></tr>
+                    <tr><th>الأهداف</th><td>فهم الأساسيات، تطبيق عملي</td></tr>
+                    <tr><th>عدد الأيام</th><td>2</td></tr>
+                    <tr><th>الساعات التدريبية</th><td>6</td></tr>
+                    <tr><th>متطلبات الحصول على الشهادة</th><td>حضور واجتياز الاختبار</td></tr>
+                    <tr><th>السعر الحضوري</th><td>٦٠٠</td></tr>
+                    <tr><th>VAT</th><td>٩٠</td></tr>
+                    <tr><th>الإجمالي</th><td>٦٩٠</td></tr>
+                    <tr><th>السعر عن بعد</th><td>٦٠٠</td></tr>
+                    <tr><th>VAT</th><td>٩٠</td></tr>
+                    <tr><th>الإجمالي</th><td>٦٩٠</td></tr>
+                    <tr><th>تاريخ آخر تصميم / تطوير</th><td>2026</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Axes & materials -->
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                <h2 class="app-card__title mb-0">المحاور والمواد التعليمية</h2>
+                <a href="new.html" class="app-link small">إدارة ورفع المواد <i class="ph ph-arrow-left"></i></a>
+              </div>
+              <div class="d-flex flex-column gap-2">
+                <div class="border rounded-2">
+                  <button class="btn w-100 d-flex align-items-center gap-2 text-start p-3 app-rules__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#axis1" aria-expanded="true" aria-controls="axis1">
+                    <span class="flex-grow-1"><span class="d-block fw-semibold app-heading-text">مقدمة الوساطة</span><span class="d-block small app-muted">3 ساعة · 2 مادة</span></span>
+                    <i class="ph ph-caret-down"></i>
+                  </button>
+                  <div class="collapse show" id="axis1">
+                    <ul class="list-unstyled mb-0 px-3 pb-3 d-flex flex-column gap-2">
+                      <li class="app-stat rounded-2 p-2"><div class="d-flex justify-content-between gap-2"><span class="fw-semibold">📝 دليل المتدرب - الوساطة</span><span class="badge badge-soft-info">المتدرب</span></div><div class="small app-muted">مفاهيم الوساطة وأخلاقيات المهنة</div></li>
+                      <li class="app-stat rounded-2 p-2"><div class="d-flex justify-content-between gap-2"><span class="fw-semibold">📝 عرض المدرب</span><span class="badge badge-soft-navy">المدرب</span></div><div class="small app-muted">شرائح الجلسة الأولى</div></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="border rounded-2">
+                  <button class="btn w-100 d-flex align-items-center gap-2 text-start p-3 app-rules__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#axis2" aria-expanded="false" aria-controls="axis2">
+                    <span class="flex-grow-1"><span class="d-block fw-semibold app-heading-text">العقود والتوثيق</span><span class="d-block small app-muted">3 ساعة · 1 مادة</span></span>
+                    <i class="ph ph-caret-down"></i>
+                  </button>
+                  <div class="collapse" id="axis2">
+                    <ul class="list-unstyled mb-0 px-3 pb-3 d-flex flex-column gap-2">
+                      <li class="app-stat rounded-2 p-2"><div class="d-flex justify-content-between gap-2"><span class="fw-semibold">📝 نماذج العقود</span><span class="badge badge-soft-info">المتدرب</span></div><div class="small app-muted">نماذج عقود وساطة معتمدة</div></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Trainee ratings -->
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">تقييمات المتدربين للبرنامج</h2>
+              <div class="row g-2 mb-3 row-cols-2 row-cols-md-5">
+                <div class="col"><div class="app-stat rounded-2 p-2 text-center"><div class="small app-muted">عدد التقييمات</div><div class="fw-semibold app-heading-text">0</div></div></div>
+                <div class="col"><div class="app-stat rounded-2 p-2 text-center"><div class="small app-muted">متوسط الرضا</div><div class="fw-semibold app-heading-text">—</div></div></div>
+                <div class="col"><div class="app-stat rounded-2 p-2 text-center"><div class="small app-muted">ممتاز (85+)</div><div class="fw-semibold text-brand-green">0</div></div></div>
+                <div class="col"><div class="app-stat rounded-2 p-2 text-center"><div class="small app-muted">جيد (60–84)</div><div class="fw-semibold text-brand-warning">0</div></div></div>
+                <div class="col"><div class="app-stat rounded-2 p-2 text-center"><div class="small app-muted">ضعيف (أقل من 60)</div><div class="fw-semibold text-brand-danger">0</div></div></div>
+              </div>
+              <div class="table-responsive border rounded-2">
+                <table class="table app-table align-middle mb-0">
+                  <thead><tr><th>المتدرب</th><th>التاريخ</th><th>التقييم</th></tr></thead>
+                  <tbody><tr><td colspan="3" class="text-center app-muted py-3">لا توجد تقييمات استبيان لهذا البرنامج بعد.</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Supervisor evaluation form for the trainer -->
+          <section class="card app-card">
+            <div class="card-body">
+              <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-2">
+                <h2 class="app-card__title mb-0">نموذج تقييم المشرف للمدرب</h2>
+                <button type="button" class="btn btn-sm btn-outline-brand" data-bs-toggle="collapse" data-bs-target="#evalItems" aria-expanded="false" aria-controls="evalItems"><i class="ph ph-plus me-1"></i>بند</button>
+              </div>
+              <p class="small app-muted">بنود التقييم ودرجاتها حسب خطة هذا البرنامج. تظهر تلقائيًا لمشرف الدورة عند رفع التقييم بعد انتهاء الدورة، وتنعكس في ملف المدرب. إذا تُرك فارغًا يُستخدم النموذج العام.</p>
+              <p class="small app-muted mb-0">لا يوجد نموذج مخصص — سيُستخدم النموذج العام (5 بنود × 20 درجة).</p>
+              <div class="collapse" id="evalItems">
+                <form class="pt-3" data-static-form>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="fw-semibold">1.</span>
+                    <input type="text" class="form-control" placeholder="نص البند" aria-label="نص البند" required>
+                    <label class="small app-muted text-nowrap" for="evalScore1">الدرجة</label>
+                    <input type="number" class="form-control ex-cap-input" id="evalScore1" value="20" required>
+                    <button type="button" class="btn btn-sm btn-light text-danger">حذف</button>
+                  </div>
+                  <p class="small app-muted">المجموع الكلي: 20 درجة — التصنيف: متميز ≥76% · متمكن 50–75% · يحتاج تطوير 25–50% · أقل من المتوقع &lt;25%</p>
+                  <button type="submit" class="btn btn-sm btn-brand">حفظ النموذج</button>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-lg-4">
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">بيانات برنامج فردي</h2>
+              <dl class="apv-kv ex-kv-2 mb-0">
+                <div><dt>حالة التشغيل</dt><dd>تقام</dd></div>
+                <div><dt>الحضور المطلوب</dt><dd>90%</dd></div>
+                <div><dt>آخر تطوير</dt><dd>2026</dd></div>
+                <div><dt>المقاعد</dt><dd>30</dd></div>
+              </dl>
+            </div>
+          </section>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">الأهداف</h2>
+              <ul class="small mb-0 pe-3"><li>فهم الأساسيات</li><li>تطبيق عملي</li></ul>
+            </div>
+          </section>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">المخرجات التعليمية</h2>
+              <ul class="small mb-0 pe-3"><li>يطبّق المتدرب المهارات في عمله</li></ul>
+            </div>
+          </section>
+          <section class="card app-card mb-3">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">التقييم</h2>
+              <p class="small mb-1">الاختبار: <b>اختبار أساسيات تحليل البيانات</b></p>
+              <a href="tests.html" class="app-link small d-inline-flex mb-2">صفحة الاختبار وشروط الاجتياز <i class="ph ph-arrow-left"></i></a>
+              <p class="small mb-0">الاستبيان: —</p>
+            </div>
+          </section>
+          <section class="card app-card">
+            <div class="card-body">
+              <h2 class="app-card__title mb-3">التسعير</h2>
+              <dl class="mb-0 small ex-price">
+                <div class="d-flex justify-content-between py-1"><dt class="fw-normal app-muted">السعر قبل الضريبة</dt><dd class="mb-0">٦٠٠ ريال</dd></div>
+                <div class="d-flex justify-content-between py-1"><dt class="fw-normal app-muted">الضريبة 15%</dt><dd class="mb-0">٩٠ ريال</dd></div>
+                <div class="d-flex justify-content-between py-1 border-top"><dt>الإجمالي</dt><dd class="mb-0 fw-bold app-heading-text">٦٩٠ ريال</dd></div>
+              </dl>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </main>
+
+    <div class="modal fade" id="unapproveProgramModal" tabindex="-1" aria-labelledby="unapproveProgramModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content app-modal">
+          <div class="modal-body text-center p-4">
+            <span class="app-modal__icon icon-tile--danger d-inline-flex align-items-center justify-content-center mb-3"><i class="ph-duotone ph-seal-warning"></i></span>
+            <h2 class="h6 fw-semibold" id="unapproveProgramModalTitle">إلغاء اعتماد البرنامج؟</h2>
+            <p class="small app-muted mb-0">نموذج: أساسيات الوساطة العقارية · PRG-2026-086</p>
+          </div>
+          <div class="modal-footer border-0 justify-content-center gap-2 pt-0 pb-4">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">رجوع</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">إلغاء الاعتماد</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="archiveProgramModal" tabindex="-1" aria-labelledby="archiveProgramModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content app-modal">
+          <div class="modal-body text-center p-4">
+            <span class="app-modal__icon icon-tile--warning d-inline-flex align-items-center justify-content-center mb-3"><i class="ph-duotone ph-archive"></i></span>
+            <h2 class="h6 fw-semibold" id="archiveProgramModalTitle">أرشفة البرنامج؟</h2>
+            <p class="small app-muted mb-0">نموذج: أساسيات الوساطة العقارية · PRG-2026-086</p>
+          </div>
+          <div class="modal-footer border-0 justify-content-center gap-2 pt-0 pb-4">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">رجوع</button>
+            <button type="button" class="btn btn-brand" data-bs-dismiss="modal">أرشفة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="app-footer text-center small py-3 border-top">
+      © <span id="footerYear"></span> المعهد العقاري السعودي. جميع الحقوق محفوظة.
+    </footer>
+  </div>
+
+
+  <!-- Vendors -->
+  <script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+
+  <!-- App -->
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>
