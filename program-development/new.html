@@ -510,18 +510,21 @@
                     <i class="ph-duotone ph-info fs-5 flex-shrink-0"></i>
                     <p class="small mb-0">قسّم المحتوى إلى المحور — مثلًا «المقدمة» وتضم فيديو، و«الفصل الأول» يضم ملف PDF. لكل مادة: الجمهور المستهدف والملف ونص الشرح الخاص بها.</p>
                   </div>
-                  <div class="border rounded-2 p-3 mb-3">
+                  <div class="border rounded-2 p-3 mb-3" data-axis>
                     <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                       <span class="fw-semibold">1.</span>
                       <input type="text" class="form-control flex-grow-1 w-auto" placeholder="اسم الالمحور (مثال: المقدمة)" aria-label="اسم المحور">
                       <div class="input-group app-hours-group"><input type="number" class="form-control" value="2" aria-label="ساعات المحور"><span class="input-group-text">ساعة</span></div>
                       <button type="button" class="btn btn-sm app-filter-btn border text-danger"><i class="ph-duotone ph-trash me-1"></i>حذف الالمحور</button>
                     </div>
-                    <div class="text-center app-muted small border rounded-2 py-3 mb-2"><i class="ph-duotone ph-files fs-4 d-block mb-1"></i>ما فيه مواد بعد.</div>
-                    <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>مادة جديدة</button>
+                    <div class="text-center app-muted small border rounded-2 py-3 mb-2" data-materials-empty><i class="ph-duotone ph-files fs-4 d-block mb-1"></i>ما فيه مواد بعد.</div>
+                    <div class="d-flex flex-column gap-2 mb-2" data-materials-list></div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <button type="button" class="btn btn-sm btn-outline-brand" data-material-add><i class="ph ph-plus me-1"></i>مادة جديدة</button>
+                      <label class="btn btn-sm app-filter-btn border mb-0"><i class="ph-duotone ph-upload-simple me-1"></i>رفع عدة ملفات دفعة وحدة<input type="file" class="d-none" multiple accept="image/*,video/*,application/pdf" data-material-bulk></label>
+                    </div>
                   </div>
                   <div class="d-flex flex-wrap gap-2">
-                    <label class="btn btn-sm app-filter-btn border mb-0"><i class="ph-duotone ph-upload-simple me-1"></i>رفع عدة ملفات دفعة وحدة<input type="file" class="d-none" multiple></label>
                     <button type="button" class="btn btn-sm btn-outline-brand"><i class="ph ph-plus me-1"></i>إضافة المحور جديد</button>
                   </div>
                 </div>
@@ -835,11 +838,105 @@
     <li class="page-item"><a class="page-link" href="#" aria-label="التالي"><i class="ph ph-caret-left"></i></a></li>
   </template>
 
+  <template id="materialTemplate">
+    <div class="border rounded-2 p-3 bg-light-subtle" data-material>
+      <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+        <input type="text" class="form-control flex-grow-1 w-auto" placeholder="اسم المادة" aria-label="اسم المادة" data-material-name>
+        <div class="btn-group btn-group-sm" role="group" aria-label="الجمهور المستهدف">
+          <button type="button" class="btn btn-brand" data-audience="المتدرب">للمتدرب</button>
+          <button type="button" class="btn app-filter-btn border" data-audience="المدرب">للمدرب</button>
+        </div>
+        <button type="button" class="btn btn-sm app-filter-btn border text-danger" data-material-remove><i class="ph-duotone ph-trash me-1"></i>حذف</button>
+      </div>
+      <input type="text" class="form-control mb-2" placeholder="وصف مختصر" aria-label="وصف مختصر">
+      <textarea class="form-control mb-2" rows="3" placeholder="نص الشرح: اكتب هنا شرح المادة أو تعليمات استخدامها…" aria-label="نص الشرح"></textarea>
+      <div class="d-flex flex-wrap align-items-center gap-2 small">
+        <span class="app-muted" data-material-file>بدون ملف</span>
+        <label class="btn btn-sm btn-outline-brand mb-0"><span data-material-file-label>+ إرفاق ملف (فيديو / PDF / صورة)</span><input type="file" class="d-none" accept="image/*,video/*,application/pdf" data-material-file-input></label>
+      </div>
+    </div>
+  </template>
+
   <!-- Vendors -->
   <script src="../assets/vendor/jquery/jquery.min.js"></script>
   <script src="../assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
 
   <!-- App -->
   <script src="../assets/js/app.js"></script>
+  <script>
+    // Materials step: "+ مادة جديدة" adds a material card inside its axis; bulk upload adds one card per file.
+    (function () {
+      var template = document.getElementById('materialTemplate');
+
+      function fileType(file) {
+        if (file.type.indexOf('video/') === 0) return {label: 'فيديو', icon: '🎬'};
+        if (file.type.indexOf('image/') === 0) return {label: 'صورة', icon: '🖼️'};
+        if (file.type === 'application/pdf') return {label: 'PDF', icon: '📄'};
+        return null;
+      }
+
+      function refreshEmpty(axis) {
+        axis.querySelector('[data-materials-empty]').classList.toggle('d-none', axis.querySelectorAll('[data-material]').length > 0);
+      }
+
+      function attachFile(card, file) {
+        var type = fileType(file);
+        if (!type) {
+          alert('الملفات المقبولة: صورة أو فيديو أو PDF فقط.');
+          return false;
+        }
+        var name = card.querySelector('[data-material-name]');
+        if (!name.value) name.value = file.name.replace(/\.[^.]+$/, '');
+        var status = card.querySelector('[data-material-file]');
+        status.textContent = type.icon + ' ' + type.label + ' مرفوع';
+        status.className = 'badge text-bg-light border fw-normal';
+        card.querySelector('[data-material-file-label]').textContent = 'استبدال الملف';
+        return true;
+      }
+
+      function addMaterial(axis, file) {
+        var card = template.content.firstElementChild.cloneNode(true);
+        if (file && !attachFile(card, file)) return;
+        axis.querySelector('[data-materials-list]').appendChild(card);
+        refreshEmpty(axis);
+        if (!file) card.querySelector('[data-material-name]').focus();
+      }
+
+      document.addEventListener('click', function (e) {
+        var add = e.target.closest('[data-material-add]');
+        if (add) {
+          addMaterial(add.closest('[data-axis]'));
+          return;
+        }
+        var audience = e.target.closest('[data-audience]');
+        if (audience) {
+          audience.parentNode.querySelectorAll('[data-audience]').forEach(function (b) {
+            var on = b === audience;
+            b.classList.toggle('btn-brand', on);
+            b.classList.toggle('app-filter-btn', !on);
+            b.classList.toggle('border', !on);
+          });
+          return;
+        }
+        var remove = e.target.closest('[data-material-remove]');
+        if (remove) {
+          var axis = remove.closest('[data-axis]');
+          remove.closest('[data-material]').remove();
+          refreshEmpty(axis);
+        }
+      });
+
+      document.addEventListener('change', function (e) {
+        if (e.target.matches('[data-material-bulk]')) {
+          var axis = e.target.closest('[data-axis]');
+          Array.prototype.forEach.call(e.target.files, function (file) { addMaterial(axis, file); });
+          e.target.value = '';
+        } else if (e.target.matches('[data-material-file-input]')) {
+          if (e.target.files[0]) attachFile(e.target.closest('[data-material]'), e.target.files[0]);
+          e.target.value = '';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
