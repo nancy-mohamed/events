@@ -1,0 +1,470 @@
+/* ==========================================================
+   Hareez landing page
+   Brand: Madar navy #091F5B + Hareez gold #A68F5C on warm cream (Hareez card keeps green #2B3A37)
+   ========================================================== */
+
+/* ---------- Fonts ---------- */
+@font-face{font-family:"Cairo";font-weight:400;font-display:swap;src:url(../fonts/cairo-arabic-400.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Cairo";font-weight:500;font-display:swap;src:url(../fonts/cairo-arabic-500.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Cairo";font-weight:600;font-display:swap;src:url(../fonts/cairo-arabic-600.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Cairo";font-weight:700;font-display:swap;src:url(../fonts/cairo-arabic-700.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-08FF,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Cairo";font-weight:400;font-display:swap;src:url(../fonts/cairo-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Cairo";font-weight:500;font-display:swap;src:url(../fonts/cairo-latin-500.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Cairo";font-weight:600;font-display:swap;src:url(../fonts/cairo-latin-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Cairo";font-weight:700;font-display:swap;src:url(../fonts/cairo-latin-700.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
+/* ---------- Tokens ---------- */
+:root{
+  --hz-primary:#091F5B;
+  --hz-primary-dark:#A68F5C;
+  --hz-secondary:#0C1A3E;
+  --hz-green:#0C1A3E;
+  --hz-green-dark:#050F2E;
+  --hz-gold:#B8A06A;
+  --hz-beige:#E5DCC7;
+  --hz-cream:#FFFFFF;
+  --hz-cream-2:#F8F5F0;
+  --hz-card:#FFFFFF;
+  --hz-ink:#0D1833;
+  --hz-muted:#6B6F69;
+  --hz-line:#E8DFCF;
+  --bs-primary:#091F5B;
+  --bs-primary-rgb:9,31,91;
+  --bs-secondary:#0C1A3E;
+  --bs-secondary-rgb:12,26,62;
+  --bs-link-color:#091F5B;
+  --bs-link-hover-color:#0C1A3E;
+  --bs-body-font-family:"Cairo",Tahoma,sans-serif;
+  --bs-body-color:var(--hz-ink);
+  --bs-body-bg:var(--hz-cream);
+}
+
+/* ---------- Base ---------- */
+body{font-family:var(--bs-body-font-family);background:var(--hz-cream);color:var(--hz-ink);line-height:1.8}
+h1,h2,h3,h4,h5{font-weight:700;color:var(--hz-green);line-height:1.45}
+a{color:inherit;text-decoration:none}
+.text-muted-hz{color:var(--hz-muted)}
+.section{padding:80px 0}
+.container{max-width:1240px}
+
+/* eyebrow with a gold line */
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.95rem;font-weight:500;color:var(--hz-muted);margin-bottom:10px}
+.eyebrow::after{content:"";width:46px;height:2px;background:var(--hz-gold)}
+.eyebrow.center::before{content:"";width:46px;height:2px;background:var(--hz-gold)}
+.section-title{font-size:2.15rem;margin-bottom:12px}
+
+/* ---------- Buttons ---------- */
+.btn-hz{background:var(--hz-primary);color:#fff;border:1px solid var(--hz-primary);border-radius:8px;padding:12px 26px;font-weight:600;display:inline-flex;align-items:center;gap:12px;transition:.25s}
+.btn-hz:hover{background:var(--hz-secondary);border-color:var(--hz-secondary);color:#fff}
+.btn-hz-outline{background:rgba(255,255,255,.7);color:var(--hz-secondary);border:1px solid var(--hz-primary);border-radius:8px;padding:12px 24px;font-weight:600;display:inline-flex;align-items:center;gap:12px;transition:.25s}
+.btn-hz-outline:hover{background:var(--hz-primary);color:#fff}
+.btn-hz-outline .play{width:24px;height:24px;border-radius:50%;background:var(--hz-primary);color:#fff;display:grid;place-items:center;font-size:.7rem}
+.btn-hz-outline:hover .play{background:#fff;color:var(--hz-primary)}
+
+/* ---------- Header ---------- */
+.site-header{position:absolute;top:0;inset-inline:0;z-index:20}
+.site-header .bar{background:var(--hz-cream-2);clip-path:polygon(0 0,100% 0,100% 100%,4.5% 100%);box-shadow:0 1px 0 var(--hz-line)}
+.site-header .navbar{padding:10px 0;min-height:92px}
+.site-header .navbar-brand img{height:66px}
+.site-header .nav-link{color:var(--hz-ink);font-weight:500;padding:8px 18px !important;position:relative}
+.site-header .nav-link.active,.site-header .nav-link:hover{color:var(--hz-primary);font-weight:700}
+.site-header .nav-link.active::after{content:"";position:absolute;bottom:0;inset-inline:18px;height:2px;background:var(--hz-gold)}
+.lang{font-size:.9rem;font-weight:500;color:var(--hz-ink);display:inline-flex;align-items:center;gap:6px}
+.btn-login{padding:10px 20px;font-size:.95rem}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:700px;padding:170px 0 120px;background:url(../images/hero-golden-hour.jpg) center bottom/cover no-repeat;overflow:visible}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(248,245,240,.78) 0%,rgba(248,245,240,.62) 30%,rgba(248,245,240,.18) 52%,rgba(248,245,240,0) 68%)}
+.hero .container{position:relative;z-index:2}
+.hero h1{font-size:2.7rem;line-height:1.6;white-space:nowrap;margin-bottom:22px}
+.hero .lead{font-size:1.15rem;color:#3A4660;margin-bottom:34px;max-width:520px}
+.hero-devices{position:absolute;left:0;bottom:-40px;width:50%;height:560px;z-index:3}
+
+/* ---------- Device mockups ---------- */
+.laptop{position:absolute;left:17%;bottom:60px;width:540px}
+.laptop .lid{background:#050B1F;border-radius:18px 18px 4px 4px;padding:14px 14px 18px;box-shadow:0 30px 60px rgba(5,15,46,.35)}
+.laptop .base{height:16px;margin:0 -46px;background:linear-gradient(#D9D6D0,#A9A69F);border-radius:0 0 20px 20px;position:relative}
+.laptop .base::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:7px;background:#8F8C86;border-radius:0 0 8px 8px}
+.screen{background:#FBF8F2;border-radius:4px;overflow:hidden;display:flex;height:320px;font-size:9px;line-height:1.5;color:var(--hz-ink)}
+.dash-side{width:96px;background:var(--hz-green);padding:12px 8px;display:flex;flex-direction:column;gap:6px;color:#D5DBE6}
+.dash-side img{width:44px;margin:0 auto 10px}
+.dash-side span{display:flex;align-items:center;gap:6px;padding:4px 6px;border-radius:4px;font-size:8px}
+.dash-side span.on{background:rgba(229,220,199,.16);color:#fff}
+.dash-side i{font-size:9px;color:var(--hz-beige)}
+.dash-main{flex:1;padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+.dash-top{display:flex;justify-content:space-between;align-items:center}
+.dash-top b{font-size:12px;color:var(--hz-green)}
+.dash-top .search{width:110px;height:16px;border-radius:8px;background:#EFE9DD}
+.dash-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.dash-stats div{background:#fff;border:1px solid var(--hz-line);border-radius:6px;padding:7px 8px}
+.dash-stats small{display:block;color:var(--hz-muted);font-size:7.5px}
+.dash-stats strong{font-size:14px;color:var(--hz-green)}
+.dash-row{display:grid;grid-template-columns:1.5fr 1fr;gap:8px;flex:1}
+.dash-card{background:#fff;border:1px solid var(--hz-line);border-radius:6px;padding:8px}
+.dash-card small{font-weight:600;color:var(--hz-green)}
+.bars{display:flex;align-items:flex-end;gap:9px;height:96px;margin-top:8px;padding:0 6px;border-bottom:1px solid var(--hz-line)}
+.bars i{flex:1;background:var(--hz-green);border-radius:2px 2px 0 0}
+.bars i.g{background:var(--hz-gold)}
+.donut{width:78px;height:78px;border-radius:50%;margin:12px auto 0;background:conic-gradient(var(--hz-green) 0 72%,var(--hz-gold) 72% 88%,var(--hz-beige) 88% 100%);display:grid;place-items:center}
+.donut::after{content:"72%";width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:700;color:var(--hz-green);font-size:11px}
+.dash-table{display:grid;gap:4px}
+.dash-table div{display:flex;justify-content:space-between;align-items:center;padding:4px 6px;background:#FAF7F1;border-radius:4px}
+.tag-s{padding:1px 6px;border-radius:6px;font-size:7px;background:#E6EEE9;color:#2D6A4F}
+.tag-s.w{background:#F5ECD8;color:#8A6D2E}
+
+.phone{position:absolute;left:6%;bottom:0;width:150px;background:#050B1F;border-radius:26px;padding:8px;box-shadow:0 30px 50px rgba(5,15,46,.4);z-index:3}
+.phone .ph-screen{background:#FBF8F2;border-radius:19px;height:290px;padding:24px 10px 10px;position:relative;font-size:8px}
+.phone .ph-screen::before{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:48px;height:10px;border-radius:8px;background:#050B1F}
+.phone .ph-head{display:flex;justify-content:space-between;font-weight:700;color:var(--hz-green);margin-bottom:10px;font-size:9px}
+.phone .tiles{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.phone .tiles span{background:#fff;border:1px solid var(--hz-line);border-radius:8px;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--hz-muted);font-size:7px}
+.phone .tiles i{font-size:14px;color:var(--hz-green)}
+
+/* ---------- Services ---------- */
+.services{background:var(--hz-cream)}
+.service-card{background:var(--hz-card);border:1px solid var(--hz-line);border-radius:14px;padding:26px 18px 22px;text-align:center;height:100%;transition:.25s}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(12,26,62,.08);border-color:var(--hz-gold)}
+.service-card .ic{width:58px;height:58px;border-radius:12px;background:var(--hz-cream-2);display:grid;place-items:center;margin:0 auto 16px;color:var(--hz-gold);font-size:1.7rem}
+.service-card h3{font-size:1rem;white-space:nowrap;margin-bottom:6px}
+.service-card p{font-size:.9rem;color:var(--hz-muted);margin:0}
+
+/* ---------- Platform ---------- */
+.platform{position:relative;padding:0;background:var(--hz-cream);min-height:500px}
+.platform .media{position:absolute;left:0;top:0;bottom:0;width:50%;background:var(--hz-cream-2);border-radius:0 0 0 0;overflow:hidden}
+.platform .media::before{content:"";position:absolute;inset:0;background:url(../images/photo-lobby.jpg) center/cover;opacity:.18;filter:grayscale(.3)}
+.platform .media::after{content:"";position:absolute;inset-inline:0;bottom:0;height:70px;background:#EFE9DF}
+.platform .laptop{width:520px;left:auto;right:auto;left:20%;bottom:56px;z-index:2}
+.platform .screen{height:300px}
+.platform .phone{left:8%;bottom:40px;width:136px}
+.platform .phone .ph-screen{height:262px}
+.platform .copy{padding:70px 0 70px 40px}
+.features-row{display:flex;margin-top:40px;border-top:1px solid var(--hz-line);padding-top:26px}
+.features-row div{flex:1;text-align:center;font-size:.92rem;color:var(--hz-ink);font-weight:500}
+.features-row div + div{border-inline-start:1px solid var(--hz-line)}
+.features-row i{display:block;font-size:1.7rem;color:var(--hz-primary);margin-bottom:6px}
+
+/* ---------- Why ---------- */
+.why-img{position:relative;height:100%;min-height:380px;border-radius:16px;background:url(../images/hero-golden-hour.jpg) 22% center/cover}
+.why-badge{position:absolute;bottom:24px;inset-inline-start:24px;background:#fff;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:16px;box-shadow:0 14px 30px rgba(5,15,46,.15)}
+.why-badge b{display:block;color:var(--hz-green);font-size:1.05rem}
+.why-badge small{color:var(--hz-muted)}
+.why-badge .ic{width:44px;height:44px;border-radius:10px;background:var(--hz-cream-2);display:grid;place-items:center;color:var(--hz-gold);font-size:1.3rem}
+.why-point{display:flex;align-items:center;gap:14px;font-weight:500}
+.why-point .ic{flex:none;width:42px;height:42px;border-radius:10px;background:var(--hz-cream-2);display:grid;place-items:center;color:var(--hz-gold);font-size:1.2rem}
+
+/* ---------- Stats ---------- */
+.stats-box{position:relative;background:var(--hz-cream-2);border-radius:16px;padding:34px 30px;overflow:hidden}
+.stats-box::before{content:"";position:absolute;inset-block:0;inset-inline-end:0;width:260px;background:url(../images/photo-b-crop.jpg) center/cover;opacity:.12;-webkit-mask-image:linear-gradient(90deg,#000,transparent);mask-image:linear-gradient(90deg,#000,transparent)}
+.stat{display:flex;align-items:center;justify-content:center;gap:18px;position:relative}
+.stat + .stat::before{content:"";position:absolute;inset-inline-start:-12px;top:10%;height:80%;width:1px;background:var(--hz-line)}
+.stat strong{display:block;font-size:2rem;color:var(--hz-green);line-height:1.2}
+.stat span{color:var(--hz-muted);font-size:.95rem}
+.stat i{font-size:2.1rem;color:var(--hz-gold)}
+
+/* ---------- CTA ---------- */
+.cta-box{position:relative;background:var(--hz-cream-2);border-radius:16px;padding:40px 46px;overflow:hidden}
+.cta-box::before{content:"";position:absolute;inset-block:0;inset-inline-end:0;width:340px;background:url(../images/hero-golden-hour.jpg) 0% 20%/auto 260%;opacity:.55;-webkit-mask-image:linear-gradient(90deg,#000 20%,transparent);mask-image:linear-gradient(90deg,#000 20%,transparent)}
+.cta-box > *{position:relative}
+.cta-box h2{font-size:1.9rem;margin-bottom:6px}
+.cta-box .btn-hz-outline{background:#fff;min-width:170px;justify-content:center}
+
+/* ---------- Footer ---------- */
+.site-footer{padding:50px 0 0;background:var(--hz-cream)}
+.site-footer .brand img{height:60px;margin-bottom:14px}
+.site-footer p{color:var(--hz-muted);font-size:.92rem}
+.site-footer h5{font-size:1.05rem;margin-bottom:16px}
+.site-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.92rem;color:var(--hz-muted)}
+.site-footer ul a:hover{color:var(--hz-primary)}
+.site-footer .contact li{display:flex;align-items:center;gap:10px}
+.site-footer .contact i{color:var(--hz-primary)}
+.social{display:flex;gap:18px;font-size:1.15rem;color:var(--hz-primary)}
+.social a:hover{color:var(--hz-gold)}
+.copyright{border-top:1px solid var(--hz-line);padding:18px 0;margin-top:40px;text-align:center;font-size:.88rem;color:var(--hz-muted)}
+
+/* ==========================================================
+   Sections: brands, how we work, maintenance flow, results, FAQ
+   ========================================================== */
+/* ---- Brands ---- */
+.brands{background:var(--hz-cream-2)}
+.brand-card{position:relative;background:#fff;border-radius:18px;overflow:hidden;height:100%;display:flex;flex-direction:column;border:1px solid var(--hz-line)}
+.brand-card .img{height:220px;background-size:cover;background-position:center;position:relative}
+.brand-card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,15,46,.55))}
+.brand-card .badge-logo{position:absolute;bottom:-34px;inset-inline-start:28px;z-index:2;width:76px;height:76px;border-radius:16px;background:var(--hz-secondary);display:grid;place-items:center;box-shadow:0 10px 24px rgba(5,15,46,.2)}
+.brand-card .badge-logo img{width:48px}
+.brand-card .badge-logo.gold{background:var(--hz-primary)}
+.brand-card .badge-logo b{color:#fff;font-size:1.15rem}
+.brand-card .body{padding:52px 28px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.brand-card .en{font-size:.8rem;letter-spacing:.25em;color:var(--hz-primary);font-weight:700}
+.brand-card h3{font-size:1.45rem;margin:0}
+.brand-card p{color:var(--hz-muted);margin:0 0 6px}
+.brand-card .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.brand-card .tags span{font-size:.82rem;padding:4px 12px;border-radius:999px;background:var(--hz-cream-2);color:var(--hz-secondary);font-weight:500}
+.brand-card .link{margin-top:auto;font-weight:700;color:var(--hz-primary);display:inline-flex;gap:8px;align-items:center}
+.madar-strip{display:flex;align-items:center;gap:18px;justify-content:center;margin-bottom:46px}
+.madar-strip .m{background:var(--hz-secondary);color:#fff;border-radius:12px;padding:10px 22px;font-weight:700}
+.madar-strip .m small{display:block;font-size:.7rem;letter-spacing:.3em;color:var(--hz-beige);font-weight:500}
+.madar-strip .line{width:70px;height:2px;background:var(--hz-primary)}
+
+/* ---- How we work ---- */
+.steps6{counter-reset:s}
+.step6{position:relative;background:#fff;border:1px solid var(--hz-line);border-radius:16px;padding:30px 26px 26px;height:100%;transition:.25s}
+.step6 .num{position:absolute;top:22px;inset-inline-end:24px;font-size:2.6rem;font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--hz-beige)}
+.step6 .ic{width:54px;height:54px;border-radius:12px;background:var(--hz-cream-2);color:var(--hz-primary);display:grid;place-items:center;font-size:1.5rem;margin-bottom:18px}
+.step6 h3{font-size:1.15rem;margin-bottom:6px}
+.step6 p{color:var(--hz-muted);font-size:.93rem;margin:0}
+.step6.active{background:var(--hz-secondary);border-color:var(--hz-secondary)}
+.step6.active h3{color:#fff}.step6.active p{color:#C4CAD6}
+.step6.active .ic{background:rgba(255,255,255,.08);color:var(--hz-primary)}
+.step6.active .num{-webkit-text-stroke-color:rgba(229,220,199,.35)}
+
+/* ---- Maintenance flow ---- */
+.flow-sec{background:var(--hz-secondary);color:#fff;position:relative;overflow:hidden}
+.flow-sec::before{content:"";position:absolute;inset:0;background:url(../images/hero-golden-hour.jpg) center/cover;opacity:.06}
+.flow-sec .container{position:relative}
+.flow-sec h2{color:#fff}
+.flow-sec .eyebrow{color:var(--hz-beige)}
+.flow-sec .sub{color:#C4CAD6;max-width:620px}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:50px;position:relative}
+.flow::before{content:"";position:absolute;top:34px;inset-inline:10%;border-top:2px dashed rgba(9,31,91,.6)}
+.flow .f{text-align:center;position:relative}
+.flow .f .ic{width:68px;height:68px;border-radius:50%;background:var(--hz-secondary);border:2px solid var(--hz-primary);color:var(--hz-primary);display:grid;place-items:center;font-size:1.6rem;margin:0 auto 18px;position:relative}
+.flow .f.done .ic{background:var(--hz-primary);color:#fff}
+.flow .f .ic small{position:absolute;top:-6px;inset-inline-end:-6px;width:24px;height:24px;border-radius:50%;background:var(--hz-beige);color:var(--hz-secondary);font-size:.75rem;font-weight:700;display:grid;place-items:center}
+.flow .f h3{color:#fff;font-size:1.1rem;margin-bottom:6px}
+.flow .f p{color:#C4CAD6;font-size:.9rem;margin:0}
+.result{margin-top:50px;background:rgba(255,255,255,.06);border:1px solid rgba(229,220,199,.16);border-radius:16px;padding:22px 28px;display:flex;align-items:center;gap:20px}
+.result .ic{flex:none;width:52px;height:52px;border-radius:12px;background:var(--hz-primary);display:grid;place-items:center;font-size:1.4rem}
+.result b{color:var(--hz-beige);font-size:1.1rem}
+.result p{margin:0;color:#E4E6E2}
+.phone.flow-phone{position:relative;left:auto;bottom:auto;width:220px;margin-inline:auto}
+.phone.flow-phone .ph-screen{height:420px;padding:30px 14px 14px;font-size:10px}
+.req{background:#fff;border:1px solid var(--hz-line);border-radius:10px;padding:10px;margin-bottom:8px;color:var(--hz-ink)}
+.req b{display:block;font-size:11px;color:var(--hz-secondary)}
+.req .st{display:flex;gap:4px;margin-top:6px}
+.req .st i{flex:1;height:4px;border-radius:4px;background:var(--hz-line)}
+.req .st i.on{background:var(--hz-primary)}
+
+/* ---- Results ---- */
+.res-card{background:#fff;border:1px solid var(--hz-line);border-radius:16px;padding:26px;display:flex;gap:18px;align-items:flex-start;height:100%}
+.res-card .ic{flex:none;width:52px;height:52px;border-radius:12px;background:var(--hz-cream-2);color:var(--hz-primary);display:grid;place-items:center;font-size:1.4rem}
+.res-card h3{font-size:1.1rem;margin-bottom:4px}
+.res-card p{color:var(--hz-muted);font-size:.93rem;margin:0}
+.res-card.wide{background:var(--hz-primary);border-color:var(--hz-primary)}
+.res-card.wide h3{color:#fff}.res-card.wide p{color:#F6F0E2}
+.res-card.wide .ic{background:rgba(255,255,255,.18);color:#fff}
+.disclaimer{font-size:.85rem;color:var(--hz-muted);text-align:center;margin-top:26px}
+.res-img{height:100%;min-height:440px;border-radius:18px;background:url(../images/hero-golden-hour.jpg) 30% center/cover;position:relative}
+.res-img .chip{position:absolute;top:24px;inset-inline-end:24px;background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 14px 30px rgba(5,15,46,.15)}
+.res-img .chip b{display:block;font-size:1.6rem;color:var(--hz-secondary);line-height:1.2}
+.res-img .chip small{color:var(--hz-muted)}
+
+/* ---- FAQ ---- */
+.faq-sec{background:var(--hz-cream-2)}
+.faq-side{background:var(--hz-secondary);border-radius:18px;padding:36px;color:#fff;height:100%;position:relative;overflow:hidden}
+.faq-side::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-40px;width:220px;height:220px;background:url(../images/madar-logo-white.png) center/contain no-repeat;opacity:.07}
+.faq-side h3{color:#fff;font-size:1.5rem}
+.faq-side p{color:#C4CAD6}
+.faq-side .btn-hz{margin-top:10px}
+.faq-side .wa{display:flex;align-items:center;gap:12px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(229,220,199,.16)}
+.faq-side .wa i{width:44px;height:44px;border-radius:50%;background:#25D366;display:grid;place-items:center;font-size:1.2rem}
+.accordion{--bs-accordion-border-color:var(--hz-line);--bs-accordion-btn-focus-box-shadow:none;--bs-accordion-active-bg:#fff;--bs-accordion-active-color:var(--hz-secondary);--bs-accordion-border-radius:14px;--bs-accordion-inner-border-radius:14px}
+.accordion-item{border-radius:14px !important;margin-bottom:12px;border:1px solid var(--hz-line) !important;overflow:hidden}
+.accordion-button{font-weight:700;color:var(--hz-secondary);padding:20px 22px;font-size:1.02rem}
+.accordion-button:not(.collapsed){box-shadow:inset 0 -1px 0 var(--hz-line)}
+.accordion-button::after{background-image:none;content:"+";font-size:1.4rem;color:var(--hz-primary);width:auto;height:auto;transform:none;margin-inline-start:auto;margin-inline-end:0}
+.accordion-button:not(.collapsed)::after{content:"−";transform:none;background-image:none}
+.accordion-body{color:var(--hz-muted)}
+
+
+/* ---- About Madar ---- */
+.about-madar .media{position:relative;height:520px}
+.about-madar .media .p1{position:absolute;top:0;left:0;width:78%;height:82%;border-radius:20px;background:url(../images/hero-golden-hour.jpg) 18% center/cover}
+.about-madar .media .p2{position:absolute;bottom:0;right:0;width:46%;height:46%;border-radius:20px;border:8px solid #fff;background:url(../images/photo-lobby.jpg) center/cover}
+.about-madar .media .exp{position:absolute;top:28px;right:4%;background:var(--hz-secondary);color:#fff;border-radius:16px;padding:20px 22px;width:210px;box-shadow:0 18px 40px rgba(5,15,46,.25)}
+.about-madar .media .exp small{display:block;font-size:.72rem;letter-spacing:.3em;color:var(--hz-primary);font-weight:700}
+.about-madar .media .exp b{display:block;font-size:1.25rem;margin:4px 0 12px}
+.about-madar .media .exp span{display:inline-block;font-size:.8rem;padding:3px 10px;border-radius:999px;background:rgba(229,220,199,.14);color:var(--hz-beige);margin:0 0 4px 4px}
+.about-madar h2{font-size:2.4rem}
+.about-madar .lead-p{font-size:1.15rem;color:var(--hz-ink);font-weight:500}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0 32px}
+.pillars div{background:var(--hz-cream-2);border-radius:14px;padding:18px 16px}
+.pillars i{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#fff;color:var(--hz-primary);font-size:1.2rem;margin-bottom:10px}
+.pillars b{display:block;color:var(--hz-secondary);font-size:1rem}
+.pillars small{color:var(--hz-muted);font-size:.85rem;line-height:1.6;display:block}
+
+/* ---- Services v3 (by brand, from PDF) ---- */
+.svc3-head{text-align:center;max-width:760px;margin:0 auto 50px}
+.svc3-head h2{font-size:2.3rem}
+.svc3{display:grid;grid-template-columns:1.55fr 1fr;gap:22px}
+.svc3 .panel{border-radius:22px;padding:34px;position:relative;overflow:hidden}
+.svc3 .panel-head{display:flex;align-items:center;gap:16px;margin-bottom:26px;padding-bottom:22px}
+.svc3 .panel-head .lg{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;font-weight:700;color:#fff;font-size:1rem}
+.svc3 .panel-head small{display:block;font-size:.85rem}
+.svc3 .panel-head b{display:block;font-size:1.35rem}
+.svc3 .panel-head .en{margin-inline-start:auto;font-size:.75rem;letter-spacing:.3em;font-weight:700}
+.svc3 .modarah{background:#fff;border:1px solid var(--hz-line)}
+.svc3 .modarah .panel-head{border-bottom:1px solid var(--hz-line)}
+.svc3 .modarah .lg{background:var(--hz-primary)}
+.svc3 .modarah .panel-head small{color:var(--hz-muted)}
+.svc3 .modarah .panel-head b{color:var(--hz-secondary)}
+.svc3 .modarah .en{color:var(--hz-primary)}
+.svc3 .items{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.svc3 .item{background:var(--hz-cream-2);border-radius:16px;padding:22px 18px;display:flex;flex-direction:column;gap:12px;min-height:150px}
+.svc3 .item i{width:46px;height:46px;border-radius:12px;background:#fff;display:grid;place-items:center;font-size:1.3rem;color:var(--hz-primary)}
+.svc3 .item b{color:var(--hz-secondary);font-size:1.02rem;margin-top:auto}
+.svc3 .hareez{background:var(--hz-secondary);color:#fff;display:flex;flex-direction:column}
+.svc3 .hareez::before{content:"";position:absolute;inset:auto 0 0 0;height:55%;background:linear-gradient(180deg,var(--hz-secondary),rgba(12,26,62,.6)),url(../images/hero-golden-hour.jpg) 20% 60%/cover;opacity:.9}
+.svc3 .hareez > *{position:relative}
+.svc3 .hareez .panel-head{border-bottom:1px solid rgba(229,220,199,.16)}
+.svc3 .hareez .lg{background:rgba(255,255,255,.08)}
+.svc3 .hareez .lg img{width:40px}
+.svc3 .hareez .panel-head small{color:#C4CAD6}
+.svc3 .hareez .en{color:var(--hz-primary)}
+.svc3 .hitem{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.07);border:1px solid rgba(229,220,199,.14);border-radius:16px;padding:20px;margin-bottom:14px;backdrop-filter:blur(4px)}
+.svc3 .hitem i{flex:none;width:50px;height:50px;border-radius:12px;background:var(--hz-primary);display:grid;place-items:center;font-size:1.35rem}
+.svc3 .hitem b{font-size:1.08rem}
+.svc3 .hareez .link{margin-top:auto;padding-top:20px;font-weight:700;color:var(--hz-beige);display:inline-flex;gap:8px}
+.svc3 .modarah .link{display:inline-flex;gap:8px;margin-top:22px;font-weight:700;color:var(--hz-primary)}
+
+
+/* ---------- Section background rhythm ---------- */
+.bg-cream{background:var(--hz-cream-2)}
+.bg-cream .why-point .ic,.bg-cream .service-card .ic{background:#fff}
+.platform{background:var(--hz-cream-2)}
+.platform .media{background:#EFE9DF}
+.platform .media::after{background:#E6DED0}
+.stats-band{background:var(--hz-secondary);padding:56px 0;position:relative;overflow:hidden}
+.stats-band::before{content:"";position:absolute;inset:0;background:url(../images/hero-golden-hour.jpg) center/cover;opacity:.06}
+.stats-band .stats-box{background:transparent;padding:0;border-radius:0}
+.stats-band .stats-box::before{display:none}
+.stats-band .stat strong{color:#fff}
+.stats-band .stat span{color:#C4CAD6}
+.stats-band .stat + .stat::before{background:rgba(229,220,199,.18)}
+.site-footer{background:var(--hz-cream-2)}
+.site-footer .copyright{border-top-color:#E6DED0}
+
+/* ---------- Responsive (basic) ---------- */
+@media (max-width:1199.98px){
+  .svc3{grid-template-columns:1fr}
+  .about-madar .media{height:420px}
+  .flow{grid-template-columns:repeat(3,1fr);row-gap:34px}
+  .flow::before{display:none}
+  .hero-devices,.platform .media{display:none}
+  .hero{min-height:auto;padding-bottom:80px}
+  .hero h1{white-space:normal}
+  .site-header .bar{clip-path:none}
+  .platform .copy{padding:60px 0}
+}
+@media (max-width:767.98px){
+  .svc3 .items{grid-template-columns:1fr 1fr}
+  .svc3 .panel{padding:24px}
+  .pillars{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .result{flex-direction:column;align-items:flex-start}
+  .hero h1{font-size:2.2rem}
+  .stat + .stat::before{display:none}
+  .cta-box{padding:30px 24px}
+}
+
+.site-header .navbar-brand{display:flex;align-items:center;gap:12px}
+.site-header .navbar-brand img{height:auto}
+.site-header .navbar-brand .wm{height:54px}
+.site-header .navbar-brand .ic{height:34px}
+.site-footer .brand img{height:110px}
+h1,h2,h3,h4,h5{color:#0C1A3E}
+/* dark surfaces: gold accent */
+.dash-side,.madar-strip .m,.step6.active,.flow-sec,.faq-side,.about-madar .media .exp,.svc3 .hareez,.stats-band{--hz-primary:#A68F5C;--hz-gold:#A68F5C}
+.flow .f.done .ic{color:#fff}
+/* brand cards keep their own identity */
+.brand-card.hareez{--hz-primary:#A68F5C;--hz-secondary:#2B3A37;--hz-green:#2B3A37;--hz-gold:#A68F5C;--hz-beige:#E5DCC7;--hz-cream-2:#F8F5F0;--hz-line:#E8DFCF}
+.brand-card.hareez h3{color:#2B3A37}
+.brand-card.hareez .img::after{background:linear-gradient(180deg,transparent 40%,rgba(31,43,41,.55))}
+.brand-card.modarah{--hz-primary:#091F5B;--hz-secondary:#091F5B;--hz-cream-2:#E4EDF6;--hz-line:#DCE6F1}
+.brand-card.modarah .tags span{color:#091F5B}
+
+/* ---------- Content from the Madar site brief ---------- */
+.why-point{align-items:flex-start}
+.why-point b{display:block;color:var(--hz-green);font-size:1rem}
+.why-point small{display:block;color:var(--hz-muted);font-size:.86rem;line-height:1.7;font-weight:400}
+.tech-hareez{margin-top:34px;padding-top:24px;border-top:1px solid var(--hz-line)}
+.site-footer ul b{color:var(--hz-green)}
+
+/* ---------- Technology (v3: app showcase) ---------- */
+.tech3{background:#fff;overflow:hidden}
+.tech3-head{text-align:center;max-width:760px;margin:0 auto 30px}
+.tech3-stage{display:grid;grid-template-columns:1fr 360px 1fr;gap:40px;align-items:center;margin-bottom:56px}
+.tech3-stage .copy .intro{font-size:1.15rem;line-height:1.95;color:var(--hz-ink);margin-bottom:20px}
+.tech3-stage .copy .quote{font-weight:700;color:var(--hz-green);font-size:1.05rem;margin-bottom:26px;padding-inline-start:14px;border-inline-start:3px solid var(--hz-gold)}
+.tech3-stage .center{position:relative;height:520px;display:grid;place-items:center}
+.tech3-stage .halo{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,var(--hz-beige) 0%,var(--hz-cream-2) 55%,transparent 72%)}
+.tech3-stage .halo::after{content:"";position:absolute;inset:30px;border-radius:50%;border:1.5px dashed var(--hz-gold);opacity:.55}
+.tech3-stage .ph{position:relative;width:250px;background:#FAF7F1;border:10px solid #050B1F;border-radius:38px;padding:34px 15px 20px;color:var(--hz-ink);box-shadow:0 34px 70px rgba(5,15,46,.28)}
+.tech3-stage .ph .notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:76px;height:17px;border-radius:10px;background:#050B1F}
+.tech3-stage .ph-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:.92rem}
+.tech3-stage .ph-top i{color:var(--hz-gold)}
+.tech3-stage .rq{background:#fff;border:1px solid #EFE9DD;border-radius:10px;padding:10px 12px;margin-bottom:9px;font-size:.78rem;line-height:1.5;position:relative}
+.tech3-stage .rq b{display:block;font-size:.84rem}
+.tech3-stage .rq small{color:var(--hz-muted)}
+.tech3-stage .rq .st{position:absolute;top:10px;inset-inline-end:10px;font-size:.66rem;padding:1px 8px;border-radius:999px;background:#E9EDF6;color:var(--hz-secondary)}
+.tech3-stage .rq .st.w{background:#F5ECD8;color:#8A6D2E}
+.tech3-stage .rq .st.ok{background:#E3F1EA;color:#2D6A4F}
+.tech3-stage .ph-btn{margin-top:12px;background:var(--hz-secondary);color:#fff;border-radius:9px;text-align:center;font-size:.8rem;padding:9px;font-weight:600}
+.tech3-stage .float{position:absolute;background:#fff;border-radius:12px;padding:10px 14px;font-size:.8rem;font-weight:600;color:var(--hz-ink);box-shadow:0 14px 30px rgba(5,15,46,.14);display:flex;align-items:center;gap:8px;white-space:nowrap}
+.tech3-stage .float i{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--hz-gold);color:#fff;font-size:.85rem}
+.tech3-stage .float.f1{top:70px;inset-inline-start:-40px}
+.tech3-stage .float.f2{bottom:80px;inset-inline-end:-40px}
+.tech3-stage .float.f2 i{background:#2D6A4F}
+.tech3-stage .steps{position:relative;display:grid;gap:30px}
+.tech3-stage .steps::before{content:"";position:absolute;top:24px;bottom:24px;inset-inline-start:23px;border-inline-start:2px dashed var(--hz-line)}
+.tech3-stage .st3{position:relative;display:flex;gap:18px;align-items:flex-start}
+.tech3-stage .st3 .n{flex:none;width:48px;height:48px;border-radius:50%;background:var(--hz-secondary);color:#fff;display:grid;place-items:center;font-weight:700;box-shadow:0 0 0 6px #fff}
+.tech3-stage .st3 b{display:block;color:var(--hz-green);font-size:1.08rem;margin-bottom:2px}
+.tech3-stage .st3 small{color:var(--hz-muted);font-size:.92rem;line-height:1.75}
+.tech3-hareez{display:flex;align-items:center;gap:26px;background:#2B3A37;border-radius:18px;padding:26px 32px;color:#E5DCC7;position:relative;overflow:hidden}
+.tech3-hareez::before{content:"";position:absolute;inset-block:0;inset-inline-start:0;width:6px;background:#A68F5C}
+.tech3-hareez .lg{flex:none;width:68px;height:68px;border-radius:14px;background:rgba(255,255,255,.07);display:grid;place-items:center}
+.tech3-hareez .lg img{width:44px}
+.tech3-hareez .txt{flex:1;margin:0;color:#D9D2C1;line-height:1.9}
+.tech3-hareez .txt b{color:#fff}
+.tech3-hareez .txt strong{display:block;color:#fff;margin-top:4px}
+.tech3-hareez .btn-hz-outline{flex:none;background:transparent;color:#E5DCC7;border-color:#A68F5C}
+.tech3-hareez .btn-hz-outline:hover{background:#A68F5C;color:#fff}
+@media (max-width:1199.98px){.tech3-stage{grid-template-columns:1fr;gap:30px}.tech3-stage .float{display:none}.tech3-hareez{flex-direction:column;align-items:flex-start}}
+
+/* Section rhythm: white / cream alternate down the page */
+.tech3{background:var(--hz-cream-2)}
+.tech3-stage .st3 .n{box-shadow:0 0 0 6px var(--hz-cream-2)}
+.tech3-stage .halo{background:radial-gradient(circle,#fff 0%,rgba(255,255,255,.6) 55%,transparent 72%)}
+.dash-side img.madar{width:64px;margin:4px auto 12px}
+
+/* ---------- Madar photography (sections) ---------- */
+.about-madar .media .p1{background-image:url(../images/madar-building.jpg);background-position:60% center}
+.why-img{background-image:url(../images/madar-hero-dusk.jpg);background-position:78% center}
+.res-img{background-image:url(../images/madar-building.jpg);background-position:62% center}
+
+/* ---------- Header: slanted bar without clipping the dropdown ---------- */
+.site-header .bar{position:relative;background:transparent;clip-path:none;box-shadow:none}
+.site-header .bar::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--hz-cream-2);clip-path:polygon(0 0,100% 0,100% 100%,4.5% 100%);box-shadow:0 1px 0 var(--hz-line)}
+.site-header .dropdown-menu{z-index:1050;border:1px solid var(--hz-line);border-radius:12px;box-shadow:0 18px 40px rgba(5,15,46,.14);padding:6px;min-width:150px;margin-top:10px!important}
+.site-header .dropdown-item{border-radius:8px;padding:8px 14px;font-weight:500;color:var(--hz-ink)}
+.site-header .dropdown-item:hover,.site-header .dropdown-item:focus{background:var(--hz-cream-2);color:var(--hz-primary)}
+.site-header .lang{padding:6px 12px;border:1px solid var(--hz-line);border-radius:999px;transition:.2s}
+.site-header .lang:hover,.site-header .lang[aria-expanded="true"]{border-color:var(--hz-gold);color:var(--hz-primary)}
+
+/* ---------- Header links hover ---------- */
+.site-header .nav-link,.site-header .nav-link.active,.site-header .nav-link:hover{font-weight:600}
+.site-header .nav-link{color:var(--hz-ink);transition:color .25s}
+.site-header .nav-link::after,.site-header .nav-link.active::after{content:"";position:absolute;bottom:2px;inset-inline:auto;left:50%;right:auto;width:0;height:2px;border-radius:2px;background:var(--hz-gold);transform:translateX(-50%);transition:width .3s ease}
+.site-header .nav-link:hover,.site-header .nav-link.active{color:var(--hz-primary)}
+.site-header .nav-link:hover::after,.site-header .nav-link.active::after{width:calc(100% - 36px)}
+.site-header .nav-link:not(.active):hover{transform:translateY(-1px)}
+@media (max-width:1199.98px){.site-header .bar::before{clip-path:none}}
+
+/* ---------- Buttons hover: Hareez gold ---------- */
+.btn-hz{transition:background-color .25s,border-color .25s,color .25s,transform .25s,box-shadow .25s}
+.btn-hz:hover,.btn-hz:focus-visible{background:#A68F5C;border-color:#A68F5C;color:#fff;transform:translateY(-2px);box-shadow:0 10px 22px rgba(166,143,92,.35)}
+.btn-hz-outline:hover,.btn-hz-outline:focus-visible{background:#A68F5C;border-color:#A68F5C;color:#fff}
+.btn-hz-outline:hover .play{background:#fff;color:#A68F5C}
+/* buttons that are already gold on dark panels darken on hover */
+.faq-side .btn-hz:hover,.svc3 .hareez .btn-hz:hover{background:#8C7748;border-color:#8C7748;color:#fff}
+.tech3-hareez .btn-hz-outline:hover{background:#A68F5C;border-color:#A68F5C;color:#fff}
