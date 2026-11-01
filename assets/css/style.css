@@ -34,7 +34,7 @@
   --bs-secondary-rgb:4,60,77;
   --bs-link-color:#043C4D;
   --bs-link-hover-color:#043C4D;
-  --bs-body-font-family:"Cairo",Tahoma,sans-serif;
+  --bs-body-font-family:"Cairo",sans-serif;
   --bs-body-color:var(--hz-ink);
   --bs-body-bg:var(--hz-cream);
 }
@@ -478,7 +478,7 @@ h1,h2,h3,h4,h5{color:#043C4D}
 @font-face{font-family:"GE SS Two";font-weight:700;font-display:swap;src:url(../fonts/ge-ss-two-bold.otf) format("opentype")}
 @font-face{font-family:"Kanakira";font-weight:400;font-display:swap;src:url(../fonts/kanakira-regular.ttf) format("truetype");unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
 @font-face{font-family:"Kanakira";font-weight:700;font-display:swap;src:url(../fonts/kanakira-bold.ttf) format("truetype");unicode-range:U+0000-00FF,U+2000-206F,U+20AC,U+2122}
-:root{--bs-body-font-family:"Kanakira","GE SS Two",Tahoma,sans-serif}
+:root{--bs-body-font-family:"Kanakira","GE SS Two",sans-serif}
 body,button,input,.btn-hz,.btn-hz-outline{font-family:var(--bs-body-font-family)}
 h1,h2,h3,h4,h5,.section-title{font-weight:700}
 
@@ -811,4 +811,10 @@ h1,h2,h3,h4,h5,.section-title{font-weight:700}
 @font-face{font-family:"Thmanyah Sans";font-weight:500;font-display:swap;src:url(../fonts/thmanyah-sans-medium.otf) format("opentype")}
 @font-face{font-family:"Thmanyah Sans";font-weight:700;font-display:swap;src:url(../fonts/thmanyah-sans-bold.otf) format("opentype")}
 @font-face{font-family:"Thmanyah Sans";font-weight:900;font-display:swap;src:url(../fonts/thmanyah-sans-black.otf) format("opentype")}
-:root{--bs-body-font-family:"Kanakira","Thmanyah Sans",Tahoma,sans-serif}
+:root{--bs-body-font-family:"Kanakira","Thmanyah Sans",sans-serif}
+
+/* ---------- Fonts per language (explicit) ----------
+   Arabic pages  (html lang="ar"): Thmanyah Sans for all text
+   English pages (html lang="en"): Kanakira, Thmanyah Sans as fallback for any Arabic word */
+html[lang="ar"]{--bs-body-font-family:"Thmanyah Sans",sans-serif}
+html[lang="en"]{--bs-body-font-family:"Kanakira","Thmanyah Sans",sans-serif}
