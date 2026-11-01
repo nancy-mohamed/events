@@ -818,3 +818,12 @@ h1,h2,h3,h4,h5,.section-title{font-weight:700}
    English pages (html lang="en"): Kanakira, Thmanyah Sans as fallback for any Arabic word */
 html[lang="ar"]{--bs-body-font-family:"Thmanyah Sans",sans-serif}
 html[lang="en"]{--bs-body-font-family:"Kanakira","Thmanyah Sans",sans-serif}
+
+/* Official company info (legal name, address) */
+.site-footer .legal-name{font-size:1rem;font-weight:700;color:var(--hz-secondary);margin:0 0 8px}
+.site-footer .brand p{line-height:1.8;max-width:360px}
+.site-footer .contact li.addr{align-items:flex-start;line-height:1.6}
+.site-footer .contact li.addr i{margin-top:3px}
+.contact-sec .ct-address{margin:28px 0 0;text-align:center;color:var(--hz-muted);font-size:.98rem}
+.contact-sec .ct-address i{color:var(--hz-primary);margin-inline-end:4px}
+@media (max-width:575.98px){.site-footer .row>div:has(>.contact){flex:0 0 100%;max-width:100%}}
