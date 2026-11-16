@@ -827,3 +827,9 @@ html[lang="en"]{--bs-body-font-family:"Kanakira","Thmanyah Sans",sans-serif}
 .contact-sec .ct-address{margin:28px 0 0;text-align:center;color:var(--hz-muted);font-size:.98rem}
 .contact-sec .ct-address i{color:var(--hz-primary);margin-inline-end:4px}
 @media (max-width:575.98px){.site-footer .row>div:has(>.contact){flex:0 0 100%;max-width:100%}}
+
+/* hero background: no photo, light blue + Modaar mark pattern (option 1) */
+.hero{background:linear-gradient(180deg,#E5EEF7 0%,#F1F6FA 65%,#fff 100%)!important}
+.hero::before{background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22244%20360%20600%20470%22%3E%3Cpath%20d%3D%22M544.1%2C490.24l-44.23-25.56h-103.68v83.32l71.71%2C41.45-71.71%2C41.45v83.32h103.68l44.23-25.56%2C44.23%2C25.56h103.68v-83.32l-71.71-41.45%2C71.71-41.45v-83.32h-103.68l-44.23%2C25.56ZM544.1%2C630.29l-70.7-40.84%2C70.7-40.84%2C70.7%2C40.84-70.7%2C40.84Z%22%20fill%3D%22%23043C4D%22%20stroke%3D%22none%22%20stroke-width%3D%220%22/%3E%3C/svg%3E") 0 0/96px 75px repeat!important;opacity:.045;-webkit-mask-image:radial-gradient(ellipse 55% 75% at 22% 50%,#000 25%,transparent 85%);mask-image:radial-gradient(ellipse 55% 75% at 22% 50%,#000 25%,transparent 85%);}
+.hero::after{content:"";position:absolute;left:40px;top:110px;width:680px;height:580px;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22380%20450%20328%20280%22%3E%3Cpath%20d%3D%22M544.1%2C490.24l-44.23-25.56h-103.68v83.32l71.71%2C41.45-71.71%2C41.45v83.32h103.68l44.23-25.56%2C44.23%2C25.56h103.68v-83.32l-71.71-41.45%2C71.71-41.45v-83.32h-103.68l-44.23%2C25.56ZM544.1%2C630.29l-70.7-40.84%2C70.7-40.84%2C70.7%2C40.84-70.7%2C40.84Z%22%20fill%3D%22none%22%20stroke%3D%22%23043C4D%22%20stroke-width%3D%222.5%22/%3E%3C/svg%3E") center/contain no-repeat;opacity:.10;z-index:1;pointer-events:none}
+@media (max-width:991.98px){.hero::after{display:none}.hero::before{opacity:.03}}
